@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Dragonfly - GTM Strategy</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reset.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/monokai.css">
+
+	<style>
+		/* Cursor-inspired Theme Overrides */
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+		:root {
+			--r-background-color: #0c0c0c;
+			/* Deep black/grey */
+			--r-main-font: 'Inter', sans-serif;
+			--r-heading-font: 'Inter', sans-serif;
+			--r-main-color: #e0e0e0;
+			--r-heading-color: #ffffff;
+			--r-link-color: #a8a8ff;
+			/* Soft purple/blue */
+			--r-link-color-hover: #ffffff;
+			--r-selection-background-color: #333;
+		}
+
+		.reveal {
+			background: radial-gradient(circle at top right, #1a1a1a 0%, #0c0c0c 40%);
+		}
+
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4,
+		.reveal h5,
+		.reveal h6 {
+			text-transform: none;
+			/* Cursor uses standard casing */
+			font-weight: 600;
+			letter-spacing: -0.02em;
+		}
+
+		.reveal h1 {
+			background: linear-gradient(120deg, #fff, #888);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.container {
+			display: flex;
+		}
+
+		.col {
+			flex: 1;
+		}
+
+		/* Match controls and progress bar to font color */
+		.reveal .controls {
+			color: var(--r-main-color) !important;
+		}
+
+		.reveal .progress span {
+			background-color: var(--r-main-color) !important;
+		}
+
+		/* Mermaid container constraints */
+		.mermaid {
+			display: block;
+			/* Flex can sometimes shrink content weirdly */
+			text-align: center;
+			background: transparent;
+			width: 100%;
+			overflow-x: auto !important;
+			/* Permit horizontal scrolling for wide charts */
+			padding-bottom: 20px;
+			/* Space for scrollbar */
+		}
+
+		/* Override mermaid text for visibility and layout */
+		.mermaid svg {
+			font-family: 'Inter', sans-serif !important;
+			height: auto !important;
+			width: auto !important;
+			/* Let it be as wide as it needs */
+			max-width: none !important;
+			/* Stop crushing wide charts */
+			max-height: none !important;
+		}
+
+		/* Fix squished text: Reveal.js styles might be clashing. Force comfortable spacing. */
+		.mermaid svg * {
+			line-height: 1.5 !important;
+		}
+
+		/* Specific fix for foreignObject divs (HTML labels) */
+		/* We target the foreignObject itself AND the div inside it to stop masking */
+		.mermaid foreignObject,
+		.mermaid foreignObject div {
+			line-height: 1.5 !important;
+			padding: 4px;
+			/* Give it some breathing room */
+			height: auto !important;
+			/* Ensure it grows */
+			overflow: visible !important;
+			/* STOP THE MASKING */
+		}
+
+		/* Sometimes the label container in Mermaid also needs this */
+		.mermaid .label {
+			overflow: visible !important;
+		}
+
+		/* Ensure the SVG itself doesn't clip */
+		.mermaid svg {
+			overflow: visible !important;
+		}
+
+		/* Maximize content width */
+		.reveal .slides>section {
+			overflow-y: auto !important;
+			/* Force scrollbar if needed */
+			max-height: 100% !important;
+			/* Ensure it respects the slide container */
+			padding: 0 !important;
+			/* Remove slide padding */
+		}
+
+		/* Spread tables out */
+		.reveal table {
+			width: 100% !important;
+			margin: 0 auto !important;
+			font-size: 0.8em;
+			/* Slightly smaller text for density */
+		}
+
+		.reveal table th,
+		.reveal table td {
+			padding: 0.2em 0.5em !important;
+			/* Compact cell padding */
+		}
+
+		/* Ensure list numbers/bullets aren't cut off by zero-margin layout */
+		.reveal ol,
+		.reveal ul {
+			padding-left: 2em !important;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Content will be injected here by the script -->
+			<section id="markdown-section" data-separator="^\r?\n-{3,}\r?\n$"
+				data-separator-vertical="^\r?\n={3,}\r?\n$">
+			</section>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+	<!-- Load Mermaid -->
+	<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+
+	<script>
+		// Initialize Mermaid
+		mermaid.initialize({
+			startOnLoad: false,
+			theme: 'dark',
+			securityLevel: 'loose',
+			fontFamily: 'Inter',
+			// CRITICAL FIX: Inject CSS into the measurement sandbox so Mermaid
+			// calculates the box size using the SAME line-height we use for display.
+			themeCSS: `
+                .node foreignObject, .node foreignObject div {
+                    line-height: 1.5 !important;
+                    font-family: 'Inter', sans-serif !important;
+                    overflow: visible;
+                }
+            `,
+			flowchart: {
+				htmlLabels: true,
+				useMaxWidth: false
+			},
+			sequence: {
+				mirrorActors: false
+			}
+		});
+
+		// "Rendering Checker" & Content Loader
+		(async function loadContent() {
+			try {
+				const response = await fetch('gtm_strat.md');
+				if (!response.ok) throw new Error(`Failed to load gtm_strat.md: ${response.statusText}`);
+
+				let markdown = await response.text();
+
+				// 1. Process Custom Image Syntax ::img{src="..."}
+				// Regex explanation: match ::img{src="..."}, capture the url
+				markdown = markdown.replace(/::img\{src="(.*?)"\}/g, (match, url) => {
+					// Changed to inline-block with smaller height for "logo wall" look
+					return `<img src="${url}" style="margin: 10px; display: inline-block; height: 60px; max-width: 200px; vertical-align: middle;">`;
+				});
+
+				// 2. Process Mermaid Code Blocks ```mermaid ... ```
+				// We need to convert them to <div class="mermaid">...</div> code, but ESCAPED so the browser doesn't eat <br/> tags.
+				markdown = markdown.replace(/```mermaid([\s\S]*?)```/g, (match, code) => {
+					// Escape HTML special characters to preserve them as text
+					const escaped = code.trim()
+						.replace(/&/g, "&amp;")
+						.replace(/</g, "&lt;")
+						.replace(/>/g, "&gt;")
+						.replace(/"/g, "&quot;")
+						.replace(/'/g, "&#039;");
+					return `<div class="mermaid">${escaped}</div>`;
+				});
+
+				// 3. Initialize Reveal with inline markdown
+				const section = document.getElementById('markdown-section');
+				// section.innerHTML = ...; // REMOVED: Do not set innerHTML directly, it conflicts with the template script
+				section.innerHTML = ''; // Clear it to be safe
+
+				section.removeAttribute('data-markdown'); // clear file path if any
+				section.setAttribute('data-markdown', ''); // enable inline parsing
+
+				// Create the script template required for inline markdown
+				const template = document.createElement('script');
+				template.type = 'text/template';
+				template.text = markdown; // Inject the processed markdown
+				section.appendChild(template);
+
+				await Reveal.initialize({
+					hash: true,
+					transition: 'slide',
+					backgroundTransition: 'slide',
+					// Optimize layout for scrolling down, not sideways
+					width: 1600, // Increased from 1200
+					height: 900,
+					margin: 0.02, // Even tighter margin
+					minScale: 0.2,
+					maxScale: 2.0,
+					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+				});
+
+				// 4. Render Mermaid (Post-Init)
+				// We bind to Reveal events to ensure we only render visible charts
+				// This prevents "0-height" calculation errors for charts on hidden slides
+
+				// Helper to render only the current slide (and maybe adjacent for smooth transitions)
+				const renderActiveCharts = async () => {
+					await document.fonts.ready; // Ensure fonts are loaded for correct metrics
+
+					const currentSlide = Reveal.getCurrentSlide();
+					if (!currentSlide) return;
+
+					// Find charts in the current slide
+					const charts = currentSlide.querySelectorAll('.mermaid');
+					for (const chart of charts) {
+						if (chart.getAttribute('data-processed')) continue; // Already rendered
+						await renderOneChart(chart);
+					}
+
+					// Optional: Pre-render next slide's charts for smoothness? 
+					// For now, let's just stick to current to ensure correctness.
+				};
+
+				Reveal.on('ready', renderActiveCharts);
+				Reveal.on('slidechanged', renderActiveCharts);
+
+				// Manual initial render because 'ready' might have already fired
+				if (Reveal.isReady()) {
+					renderActiveCharts();
+				}
+
+			} catch (err) {
+				console.error("Presentation Error:", err);
+				document.body.innerHTML = `<div style="color: red; padding: 20px; font-family: sans-serif;">
+                        <h1>Rendering Error</h1>
+                        <p>Could not load or parse the presentation content.</p>
+                        <pre>${err.message}</pre>
+                    </div>`;
+			}
+		})();
+
+		// Shared rendering function
+		const renderOneChart = async (chart) => {
+			// Now that we escaped upstream, textContent should contain the raw literal strings (including <br/>)
+			let txt = chart.textContent.trim();
+			if (!txt) return;
+
+			try {
+				window.mermaidCounter = (window.mermaidCounter || 0) + 1;
+				const id = `mermaid-chart-${window.mermaidCounter}`;
+				// Render returns an object { svg }
+				const { svg } = await mermaid.render(id, txt);
+				chart.innerHTML = svg;
+				chart.setAttribute('data-processed', 'true');
+			} catch (e) {
+				console.error("Mermaid Render Fail:", e);
+				chart.innerHTML = `<div style="color: #ff5f5f; font-size: 14px; border: 1px solid #ff5f5f; padding: 10px; text-align: left; background: rgba(0,0,0,0.5);">
+                    <strong>Chart Failed:</strong><br/>
+                    <pre style="white-space: pre-wrap;">${e.message}</pre>
+                    <details><summary>Source</summary><pre>${txt}</pre></details>
+                </div>`;
+			}
+		};
+	</script>
+</body>
+
+</html>
