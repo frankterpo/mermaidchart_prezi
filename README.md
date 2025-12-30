@@ -50,6 +50,29 @@ To change the browser tab name and icon:
 2. **Tab Name:** Edit the text inside the `<title>` tag (Line 8).
 3. **Tab Icon (Favicon):** Edit the `<link rel="icon">` tag (Line 9). Point the `href` to your image file.
 
+## ✍️ Content & Diagrams
+
+Edit `presentation/gtm_strat.md` to change your presentation.
+
+### Slides Structure
+- **New Slide:** Use `---` on its own line.
+- **Vertical Slide:** Use `===` on its own line.
+
+### Adding Diagrams
+Wrap Mermaid code in triple backticks:
+
+````markdown
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+````
+
+For advanced charts (Gantt, Sequence, State), check the **[Mermaid.js Documentation](https://mermaid.js.org/intro/)**.
+
 ## 🛠 Compatibility
 
 Works on macOS, Linux, and Windows (via WSL). Requires Python installed (standard on most systems).
