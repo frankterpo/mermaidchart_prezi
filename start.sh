@@ -51,14 +51,26 @@ if [ "$USE_NGROK" = true ]; then
     if ! command -v ngrok &> /dev/null; then
         echo "❌ ngrok not found. Please install it to use --ngrok."
         echo "   Continuing with local server only..."
+        # Open local confirmation since ngrok failed
+        sleep 1
+        open "http://localhost:$PORT" 2>/dev/null || xdg-open "http://localhost:$PORT" 2>/dev/null || echo "🔗 Open http://localhost:$PORT in your browser"
     else
         echo "🔗 Starting ngrok tunnel..."
         echo "ℹ️  Press Ctrl+C to stop everything."
         echo ""
-        ngrok http $PORT
+        # We start ngrok in foreground so we can see the log, but we need to let the user know.
+        # Actually, simpler: run ngrok http $PORT which is blocking.
+        # But we want to open the URL. Ngrok output usually hides the URL unless we parse it or use the UI.
+        # For simplicity, let's just let ngrok run. The user sees the URL in the terminal.
+        ngrok http $PORT 
     fi
 else
     echo "ℹ️  Running locally. Use './start.sh --ngrok' to share."
-    # Wait indefinitely since we aren't running a foreground process like ngrok
+    echo "🌍 Opening browser..."
+    sleep 1
+    # Try macOS 'open' then Linux 'xdg-open'
+    open "http://localhost:$PORT" 2>/dev/null || xdg-open "http://localhost:$PORT" 2>/dev/null || echo "🔗 Open http://localhost:$PORT in your browser"
+    
+    # Wait indefinitely
     wait $PID
 fi

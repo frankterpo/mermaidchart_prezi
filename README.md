@@ -1,43 +1,35 @@
-# Dragonfly GTM Presentation
+# Mermaid + Reveal.js Presentation Template
 
-This repository contains the Reveal.js presentation for the Dragonfly 2026 GTM Strategy.
+A "fork & use" template for building beautiful, code-driven presentations with **Mermaid.js** diagrams and **Markdown**.
 
-## 🚀 Quick Start
+**Why use this?**
+- 📝 Write content in Markdown (`gtm_strat.md`).
+- 📊 Diagrams render automatically from code (Mermaid.js).
+- 🎨 Beautiful, simple styling (Inter font, Dark mode).
+- 🚀 One-command start & share.
 
-The project includes a helper script `start.sh` to make running and sharing the presentation easy.
+## ⚡️ Quick Start
 
-### Prerequisites
-
-- **Python 3** (usually pre-installed on macOS/Linux)
-- **Ngrok** (optional, for public sharing)
-  - Install via Homebrew: `brew install ngrok/ngrok/ngrok`
-  - Or manually from [ngrok.com](https://ngrok.com)
-
-### 1. Run Locally
-
-To start a local server and open the presentation in your default browser:
-
+### 1. Run it
 ```bash
 ./start.sh
 ```
+*Autosystematically opens `http://localhost:8000` in your browser.*
 
-- Access at: `http://localhost:8000`
-- The script uses Python's `http.server` to serve the `presentation/` directory.
+### 2. Customize it
+1. Open `presentation/gtm_strat.md`.
+2. Edit the Markdown.
+3. Refresh browser.
 
-### 2. Share via Ngrok
-
-To expose your local server to the internet for sharing (e.g., with a client or colleague):
-
+### 3. Share it
 ```bash
 ./start.sh --ngrok
 ```
+*Generates a public URL to share instantly.* (Requires [ngrok](https://ngrok.com)).
 
-- This will start the local server AND an Ngrok tunnel.
-- The script will output a public URL (e.g., `https://random-id.ngrok-free.app`).
-- **Note:** You must have `ngrok` installed and authenticated (`ngrok config add-authtoken <token>`).
+## 🛠 Compatibility
 
-## 🛠 Project Structure
+Works on macOS, Linux, and Windows (via WSL). Requires Python installed (standard on most systems).
 
-- `presentation/index.html`: The main entry point containing the Reveal.js setup and custom logic.
-- `presentation/gtm_strat.md`: The content source (Markdown).
-- `start.sh`: Helper script for automation.
+---
+*Powered by [Reveal.js](https://revealjs.com) and [Mermaid.js](https://mermaid.js.org).*
