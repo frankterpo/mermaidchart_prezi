@@ -25,7 +25,24 @@ A "fork & use" template for building beautiful, code-driven presentations with *
 ```bash
 ./start.sh --ngrok
 ```
-*Generates a public URL to share instantly.* (Requires [ngrok](https://ngrok.com)).
+*Generates a public URL to share instantly.*
+
+#### 🛠 Ngrok Setup
+If you don't have ngrok installed:
+1. **Install:**
+   - macOS: `brew install ngrok/ngrok/ngrok`
+   - Linux/Windows: Download from [ngrok.com](https://ngrok.com/download)
+2. **Authenticate:** 
+   - Sign up at ngrok.com to get your auth token.
+   - Run: `ngrok config add-authtoken YOUR_TOKEN_HERE`
+
+### 4. Push Changes
+To save your edits and push them back to GitHub:
+```bash
+git add .
+git commit -m "Update presentation content"
+git push
+```
 
 ## 🛠 Compatibility
 
