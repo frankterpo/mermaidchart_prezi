@@ -1,6 +1,8 @@
 # Mermaid + Reveal.js Presentation Template
 
-A "fork & use" template for building beautiful, code-driven presentations with **Mermaid.js** diagrams and **Markdown**.
+A "fork &    - [x] Create README.md (Instructions) <!-- id: 20 -->
+    - [x] Add tab name/favicon instructions to README <!-- id: 21 -->
+- [x] Distribution Polish **Mermaid.js** diagrams and **Markdown**.
 
 **Why use this?**
 - 📝 Write content in Markdown (`gtm_strat.md`).
@@ -43,6 +45,12 @@ git add .
 git commit -m "Update presentation content"
 git push
 ```
+
+### 5. Customize Tab Name & Icon
+To change the browser tab name and icon:
+1. Open `presentation/index.html`.
+2. **Tab Name:** Edit the text inside the `<title>` tag (Line 8).
+3. **Tab Icon (Favicon):** Edit the `<link rel="icon">` tag (Line 9). Point the `href` to your image file.
 
 ## 🛠 Compatibility
 
