@@ -326,7 +326,7 @@
 </head>
 
 <body>
-	<div class="reveal">
+	<div class="reveal hide-others">
 		<div class="slides">
 			<!-- Content will be injected here by the script -->
 			<section id="markdown-section" data-separator="^\r?\n-{3,}\r?\n$"
@@ -403,19 +403,6 @@
 				template.text = markdown; // Inject the processed markdown
 				section.appendChild(template);
 
-				await Reveal.initialize({
-					hash: true,
-					transition: 'slide',
-					backgroundTransition: 'slide',
-					// Optimize layout for scrolling down, not sideways
-					width: 1600,
-					height: 900,
-					margin: 0.15, // Increased from 0.1 to further prevent ghosting
-					minScale: 0.2,
-					maxScale: 2.0,
-					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-				});
-
 				// 4. Render Mermaid (Robust Post-Markdown hook)
 				const renderAllMermaid = async () => {
 					const blocks = document.querySelectorAll('.language-mermaid, code[class*="mermaid"]');
@@ -442,14 +429,24 @@
 					}
 				};
 
-				// We run it on ready and after a small delay to be safe
+				// We set listeners BEFORE initialization to catch all events
 				Reveal.on('ready', () => {
 					renderAllMermaid();
 					setTimeout(renderAllMermaid, 1000);
-					// Enable absolute isolation once ready
-					document.querySelector('.reveal').classList.add('hide-others');
 				});
 				Reveal.on('slidechanged', renderAllMermaid);
+
+				await Reveal.initialize({
+					hash: true,
+					transition: 'slide',
+					backgroundTransition: 'slide',
+					width: 1600,
+					height: 900,
+					margin: 0.15,
+					minScale: 0.2,
+					maxScale: 2.0,
+					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+				});
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
 				const updateScrollIndicator = () => {
