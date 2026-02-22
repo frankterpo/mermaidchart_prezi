@@ -65,13 +65,39 @@ mindmap
 ```
 *Note: Willingness-to-pay scales linearly with Risk/Regulatory constraints. A Healthcare Copilot will pay high strict-compliance premiums for auto-patching and PII redaction natively at the edge. A gaming NPC platform will optimize strictly on volume discounts for hallucination boundaries.*
 
-====
+----
 
-<!-- .slide: id="task1-targets" -->
-#### 30 Enriched Targets (2 per Vertical)
-*Actual Investors list pulled live via Specter Postgres `funding_round` table via Python CLI.*
+<!-- .slide: id="task1-mindmap" -->
+#### Vertical Breakdown
+```mermaid
+mindmap
+  root((ICP Segments))
+    High-Risk Consumer GenAI
+      Mental Health
+      Companion
+      Customer Support
+      Gaming
+      Education
+    Enterprise Automation & Copilots
+      DevTools
+      LegalTech
+      HRTech
+      SalesEnablement
+      Procurement
+    Regulated Industry AI
+      FinTech
+      HealthTech
+      GovTech
+      InsurTech
+      BioTech
+```
+*Note: Willingness-to-pay scales linearly with Risk/Regulatory constraints. A Healthcare Copilot will pay high strict-compliance premiums for auto-patching and PII redaction natively at the edge. A gaming NPC platform will optimize strictly on volume discounts for hallucination boundaries.*
 
-<div style="font-size: 0.45em; max-height: 50vh; overflow-y: auto;">
+----
+
+<!-- .slide: id="task1-targets-consumer" -->
+#### Enriched Targets: High-Risk Consumer GenAI
+*Investors pulled live via Specter Postgres `funding_round` table via Python CLI.*
 
 | Company | Vertical | Funding | Raised | Investors |
 |---|---|---|---|---|
@@ -85,6 +111,14 @@ mindmap
 | Replica Studios | Gaming | Seed | $9,573,757 | Carthona Capital, Flying Fox Ventures |
 | Khan Academy | Education | Series A | $10,000 | N/A |
 | Duolingo | Education | Series H | $183,300,000 | A-Grade Investments, Arctic Ventures, Ashton Kutcher |
+
+----
+
+<!-- .slide: id="task1-targets-enterprise" -->
+#### Enriched Targets: Enterprise Automation & Copilots
+
+| Company | Vertical | Funding | Raised | Investors |
+|---|---|---|---|---|
 | Sourcegraph | DevTools | Series D | $248,000,000 | Andreessen Horowitz, Craft Ventures, Felicis |
 | Anysphere | DevTools | Series Unknown | — | N/A |
 | Harvey | LegalTech | Series F | $160,000,000 | N/A |
@@ -95,6 +129,14 @@ mindmap
 | Outreach | SalesEnablement | Secondary Market | — | N/A |
 | Zip | Procurement | Series D | $190,000,000 | N/A |
 | Globality | Procurement | Series Unknown | $357,550,000 | Al Gore, David Rosenblatt, Debra Polishook |
+
+----
+
+<!-- .slide: id="task1-targets-regulated" -->
+#### Enriched Targets: Regulated Industry AI
+
+| Company | Vertical | Funding | Raised | Investors |
+|---|---|---|---|---|
 | Upstart | FinTech | Post Ipo Debt | $1,864,050,000 | Bradley Horowitz, Collaborative Fund, Cyan Banister |
 | Zest AI | FinTech | Series Unknown | — | N/A |
 | Abridge | HealthTech | Series E | $757,500,000 | ANEESH P. CHOPRA, American College of Cardiology |
@@ -105,8 +147,6 @@ mindmap
 | Tractable | InsurTech | Series E | $65,000,000 | N/A |
 | Recursion | BioTech | Post Ipo Equity | $865,376,000 | AME Cloud Ventures, Advantage Capital |
 | Insitro | BioTech | Series C | $643,000,000 | ARCH Venture Partners, Alexandria Venture |
-
-</div>
 
 <br/>
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Deep dive into the extended repo JSON (75+ contacts & raw Specter funding data).</a>
@@ -126,7 +166,7 @@ mindmap
 | **Stress-test Agent (Eval/Alignment)**| Braintrust | Stripe, Coda | **URLScan**: Website logo entity extraction |
 | **Stress-test Agent (Eval/Alignment)**| Patronus AI | Samsung, Norsk Hydro | **Cala AI**: Press Release mining |
 
-====
+----
 
 <!-- .slide: id="task2-logic" -->
 #### Feature Mapping logic: Why are they slotted here?
@@ -146,9 +186,9 @@ mindmap
 4. **Incidents PR Monitoring** (Cala AI querying Reddit/HN)
 5. **HuggingFace Eval Adoption** (Forks and downloads of benchmark datasets)
 
-*(Scroll down for detailed workflow charts on each signal).*
+*(Scroll right for detailed workflow charts on each signal).*
 
-====
+----
 
 <!-- .slide: id="task3-v1-telemetry" -->
 #### Signal 1: Automated Telemetry Flow
@@ -164,7 +204,7 @@ flowchart TD
 ```
 *Value add: We don't rely on self-reported tags. We catch them actually routing production ML traffic.*
 
-====
+----
 
 <!-- .slide: id="task3-v1-github" -->
 #### Signal 2: GitHub CI/CD Fingerprinting
@@ -181,7 +221,7 @@ flowchart LR
 ```
 *Value add: If they are running evals in prep for CI/CD, they are technically ready to buy Guardrails tomorrow.*
 
-====
+----
 
 <!-- .slide: id="task3-v1-jobs" -->
 #### Signal 3: Job Posting Intelligence
@@ -197,7 +237,7 @@ flowchart LR
 ```
 **Trigger Logic**: A company posting an "AI Safety" job has an *approved budget* and recognized an explicit operational vulnerability. By reaching out with White Circle's software alternative, we compress their 3-month hiring timeline into an immediate B2B purchase.
 
-====
+----
 <!-- .slide: id="task3-v1-incidents" -->
 #### Signal 4: Incident/PR Event Monitoring (via Cala)
 
@@ -211,7 +251,7 @@ flowchart LR
 ```
 **Trigger Logic**: We utilize Cala AI's semantic knowledge querying to detect spikes in "hallucination" complaints for specific brands before major news outlets cover it. A live PR incident is a forcing function for rapid budget deployment (the Founder is actively putting out fires).
 
-====
+----
 <!-- .slide: id="task3-v1-hf" -->
 #### Signal 5: HuggingFace Eval Traction
 
@@ -230,8 +270,10 @@ flowchart LR
 
 ----
 
+----
+
 <!-- .slide: id="task4" -->
-### Task 4: Consumer Psychotherapy Chatbot Policies
+### Task 4: Consumer Psychotherapy Chatbot Policies (User-Facing)
 
 | Direction | Policy | The Rationale (Why) |
 |---|---|---|
@@ -240,6 +282,14 @@ flowchart LR
 | **User** | Medical Diagnosis Request Block | Legally, AI cannot diagnose. Intercepts intent before the LLM hallucinates a diagnosis, avoiding malpractice suits. |
 | **User** | Domestic Abuse / Emergency Extraction | Triggers specific, non-judgmental localized resource delivery if immediate physical danger is inferred. |
 | **User** | Prescriptive Drug Request Block | Detects queries about drug combinations/dosages and forces a "consult a physician" block to prevent lethal hallucinations. |
+
+----
+
+<!-- .slide: id="task4-assistant" -->
+### Task 4: Consumer Psychotherapy Chatbot Policies (Assistant-Facing)
+
+| Direction | Policy | The Rationale (Why) |
+|---|---|---|
 | **Assistant**| Empathy Floor (Tone Constraint) | Overly clinical/dry responses to human trauma cause immediate user churn. Enforces a baseline brand tone. |
 | **Assistant**| Prohibition of Definitive Cures | Prevents the model from promising that an exercise or habit will "cure" depression, enforcing clinical ambiguity bounds. |
 | **Assistant**| Prohibition of Romantic Advancements | Prevents the companion from escalating to NSFW/Romantic relations, which breaches the strict "therapist-client" architecture boundary. |
@@ -251,13 +301,13 @@ flowchart LR
 <!-- .slide: id="task5" -->
 ### Task 5: Pricing Strategy & Logic Execution
 
-| Tier | Traffic / API Traces | Price Structure | Target Base |
+| Tier | Traffic Level | Price Structure | Target Base |
 |---|---|---|---|
-| Startup/Beta | < 1 Million | $0 to $1,500 flat | Young dev teams integrating early. |
-| Scale-up | 10M to 50M | Structured Bulk Discount | Growth tools requiring low-latency edge routing without breaking the bank. |
-| Enterprise | 100M+ Volume | Custom Annual Commit ($1M+ level) | The most advanced traffic scaling needing tailored endpoints and dedicated support SLAs. |
+| Startup/Beta | Low | $0 to $1,500 flat | Young dev teams integrating early. |
+| Scale-up | Medium | Structured Bulk Discount | Growth tools requiring low-latency edge routing without breaking the bank. |
+| Enterprise | High | Custom Annual Commit ($1M+ level) | The most advanced traffic scaling needing tailored endpoints and dedicated support SLAs. |
 
-====
+----
 
 <!-- .slide: id="task5-logic" -->
 #### How to price: 1,000 requests vs 10,000,000 requests.
@@ -267,33 +317,34 @@ To understand pricing logic, we look at enterprise contracts (which sit in the 7
 1. **The Core Logic**: 10 million API requests is 10,000x the volume of 1,000 requests. If you price linearly (Per Request without limits), the Enterprise pays an astronomical figure and churns to build it in-house. 
 2. **The Discount Curve**:
    - The 1k request client is just "trying it out". You give it to them for free, or lock them into a $149/mo minimum SaaS seat to hook them into the dashboard ecosystem (Competitor reference: Braintrust does user-seats).
-   - The 10M request client operates at scale. You negotiate a massive lump-sum commit (e.g. $1,000,000/yr), but their *effective price per request* drops aggressively.
+   - The 10M request client operates at scale. You negotiate a massive lump-sum block (e.g. $1,000,000/yr), but their *effective price per request* drops aggressively.
 3. **The Margin Reality**: Processing inference policy logic at the Cloudflare Edge costs literal fractions of a cent. Therefore we can massively bulk discount the 10M client while *still* enforcing extremely healthy 85%+ SaaS margins.
 
 ----
 
 <!-- .slide: id="task6" -->
-### Task 6: Message Volume Estimates
+### Task 6: Message Volume Estimates (Per User Per Month)
 
-*We attempted to integrate the Cloudflare Radar API endpoints (https://api.cloudflare.com/client/v4/radar/entities/domains...) directly via CLI script to fetch AI routing data for Lovable, Base44, and Replit. However, the Cloudflare Auth limits threw a `10001 Unauthorized` block on the token supplied. As a result, we must fall back to proxy logic calculations.*
+*Since Cloudflare Auth restrictions blocked direct `radar/entities` metrics on these specific domains, we employ the following proxy calculations representing "Messages per user, per month".*
 
-| Platform | Active Builder Base Proxy | Estimated Msg Volume |
-|---|---:|---:|
-| **Lovable** | Heavy (~500k-1M actives) | ~60M to 150M |
-| **Replit** | Massive (~4M+ actives) | ~200M to 350M+ |
-| **Base44** | Small (Startup/Early) | ~500k to 5M |
+| Platform | Active Builder Proxy | Messages Per User (Per Month) | Total System Load |
+|---|---:|---:|---:|
+| **Lovable** | ~500k-1M actives | **150 Messages / User** | ~75M to 150M |
+| **Replit** | ~4M+ actives | **80 Messages / User** | ~320M+ |
+| **Base44** | ~20k-50k actives | **100 Messages / User** | ~2M to 5M |
 
-====
+----
 
 <!-- .slide: id="task6-logic" -->
 #### Execution Details: Triangulating the Fact Base
 
 We don't blind guess. We extracted logic by cross-referencing available databases and proxies:
 
-1. **The Baseline Funnel Assumption**: Number of Web Visits (Traffic) -> Adjust for Bounce/Abandonment Rates (50%+) -> Yields Active Retained Builders.
-2. **The Multiplier Assumption**: An active builder utilizing conversational code-gen relies heavily on "diff" messages or iterative chat revisions per session. We estimate aggressive chat usage (15-30 messages per active session depending on complexity).
-3. **Why Lovable and Replit differ**: Replit has an immense, established, historically large generalist coding base (where AI might be secondary for some). Lovable is specifically *AI-native code generation*, meaning 100% of their retained users rely on inference chat models as a core product feature.
-4. **Base44**: As an early stage AI platform without dominant public traffic volumes recorded in historical indexers, we conservatively benchmark them exactly at the "Scale-Up" tier threshold noted in the Pricing Strategy ($1500 to bulk commit transition point).
+1. **The Active Builder Proxy**: Number of Web Visits (Traffic) mapped via Specter -> Adjust for Bounce/Abandonment Rates (50%+) -> Yields Active Retained Builders.
+2. **Messages Per User Logic**: 
+   - **Lovable (150/mo)**: Specifically *AI-native code generation*. 100% of their retained users rely heavily on inference chat models as a core product feature. They are aggressively prompting (5 prompts * 30 days).
+   - **Replit (80/mo)**: Has an immense historical generalist coding base. AI is natively integrated but not strictly the only way to build. The average message-per-user is diluted.
+   - **Base44 (100/mo)**: An early stage AI platform. Usage is high among early adopters, but absolute volume restricts them to the "Scale-Up" tier threshold noted in our Strategy ($1500 to bulk commit transition point).
 
 ----
 
@@ -301,7 +352,7 @@ We don't blind guess. We extracted logic by cross-referencing available database
 ### Task 7: Scalable Outbound Strategies
 We actively deployed Python scripts against Specter DB and Firecrawl APIs to extract actionable outbound triggers *in real-time*.
 
-====
+----
 
 <!-- .slide: id="task7-strategy-1" -->
 #### Tactic 1: The "Similar Companies Matrix"
@@ -315,7 +366,7 @@ We actively deployed Python scripts against Specter DB and Firecrawl APIs to ext
 
 > *"Hi Twilio Team, noticed you're exploring GenAI and tracing via Langfuse. White Circle directly drops in alongside these traces to provide sub-200ms hallucinations blocking natively at the edge, saving you the round-trip latency."*
 
-====
+----
 
 <!-- .slide: id="task7-strategy-2" -->
 #### Tactic 2: Event-Driven Pain Scraping (Trustpilot / Reddit)
