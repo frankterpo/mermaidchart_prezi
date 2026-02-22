@@ -125,8 +125,14 @@
 			overflow: visible !important;
 		}
 
-		/* Standard Reveal isolation — do NOT override background/overflow on sections
-		   unless you also handle the Reveal.js transform lifecycle. */
+		/* Restore slide isolation: force solid backgrounds and higher z-index for the active slide */
+		.reveal .slides section {
+			background: var(--r-background-color) !important;
+		}
+
+		.reveal .slides section.present {
+			z-index: 10;
+		}
 
 		/* Utility Classes for Markdown attributes */
 
@@ -363,19 +369,6 @@
 					return `<img src="${url}" style="margin: 10px; display: inline-block; height: 60px; max-width: 200px; vertical-align: middle;">`;
 				});
 
-				// 2. Process Mermaid Code Blocks ```mermaid ... ```
-				// We need to convert them to <div class="mermaid">...</div> code, but ESCAPED so the browser doesn't eat <br/> tags.
-				markdown = markdown.replace(/```mermaid([\s\S]*?)```/g, (match, code) => {
-					// Escape HTML special characters to preserve them as text
-					const escaped = code.trim()
-						.replace(/&/g, "&amp;")
-						.replace(/</g, "&lt;")
-						.replace(/>/g, "&gt;")
-						.replace(/"/g, "&quot;")
-						.replace(/'/g, "&#039;");
-					return `<div class="mermaid">${escaped}</div>`;
-				});
-
 				// 3. Initialize Reveal with inline markdown
 				const section = document.getElementById('markdown-section');
 				// section.innerHTML = ...; // REMOVED: Do not set innerHTML directly, it conflicts with the template script
@@ -397,44 +390,40 @@
 					// Optimize layout for scrolling down, not sideways
 					width: 1600,
 					height: 900,
-					margin: 0.1, // Increased from 0.02 to prevent ghosting
+					margin: 0.15, // Increased from 0.1 to further prevent ghosting
 					minScale: 0.2,
 					maxScale: 2.0,
 					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 				});
 
-				// 4. Render Mermaid (Mutation Observer Approach)
-				// This catches charts as soon as the Markdown plugin injects them 
-				// anywhere in the presentation slides.
-				const observer = new MutationObserver((mutations) => {
-					for (const mutation of mutations) {
-						if (mutation.type === 'childList') {
-							mutation.addedNodes.forEach(node => {
-								if (node.nodeType === 1) { // Element
-									const charts = node.querySelectorAll ? node.querySelectorAll('.mermaid') : [];
-									charts.forEach(chart => {
-										if (!chart.getAttribute('data-processed')) {
-											renderOneChart(chart);
-										}
-									});
-									if (node.classList && node.classList.contains('mermaid') && !node.getAttribute('data-processed')) {
-										renderOneChart(node);
-									}
-								}
-							});
+				// 4. Render Mermaid (Post-Markdown hook)
+				// We find all code blocks with class "language-mermaid" and transform them.
+				const renderAllMermaid = async () => {
+					const blocks = document.querySelectorAll('code.language-mermaid');
+					for (const block of blocks) {
+						const container = block.parentElement.parentElement; // pre > code
+						if (container.getAttribute('data-processed')) continue;
+
+						const code = block.textContent.trim();
+						try {
+							window.mermaidCounter = (window.mermaidCounter || 0) + 1;
+							const id = `mermaid-chart-${window.mermaidCounter}`;
+							const { svg } = await mermaid.render(id, code);
+
+							const div = document.createElement('div');
+							div.className = 'mermaid';
+							div.innerHTML = svg;
+
+							container.parentNode.replaceChild(div, container);
+							div.setAttribute('data-processed', 'true');
+						} catch (e) {
+							console.error("Mermaid Render Fail:", e);
 						}
 					}
-				});
+				};
 
-				observer.observe(document.querySelector('.slides'), {
-					childList: true,
-					subtree: true
-				});
-
-				// Initial pass for anything already there
-				document.querySelectorAll('.mermaid').forEach(chart => {
-					if (!chart.getAttribute('data-processed')) renderOneChart(chart);
-				});
+				Reveal.on('ready', renderAllMermaid);
+				Reveal.on('slidechanged', renderAllMermaid);
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
 				const updateScrollIndicator = () => {
