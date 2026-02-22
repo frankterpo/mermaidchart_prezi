@@ -126,25 +126,20 @@
 		}
 
 		/* DEFINITIVE FIX: Absolute isolation. 
-		   Reveal.js keeps parent sections as .present when a child is active. */
-		.reveal .slides section:not(.present) {
+		   We only do this when the .hide-others class is present. */
+		.reveal.hide-others .slides section:not(.present) {
 			display: none !important;
 		}
 
 		/* If we are in a vertical stack, hide the parent's immediate content
 		   when any child is present. */
-		.reveal .slides section.present>*:not(section) {
+		.reveal.hide-others .slides section.present>*:not(section) {
 			display: none !important;
 		}
 
-		/* BUT ensure the active nested section is still shown */
-		.reveal .slides section.present section.present {
+		/* Show the sub-slide only if it is present */
+		.reveal.hide-others .slides section.present section.present {
 			display: block !important;
-		}
-
-		/* Aggressively hide all non-present siblings across all levels */
-		.reveal .slides section:not(.present) {
-			display: none !important;
 		}
 
 		.reveal .slides section.present {
@@ -153,21 +148,17 @@
 
 		/* Utility Classes for Markdown attributes */
 
-		/* Utility Classes for Markdown attributes */
-		.mermaid-scaled .mermaid {
-			transform: scale(0.7);
-			transform-origin: top center;
-		}
-
 		/* Specific Table Fixes for Overflow */
-		.small-table table {
+		table.small-table,
+		section[id*="task4"] table {
 			font-size: 0.58em !important;
 			line-height: 1.1 !important;
 			table-layout: fixed !important;
 			width: 100% !important;
 		}
 
-		.small-table td {
+		table.small-table td,
+		section[id*="task4"] table td {
 			word-break: break-all !important;
 			overflow-wrap: anywhere !important;
 			white-space: normal !important;
@@ -451,6 +442,8 @@
 				Reveal.on('ready', () => {
 					renderAllMermaid();
 					setTimeout(renderAllMermaid, 1000);
+					// Enable absolute isolation once ready
+					document.querySelector('.reveal').classList.add('hide-others');
 				});
 				Reveal.on('slidechanged', renderAllMermaid);
 
