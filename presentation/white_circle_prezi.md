@@ -374,7 +374,7 @@ To understand pricing logic, we look at enterprise contracts (which sit in the 7
 |---|---|---:|---:|
 | **Lovable** | `Artificial Intelligence` + `Chat` | **150 Messages / User** | ~75M to 150M |
 | **Replit** | `Education` + `Technology` | **80 Messages / User** | ~320M+ |
-| **Base44** | `Parked / For Sale Domains` ⚠️ | **100 Messages / User** | ~2M to 5M |
+| **Base44** | `Artificial Intelligence` + `Technology` | **100 Messages / User** | ~2M to 5M |
 
 ====
 
@@ -386,11 +386,11 @@ We executed live Cloudflare Intel API lookups to classify each domain, then over
 1. **Cloudflare Domain Classification (Intel API):**
    - `lovable.dev` → `Artificial Intelligence + Chat + Technology` — confirms AI-native traffic pattern.
    - `replit.com` → `Education + Technology` — indicates a mixed audience (learning + building).
-   - `base44.ai` → **Flagged `Parked & For Sale Domains`** ⚠️ — Cloudflare's network has not seen enough sustained traffic to classify it beyond a risk category. This validates our conservative volume estimate.
+   - `base44.com` → `Artificial Intelligence + Technology` — confirmed active AI product. Resolves to `34.160.37.117` (Google Cloud), indicating a live hosted web app.
 2. **Messages Per User Logic**:
    - **Lovable (150/mo)**: 100% AI-native. Users aggressively prompt for code generation iterations (≈5 prompts/day).
    - **Replit (80/mo)**: Mixed generalist + AI users dilute per-user message rates.
-   - **Base44 (100/mo)**: High engagement per early adopter but extremely small base — sits at the Startup → Scale-Up pricing threshold.
+   - **Base44 (100/mo)**: Early stage AI builder tool. Intel confirms it's a live AI product, but small absolute user base puts it at the Startup → Scale-Up pricing threshold.
 
 ----
 
