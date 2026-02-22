@@ -125,16 +125,8 @@
 			overflow: visible !important;
 		}
 
-		/* Ensure all slides are opaque to fix overlap */
-		.reveal .slides section {
-			background-color: var(--r-background-color) !important;
-		}
-
-		/* Inner content slides — allow scrolling via a custom wrapper if needed, 
-		   but for now let's let Reveal.js handle visibility. */
-		.reveal .slides section.present {
-			z-index: 10;
-		}
+		/* Standard Reveal isolation — do NOT override background/overflow on sections
+		   unless you also handle the Reveal.js transform lifecycle. */
 
 		/* Utility Classes for Markdown attributes */
 
@@ -411,35 +403,38 @@
 					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 				});
 
-				// 4. Render Mermaid (Post-Init)
-				// We bind to Reveal events to ensure we only render visible charts
-				// This prevents "0-height" calculation errors for charts on hidden slides
-
-				// Helper to render only the current slide (and maybe adjacent for smooth transitions)
-				const renderActiveCharts = async () => {
-					await document.fonts.ready; // Ensure fonts are loaded for correct metrics
-
-					const currentSlide = Reveal.getCurrentSlide();
-					if (!currentSlide) return;
-
-					// Find charts in the current slide
-					const charts = currentSlide.querySelectorAll('.mermaid');
-					for (const chart of charts) {
-						if (chart.getAttribute('data-processed')) continue; // Already rendered
-						await renderOneChart(chart);
+				// 4. Render Mermaid (Mutation Observer Approach)
+				// This catches charts as soon as the Markdown plugin injects them 
+				// anywhere in the presentation slides.
+				const observer = new MutationObserver((mutations) => {
+					for (const mutation of mutations) {
+						if (mutation.type === 'childList') {
+							mutation.addedNodes.forEach(node => {
+								if (node.nodeType === 1) { // Element
+									const charts = node.querySelectorAll ? node.querySelectorAll('.mermaid') : [];
+									charts.forEach(chart => {
+										if (!chart.getAttribute('data-processed')) {
+											renderOneChart(chart);
+										}
+									});
+									if (node.classList && node.classList.contains('mermaid') && !node.getAttribute('data-processed')) {
+										renderOneChart(node);
+									}
+								}
+							});
+						}
 					}
+				});
 
-					// Optional: Pre-render next slide's charts for smoothness? 
-					// For now, let's just stick to current to ensure correctness.
-				};
+				observer.observe(document.querySelector('.slides'), {
+					childList: true,
+					subtree: true
+				});
 
-				Reveal.on('ready', renderActiveCharts);
-				Reveal.on('slidechanged', renderActiveCharts);
-
-				// Manual initial render because 'ready' might have already fired
-				if (Reveal.isReady()) {
-					setTimeout(renderActiveCharts, 500); // Wait for markdown plugin content to be in DOM
-				}
+				// Initial pass for anything already there
+				document.querySelectorAll('.mermaid').forEach(chart => {
+					if (!chart.getAttribute('data-processed')) renderOneChart(chart);
+				});
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
 				const updateScrollIndicator = () => {
