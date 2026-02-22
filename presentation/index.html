@@ -125,26 +125,18 @@
 			overflow: visible !important;
 		}
 
-		/* Outer section wrappers — never overflow (Reveal needs these clean) */
-		.reveal .slides>section {
-			padding: 0 !important;
-			overflow: hidden !important;
+		/* Ensure all slides are opaque to fix overlap */
+		.reveal .slides section {
+			background-color: var(--r-background-color) !important;
 		}
 
-		/* Inner content slides (leaf sections) — allow scrolling when needed */
-		.reveal .slides>section.present,
-		.reveal .slides>section>section.present {
-			background-color: var(--r-background-color);
-			/* CRITICAL: Ensure slides are opaque to fix overlap */
-			overflow-y: auto !important;
-			max-height: 100% !important;
-			scrollbar-width: thin;
-			scrollbar-color: #444 transparent;
-			-webkit-overflow-scrolling: touch;
-			padding: 0 !important;
+		/* Inner content slides — allow scrolling via a custom wrapper if needed, 
+		   but for now let's let Reveal.js handle visibility. */
+		.reveal .slides section.present {
 			z-index: 10;
-			/* Bring present slide to front */
 		}
+
+		/* Utility Classes for Markdown attributes */
 
 		/* Utility Classes for Markdown attributes */
 		.small-table table {
@@ -411,9 +403,9 @@
 					transition: 'slide',
 					backgroundTransition: 'slide',
 					// Optimize layout for scrolling down, not sideways
-					width: 1600, // Increased from 1200
+					width: 1600,
 					height: 900,
-					margin: 0.02, // Even tighter margin
+					margin: 0.1, // Increased from 0.02 to prevent ghosting
 					minScale: 0.2,
 					maxScale: 2.0,
 					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
@@ -446,7 +438,7 @@
 
 				// Manual initial render because 'ready' might have already fired
 				if (Reveal.isReady()) {
-					renderActiveCharts();
+					setTimeout(renderActiveCharts, 500); // Wait for markdown plugin content to be in DOM
 				}
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
