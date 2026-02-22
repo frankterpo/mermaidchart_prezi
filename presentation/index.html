@@ -129,12 +129,16 @@
 		.reveal .slides section {
 			background: var(--r-background-color) !important;
 			overflow: hidden !important;
-			clip-path: inset(0 0 0 0);
-			/* Force clipping of children */
+			visibility: hidden;
+			position: absolute !important;
 		}
 
 		.reveal .slides section.present {
+			visibility: visible !important;
 			z-index: 10;
+			position: relative !important;
+			clip-path: inset(0);
+			/* Final barrier against bleed-through */
 		}
 
 		/* Utility Classes for Markdown attributes */
@@ -401,14 +405,16 @@
 
 				// 4. Render Mermaid (Robust Post-Markdown hook)
 				const renderAllMermaid = async () => {
-					// We find all code blocks with class "language-mermaid"
-					const blocks = document.querySelectorAll('code.language-mermaid');
+					// Catch all possible mermaid containers
+					const blocks = document.querySelectorAll('.language-mermaid, code[class*="mermaid"]');
 					if (blocks.length === 0) return;
 
 					for (const block of blocks) {
-						// The structure is usually section > pre > code
-						const container = block.parentElement.parentElement;
-						if (container.getAttribute('data-processed')) continue;
+						// Look for the nearest wrapper to replace (usually PRE)
+						let toReplace = block;
+						if (block.parentElement.tagName === 'PRE') toReplace = block.parentElement;
+
+						if (toReplace.getAttribute('data-processed')) continue;
 
 						const code = block.textContent.trim();
 						try {
@@ -420,8 +426,6 @@
 							div.className = 'mermaid';
 							div.innerHTML = svg;
 
-							// If the container is a PRE tag, replace it. Otherwise replace the block.
-							const toReplace = container.tagName === 'PRE' ? container : block;
 							toReplace.parentNode.replaceChild(div, toReplace);
 							div.setAttribute('data-processed', 'true');
 						} catch (e) {
@@ -432,10 +436,10 @@
 
 				// We run it on ready and after a small delay to be safe
 				Reveal.on('ready', () => {
-					renderAllMermaid();
-					setTimeout(renderAllMermaid, 1000); // Fail-safe for slow markdown parsing
+					requestAnimationFrame(renderAllMermaid);
+					setTimeout(renderAllMermaid, 1500);
 				});
-				Reveal.on('slidechanged', renderAllMermaid);
+				Reveal.on('slidechanged', () => requestAnimationFrame(renderAllMermaid));
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
 				const updateScrollIndicator = () => {
