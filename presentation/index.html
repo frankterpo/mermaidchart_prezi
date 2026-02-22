@@ -125,20 +125,15 @@
 			overflow: visible !important;
 		}
 
-		/* CRITICAL FIX: Ensure strict visual isolation of slides */
-		.reveal .slides section {
-			background: var(--r-background-color) !important;
-			overflow: hidden !important;
-			visibility: hidden;
-			position: absolute !important;
+		/* DEFINITIVE FIX: Absolute isolation via display:none for non-present slides.
+		   We only do this when the .hide-others class is present on the reveal container
+		   to avoid interfering with initial layout/fragments. */
+		.reveal.hide-others .slides section:not(.present) {
+			display: none !important;
 		}
 
-		.reveal .slides section.present {
-			visibility: visible !important;
-			z-index: 10;
-			position: relative !important;
-			clip-path: inset(0);
-			/* Final barrier against bleed-through */
+		.reveal .slides section {
+			background: var(--r-background-color) !important;
 		}
 
 		/* Utility Classes for Markdown attributes */
@@ -405,15 +400,12 @@
 
 				// 4. Render Mermaid (Robust Post-Markdown hook)
 				const renderAllMermaid = async () => {
-					// Catch all possible mermaid containers
 					const blocks = document.querySelectorAll('.language-mermaid, code[class*="mermaid"]');
 					if (blocks.length === 0) return;
 
 					for (const block of blocks) {
-						// Look for the nearest wrapper to replace (usually PRE)
 						let toReplace = block;
 						if (block.parentElement.tagName === 'PRE') toReplace = block.parentElement;
-
 						if (toReplace.getAttribute('data-processed')) continue;
 
 						const code = block.textContent.trim();
@@ -421,11 +413,9 @@
 							window.mermaidCounter = (window.mermaidCounter || 0) + 1;
 							const id = `mermaid-chart-${window.mermaidCounter}`;
 							const { svg } = await mermaid.render(id, code);
-
 							const div = document.createElement('div');
 							div.className = 'mermaid';
 							div.innerHTML = svg;
-
 							toReplace.parentNode.replaceChild(div, toReplace);
 							div.setAttribute('data-processed', 'true');
 						} catch (e) {
@@ -436,10 +426,12 @@
 
 				// We run it on ready and after a small delay to be safe
 				Reveal.on('ready', () => {
-					requestAnimationFrame(renderAllMermaid);
-					setTimeout(renderAllMermaid, 1500);
+					renderAllMermaid();
+					setTimeout(renderAllMermaid, 1000);
+					// Enable absolute isolation once ready
+					document.querySelector('.reveal').classList.add('hide-others');
 				});
-				Reveal.on('slidechanged', () => requestAnimationFrame(renderAllMermaid));
+				Reveal.on('slidechanged', renderAllMermaid);
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
 				const updateScrollIndicator = () => {

@@ -317,17 +317,17 @@ flowchart LR
 
 <!-- .slide: id="task4" -->
 ### Task 4: Psychotherapy Chatbot Safety Policies
-##### `artifacts/psychotherapy_policies.yaml` — 10 policies, CI-testable
+##### `artifacts/psychotherapy_policies.yaml` — 10 policies, CI-testable, severity-tagged
 
 **User-Facing (5 constraints):**
 
-| Policy | Detection Signal | Enforcement |
-|---|---|---|
-| **Self-Harm Escalation** | `intent:self_harm` OR `sentiment:acute_distress` | `handoff_to_human_crisis_flow` |
-| **PII Redaction** | `entity:pii(ssn\|email\|card)` | `mask_sensitive_tokens` |
-| **Medical Diagnosis Block** | `intent:diagnosis_request` | `decline_and_refer_clinician` |
-| **Sexual Content Block** | `toxicity:sexual_explicit` | `block_and_redirect` |
-| **Abuse De-escalation** | `toxicity:harassment` | `set_boundary_then_continue_support` |
+| Policy | Severity | Detection Signal | Enforcement |
+|---|---|---|---|
+| **Self-Harm Escalation** | `critical` | `intent:self_harm OR sentiment:acute_distress` | `handoff_to_human_crisis_flow` |
+| **PII Redaction** | `critical` | `entity:pii(name\|email\|phone\|card)` | `mask_sensitive_tokens` |
+| **Medical Diagnosis Boundary** | `high` | `intent:diagnosis_request` | `decline_and_refer_clinician` |
+| **Sexual Content Guardrail** | `high` | `toxicity:sexual_explicit` | `block_and_redirect` |
+| **Abuse De-escalation** | `medium` | `toxicity:harassment` | `set_boundary_then_continue_support` |
 <!-- .element: class="small-table" -->
 
 ====
@@ -335,13 +335,13 @@ flowchart LR
 <!-- .slide: id="task4-assistant" -->
 #### Assistant-Facing Constraints (5 policies)
 
-| Policy | Detection Signal | Enforcement |
-|---|---|---|
-| **No Prescription Advice** | `output:drug_dosage` | `remove_medication_instruction` |
-| **Empathy Floor** | `tone:low_empathy` | `rewrite_with_empathy_prefix` |
-| **Link Integrity** | `output:url_unverified` | `strip_unverified_links` |
-| **Anonymized Summaries** | `output:contains_identifiers` | `replace_personal_identifiers` |
-| **No Definitive Cure Claims** | `output:cure_claim` | `soften_to_clinical_language` |
+| Policy | Severity | Detection Signal | Enforcement |
+|---|---|---|---|
+| **No Prescription Advice** | `high` | `output:drug_dosage` | `remove_medication_instruction` |
+| **Empathy Floor** | `medium` | `tone:low_empathy` | `rewrite_with_empathy_prefix` |
+| **Link Integrity** | `medium` | `output:url_unverified` | `strip_unverified_links` |
+| **Anonymized Summaries** | `critical` | `output:contains_identifiers` | `replace_personal_identifiers` |
+| **Crisis Refusal Override** | `critical` | `context:high_risk_and_user_refuses_help` | `force_crisis_protocol` |
 <!-- .element: class="small-table" -->
 
 ====
@@ -352,6 +352,7 @@ flowchart LR
 ```yaml
 # From artifacts/psychotherapy_policies.yaml
 - name: Self-Harm Escalation
+  severity: critical
   detection_signal: intent:self_harm OR sentiment:acute_distress
   enforcement: handoff_to_human_crisis_flow
   ci_test:
@@ -368,30 +369,29 @@ flowchart LR
 
 <!-- .slide: id="task5" -->
 ### Task 5: Pricing Strategy
-##### `artifacts/pricing_model.csv` — 4 tiers, logarithmic scaling
+##### `artifacts/pricing_model.csv` — 4 tiers, effective rate + margin + competitor anchor
 
-| Tier | Requests | Price | Per-1M Rate | SLA | Compliance |
-|---|---:|---:|---:|---|---|
-| **Free** | 1,000 | $0 | — | Community | Basic templates |
-| **Startup** | 100K | $149/mo | $1,490 | 99.5% | SOC2-ready, audit logs |
-| **Growth** | 1M | $899/mo | $899 | 99.9% | SOC2 II, SSO |
-| **Enterprise** | 10M | $4,990/mo | $499 | 99.99% | HIPAA option, data residency |
+| Tier | Requests | Price | Effective / 1M | Gross Margin % | Competitive Anchor |
+|---|---:|---:|---:|---:|---|
+| **Free** | 1,000 | $0 | $0 | 0.00 | Langfuse community/open-source entry point |
+| **Startup** | 100,000 | $149 | $1,490 | 99.66 | Braintrust startup-friendly entry economics |
+| **Growth** | 1,000,000 | $899 | $899 | 99.44 | Helicone usage-volume scaling benchmark |
+| **Enterprise** | 10,000,000 | $4,990 | $499 | 99.00 | Lakera-style enterprise annual commit motion |
 
 ====
 
 <!-- .slide: id="task5-logic" -->
 #### The Math: Why Non-Linear Pricing Works
 
-**The problem with linear pricing:** Charging $0.001/request means a 10M-request customer pays $10K/mo — they'll build in-house instead.
+**Validation from generated model (`pricing build`):**
 
-**The solution — volume discount curve:**
-1. **Startup ($149/mo):** Lock them into the dashboard ecosystem with free-tier hooks. They become champions who advocate internally. <!-- .element: class="fragment" -->
-2. **Growth ($899/mo):** The effective rate drops 40% from Startup. Expanding teams stay on platform instead of negotiating. <!-- .element: class="fragment" -->
-3. **Enterprise ($4,990/mo):** Effective rate at $499/M — 66% below Startup rate. Massive commit but **85%+ SaaS margin** maintained because: <!-- .element: class="fragment" -->
+1. Effective rate decreases monotonically across paid tiers: **$1,490 → $899 → $499 per 1M**. <!-- .element: class="fragment" -->
+2. Unit economics remain high at all paid tiers using `$5 / 1M` inference cost assumption: **99.66% / 99.44% / 99.00% gross margin**. <!-- .element: class="fragment" -->
+3. Tier anchors map to live competitor positioning (Braintrust, Helicone, Lakera) so pricing narrative matches buyer context. <!-- .element: class="fragment" -->
 
-> `Cloudflare Edge inference = fractions of a cent per policy check`
+> Formula used in artifact: `margin = (price - (requests / 1M * 5)) / price * 100`
 
-**The $1M contract anchor:** An enterprise client negotiating above the published $4,990/mo tier hits a custom block (e.g. 100M+ requests = ~$1M/yr). Their effective rate ~$100/M — but White Circle's infra cost is ~$5/M. **95% gross margin.**
+**Interpretation:** Growth retains high margin while Enterprise stays cheaper per 1M for high-volume traffic.
 
 ----
 
@@ -399,13 +399,13 @@ flowchart LR
 ### Task 6: Message Volume Estimates
 ##### `artifacts/message_volume_estimates.md` — 3 independent heuristics
 
-*Enriched via live Cloudflare Intel API · Feb 2026*
+*Cloudflare Intel verified `base44.com` on Feb 22, 2026 (`Artificial Intelligence` + `Technology`)*
 
-| Platform | CF Intel Category | Low | Base | High | 95% CI |
-|---|---|---:|---:|---:|---|
-| **Lovable** | `AI` + `Chat` | 11.5M | 16.5M | 18.7M | 13.5M – 18.7M |
-| **Replit** | `Education` + `Tech` | 82.5M | 86.4M | 107.8M | 82.5M – 102M |
-| **Base44** | `AI` + `Technology` | 4.2M | 5.0M | 5.3M | 4.2M – 5.3M |
+| Platform | Domain | Low | Base | High | 95% CI | Tier Fit |
+|---|---|---:|---:|---:|---|---|
+| **Lovable** | `lovable.dev` | 11.52M | 15.30M | 18.96M | 13.46M - 17.14M | Enterprise |
+| **Replit** | `replit.com` | 82.50M | 86.40M | 107.80M | 82.50M - 96.77M | Enterprise |
+| **Base44** | `base44.com` | 4.22M | 4.78M | 5.30M | 4.22M - 5.30M | Growth |
 
 > All three figures are **per-platform per-month message totals**, derived from 3 independent heuristics triangulated together.
 
@@ -429,7 +429,7 @@ Method 3 — Engineering Proxy:
 - Each proxy has different failure modes (traffic data can lag; DAU estimates can be optimistic; RPS can be infra-capped).
 - The **confidence interval narrows** dramatically when all three align — which they do for Lovable and Replit.
 
-**Base44 note:** CF Intel classifies `base44.com` as `Artificial Intelligence + Technology`, hosted live on Google Cloud (`34.160.37.117`). The lower volume reflects early-stage growth, not product weakness.
+**Base44 note:** Cloudflare Intel classifies `base44.com` as `Artificial Intelligence + Technology`, resolving to `34.149.87.45`.
 
 ====
 
@@ -438,56 +438,51 @@ Method 3 — Engineering Proxy:
 
 | Platform | Est. MAU | Messages / User / Month | Reasoning |
 |---|---:|---:|---|
-| **Lovable** | ~100K–200K | **~100–150 msgs** | 100% AI-native codegen: 5 prompts/session × 20 sessions/mo |
-| **Replit** | ~4M+ | **~20–25 msgs** | Large base but only fraction use AI agent actively |
-| **Base44** | ~20K–50K | **~100 msgs** | Power-user early adopter base, high engagement per user |
+| **Lovable** | 100000-200000 | 100-150 | 100% AI-native codegen: high prompt/session density |
+| **Replit** | 4000000-6000000 | 20-25 | Broad user base; only a subset uses AI intensively |
+| **Base44** | 20000-50000 | 90-130 | Early adopter-heavy user pool with high per-user usage |
 
 ----
 
 <!-- .slide: id="task7" -->
 ### Task 7: Scalable Outbound Strategies
-##### 2 Tactics — Powered by Live Specter DB + Firecrawl Execution
+##### Signal-Driven Outbound at Scale
 
-> Everything here is **already running in code.** The repo contains complete scripts, email templates, and lead enrichment pipelines ready to activate immediately.
+| Artifact | Count | Status |
+|---|---:|---|
+| `artifacts/leads.jsonl` | 105 leads | Valid JSONL parse |
+| `artifacts/email_*.txt` | 113 templates | Trigger/evidence/value/CTA format |
+| `artifacts/email_*_v2.txt` | 105 templates | One per lead with confidence > 0.7 |
+| `artifacts/linkedin_*.txt` | 8 templates | Personalized first-touch scripts |
 
 ====
 
 <!-- .slide: id="task7-s1" -->
-#### Tactic 1: "Similar Companies" Matrix
-##### Live SQL against Specter `company_clients` table
+#### Tactic 1: Trigger-Specific Email Generation
+##### Executed via `python -m src.cli outbound draft` + `bulk-v2`
 
-**Step 1 — Query Specter for competitor install bases:**
-```sql
-SELECT client_domain, competitor_domain
-FROM company_clients
-WHERE competitor_domain IN ('lakera.ai','langfuse.com','arize.com')
-```
+Every generated email now includes:
+1. `Trigger event` derived from the lead signal type. <!-- .element: class="fragment" -->
+2. `Evidence URL` tied to the lead's observed activity. <!-- .element: class="fragment" -->
+3. `White Circle value prop` mapped to that signal. <!-- .element: class="fragment" -->
+4. A concrete `CTA` for next-step benchmarking. <!-- .element: class="fragment" -->
 
-**Live Output:**
-- Langfuse clients: `Samsara`, `Twilio`, `Khan Academy` <!-- .element: class="fragment" -->
-- Lakera clients: `Dropbox`, `Cohere` <!-- .element: class="fragment" -->
-
-**Step 2 — Cross-reference with Specter contacts, then send:**
-
-> *"Hi [Name] at Twilio — noticed you're tracing GenAI workloads via Langfuse. White Circle drops in alongside those traces to provide sub-200ms hallucination blocking natively at the edge, saving the round-trip latency. Happy to show you a 10-minute benchmark?"*
+> This removed stale lead IDs and regenerated outbound templates from live DB-backed leads only.
 
 ====
 
 <!-- .slide: id="task7-s2" -->
-#### Tactic 2: Event-Driven Pain Scraping
-##### Live Firecrawl API · Trustpilot · Feb 2026
+#### Tactic 2: Confidence-Gated Sequencing
+##### `confidence > 0.7` automatically receives V2 personalization
 
-**The Logic:** Instead of assuming pain, we execute a live `Firecrawl API` Python script.
+```bash
+python -m src.cli outbound bulk-v2 --min-confidence 0.7 --out-dir artifacts
+```
 
-**Query:** Trustpilot reviews for `Character.AI` with keywords: `filter OR strict OR ruined`
-
-**Live Firecrawl Output (Feb 2026):**
-- *"The new strict guidelines are too sensitive! I just got timed out for 24 hours AND I DID NOT VIOLATE ANYTHING!"* <!-- .element: class="fragment" -->
-- *"The filter is so strong... Also the bots have been very dry recently."* <!-- .element: class="fragment" -->
-
-**Personalized outreach using this verbatim:**
-
-> *"Hi Sunita — Noticed the recent Trustpilot friction where users are churning due to overly aggressive '24-hour timeout' filters disrupting benign workflows. Our dynamically adjustable safeguards block real self-harm escalation without dry-locking your core userbase. The auto-patching layer makes this configurable per-policy, not per-deploy. 15 minutes?"*
+**Result from this run:**
+- 105 high-confidence leads detected in `artifacts/leads.jsonl` <!-- .element: class="fragment" -->
+- 105 corresponding `email_<lead_id>_v2.txt` files generated <!-- .element: class="fragment" -->
+- Message copy now reflects signal context: telemetry, CI-eval, jobs, incidents, or HF-eval adoption <!-- .element: class="fragment" -->
 
 ----
 
