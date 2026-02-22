@@ -125,14 +125,18 @@
 			overflow: visible !important;
 		}
 
-		/* DEFINITIVE FIX: Absolute isolation via display:none for non-present slides.
-		   We only do this when the .hide-others class is present on the reveal container
-		   to avoid interfering with initial layout/fragments. */
-		.reveal.hide-others .slides section:not(.present) {
-			display: none !important;
+		/* DEFINITIVE FIX: Absolute isolation of the present slide.
+		   We hide all sections and only show the one marked as .present. */
+		.reveal .slides section:not(.present) {
+			opacity: 0 !important;
+			pointer-events: none !important;
+			z-index: 1 !important;
 		}
 
-		.reveal .slides section {
+		.reveal .slides section.present {
+			opacity: 1 !important;
+			pointer-events: auto !important;
+			z-index: 100 !important;
 			background: var(--r-background-color) !important;
 		}
 
@@ -428,8 +432,6 @@
 				Reveal.on('ready', () => {
 					renderAllMermaid();
 					setTimeout(renderAllMermaid, 1000);
-					// Enable absolute isolation once ready
-					document.querySelector('.reveal').classList.add('hide-others');
 				});
 				Reveal.on('slidechanged', renderAllMermaid);
 
