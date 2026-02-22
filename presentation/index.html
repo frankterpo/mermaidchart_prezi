@@ -134,12 +134,45 @@
 		/* Inner content slides (leaf sections) — allow scrolling when needed */
 		.reveal .slides>section.present,
 		.reveal .slides>section>section.present {
+			background-color: var(--r-background-color);
+			/* CRITICAL: Ensure slides are opaque to fix overlap */
 			overflow-y: auto !important;
 			max-height: 100% !important;
 			scrollbar-width: thin;
 			scrollbar-color: #444 transparent;
 			-webkit-overflow-scrolling: touch;
 			padding: 0 !important;
+			z-index: 10;
+			/* Bring present slide to front */
+		}
+
+		/* Utility Classes for Markdown attributes */
+		.small-table table {
+			font-size: 0.65em !important;
+			line-height: 1.2 !important;
+		}
+
+		.condensed-list ul,
+		.condensed-list ol {
+			font-size: 0.8em !important;
+			line-height: 1.2 !important;
+		}
+
+		.mermaid-scaled .mermaid {
+			transform: scale(0.8);
+			transform-origin: top center;
+		}
+
+		.text-left {
+			text-align: left !important;
+		}
+
+		.text-center {
+			text-align: center !important;
+		}
+
+		.full-width {
+			width: 100% !important;
 		}
 
 		/* Subtle scrollbar for webkit */

@@ -13,7 +13,7 @@
 
 ----
 
-<!-- .slide: id="pipeline" -->
+<!-- .slide: id="pipeline" class="mermaid-scaled" -->
 ### Research Fabric Pipeline
 ##### Automated Recon → Signal Detection → Enrichment
 
@@ -143,6 +143,7 @@ mindmap
 | **Tractable** | InsurTech | $65M | N/A |
 | **Recursion** | BioTech | $865M | AME Cloud Ventures |
 | **Insitro** | BioTech | $643M | ARCH Venture Partners |
+<!-- .element: class="small-table" -->
 
 <br/>
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full JSON — 75+ seniority-ranked contacts & live Specter funding data</a>
@@ -161,6 +162,7 @@ mindmap
 | **Observability** | Langfuse | Twilio, Samsara, Khan | **Specter DB**: 3 live SaaS adoptions |
 | **Eval / Stress-test** | Braintrust | Stripe, Coda | **URLScan**: logo entity extraction |
 | **Eval / Stress-test** | Patronus AI | Samsung, Norsk Hydro | **Cala AI**: Press release mining |
+<!-- .element: class="small-table" -->
 
 ====
 
@@ -221,6 +223,7 @@ flowchart TD
     DB --> T[Tag: Using CF Edge]
     T --> O[Priority Outbound Queue]
 ```
+<!-- .element: class="mermaid-scaled" -->
 > **Why it works:** We don't rely on self-reported feature flags. We catch them *actually routing production ML traffic* through infrastructure White Circle integrates with natively.
 
 ====
@@ -238,6 +241,7 @@ flowchart LR
     E --> F[Specter DB Lookup]
     F --> G[Qualified Lead + Contact]
 ```
+<!-- .element: class="mermaid-scaled" -->
 > **Insight:** If they run eval tooling in CI, they have already allocated engineering budget for AI quality. They're technically ready to buy guardrails *tomorrow*.
 
 ====
@@ -254,11 +258,12 @@ flowchart LR
     D --> E[Specter Contact Gen]
     E --> F[CTO / VP-Eng Outreach]
 ```
+<!-- .element: class="mermaid-scaled" -->
 
 **Trigger Logic:** A company posting an `AI Safety` role has:
-1. ✅ An **approved headcount budget** already
-2. ✅ Recognized an **explicit operational vulnerability**
-3. ✅ Set a 90-day hiring timeline we can **compress to an immediate B2B purchase**
+1. ✅ An **approved headcount budget** already <!-- .element: class="fragment" -->
+2. ✅ Recognized an **explicit operational vulnerability** <!-- .element: class="fragment" -->
+3. ✅ Set a 90-day hiring timeline we can **compress to an immediate B2B purchase** <!-- .element: class="fragment" -->
 
 ====
 
@@ -274,6 +279,7 @@ flowchart LR
     D --> E[Event Summary Extract]
     E --> F[Immediate Triggered Email]
 ```
+<!-- .element: class="mermaid-scaled" -->
 
 **Trigger Logic:** Cala detects complaint spikes *before* mainstream press. A live PR incident is a forcing function for rapid budget deployment — the Founder is actively putting out fires and receptive to immediate solutions.
 
@@ -291,6 +297,7 @@ flowchart LR
     D -->|Research Lab| E[Top-Funnel Signal]
     D -->|AI Safety Company| F[High-Intent Lead]
 ```
+<!-- .element: class="mermaid-scaled" -->
 
 **Live Data — `ai-safety-institute/AgentHarm`:**
 
@@ -321,6 +328,7 @@ flowchart LR
 | **Medical Diagnosis Block** | `intent:diagnosis_request` | `decline_and_refer_clinician` |
 | **Sexual Content Block** | `toxicity:sexual_explicit` | `block_and_redirect` |
 | **Abuse De-escalation** | `toxicity:harassment` | `set_boundary_then_continue_support` |
+<!-- .element: class="small-table" -->
 
 ====
 
@@ -334,6 +342,7 @@ flowchart LR
 | **Link Integrity** | `output:url_unverified` | `strip_unverified_links` |
 | **Anonymized Summaries** | `output:contains_identifiers` | `replace_personal_identifiers` |
 | **No Definitive Cure Claims** | `output:cure_claim` | `soften_to_clinical_language` |
+<!-- .element: class="small-table" -->
 
 ====
 
@@ -376,9 +385,9 @@ flowchart LR
 **The problem with linear pricing:** Charging $0.001/request means a 10M-request customer pays $10K/mo — they'll build in-house instead.
 
 **The solution — volume discount curve:**
-1. **Startup ($149/mo):** Lock them into the dashboard ecosystem with free-tier hooks. They become champions who advocate internally.
-2. **Growth ($899/mo):** The effective rate drops 40% from Startup. Expanding teams stay on platform instead of negotiating.
-3. **Enterprise ($4,990/mo):** Effective rate at $499/M — 66% below Startup rate. Massive commit but **85%+ SaaS margin** maintained because:
+1. **Startup ($149/mo):** Lock them into the dashboard ecosystem with free-tier hooks. They become champions who advocate internally. <!-- .element: class="fragment" -->
+2. **Growth ($899/mo):** The effective rate drops 40% from Startup. Expanding teams stay on platform instead of negotiating. <!-- .element: class="fragment" -->
+3. **Enterprise ($4,990/mo):** Effective rate at $499/M — 66% below Startup rate. Massive commit but **85%+ SaaS margin** maintained because: <!-- .element: class="fragment" -->
 
 > `Cloudflare Edge inference = fractions of a cent per policy check`
 
@@ -455,8 +464,8 @@ WHERE competitor_domain IN ('lakera.ai','langfuse.com','arize.com')
 ```
 
 **Live Output:**
-- Langfuse clients: `Samsara`, `Twilio`, `Khan Academy`
-- Lakera clients: `Dropbox`, `Cohere`
+- Langfuse clients: `Samsara`, `Twilio`, `Khan Academy` <!-- .element: class="fragment" -->
+- Lakera clients: `Dropbox`, `Cohere` <!-- .element: class="fragment" -->
 
 **Step 2 — Cross-reference with Specter contacts, then send:**
 
@@ -473,8 +482,8 @@ WHERE competitor_domain IN ('lakera.ai','langfuse.com','arize.com')
 **Query:** Trustpilot reviews for `Character.AI` with keywords: `filter OR strict OR ruined`
 
 **Live Firecrawl Output (Feb 2026):**
-- *"The new strict guidelines are too sensitive! I just got timed out for 24 hours AND I DID NOT VIOLATE ANYTHING!"*
-- *"The filter is so strong... Also the bots have been very dry recently."*
+- *"The new strict guidelines are too sensitive! I just got timed out for 24 hours AND I DID NOT VIOLATE ANYTHING!"* <!-- .element: class="fragment" -->
+- *"The filter is so strong... Also the bots have been very dry recently."* <!-- .element: class="fragment" -->
 
 **Personalized outreach using this verbatim:**
 
@@ -495,13 +504,13 @@ Everything here isn't just theory — **it is entirely powered by running code.*
 
 | What's live | Evidence |
 |---|---|
-| 30 ICP profiles with Specter funding & investor data | `artifacts/ICP_targets_enriched.json` |
-| 6-competitor intelligence matrix | `artifacts/task2_competitors/` |
-| 5 automated signal detectors | `python -m src.cli signals run` |
-| 10 CI-tested safety policies | `artifacts/psychotherapy_policies.yaml` |
-| 4-tier pricing model | `artifacts/pricing_model.csv` |
-| 3-heuristic volume estimates | `artifacts/message_volume_estimates.md` |
-| Personalized outbound emails | `artifacts/email_*.txt` |
+| 30 ICP profiles with Specter funding & investor data | `artifacts/ICP_targets_enriched.json` | <!-- .element: class="fragment" -->
+| 6-competitor intelligence matrix | `artifacts/task2_competitors/` | <!-- .element: class="fragment" -->
+| 5 automated signal detectors | `python -m src.cli signals run` | <!-- .element: class="fragment" -->
+| 10 CI-tested safety policies | `artifacts/psychotherapy_policies.yaml` | <!-- .element: class="fragment" -->
+| 4-tier pricing model | `artifacts/pricing_model.csv` | <!-- .element: class="fragment" -->
+| 3-heuristic volume estimates | `artifacts/message_volume_estimates.md` | <!-- .element: class="fragment" -->
+| Personalized outbound emails | `artifacts/email_*.txt` | <!-- .element: class="fragment" -->
 
 <br/>
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/" style="font-size: 1.1em; color: #a8a8ff;">🔗 github.com/frankterpo/growth_hacker_wc_2026</a>
