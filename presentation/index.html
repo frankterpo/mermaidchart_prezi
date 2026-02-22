@@ -150,20 +150,22 @@
 		/* Utility Classes for Markdown attributes */
 
 		/* Utility Classes for Markdown attributes */
-		.small-table table {
-			font-size: 0.65em !important;
-			line-height: 1.2 !important;
-		}
-
-		.condensed-list ul,
-		.condensed-list ol {
-			font-size: 0.8em !important;
-			line-height: 1.2 !important;
-		}
-
 		.mermaid-scaled .mermaid {
-			transform: scale(0.8);
+			transform: scale(0.7);
 			transform-origin: top center;
+		}
+
+		/* Specific Table Fixes for Overflow */
+		.small-table table {
+			font-size: 0.6em !important;
+			line-height: 1.1 !important;
+			table-layout: fixed !important;
+			width: 100% !important;
+		}
+
+		.small-table td {
+			word-break: break-word !important;
+			white-space: normal !important;
 		}
 
 		.text-left {
@@ -179,13 +181,18 @@
 		}
 
 		/* Subtle scrollbar for webkit */
+		.reveal .slides section.present {
+			overflow-y: auto !important;
+			max-height: 100% !important;
+		}
+
 		.reveal .slides section::-webkit-scrollbar {
-			width: 4px;
+			width: 6px;
 		}
 
 		.reveal .slides section::-webkit-scrollbar-thumb {
-			background: #444;
-			border-radius: 2px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 3px;
 		}
 
 		/* Spread tables out */
