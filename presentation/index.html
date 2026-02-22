@@ -125,9 +125,12 @@
 			overflow: visible !important;
 		}
 
-		/* Restore slide isolation: force solid backgrounds and higher z-index for the active slide */
+		/* CRITICAL FIX: Ensure strict visual isolation of slides */
 		.reveal .slides section {
 			background: var(--r-background-color) !important;
+			overflow: hidden !important;
+			clip-path: inset(0 0 0 0);
+			/* Force clipping of children */
 		}
 
 		.reveal .slides section.present {
@@ -396,12 +399,15 @@
 					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 				});
 
-				// 4. Render Mermaid (Post-Markdown hook)
-				// We find all code blocks with class "language-mermaid" and transform them.
+				// 4. Render Mermaid (Robust Post-Markdown hook)
 				const renderAllMermaid = async () => {
+					// We find all code blocks with class "language-mermaid"
 					const blocks = document.querySelectorAll('code.language-mermaid');
+					if (blocks.length === 0) return;
+
 					for (const block of blocks) {
-						const container = block.parentElement.parentElement; // pre > code
+						// The structure is usually section > pre > code
+						const container = block.parentElement.parentElement;
 						if (container.getAttribute('data-processed')) continue;
 
 						const code = block.textContent.trim();
@@ -414,7 +420,9 @@
 							div.className = 'mermaid';
 							div.innerHTML = svg;
 
-							container.parentNode.replaceChild(div, container);
+							// If the container is a PRE tag, replace it. Otherwise replace the block.
+							const toReplace = container.tagName === 'PRE' ? container : block;
+							toReplace.parentNode.replaceChild(div, toReplace);
 							div.setAttribute('data-processed', 'true');
 						} catch (e) {
 							console.error("Mermaid Render Fail:", e);
@@ -422,7 +430,11 @@
 					}
 				};
 
-				Reveal.on('ready', renderAllMermaid);
+				// We run it on ready and after a small delay to be safe
+				Reveal.on('ready', () => {
+					renderAllMermaid();
+					setTimeout(renderAllMermaid, 1000); // Fail-safe for slow markdown parsing
+				});
 				Reveal.on('slidechanged', renderAllMermaid);
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
