@@ -125,21 +125,23 @@
 			overflow: visible !important;
 		}
 
-		/* DEFINITIVE FIX: Absolute isolation. 
-		   We only do this when the .hide-others class is present. */
-		.reveal.hide-others .slides section:not(.present) {
+		/* SCORCHED EARTH ISOLATION: Hide EVERYTHING except the present slide. */
+		.reveal.hide-others .slides section {
 			display: none !important;
 		}
 
-		/* If we are in a vertical stack, hide the parent's immediate content
-		   when any child is present. */
-		.reveal.hide-others .slides section.present>*:not(section) {
-			display: none !important;
-		}
-
-		/* Show the sub-slide only if it is present */
-		.reveal.hide-others .slides section.present section.present {
+		/* Show the present slide and its parent stacks */
+		.reveal.hide-others .slides section.present {
 			display: block !important;
+		}
+
+		/* Inside a stack, ONLY show the present slide and hide all immediate parent content */
+		.reveal.hide-others .slides section.stack.present>*:not(section) {
+			display: none !important;
+		}
+
+		.reveal.hide-others .slides section.stack.present section:not(.present) {
+			display: none !important;
 		}
 
 		.reveal .slides section.present {
@@ -151,10 +153,12 @@
 		/* Specific Table Fixes for Overflow */
 		table.small-table,
 		section[id*="task4"] table {
-			font-size: 0.58em !important;
+			font-size: 0.55em !important;
 			line-height: 1.1 !important;
 			table-layout: fixed !important;
 			width: 100% !important;
+			max-width: 1600px !important;
+			box-sizing: border-box !important;
 		}
 
 		table.small-table td,
