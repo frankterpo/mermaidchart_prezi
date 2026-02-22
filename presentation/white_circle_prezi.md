@@ -95,6 +95,34 @@ mindmap
 
 ----
 
+<!-- .slide: id="task1-mindmap" -->
+#### Vertical Breakdown
+```mermaid
+mindmap
+  root((ICP Segments))
+    High-Risk Consumer GenAI
+      Mental Health
+      Companion
+      Customer Support
+      Gaming
+      Education
+    Enterprise Automation & Copilots
+      DevTools
+      LegalTech
+      HRTech
+      SalesEnablement
+      Procurement
+    Regulated Industry AI
+      FinTech
+      HealthTech
+      GovTech
+      InsurTech
+      BioTech
+```
+*Note: Willingness-to-pay scales linearly with Risk/Regulatory constraints. A Healthcare Copilot will pay high strict-compliance premiums for auto-patching and PII redaction natively at the edge. A gaming NPC platform will optimize strictly on volume discounts for hallucination boundaries.*
+
+====
+
 <!-- .slide: id="task1-targets-consumer" -->
 #### Enriched Targets: High-Risk Consumer GenAI
 *Investors pulled live via Specter Postgres `funding_round` table via Python CLI.*
@@ -112,7 +140,7 @@ mindmap
 | Khan Academy | Education | Series A | $10,000 | N/A |
 | Duolingo | Education | Series H | $183,300,000 | A-Grade Investments, Arctic Ventures, Ashton Kutcher |
 
-----
+====
 
 <!-- .slide: id="task1-targets-enterprise" -->
 #### Enriched Targets: Enterprise Automation & Copilots
@@ -130,7 +158,7 @@ mindmap
 | Zip | Procurement | Series D | $190,000,000 | N/A |
 | Globality | Procurement | Series Unknown | $357,550,000 | Al Gore, David Rosenblatt, Debra Polishook |
 
-----
+====
 
 <!-- .slide: id="task1-targets-regulated" -->
 #### Enriched Targets: Regulated Industry AI
@@ -166,7 +194,7 @@ mindmap
 | **Stress-test Agent (Eval/Alignment)**| Braintrust | Stripe, Coda | **URLScan**: Website logo entity extraction |
 | **Stress-test Agent (Eval/Alignment)**| Patronus AI | Samsung, Norsk Hydro | **Cala AI**: Press Release mining |
 
-----
+====
 
 <!-- .slide: id="task2-logic" -->
 #### Feature Mapping logic: Why are they slotted here?
@@ -186,9 +214,9 @@ mindmap
 4. **Incidents PR Monitoring** (Cala AI querying Reddit/HN)
 5. **HuggingFace Eval Adoption** (Forks and downloads of benchmark datasets)
 
-*(Scroll right for detailed workflow charts on each signal).*
+*(Scroll down for detailed workflow charts on each signal).*
 
-----
+====
 
 <!-- .slide: id="task3-v1-telemetry" -->
 #### Signal 1: Automated Telemetry Flow
@@ -204,7 +232,7 @@ flowchart TD
 ```
 *Value add: We don't rely on self-reported tags. We catch them actually routing production ML traffic.*
 
-----
+====
 
 <!-- .slide: id="task3-v1-github" -->
 #### Signal 2: GitHub CI/CD Fingerprinting
@@ -221,7 +249,7 @@ flowchart LR
 ```
 *Value add: If they are running evals in prep for CI/CD, they are technically ready to buy Guardrails tomorrow.*
 
-----
+====
 
 <!-- .slide: id="task3-v1-jobs" -->
 #### Signal 3: Job Posting Intelligence
@@ -237,7 +265,8 @@ flowchart LR
 ```
 **Trigger Logic**: A company posting an "AI Safety" job has an *approved budget* and recognized an explicit operational vulnerability. By reaching out with White Circle's software alternative, we compress their 3-month hiring timeline into an immediate B2B purchase.
 
-----
+====
+
 <!-- .slide: id="task3-v1-incidents" -->
 #### Signal 4: Incident/PR Event Monitoring (via Cala)
 
@@ -251,7 +280,8 @@ flowchart LR
 ```
 **Trigger Logic**: We utilize Cala AI's semantic knowledge querying to detect spikes in "hallucination" complaints for specific brands before major news outlets cover it. A live PR incident is a forcing function for rapid budget deployment (the Founder is actively putting out fires).
 
-----
+====
+
 <!-- .slide: id="task3-v1-hf" -->
 #### Signal 5: HuggingFace Eval Traction
 
@@ -270,8 +300,6 @@ flowchart LR
 
 ----
 
-----
-
 <!-- .slide: id="task4" -->
 ### Task 4: Consumer Psychotherapy Chatbot Policies (User-Facing)
 
@@ -283,7 +311,7 @@ flowchart LR
 | **User** | Domestic Abuse / Emergency Extraction | Triggers specific, non-judgmental localized resource delivery if immediate physical danger is inferred. |
 | **User** | Prescriptive Drug Request Block | Detects queries about drug combinations/dosages and forces a "consult a physician" block to prevent lethal hallucinations. |
 
-----
+====
 
 <!-- .slide: id="task4-assistant" -->
 ### Task 4: Consumer Psychotherapy Chatbot Policies (Assistant-Facing)
@@ -307,7 +335,7 @@ flowchart LR
 | Scale-up | Medium | Structured Bulk Discount | Growth tools requiring low-latency edge routing without breaking the bank. |
 | Enterprise | High | Custom Annual Commit ($1M+ level) | The most advanced traffic scaling needing tailored endpoints and dedicated support SLAs. |
 
-----
+====
 
 <!-- .slide: id="task5-logic" -->
 #### How to price: 1,000 requests vs 10,000,000 requests.
@@ -333,7 +361,7 @@ To understand pricing logic, we look at enterprise contracts (which sit in the 7
 | **Replit** | ~4M+ actives | **80 Messages / User** | ~320M+ |
 | **Base44** | ~20k-50k actives | **100 Messages / User** | ~2M to 5M |
 
-----
+====
 
 <!-- .slide: id="task6-logic" -->
 #### Execution Details: Triangulating the Fact Base
@@ -352,7 +380,7 @@ We don't blind guess. We extracted logic by cross-referencing available database
 ### Task 7: Scalable Outbound Strategies
 We actively deployed Python scripts against Specter DB and Firecrawl APIs to extract actionable outbound triggers *in real-time*.
 
-----
+====
 
 <!-- .slide: id="task7-strategy-1" -->
 #### Tactic 1: The "Similar Companies Matrix"
@@ -366,7 +394,7 @@ We actively deployed Python scripts against Specter DB and Firecrawl APIs to ext
 
 > *"Hi Twilio Team, noticed you're exploring GenAI and tracing via Langfuse. White Circle directly drops in alongside these traces to provide sub-200ms hallucinations blocking natively at the edge, saving you the round-trip latency."*
 
-----
+====
 
 <!-- .slide: id="task7-strategy-2" -->
 #### Tactic 2: Event-Driven Pain Scraping (Trustpilot / Reddit)
