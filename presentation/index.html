@@ -125,18 +125,25 @@
 			overflow: visible !important;
 		}
 
-		/* DEFINITIVE FIX: Absolute isolation of the present slide.
-		   We hide all sections and only show the one marked as .present. */
+		/* DEFINITIVE FIX: Absolute isolation. 
+		   Reveal.js keeps parent sections as .present when a child is active.
+		   We only want to show the ACTUAL current slide. */
 		.reveal .slides section:not(.present) {
-			opacity: 0 !important;
-			pointer-events: none !important;
-			z-index: 1 !important;
+			display: none !important;
+		}
+
+		/* If we are in a vertical stack, hide the parent's immediate content
+		   (like titles/tables) when a sub-slide is active. */
+		.reveal .slides section.stack.present>*:not(section) {
+			display: none !important;
+		}
+
+		/* Show the sub-slide only if it is present */
+		.reveal .slides section.stack.present section.present {
+			display: block !important;
 		}
 
 		.reveal .slides section.present {
-			opacity: 1 !important;
-			pointer-events: auto !important;
-			z-index: 100 !important;
 			background: var(--r-background-color) !important;
 		}
 
