@@ -125,24 +125,43 @@
 			overflow: visible !important;
 		}
 
-		/* Maximize content width */
+		/* Outer section wrappers — never overflow (Reveal needs these clean) */
 		.reveal .slides>section {
 			padding: 0 !important;
-			/* Remove slide padding */
+			overflow: hidden !important;
+		}
+
+		/* Inner content slides (leaf sections) — allow scrolling when needed */
+		.reveal .slides>section.present,
+		.reveal .slides>section>section.present {
+			overflow-y: auto !important;
+			max-height: 100% !important;
+			scrollbar-width: thin;
+			scrollbar-color: #444 transparent;
+			-webkit-overflow-scrolling: touch;
+			padding: 0 !important;
+		}
+
+		/* Subtle scrollbar for webkit */
+		.reveal .slides section::-webkit-scrollbar {
+			width: 4px;
+		}
+
+		.reveal .slides section::-webkit-scrollbar-thumb {
+			background: #444;
+			border-radius: 2px;
 		}
 
 		/* Spread tables out */
 		.reveal table {
 			width: 100% !important;
 			margin: 0 auto !important;
-			font-size: 0.8em;
-			/* Slightly smaller text for density */
+			font-size: 0.78em;
 		}
 
 		.reveal table th,
 		.reveal table td {
 			padding: 0.2em 0.5em !important;
-			/* Compact cell padding */
 		}
 
 		/* Ensure list numbers/bullets aren't cut off by zero-margin layout */
@@ -150,6 +169,31 @@
 		.reveal ul {
 			padding-left: 2em !important;
 			box-sizing: border-box;
+		}
+
+		/* Scroll indicator fade at slide bottom */
+		.reveal .slides>section.present.has-scroll::after,
+		.reveal .slides>section>section.present.has-scroll::after {
+			content: '▾ scroll';
+			position: fixed;
+			bottom: 40px;
+			right: 70px;
+			font-size: 0.55em;
+			color: #555;
+			pointer-events: none;
+			animation: pulse-fade 2s ease-in-out infinite;
+		}
+
+		@keyframes pulse-fade {
+
+			0%,
+			100% {
+				opacity: 0.3;
+			}
+
+			50% {
+				opacity: 0.9;
+			}
 		}
 	</style>
 </head>
@@ -280,6 +324,26 @@
 				if (Reveal.isReady()) {
 					renderActiveCharts();
 				}
+
+				// Scroll indicator: mark slides that overflow with .has-scroll class
+				const updateScrollIndicator = () => {
+					const slide = Reveal.getCurrentSlide();
+					if (!slide) return;
+					// Check after a brief RAF to let content render
+					requestAnimationFrame(() => {
+						if (slide.scrollHeight > slide.clientHeight + 10) {
+							slide.classList.add('has-scroll');
+							// Remove indicator once user has scrolled
+							slide.addEventListener('scroll', () => {
+								slide.classList.remove('has-scroll');
+							}, { once: true });
+						} else {
+							slide.classList.remove('has-scroll');
+						}
+					});
+				};
+				Reveal.on('ready', updateScrollIndicator);
+				Reveal.on('slidechanged', updateScrollIndicator);
 
 			} catch (err) {
 				console.error("Presentation Error:", err);
