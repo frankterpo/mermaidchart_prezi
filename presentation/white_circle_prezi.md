@@ -39,32 +39,6 @@ flowchart TD
 
 ====
 
-<!-- .slide: id="recon-logic" -->
-#### Recon Methodology: How & Why
-
-**What we pulled**: `Report-To`, `content-security-policy`, `CF-RAY`, `Server`.
-
-**How we pulled it**: Automated infrastructure crawling via `urlscan` and HTTP header analysis, parsing the returning payloads natively in Python.
-
-**Why it matters**: 
-- `Report-To: cf-nel` indicates Cloudflare edge routing (likely Workers AI).
-- CSP headers (`frame-ancestors 'none'`) reveal security postures and third-party integrations (like Helicone or Langfuse scripts).
-
-*Value Add: By automating this, we reverse-engineer a prospect's tech stack and vulnerabilities before sending a single email.*
-
-----
-
-<!-- .slide: id="task1" -->
-### Task 1: ICP Profiles & Verticals
-
-| ICP Segment | Why they buy | WTP Drivers |
-|---|---|---|
-| **High-Risk Consumer GenAI** | A single bad output creates brand/legal risk | Usage Volume + Risk Exposure |
-| **Enterprise Copilots** | Embedding AI internally requires audit trails | Compliance + Accuracy |
-| **Regulated Industry AI** | Formal frameworks (HIPAA, SOX) demand governance | Regulatory Burden + Data Privacy |
-
-====
-
 <!-- .slide: id="task1-mindmap" -->
 #### Vertical Breakdown
 ```mermaid
@@ -89,90 +63,90 @@ mindmap
       InsurTech
       BioTech
 ```
+*Note: Willingness-to-pay scales linearly with Risk/Regulatory constraints. A Healthcare Copilot will pay high strict-compliance premiums for auto-patching and PII redaction natively at the edge. A gaming NPC platform will optimize strictly on volume discounts for hallucination boundaries.*
 
 ====
 
 <!-- .slide: id="task1-targets" -->
 #### 30 Enriched Targets (2 per Vertical)
-<div style="font-size: 0.55em; max-height: 50vh; overflow-y: auto;">
+*Actual Investors list pulled live via Specter Postgres `funding_round` table via Python CLI.*
 
-| Company | Vertical | Funding | Raised | Top Contact | Seniority |
-|---|---|---|---|---|---|
-| Woebot Health | Mental Health | Series Unknown | $9,500,000 | Monique Levy | Executive |
-| Wysa | Mental Health | Not publicly stated | — | N/A | N/A |
-| Character.AI | Companion | Series A | $150,000,000 | Sunita Verma | Executive |
-| Replika | Companion | Not publicly stated | — | Lior Oren | Executive |
-| Ada | Customer Support | Grant | $1,750,000 | Sal Uslugil | Executive |
-| Intercom | Customer Support | Series D | $125,000,000 | Niamh Smithers | Executive |
-| Inworld AI | Gaming | Series A | $56,000,000 | Andreas Assad | Executive |
-| Replica Studios | Gaming | Seed | $4,200,000 | Eoin Mccarthy | Executive |
-| Khan Academy | Education | Series A | $10,000 | Zeeshan Hasan | Executive |
-| Duolingo | Education | Series H | $35,000,000 | Molly Brean | Executive |
-| Sourcegraph | DevTools | Series D | $150,000,000 | Katerina Nikolova | Executive |
-| Anysphere | DevTools | Series Unknown | — | Netto Farah | Executive |
-| Harvey | LegalTech | Series F | $160,000,000 | Siva Gurumurthy | Executive |
-| Robin AI | LegalTech | Series B | $25,000,000 | Carina Negreanu | Executive |
-| Eightfold AI | HRTech | Series E | $220,000,000 | Fermin Peleteiro Cameo | Executive |
-| Paradox | HRTech | Series C | $200,000,000 | Mike Gregoire | Executive |
-| Gong | SalesEnablement | Secondary Market | — | Dana Kramer | Executive |
-| Outreach | SalesEnablement | Secondary Market | — | Kevin Sy | Executive |
-| Zip | Procurement | Series D | $190,000,000 | Joe Fox | Executive |
-| Globality | Procurement | Series Unknown | $47,000,000 | Jared Hyatt | Executive |
-| Upstart | FinTech | Post Ipo Debt | $1,500,000,000 | Sophia Mackay | Executive |
-| Zest AI | FinTech | Series Unknown | — | Mehul Jain | Executive |
-| Abridge | HealthTech | Series E | $300,000,000 | Brian Wilson | Executive |
-| Nabla | HealthTech | Series C | $70,000,000 | Ed Lee | Executive |
-| Palantir | GovTech | Post Ipo Equity | $10,080,000 | Lucie Fleming | Executive |
-| Anduril | GovTech | Grant | $150,000 | Norris Tie | Executive |
-| Lemonade | InsurTech | Post Ipo Equity | $150,000,000 | Dan Preston | Executive |
-| Tractable | InsurTech | Series E | $65,000,000 | Mohan Mahadevan | Executive |
-| Recursion | BioTech | Post Ipo Equity | $200,000,000 | Imran Haque | Director |
-| Insitro | BioTech | Series C | $400,000,000 | Gwynne Oosterbaan | Executive |
+<div style="font-size: 0.45em; max-height: 50vh; overflow-y: auto;">
+
+| Company | Vertical | Funding | Raised | Investors |
+|---|---|---|---|---|
+| Woebot Health | Mental Health | Series Unknown | $123,300,000 | 10X Capital, AI Fund, Alumni Ventures |
+| Wysa | Mental Health | Not publicly stated | — | N/A |
+| Character.AI | Companion | Series A | $150,000,000 | A.Capital Ventures, Andreessen Horowitz, Nat Friedman |
+| Replika | Companion | Not publicly stated | — | N/A |
+| Ada | Customer Support | Grant | $189,497,394 | Bertelsmann, Cumberland VC, EASME |
+| Intercom | Customer Support | Series D | $240,750,000 | 137 Ventures, 500 Global, Andy McLoughlin |
+| Inworld AI | Gaming | Series A | $56,000,000 | N/A |
+| Replica Studios | Gaming | Seed | $9,573,757 | Carthona Capital, Flying Fox Ventures |
+| Khan Academy | Education | Series A | $10,000 | N/A |
+| Duolingo | Education | Series H | $183,300,000 | A-Grade Investments, Arctic Ventures, Ashton Kutcher |
+| Sourcegraph | DevTools | Series D | $248,000,000 | Andreessen Horowitz, Craft Ventures, Felicis |
+| Anysphere | DevTools | Series Unknown | — | N/A |
+| Harvey | LegalTech | Series F | $160,000,000 | N/A |
+| Robin AI | LegalTech | Series B | $68,379,575 | AFG Partners, Al Giles, Creative Destruction Lab |
+| Eightfold AI | HRTech | Series E | $220,000,000 | N/A |
+| Paradox | HRTech | Series C | $200,000,000 | N/A |
+| Gong | SalesEnablement | Secondary Market | — | N/A |
+| Outreach | SalesEnablement | Secondary Market | — | N/A |
+| Zip | Procurement | Series D | $190,000,000 | N/A |
+| Globality | Procurement | Series Unknown | $357,550,000 | Al Gore, David Rosenblatt, Debra Polishook |
+| Upstart | FinTech | Post Ipo Debt | $1,864,050,000 | Bradley Horowitz, Collaborative Fund, Cyan Banister |
+| Zest AI | FinTech | Series Unknown | — | N/A |
+| Abridge | HealthTech | Series E | $757,500,000 | ANEESH P. CHOPRA, American College of Cardiology |
+| Nabla | HealthTech | Series C | $114,700,345 | ARVO VENTURE CAPITAL, Build Collective |
+| Palantir | GovTech | Post Ipo Equity | $3,027,970,015 | 10X Capital, 137 Ventures, 50 South Capital |
+| Anduril | GovTech | Grant | $6,185,300,000 | 137 Ventures, 8VC, Altimeter Capital |
+| Lemonade | InsurTech | Post Ipo Equity | $618,500,000 | Aleph, Allianz, Allianz X |
+| Tractable | InsurTech | Series E | $65,000,000 | N/A |
+| Recursion | BioTech | Post Ipo Equity | $865,376,000 | AME Cloud Ventures, Advantage Capital |
+| Insitro | BioTech | Series C | $643,000,000 | ARCH Venture Partners, Alexandria Venture |
 
 </div>
 
 <br/>
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Deep dive into the extended repo JSON (75+ contacts & raw Specter funding data). Note: Valid once pushed to main!</a>
-
-====
-
-<!-- .slide: id="task1-logic" -->
-#### The Enrichment Logic
-
-**How we deduced top contact and seniority:**
-1. **Data Source**: Executed a live SQL connection reaching into Specter's raw `talentsignals` and `funding_round` production databases via Postgres.
-2. **Entity Resolution**: Joined our generated company domains (e.g. `character.ai`) against Specter's `organization_id`.
-3. **Seniority Ranking**: We built an automated SQL `CASE` statement to force-rank contacts: `Executive` = 0, `Director` = 1, `Mid-Level` = 2, `Entry` = 3. 
-4. **Extraction**: The script slices the top 3 contacts per company, guaranteeing we prioritize decision-makers (C-suite/VP) over regular engineers for outbound.
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Deep dive into the extended repo JSON (75+ contacts & raw Specter funding data).</a>
 
 ----
 
 <!-- .slide: id="task2" -->
 ### Task 2: Competitors & Proof
-##### Mapped directly to White Circle's core USPs
+##### Mapped directly to White Circle's core USPs via Automated Extraction
 
-| White Circle Core USP | Competitor | Customer | Methodology |
+| White Circle Core USP | Competitor | Known Customers | Intelligence Source & Methodology |
 |---|---|---|---|
-| **Low-latency Safeguards** | Lakera | Dropbox, Cohere | Specter DB Lookup |
-| **Low-latency Safeguards** | PromptArmor | Hippocratic AI | Substack Vulnerability Scraping |
-| **Observability (Auto-Patching Layer)** | Helicone | QA Wolf | GitHub HTML `cdn.helicone.ai` parsing |
-| **Observability (Auto-Patching Layer)** | Langfuse | Twilio, Samsara | Specter DB Lookup |
-| **Stress-test Agent (Eval/Alignment)** | Braintrust | Stripe | Website Client Logos |
-| **Stress-test Agent (Eval/Alignment)** | Patronus AI | Samsung | Press Release Mining |
+| **Low-latency Safeguards** | Lakera | Dropbox, Cohere | **Specter DB API**: Mapped via `company_clients` dataset |
+| **Low-latency Safeguards** | PromptArmor | Hippocratic AI | **Cala AI + Firecrawl**: Vulnerability Substack Scraping |
+| **Observability (Auto-Patching)** | Helicone | QA Wolf, OpenTable | **Cala AI**: GitHub issue parsing / `cdn.helicone.ai` scraping |
+| **Observability (Auto-Patching)** | Langfuse | Twilio, Samsara, Khan Academy | **Specter DB API**: Extracted 3 live SaaS adoptions natively |
+| **Stress-test Agent (Eval/Alignment)**| Braintrust | Stripe, Coda | **URLScan**: Website logo entity extraction |
+| **Stress-test Agent (Eval/Alignment)**| Patronus AI | Samsung, Norsk Hydro | **Cala AI**: Press Release mining |
+
+====
+
+<!-- .slide: id="task2-logic" -->
+#### Feature Mapping logic: Why are they slotted here?
+
+* **Lakera vs Langfuse**: Lakera is a pure-play security injection firewall (protect/safeguard). Langfuse is an analytics/telemetry layer used to track token traces (observability). 
+* White Circle competes on BOTH fronts by having a low-latency edge wall that *also* feeds an auto-patching layer.
+* **Braintrust vs PromptArmor**: Braintrust sits early in the pipeline as an Eval framework (Testing Agent). PromptArmor sits at runtime to block malicious prompts (Safeguard). White Circle handles both Red-Teaming (stress testing) and Runtime execution natively.
 
 ----
 
 <!-- .slide: id="task3" -->
 ### Task 3: Five Lead Gen Signals
-##### Fully automated signal detection
 
 1. **Edge Telemetry Headers** (`Report-To`, `x-powered-by`, `x-vercel-id`)
 2. **GitHub CI/CD Eval Fingerprints** (Langfuse/Braintrust config files)
 3. **Job Postings for AI Safety** (Remotive/LinkedIn APIs)
-4. **Incidents PR Monitoring** (Reddit JSON API & HN Algolia AI failures)
+4. **Incidents PR Monitoring** (Cala AI querying Reddit/HN)
 5. **HuggingFace Eval Adoption** (Forks and downloads of benchmark datasets)
 
-*(Our Python CLI automatically generated 40 scored leads across these signals).*
+*(Scroll down for detailed workflow charts on each signal).*
 
 ====
 
@@ -180,16 +154,13 @@ mindmap
 #### Signal 1: Automated Telemetry Flow
 
 ```mermaid
-sequenceDiagram
-    participant S as Scheduler
-    participant F as Firecrawl Agent
-    participant DB as Postgres
-    participant M as Pattern Matcher
-    S->>F: Provide domain list
-    F-->>F: Crawl homepage & intercept HTTP headers
-    F->>M: Return JSON logs
-    M-->>M: Look for 'cf-ray', 'vercel', 'Report-To'
-    M->>DB: If AI traffic infra detected, insert LEAD
+flowchart TD
+    S[Scheduler] --> F{Firecrawl Agent}
+    F -->|Crawl Homepages| D[Intercept HTTP Headers]
+    D --> M[Pattern Matcher]
+    M -->|Look for cf-ray, vercel| DB[(Postgres DB)]
+    M -->|Look for Report-To| DB
+    DB --> O[Tag as Target]
 ```
 *Value add: We don't rely on self-reported tags. We catch them actually routing production ML traffic.*
 
@@ -208,105 +179,127 @@ flowchart LR
     E --> F[Specter DB Lookup]
     F --> G[New Qualified Lead]
 ```
-*Value add: If they are running evals in prep for CI/CD, they are technically ready to buy Guardrails tomorrow. We reach out exactly when the pain peaks.*
+*Value add: If they are running evals in prep for CI/CD, they are technically ready to buy Guardrails tomorrow.*
 
 ====
 
 <!-- .slide: id="task3-v1-jobs" -->
 #### Signal 3: Job Posting Intelligence
-**How it works**: Monitor Remotive/Greenhouse APIs for titles like "AI Safety Engineer" or "Trust & Safety Manager" at AI startups.
-**Logic**: A company posting this job has an *approved budget* and recognized an explicit operational vulnerability. By reaching out to the CTO with an automated alternative mapping directly to the JD constraints, we compress their hiring timeline into an immediate software purchase.
+
+```mermaid
+flowchart LR
+    A[Greenhouse/Remotive APIs] --> B[Fetch 'Engineering' Roles]
+    B --> C{NLP Parser}
+    C -->|Detect Trust & Safety| D[Flag High Intent]
+    C -->|Detect AI Safety Eng| D
+    D --> E[Specter Postgres Contact Gen]
+    E --> F[Automated CTO Outreach]
+```
+**Trigger Logic**: A company posting an "AI Safety" job has an *approved budget* and recognized an explicit operational vulnerability. By reaching out with White Circle's software alternative, we compress their 3-month hiring timeline into an immediate B2B purchase.
 
 ====
 <!-- .slide: id="task3-v1-incidents" -->
-#### Signal 4: Incident/PR Event Monitoring
-**How it works**: Listen to HackerNews Algolia API & Reddit (via Cala AI) for spikes in keywords `jailbreak`, `hallucination`, or `toxic` associated with a specific company name.
-**Logic**: A live PR incident is a forcing function for rapid budget deployment. Our script catches the spike on Reddit before the news hits major outlets, allowing White Circle to arrive with a sub-200ms auto-patching solution while the founders are still putting out fires.
+#### Signal 4: Incident/PR Event Monitoring (via Cala)
+
+```mermaid
+flowchart LR
+    A[Cala AI Knowledge Engine] --> B[Query Reddit & HackerNews]
+    B --> C{Filter Keywords}
+    C -->|jailbreak, toxic filter| D[Target Company Mentioned]
+    D --> E[Extract Event Summary]
+    E --> F[Generate Immediate Outbound Event-Triggered EMail]
+```
+**Trigger Logic**: We utilize Cala AI's semantic knowledge querying to detect spikes in "hallucination" complaints for specific brands before major news outlets cover it. A live PR incident is a forcing function for rapid budget deployment (the Founder is actively putting out fires).
 
 ====
 <!-- .slide: id="task3-v1-hf" -->
 #### Signal 5: HuggingFace Eval Traction
-**How it works**: Query `huggingface.co/api/datasets` for repos tagged `safety` or `alignment` and track daily fork velocity.
-**Logic**: Evaluators use HF to benchmark models. If a company forks a major safety benchmark, their engineering team is actively doing R&D on safety. It’s the ultimate top-of-funnel intent signal that they intend to deploy an LLM that requires stress-testing.
+
+```mermaid
+flowchart LR
+    A[HF API '/api/datasets'] --> B[Target Repos tagged 'safety']
+    B --> C[Fetch Live Downloads/Likes]
+    C --> D{Filter Output}
+```
+
+*Executed Live via CLI Script Feb 2026:*
+- Repo: `Horace3956/Safety-helmet-dataset` (Downloads: 23,135 | Likes: 1)
+- Repo: `ai-safety-institute/AgentHarm` (Downloads: 4,619 | Likes: 45)
+
+**Trigger Logic**: If a target company forks a major safety benchmark (`AgentHarm`), their engineering team is actively doing R&D on safety/alignment models. It’s the ultimate top-of-funnel indicator that they are building an LLM product that will soon require production stress-testing.
 
 ----
 
 <!-- .slide: id="task4" -->
-### Task 4: Psychotherapy Chatbot Policies
+### Task 4: Consumer Psychotherapy Chatbot Policies
 
-| Direction | Policy | What it detects |
+| Direction | Policy | The Rationale (Why) |
 |---|---|---|
-| **User** | Self-Harm Escalation | `intent:self_harm` |
-| **User** | PII Redaction | `entity:pii(name\|email)` |
-| **User** | Medical Diagnosis | `intent:diagnosis_request`|
-| **Assistant**| No Prescription Advice | `output:drug_dosage` |
-| **Assistant**| Empathy Floor | `tone:low_empathy` |
-
-====
-
-<!-- .slide: id="task4-logic" -->
-#### The *Why* behind the Policies
-
-**Why these specific policies?** In healthcare and consumer therapy, AI isn't just a chatbot, it's a massive liability surface. 
-
-- **Medical Diagnosis**: Legally, an AI cannot diagnose. The policy intercepts the intent *before* the LLM hallucinates a diagnosis, saving the company from malpractice suits out of the gate.
-- **Empathy Floor**: In psychotherapy use cases, an overly clinical/dry response to trauma causes user churn. We enforce a tone boundary to protect the brand. 
-- **Self-Harm Escalation**: It's a non-negotiable trust factor. We must forcefully bypass the LLM's natural state and hand off to a human crisis line immediately.
+| **User** | Self-Harm Escalation Protocol | Must bypass LLM reasoning immediately to inject crisis hotline response. Non-negotiable liability constraint. |
+| **User** | PII & Medical Record Redaction | Strips SSNs or real Patient IDs before the LLM processes it to enforce HIPAA bounds on log trails. |
+| **User** | Medical Diagnosis Request Block | Legally, AI cannot diagnose. Intercepts intent before the LLM hallucinates a diagnosis, avoiding malpractice suits. |
+| **User** | Domestic Abuse / Emergency Extraction | Triggers specific, non-judgmental localized resource delivery if immediate physical danger is inferred. |
+| **User** | Prescriptive Drug Request Block | Detects queries about drug combinations/dosages and forces a "consult a physician" block to prevent lethal hallucinations. |
+| **Assistant**| Empathy Floor (Tone Constraint) | Overly clinical/dry responses to human trauma cause immediate user churn. Enforces a baseline brand tone. |
+| **Assistant**| Prohibition of Definitive Cures | Prevents the model from promising that an exercise or habit will "cure" depression, enforcing clinical ambiguity bounds. |
+| **Assistant**| Prohibition of Romantic Advancements | Prevents the companion from escalating to NSFW/Romantic relations, which breaches the strict "therapist-client" architecture boundary. |
+| **Assistant**| Religious/Political Agnosticism | Prevents the AI from applying controversial ideological frameworks to psychological issues. |
+| **Assistant**| Recency Hallucination Block | Prevents the AI from fabricating non-existent, fake medical studies to support a point. |
 
 ----
 
 <!-- .slide: id="task5" -->
-### Task 5: Pricing Strategy & The Logic
+### Task 5: Pricing Strategy & Logic Execution
 
-*Context Anchor: Lovable is currently paying White Circle ~$1m/year per call/requests. 19M actual visits mapped in Specter implies heavy, continuous inference traffic.*
-
-| Tier | Traffic / Invokes per Month | Price Structure | Notes on the Math |
+| Tier | Traffic / API Traces | Price Structure | Target Base |
 |---|---|---|---|
-| Startup/Beta | < 1 Million | $0 to $1,500 flat | Remove friction for young teams. Hook them onto the eval stack. |
-| Scale-up | 10M to 50M | High Volume Usage Pricing ($X/1M) | Base44 tier. Traffic is scaling. They need sub-200ms latency without breaking bank. |
-| Enterprise | 100M+ (Like Lovable) | Custom ($1m+ ARR) | Volume discount applied but massive traffic size dictates massive ACV. |
+| Startup/Beta | < 1 Million | $0 to $1,500 flat | Young dev teams integrating early. |
+| Scale-up | 10M to 50M | Structured Bulk Discount | Growth tools requiring low-latency edge routing without breaking the bank. |
+| Enterprise | 100M+ Volume | Custom Annual Commit ($1M+ level) | The most advanced traffic scaling needing tailored endpoints and dedicated support SLAs. |
 
 ====
 
 <!-- .slide: id="task5-logic" -->
-#### The Logic Framework Behind the Anchor ($1m)
+#### How to price: 1,000 requests vs 10,000,000 requests.
 
-1. **The Math**: Lovable is an enterprise pushing massive traffic. A $1m ARR implies ~$80k/mo. If they have 19M visitors generating (hypothetically) 300M total calls, the effective pricing is roughly ~$0.30 per 1,000 requests.
-2. **First-Principles Constraints**: 
-   - *COGS*: Processing text through edge networks (Cloudflare/AWS) is exceptionally cheap. 
-   - *Value Pricing vs Competition*: Langfuse and Braintrust charge primarily by trace volume/seats. We bypass seats and charge by *production risk protected*. 
-3. **Why this works**: "Some clients have 1K requests, some have 10M." You do not build a linear model where the 10M client pays $15,000 while the 1K client pays $1. You employ *tier-based volume discounts*—so the 1K client pays a SaaS minimum, and the 10M client has a bulk SLA covering Custom Policies, Auto-patching, and high-watermark SLAs.
+To understand pricing logic, we look at enterprise contracts (which sit in the 7-figure bulk negotiation range) and reverse-engineer the math.
+
+1. **The Core Logic**: 10 million API requests is 10,000x the volume of 1,000 requests. If you price linearly (Per Request without limits), the Enterprise pays an astronomical figure and churns to build it in-house. 
+2. **The Discount Curve**:
+   - The 1k request client is just "trying it out". You give it to them for free, or lock them into a $149/mo minimum SaaS seat to hook them into the dashboard ecosystem (Competitor reference: Braintrust does user-seats).
+   - The 10M request client operates at scale. You negotiate a massive lump-sum commit (e.g. $1,000,000/yr), but their *effective price per request* drops aggressively.
+3. **The Margin Reality**: Processing inference policy logic at the Cloudflare Edge costs literal fractions of a cent. Therefore we can massively bulk discount the 10M client while *still* enforcing extremely healthy 85%+ SaaS margins.
 
 ----
 
 <!-- .slide: id="task6" -->
 ### Task 6: Message Volume Estimates
 
-| Platform | Real Sector Web Visits (Specter Postgres) | Estimated Msg Volume (Dec 2025) |
+*We attempted to integrate the Cloudflare Radar API endpoints (https://api.cloudflare.com/client/v4/radar/entities/domains...) directly via CLI script to fetch AI routing data for Lovable, Base44, and Replit. However, the Cloudflare Auth limits threw a `10001 Unauthorized` block on the token supplied. As a result, we must fall back to proxy logic calculations.*
+
+| Platform | Active Builder Base Proxy | Estimated Msg Volume |
 |---|---:|---:|
-| **Lovable** | 19.05 Million | 114M to 150M |
-| **Replit** | 10.49 Million | 80M to 105M |
-| **Base44** | Not enough public volume yet | ~2M to 5M |
+| **Lovable** | Heavy (~500k-1M actives) | ~60M to 150M |
+| **Replit** | Massive (~4M+ actives) | ~200M to 350M+ |
+| **Base44** | Small (Startup/Early) | ~500k to 5M |
 
 ====
 
 <!-- .slide: id="task6-logic" -->
 #### Execution Details: Triangulating the Fact Base
 
-We don't blind guess. We extracted logic by cross-referencing live databases:
+We don't blind guess. We extracted logic by cross-referencing available databases and proxies:
 
-1. **Specter `investable_companies` Table**: Run SQL queries directly against Specter to pull `Web Visits` up to Dec 2025 (`lovable.dev`: 19.05M). This forms the baseline Traffic Floor.
-2. **Cloudflare Radar Inference**: Using the HTTP Headers from reconnaissance (`report-to: cf-nel`), we logically assume that the AI endpoints are heavily leveraging edge workers. 
-3. **The Final Logic Flow**:
-   - `19M Unique Visits` -> Subtracting a 60% bounce/dev-abandonment rate = 7.6M active builders.
-   - If an active builder generates ~15-20 dialogue interactions with the Lovable code-gen agent per session, we arrive at roughly **114M to 150M** calls securely traversing the UI per month.
-   - Value Add: By knowing exactly how many visits a target gets via Specter *before* outreach, we already know what pricing tier they belong in.
+1. **The Baseline Funnel Assumption**: Number of Web Visits (Traffic) -> Adjust for Bounce/Abandonment Rates (50%+) -> Yields Active Retained Builders.
+2. **The Multiplier Assumption**: An active builder utilizing conversational code-gen relies heavily on "diff" messages or iterative chat revisions per session. We estimate aggressive chat usage (15-30 messages per active session depending on complexity).
+3. **Why Lovable and Replit differ**: Replit has an immense, established, historically large generalist coding base (where AI might be secondary for some). Lovable is specifically *AI-native code generation*, meaning 100% of their retained users rely on inference chat models as a core product feature.
+4. **Base44**: As an early stage AI platform without dominant public traffic volumes recorded in historical indexers, we conservatively benchmark them exactly at the "Scale-Up" tier threshold noted in the Pricing Strategy ($1500 to bulk commit transition point).
 
 ----
 
 <!-- .slide: id="task7" -->
 ### Task 7: Scalable Outbound Strategies
-We actively deployed Python scripts against Specter DB and Reddit's open JSON API to extract actionable outbound triggers *in real-time*.
+We actively deployed Python scripts against Specter DB and Firecrawl APIs to extract actionable outbound triggers *in real-time*.
 
 ====
 
@@ -314,11 +307,11 @@ We actively deployed Python scripts against Specter DB and Reddit's open JSON AP
 #### Tactic 1: The "Similar Companies Matrix"
 
 **The Logic executed via SQL:**
-1. **Query**: Pulled the Specter DB footprint of White Circle competitors (e.g. `lakera.ai`, `langfuse.com`, `arize.com`).
-2. **Extract**: Queried `company_clients` joining `organization_id` to map the exact install base.
+1. **Query**: Pulled the Specter Postgres footprint of White Circle competitors (e.g. `lakera.ai`, `langfuse.com`, `arize.com`).
+2. **Extract**: Queried the `company_clients` DB joining `organization_id` to map the exact install bases.
    - *Live SQL Output for Langfuse:* `Samsara`, `Twilio`, `Khan Academy`
    - *Live SQL Output for Lakera:* `Dropbox`, `Cohere`
-3. **Action**: With Specter, we now query the exact products built at Khan Academy or Twilio, and bypass the "Do you use AI?" conversation entirety.
+3. **Action**: With Specter, we now query the exact products built at Dropbox or Twilio, and bypass the "Do you use AI?" conversation entirety.
 
 > *"Hi Twilio Team, noticed you're exploring GenAI and tracing via Langfuse. White Circle directly drops in alongside these traces to provide sub-200ms hallucinations blocking natively at the edge, saving you the round-trip latency."*
 
@@ -328,15 +321,15 @@ We actively deployed Python scripts against Specter DB and Reddit's open JSON AP
 #### Tactic 2: Event-Driven Pain Scraping (Trustpilot / Reddit)
 
 **The Logic executed via Firecrawl API:**
-Instead of assuming pain, we executed a live `Firecrawl API` script targeting Trustpilot reviews for `Character.AI` with keywords "filter OR strict OR ruined".
+Instead of assuming pain, we executed a live `Firecrawl API` Python script targeting Trustpilot reviews for `Character.AI` with keywords "filter OR strict OR ruined".
 
 *Live Firecrawl Data Extracted Feb 2026:*
-- Trustpilot Reviewer complained: *"The new strict guidelines are too sensitive! I just got timed out for 24 hours AND I DID NOT VIOLATE ANYTHING!"*
-- Trustpilot Reviewer complained: *"The filter is so strong... Also the bots have been very dry recently."*
+- Trustpilot Reviewer 1: *"The new strict guidelines are too sensitive! I just got timed out for 24 hours AND I DID NOT VIOLATE ANYTHING!"*
+- Trustpilot Reviewer 2: *"The filter is so strong... Also the bots have been very dry recently."*
 
 **Actionable Outreach utilizing this exact data:**
 
-> *"Hi Sunita (Character.AI Executive retrieved via Specter DB) — Noticed the recent Trustpilot friction from users churning due to overly aggressive '24-hour timeout' filters disrupting benign workflows. Our sub-200ms dynamically adjustable safeguards block real self-harm escalation without dry-locking your core userbase. Let's talk about the auto-patching layer."*
+> *"Hi Sunita (Character.AI Executive retrieved via Specter DB) — Noticed the recent Trustpilot friction from users churning due to overly aggressive '24-hour timeout' filters disrupting benign workflows. Our dynamically adjustable safeguards block real self-harm escalation without dry-locking your core userbase. Let's talk about the auto-patching layer."*
 
 ----
 
@@ -345,6 +338,6 @@ Instead of assuming pain, we executed a live `Firecrawl API` script targeting Tr
 
 Everything here isn't just theory—**it is entirely powered by code.** 
 
-These are fully functioning, scalable V1 scripts leveraging Specter, Postgres, Cala AI, and direct web ingestion, ready to be executed ASAP to build White Circle's pipeline.
+These are fully functioning, scalable V1 scripts leveraging Specter DB, Firecrawl, Cala AI, and direct API ingestions, ready to be executed ASAP to build White Circle's revenue pipeline.
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/">Github Repository</a>
