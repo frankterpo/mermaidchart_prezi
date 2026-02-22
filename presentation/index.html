@@ -239,19 +239,45 @@
 			transform: scale(1.1);
 		}
 
+		/* Mark the top row as Title slides */
+		.minimap-cell.title-row {
+			border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+			height: 10px;
+			/* Slightly taller for titles */
+		}
+
+		.minimap-cell.visited.title-row {
+			border-bottom-color: rgba(168, 168, 255, 0.6);
+		}
+
 		.minimap-cell.hidden {
 			opacity: 0;
 			pointer-events: none;
 		}
 
+		#minimap-label-container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			margin-bottom: 6px;
+		}
+
 		#minimap-label {
 			font-size: 10px;
+			font-weight: 700;
 			text-transform: uppercase;
-			color: #888;
-			letter-spacing: 0.05em;
+			color: #eee;
+			letter-spacing: 0.1em;
 			text-align: right;
-			margin-bottom: 4px;
 			font-family: inherit;
+		}
+
+		#minimap-sublabel {
+			font-size: 8px;
+			color: #666;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+			margin-top: 1px;
 		}
 	</style>
 </head>
@@ -265,7 +291,10 @@
 			</section>
 		</div>
 		<div id="minimap-container">
-			<div id="minimap-label">Quest Progress</div>
+			<div id="minimap-label-container">
+				<div id="minimap-label">Quest Map</div>
+				<div id="minimap-sublabel">↓ Elaboration</div>
+			</div>
 			<div id="minimap-grid"></div>
 		</div>
 	</div>
@@ -431,6 +460,8 @@
 						for (let h = 0; h < totalCols; h++) {
 							const cell = document.createElement('div');
 							cell.className = 'minimap-cell';
+							if (v === 0) cell.classList.add('title-row');
+
 							const vCount = structure[h];
 							if (v >= vCount) {
 								cell.classList.add('hidden');
