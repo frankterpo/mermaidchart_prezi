@@ -110,7 +110,7 @@ mindmap
 <!-- .element: class="small-table" -->
 
 <br/>
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
+<a href="./task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
 
 ====
 
@@ -132,7 +132,7 @@ mindmap
 <!-- .element: class="small-table" -->
 
 <br/>
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
+<a href="./task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
 
 ====
 
@@ -154,7 +154,7 @@ mindmap
 <!-- .element: class="small-table" -->
 
 <br/>
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
+<a href="./task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
 
 ====
 
@@ -198,42 +198,64 @@ graph LR
 
 | White Circle USP | Competitor | Known Customers | Source & Method |
 |---|---|---|---|
-| **Low-latency Safeguards** | Lakera | Dropbox, Cohere | **Specter DB**: `company_clients` join |
-| **Low-latency Safeguards** | PromptArmor | Hippocratic AI | **Cala AI + Firecrawl**: Substack scrape |
-| **Observability** | Helicone | QA Wolf, OpenTable | **Cala AI**: GitHub issue parser |
-| **Observability** | Langfuse | Twilio, Samsara, Khan | **Specter DB**: 3 live SaaS adoptions |
-| **Eval / Stress-test** | Braintrust | Stripe, Coda | **URLScan**: logo entity extraction |
-| **Eval / Stress-test** | Patronus AI | Samsung, Norsk Hydro | **Cala AI**: Press release mining |
+| **Low-latency Safeguards** | Lakera | Dropbox, Cohere, Thatch | **Specter DB**: `company_clients` join + **Cala AI** |
+| **Low-latency Safeguards** | PromptArmor | Triplebyte, Prysm, Theswarm | **Specter DB**: `company_clients` join + **Firecrawl** |
+| **Observability** | Helicone | LinkedIn, Actualhq, 4Degrees | **Specter DB**: `company_clients` join + **Cala AI** |
+| **Observability** | Langfuse | Tracebit, Portialabs, Claimsorted | **Specter DB**: `company_clients` join + **DDG/BS4** |
+| **Eval / Stress-test** | Braintrust | Stripe, Coda, Notion | **URLScan**: logo entity extraction + **Cala AI** |
+| **Eval / Stress-test** | Patronus AI | Samsung, Norsk Hydro, Optery | **Cala AI**: Press release mining + **Firecrawl** |
 <!-- .element: class="small-table" -->
+
+<br/>
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/competitors.md" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full Competitor Artifact — Multi-source evidence & differentiation matrix</a>
 
 ====
 
 <!-- .slide: id="task2-why" -->
-#### Feature Mapping: Why are they slotted here?
+#### Feature Mapping: Use-Case Matrix
+##### White Circle vs. AI Security Ecosystem
 
-**Lakera vs Langfuse** — not interchangeable:
-- **Lakera** = pure-play security firewall at the edge. Blocks prompt injection *before* the model sees it.
-- **Langfuse** = analytics overlay. Traces token flows *after* the model responds.
-- **White Circle** competes on both: edge-native blocking *plus* auto-patching from the telemetry feedback loop.
+```mermaid
+quadrantChart
+    title AI Security & Observability Positioning
+    x-axis Low Latency Enforcement --> High Latency Analysis
+    y-axis Pre-deployment Eval --> Runtime Protection
+    quadrant-1 Strategic Protection
+    quadrant-2 Quality Assurance
+    quadrant-3 Observability & Tracing
+    quadrant-4 Edge Defense
+    Lakera: [0.2, 0.8]
+    PromptArmor: [0.3, 0.7]
+    Helicone: [0.8, 0.3]
+    Langfuse: [0.9, 0.2]
+    Braintrust: [0.7, 0.1]
+    Patronus AI: [0.6, 0.1]
+    White Circle: [0.1, 0.9]
+```
 
-**Braintrust vs PromptArmor:**
-- **Braintrust** = pre-flight eval framework (CI/CD red-teaming before deploy).
-- **PromptArmor** = runtime injection blocker (guards live traffic).
-- **White Circle** handles both: Stress-Test Agent for pre-deploy + runtime guardrails in production.
+**Strategic Differentiation:**
+- **White Circle** occupies the top-left (Edge Defense + Runtime Protection), combining the lowest latency with the highest safety enforcement.
+- **Langfuse/Helicone** are shifted right (Observability), focusing on post-facto analysis rather than prevention.
+- **Braintrust/Patronus** are shifted down (QA), focusing on pre-deploy evals.
 
 ====
 
 <!-- .slide: id="task2-intel" -->
-#### Live Cloudflare Intel: Competitor Domain Classification
-*Via Cloudflare Intel API `/intel/domain` · Executed Feb 2026*
+#### Live Cloudflare Intel: Competitor & Customer Validation
+##### *Via Cloudflare Intel API `/intel/domain` · Executed Feb 2026*
 
 | Domain | CF Intel Category | Signal |
 |---|---|---|
-| `langfuse.com` | `Business & Economy` + `Technology` | Standard SaaS telemetry |
-| `lakera.ai` | `Artificial Intelligence` + `Technology` | Pure AI Security taxonomy |
-| `helicone.ai` | `Business & Economy` + `Artificial Intelligence` | AI observability tooling |
-| `patronus.ai` | `Business & Economy` + `Technology` | Eval/testing as enterprise tech |
-| `character.ai` | `Chat` + `Artificial Intelligence` | **CF App ID 2462** — only ICP with a native CF application entry, confirming platform scale |
+| `lakera.ai` | `Artificial Intelligence` | Pure AI Security taxonomy |
+| `langfuse.com` | `Business & Economy` | Standard SaaS telemetry |
+| `character.ai` | `Chat` | **CF App ID 2462** — platform scale |
+| `dropbox.com` | `Technology` | Verified Competitor Customer |
+| `samsung.com` | `Electronics` | Verified Competitor Customer |
+| `linkedin.com` | `Social Networking` | Verified Competitor Customer |
+| `opentable.com` | `Food & Drink` | Verified Competitor Customer |
+<!-- .element: class="small-table" -->
+
+> **Validation:** Cloudflare Intel confirms that competitors are successfully penetrating diverse verticals (Electronics, Food & Drink, Social) beyond just "Tech", validating our broad ICP strategy.
 
 ----
 
