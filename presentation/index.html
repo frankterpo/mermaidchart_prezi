@@ -263,14 +263,16 @@
 		}
 
 		#minimap-container.minimized {
-			width: 70px;
-			height: 36px;
+			width: 40px;
+			height: 20px;
+			min-width: 40px;
+			min-height: 20px;
 			overflow: hidden;
 			cursor: pointer;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: 4px 8px;
+			padding: 0 2px;
 			/* Keep position: fixed from base so it stays anchored to top-right */
 		}
 
@@ -287,7 +289,7 @@
 			height: 100%;
 			justify-content: center;
 			align-items: center;
-			font-size: 14px;
+			font-size: 10px;
 			font-weight: 700;
 			color: #a8a8ff;
 			letter-spacing: 0.02em;
@@ -296,6 +298,9 @@
 
 		#minimap-container.minimized #minimap-progress-container {
 			display: flex !important;
+			font-size: 9px;
+			font-weight: 600;
+			letter-spacing: -0.02em;
 		}
 
 		.minimap-row {
@@ -364,6 +369,208 @@
 			letter-spacing: 0.05em;
 			margin-top: 1px;
 		}
+
+		/* Maximize space */
+		.reveal .slides {
+			/* width: 95% !important;  REMOVED: Let Reveal handle width */
+			/* height: 95% !important; REMOVED: Let Reveal handle height */
+			margin: 0 auto;
+		}
+		/* Pill style for file refs */
+		.pill {
+			background-color: #2f3542;
+			color: #a8a8ff;
+			padding: 2px 6px;
+			border-radius: 4px;
+			font-family: monospace;
+			font-size: 0.9em;
+			border: 1px solid #444;
+			text-decoration: none;
+		}
+		.pill:hover {
+			background-color: #3f4552;
+			text-decoration: none;
+			color: #fff;
+		}
+		/* Table optimization */
+		.reveal table {
+			font-size: 0.6em; /* Smaller base font for tables */
+			width: 100%;
+		}
+		.reveal table th, .reveal table td {
+			padding: 4px 8px; /* Less padding */
+		}
+		/* Callout box */
+		.callout {
+			background: rgba(255, 255, 255, 0.05);
+			border-left: 4px solid #a8a8ff;
+			padding: 15px;
+			margin: 10px 0;
+			border-radius: 0 4px 4px 0;
+			text-align: left;
+		}
+		.callout.text-left { text-align: left; }
+		/* WTP flowchart: no scale (TB layout fits) */
+		#task1-wtp .mermaid svg { max-width: 100%; }
+		/* Matrix: scale down to fit viewport, reduce title-to-chart gap */
+		#task2-why { padding-top: 0.5em !important; }
+		#task2-why h4, #task2-why h5 { margin: 0 0 0.2em 0 !important; }
+		#task2-why .mermaid {
+			overflow: visible !important;
+			display: flex;
+			justify-content: center;
+			margin-top: 0.2em !important;
+		}
+		#task2-why .mermaid svg {
+			transform: scale(0.55);
+			transform-origin: center;
+			max-width: 100%;
+		}
+		#task7-artifacts .mermaid svg {
+			transform: scale(1.1);
+			transform-origin: center;
+		}
+		/* Scrollable JSON/code boxes */
+		.scrollable-box {
+			max-height: 200px;
+			overflow-y: auto;
+			border: 1px solid #2f3542;
+			border-radius: 8px;
+			background: #0b0f14;
+			padding: 12px;
+			margin: 8px 0;
+			text-align: left;
+		}
+		.scrollable-box pre { margin: 0; font-size: 0.5em; line-height: 1.4; }
+		.scrollable-box code { color: #a8d8ea; }
+		/* Contact switcher tabs */
+		.contact-switcher { text-align: left; }
+		.contact-tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+		.contact-tabs .tab {
+			background: #2f3542;
+			color: #a8a8ff;
+			border: 1px solid #444;
+			padding: 6px 12px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 0.7em;
+			font-family: inherit;
+		}
+		.contact-tabs .tab:hover { background: #3f4552; color: #fff; }
+		.contact-tabs .tab.active { background: #a8a8ff; color: #0c0c0c; border-color: #a8a8ff; }
+		.email-preview { background: #0b0f14; border: 1px solid #2f3542; border-radius: 8px; padding: 12px; text-align: left; }
+		.email-preview pre { margin: 0; font-size: 0.55em; line-height: 1.4; white-space: pre-wrap; }
+		/* Side panel contact switcher: left = full names + position, right = Email + LinkedIn */
+		.contact-switcher-sidebar { text-align: left; display: flex; gap: 0; min-height: 360px; }
+		.contact-switcher-sidebar .folder-contacts {
+			width: 240px;
+			flex-shrink: 0;
+			background: #161b22;
+			border: 1px solid #2f3542;
+			border-right: none;
+			border-radius: 8px 0 0 8px;
+			overflow-y: auto;
+			display: flex;
+			flex-direction: column;
+		}
+		.contact-switcher-sidebar .contact-item {
+			display: block;
+			padding: 12px 14px;
+			color: #8b949e;
+			font-size: 0.7em;
+			line-height: 1.4;
+			cursor: pointer;
+			border-bottom: 1px solid #21262d;
+			transition: background 0.15s, color 0.15s;
+		}
+		.contact-switcher-sidebar .contact-item:hover {
+			background: #21262d;
+			color: #c9d1d9;
+		}
+		.contact-switcher-sidebar .contact-item.active {
+			background: #0b0f14;
+			color: #a8a8ff;
+			font-weight: 600;
+		}
+		.contact-switcher-sidebar .contact-item .contact-name { display: block; font-weight: 600; }
+		.contact-switcher-sidebar .contact-item .contact-position { display: block; font-size: 0.9em; color: #6e7681; margin-top: 2px; }
+		.contact-switcher-sidebar .contact-item.active .contact-position { color: #8b949e; }
+		.contact-switcher-sidebar .contact-item .tab-llm {
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			background: rgba(168, 168, 255, 0.5);
+			border-radius: 50%;
+			margin-right: 6px;
+			vertical-align: middle;
+		}
+		.contact-switcher-sidebar .folder-body {
+			flex: 1;
+			border: 1px solid #2f3542;
+			border-radius: 0 8px 8px 0;
+			background: #0b0f14;
+			padding: 18px;
+			min-width: 0;
+			overflow-y: auto;
+		}
+		.contact-switcher-sidebar .folder-email {
+			font-size: 0.72em;
+			line-height: 1.55;
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+		}
+		.contact-switcher-sidebar .folder-email .folder-email-scroll {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+		}
+		.contact-switcher-sidebar .msg-title .pill-opencode {
+			display: inline-block;
+			font-size: 0.65em;
+			padding: 1px 4px;
+			background: rgba(168, 168, 255, 0.2);
+			color: #a8a8ff;
+			border-radius: 3px;
+			margin-left: 4px;
+			font-weight: 600;
+		}
+		.contact-switcher-sidebar .folder-email .msg-title {
+			font-size: 0.9em;
+			color: #a8a8ff;
+			margin-bottom: 6px;
+			font-weight: 700;
+		}
+		.contact-switcher-sidebar .folder-email pre {
+			margin: 0;
+			padding: 14px;
+			border: 1px solid #2f3542;
+			border-radius: 6px;
+			background: #070b10;
+			white-space: pre-wrap;
+			line-height: 1.5;
+			font-size: 1em;
+		}
+		.contact-switcher-sidebar .folder-email .msg-meta {
+			font-size: 0.88em;
+			color: #b8c7d6;
+			border-top: 1px dashed #2f3542;
+			padding-top: 10px;
+		}
+		.linkedin-message p { margin: 0.4em 0; }
+		.incident-callout {
+			margin: 0;
+			padding: 12px 14px;
+			border: 1px solid #2f3542;
+			border-radius: 6px;
+			background: #070b10;
+			font-size: 0.85em;
+			line-height: 1.5;
+			color: #b8c7d6;
+		}
+		.incident-callout a { color: #a8a8ff; }
+		.linkedin-slide .folder-contacts .contact-item { cursor: default; }
+		.artifact-preview .scrollable-box pre { color: #a8d8ea; }
 	</style>
 </head>
 
@@ -394,6 +601,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
 	<!-- Load Mermaid -->
 	<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+
+	<script type="application/json" id="tome-contacts-embed">{"contacts":[{"role":"cpo","label":"Billy French, Tome: Head of Product Design","email_body":"Subject: Quick thought on Tome's AI stack\n\nHi Billy,\n\nI noticed Tome's integration with companies like Helicone, Lakera AI, Langfuse, and Patronus AI - solid lineup for AI infrastructure.\n\nWe're White Circle, and we help AI platforms with three things: sub-200ms edge policy enforcement, auto-patching for vulnerabilities, and runtime observability with audit trails.\n\nGiven your background building design systems and product strategy at Tome, I thought this might be worth a conversation. Would you be open to a quick chat?\n\nBest,\nWhite Circle GTM","linkedin_message":"Hi Billy - saw your work at Tome building out the product design there. Your integrations with Helicone, Lakera AI, Langfuse, and others show you're thinking seriously about AI infrastructure.\n\nWe work with AI platforms on policy enforcement (sub-200ms edge), auto-patching vulnerabilities, and runtime observability. Would love to show you what we're building.\n\nOpen to a quick conversation?","outreach_reason":["Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.","Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.","Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity."],"opencode":{"used":true,"model":"opencode/minimax-m2.5-free"}},{"role":"team","label":"Tome team","email_body":"Subject: Tome + White Circle (Lakera stack check)\n\nHi Tome team,\n\nWe're reaching out because Specter client-link data shows Tome connected to Lakera's stack.\n\nWhite Circle is complementary: edge enforcement under 200ms, auto-patching for emerging vulnerabilities, and audit-ready runtime traces.\n\nIf helpful, we can run a short gap check against Tome's current posture and send concrete fix opportunities.\n\nBest,\nWhite Circle GTM","linkedin_message":"Hi Tome team — we saw your Lakera-linked footprint and can share a quick edge enforcement + auto-patching gap checklist if useful.","outreach_reason":["Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com","Outreach driven by stack/competitor signal"],"opencode":{"used":false,"model":null}}]}</script>
 
 	<script>
 		// Initialize Mermaid
@@ -479,8 +688,166 @@
 				Reveal.on('ready', () => {
 					renderAllMermaid();
 					setTimeout(renderAllMermaid, 1000);
+					initContactSwitcher();
+					initIncidentLinkedinSwitcher();
 				});
-				Reveal.on('slidechanged', renderAllMermaid);
+				Reveal.on('slidechanged', () => { renderAllMermaid(); initContactSwitcher(); initIncidentLinkedinSwitcher(); });
+
+				async function initContactSwitcher() {
+					const root = document.getElementById('tome-contact-switcher');
+					if (!root) return;
+					const contactsEl = root.querySelector('.folder-contacts');
+					const emailEl = root.querySelector('.folder-email');
+					if (!contactsEl || !emailEl) return;
+					let data = null;
+					try {
+						const r = await fetch('tome_contacts.json?t=' + Date.now());
+						if (r.ok) data = await r.json();
+					} catch (_) {}
+					if (!data) {
+						const embedEl = document.getElementById('tome-contacts-embed');
+						if (embedEl && embedEl.textContent) {
+							try { data = JSON.parse(embedEl.textContent); } catch (_) {}
+						}
+					}
+					const contacts = (data && data.contacts) ? data.contacts : [];
+					const esc = (value) => String(value || '')
+						.replace(/&/g, '&amp;')
+						.replace(/</g, '&lt;')
+						.replace(/>/g, '&gt;')
+						.replace(/"/g, '&quot;')
+						.replace(/'/g, '&#39;');
+					const renderContact = (contact) => {
+						const emailBody = contact?.email_body || '';
+						const linkedinBody = contact?.linkedin_message || 'No LinkedIn message generated for this contact.';
+						const reasons = Array.isArray(contact?.outreach_reason) ? contact.outreach_reason.slice(0, 3) : [];
+						const reasonHtml = reasons.length
+							? `<div class="msg-meta"><strong>Why this outreach:</strong><br>${reasons.map(r => `• ${esc(r)}`).join('<br>')}</div>`
+							: '';
+						const opencodeBadge = contact?.opencode?.used
+							? ` <span class="pill-opencode" title="OpenCode ${contact.opencode.model || 'LLM'}">LLM</span>`
+							: '';
+						emailEl.innerHTML = `
+							<div class="folder-email-scroll">
+								<div>
+									<div class="msg-title">Email${opencodeBadge}</div>
+									<pre>${esc(emailBody)}</pre>
+								</div>
+								<div>
+									<div class="msg-title">LinkedIn</div>
+									<pre>${esc(linkedinBody)}</pre>
+								</div>
+								${reasonHtml}
+							</div>
+						`;
+					};
+					contactsEl.innerHTML = '';
+					renderContact(contacts[0] || {});
+					const parseLabel = (label) => {
+						const s = String(label || '').trim();
+						const sep = s.indexOf(', ');
+						if (sep >= 0) return { name: s.slice(0, sep), position: s.slice(sep + 2) };
+						return { name: s, position: '' };
+					};
+					contacts.forEach((c, i) => {
+						const item = document.createElement('div');
+						item.className = 'contact-item' + (i === 0 ? ' active' : '');
+						item.dataset.index = String(i);
+						const { name, position } = parseLabel(c.label);
+						item.innerHTML = (c?.opencode?.used ? '<span class="tab-llm" title="LLM personalized"></span>' : '') +
+							'<span class="contact-name">' + esc(name || 'Contact') + '</span>' +
+							(position ? '<span class="contact-position">' + esc(position) + '</span>' : '');
+						item.onclick = () => {
+							contactsEl.querySelectorAll('.contact-item').forEach(t => t.classList.remove('active'));
+							item.classList.add('active');
+							renderContact(c);
+						};
+						contactsEl.appendChild(item);
+					});
+					if (contacts.length === 0) {
+						renderContact({
+							email_body: 'Subject: Tome + White Circle (Lakera stack check)\n\nHi Tome team,\n\nWe\'re reaching out because Specter client-link data shows Tome connected to Lakera\'s stack.\n\nWhite Circle is complementary: edge enforcement under 200ms, auto-patching for emerging vulnerabilities, and audit-ready runtime traces.\n\nIf helpful, we can run a short gap check against Tome\'s current posture and send concrete fix opportunities.\n\nBest,\nWhite Circle GTM',
+							linkedin_message: 'Hi Tome team — we saw your Lakera-linked footprint and can share a quick edge enforcement + auto-patching gap checklist if useful.',
+							outreach_reason: ['Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com', 'Outreach driven by stack/competitor signal']
+						});
+						contactsEl.innerHTML = '<div class="contact-item active"><span class="contact-name">Tome team</span></div>';
+					}
+				}
+
+				async function initIncidentLinkedinSwitcher() {
+					const root = document.getElementById('incident-linkedin-switcher');
+					if (!root) return;
+					const contactsEl = root.querySelector('.folder-contacts');
+					const emailEl = root.querySelector('.folder-email');
+					if (!contactsEl || !emailEl) return;
+					let data = null;
+					try {
+						const r = await fetch('incident_linkedin_contacts.json?t=' + Date.now());
+						if (r.ok) data = await r.json();
+					} catch (_) {}
+					const contacts = (data && data.contacts) ? data.contacts : [];
+					const esc = (value) => String(value || '')
+						.replace(/&/g, '&amp;')
+						.replace(/</g, '&lt;')
+						.replace(/>/g, '&gt;')
+						.replace(/"/g, '&quot;')
+						.replace(/'/g, '&#39;');
+					const renderContact = (contact) => {
+						const incident = contact?.incident || '';
+						const incidentUrl = contact?.incident_url || '';
+						const linkedinBody = contact?.linkedin_message || 'No LinkedIn message.';
+						const reasons = Array.isArray(contact?.outreach_reason) ? contact.outreach_reason.slice(0, 3) : [];
+						const reasonHtml = reasons.length
+							? `<div class="msg-meta"><strong>Why this outreach:</strong><br>${reasons.map(r => `• ${esc(r)}`).join('<br>')}</div>`
+							: '';
+						const incidentHtml = incident
+							? `<div class="msg-title">Incident</div><div class="incident-callout">${esc(incident)}${incidentUrl ? ` <a href="${esc(incidentUrl)}" target="_blank" rel="noopener">Source</a>` : ''}</div>`
+							: '';
+						const linkedinUrl = contact?.linkedin_url || '';
+						const linkHtml = linkedinUrl ? `<a href="${esc(linkedinUrl)}" target="_blank" class="pill">LinkedIn</a>` : '';
+						emailEl.innerHTML = `
+							<div class="folder-email-scroll">
+								${incidentHtml ? `<div>${incidentHtml}</div>` : ''}
+								<div>
+									<div class="msg-title">LinkedIn Message</div>
+									<pre>${esc(linkedinBody)}</pre>
+								</div>
+								${reasonHtml}
+								${linkHtml ? `<div style="margin-top:8px;">${linkHtml}</div>` : ''}
+							</div>
+						`;
+					};
+					contactsEl.innerHTML = '';
+					renderContact(contacts[0] || {});
+					const parseLabel = (label) => {
+						const s = String(label || '').trim();
+						const sep = s.indexOf(', ');
+						if (sep >= 0) return { name: s.slice(0, sep), position: s.slice(sep + 2) };
+						return { name: s, position: '' };
+					};
+					contacts.forEach((c, i) => {
+						const item = document.createElement('div');
+						item.className = 'contact-item' + (i === 0 ? ' active' : '');
+						item.dataset.index = String(i);
+						const { name, position } = parseLabel(c.label);
+						item.innerHTML = '<span class="contact-name">' + esc(name || c.label || 'Contact') + '</span>' +
+							(position ? '<span class="contact-position">' + esc(position) + '</span>' : '');
+						item.onclick = () => {
+							contactsEl.querySelectorAll('.contact-item').forEach(t => t.classList.remove('active'));
+							item.classList.add('active');
+							renderContact(c);
+						};
+						contactsEl.appendChild(item);
+					});
+					if (contacts.length === 0) {
+						renderContact({
+							incident: 'No incident contacts loaded.',
+							linkedin_message: 'Run: python -m src.cli outbound enrich-incident-linkedin (when available)',
+							outreach_reason: []
+						});
+						contactsEl.innerHTML = '<div class="contact-item active"><span class="contact-name">No contacts</span></div>';
+					}
+				}
 
 				await Reveal.initialize({
 					hash: true,
@@ -488,7 +855,7 @@
 					backgroundTransition: 'slide',
 					width: 1600,
 					height: 900,
-					margin: 0.15,
+					margin: 0.02,
 					minScale: 0.2,
 					maxScale: 2.0,
 					plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]

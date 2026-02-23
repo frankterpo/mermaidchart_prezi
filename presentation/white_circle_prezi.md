@@ -161,13 +161,55 @@ mindmap
 <!-- .slide: id="task1-wtp" -->
 #### Willingness to Pay (WTP) Model
 
-Calibrated from `artifacts/ICP_targets_enriched.json` (risk + volume weights + priority score + raised capital):
+```mermaid
+flowchart TB
+    R[Risk ↑] --> S[WTP Score]
+    V[Volume ↑] --> S
+    C[Compliance ↑] --> S
+    RC[Risk×Compliance] --> S
+    S --> T[Buying urgency]
+    T --> P[Price tier]
+```
+
+<div class="callout text-left">
+  <strong>In plain English:</strong>
+  <ul>
+    <li>More AI risk → pay more for protection.</li>
+    <li>More volume → pay more (impact is bigger).</li>
+    <li>Heavier compliance rules → pay more to stay audit-safe.</li>
+    <li>Risk + compliance both high → urgency jumps faster.</li>
+  </ul>
+</div>
+
+====
+
+<!-- .slide: id="task1-wtp-formula" -->
+#### WTP Formula & Calibration
+
+Calibrated from <span class="pill">artifacts/ICP_targets_enriched.json</span> as a normalized **WTP score** (tier mapping in Task 5):
 
 $$
-WTP_i = \alpha\cdot\text{RiskWeight}_i + \beta\cdot\text{VolumeWeight}_i + \gamma\cdot\text{ComplianceBurden}_i
+\text{WTPScore}_i=\delta+\alpha\tilde{R}_i+\beta\tilde{V}_i+\gamma\tilde{C}_i+\eta(\tilde{R}_i\cdot\tilde{C}_i)
 $$
 
-**ICP vs Industry comparison (live dataset aggregate):**
+$$
+\tilde{R}_i,\tilde{V}_i,\tilde{C}_i\in[0,1],\quad
+\text{WTPUSD}_i=f(\text{WTPScore}_i)\ \text{via tier mapping}
+$$
+
+<div class="callout text-left">
+  <strong>Variable definitions:</strong>
+  <ul>
+    <li>$\delta$ — baseline spend propensity.</li>
+    <li>$(\tilde{R}_i\cdot\tilde{C}_i)$ — compound pressure when risk and compliance are both high.</li>
+    <li>Coefficients fit on outcomes (win/loss, tier, expansion); refreshed as data lands.</li>
+  </ul>
+</div>
+
+====
+
+<!-- .slide: id="task1-wtp-table" -->
+#### ICP vs Industry Comparison
 
 | Lens | Bucket | N | Avg Risk | Avg Volume | Avg Priority | Median Raised |
 |---|---|---:|---:|---:|---:|---:|
@@ -178,17 +220,11 @@ $$
 | **Industry** | Mental Health | 2 | 0.50 | 0.50 | 90.0 | $8.4M |
 | **Industry** | GovTech | 2 | 0.70 | 0.00 | 84.0 | $5.1M |
 | **Industry** | SalesEnablement | 2 | 0.60 | 0.40 | 90.0 | $225.0M |
+<!-- .element: class="small-table" -->
 
-> QA takeaway: weights are set by ICP policy posture, while financing scale varies significantly by industry vertical.
-
-```mermaid
-graph LR
-    A[Higher Risk Weight] --> B[Higher Baseline WTP]
-    C[Higher Volume Weight] --> D[Usage-Sensitive WTP]
-    E[Compliance Burden] --> B
-    B --> F[Regulated ICP]
-    D --> G[Consumer & Enterprise ICP]
-```
+<div class="callout text-left">
+  QA: Calibrated <strong>propensity score</strong>; price assigned in Task 5 by tier thresholds.
+</div>
 
 ----
 
@@ -196,18 +232,20 @@ graph LR
 ### Task 2: Competitor Intelligence
 ##### Mapped to White Circle USPs via Automated Multi-Source Extraction
 
-| White Circle USP | Competitor | Known Customers | Source & Method |
-|---|---|---|---|
-| **Low-latency Safeguards** | Lakera | Dropbox, Cohere, Thatch | **Specter DB**: `company_clients` join + **Cala AI** |
-| **Low-latency Safeguards** | PromptArmor | Triplebyte, Prysm, Theswarm | **Specter DB**: `company_clients` join + **Firecrawl** |
-| **Observability** | Helicone | LinkedIn, Actualhq, 4Degrees | **Specter DB**: `company_clients` join + **Cala AI** |
-| **Observability** | Langfuse | Tracebit, Portialabs, Claimsorted | **Specter DB**: `company_clients` join + **DDG/BS4** |
-| **Eval / Stress-test** | Braintrust | Stripe, Coda, Notion | **URLScan**: logo entity extraction + **Cala AI** |
-| **Eval / Stress-test** | Patronus AI | Samsung, Norsk Hydro, Optery | **Cala AI**: Press release mining + **Firecrawl** |
+| White Circle USP | Competitor | Products (Specter) | Reported Clients (`company_clients`) | Source & Method | Differentiation vs White Circle |
+|---|---|---|---|---|---|
+| **Low-latency Safeguards** | Lakera | Lakera Guard, Lakera Red, Lakera Gandalf | tome.com (`tome.com`), verax.ai (`verax.ai`), wexler.ai (`wexler.ai`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/case-studies`=ok) + DDG (0 results this run) + Cala (key present, not queried) | White Circle combines edge enforcement with continuous post-deployment tuning; Lakera is firewall-first. |
+| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | 101.xyz (`101.xyz`), 15five.com (`15five.com`), 222.place (`222.place`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle adds observability + policy QA workflows on top of prompt-injection defense. |
+| **Observability** | Helicone | Helicone | linkedin.com (`linkedin.com`), 15five.com (`15five.com`), 4degrees.ai (`4degrees.ai`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle emphasizes prevention + policy enforcement, while Helicone is telemetry-first. |
+| **Observability** | Langfuse | Langfuse | claimsorted.com (`claimsorted.com`), portialabs.ai (`portialabs.ai`), symbe.co (`symbe.co`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle targets runtime blocking/remediation; Langfuse focuses on tracing and analytics. |
+| **Eval / Stress-test** | Braintrust | Braintrust | No reported clients in `company_clients` | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle includes runtime guardrails in addition to pre-deploy evaluation coverage. |
+| **Eval / Stress-test** | Patronus AI | Patronus API, Percival, Lynx | 101.xyz (`101.xyz`), 15five.com (`15five.com`), 222.place (`222.place`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle unifies edge controls + stress-testing; Patronus is strongest on eval scoring. |
 <!-- .element: class="small-table" -->
 
 <br/>
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/competitors.md" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full Competitor Artifact — Multi-source evidence & differentiation matrix</a>
+<a href="./task2_competitors.md" target="_blank" class="pill">artifacts/task2_competitors/competitors.md</a>
+<a href="./task2_product_industry_overlap.csv" target="_blank" class="pill">task2_product_industry_overlap.csv</a>
+<a href="./task2_competitor_matrix_enriched.json" target="_blank" class="pill">task2_competitor_matrix_enriched.json</a>
 
 ====
 
@@ -217,45 +255,43 @@ graph LR
 
 ```mermaid
 quadrantChart
-    title AI Security & Observability Positioning
-    x-axis Low Latency Enforcement --> High Latency Analysis
-    y-axis Pre-deployment Eval --> Runtime Protection
-    quadrant-1 Strategic Protection
-    quadrant-2 Quality Assurance
-    quadrant-3 Observability & Tracing
-    quadrant-4 Edge Defense
-    Lakera: [0.2, 0.8]
-    PromptArmor: [0.3, 0.7]
-    Helicone: [0.8, 0.3]
-    Langfuse: [0.9, 0.2]
-    Braintrust: [0.7, 0.1]
-    Patronus AI: [0.6, 0.1]
-    White Circle: [0.1, 0.9]
+    title AI Security Positioning
+    x-axis Low Latency --> High Latency
+    y-axis Pre-deploy Eval --> Runtime Protection
+    quadrant-1 Observability
+    quadrant-2 Strategic Protection
+    quadrant-3 CI/CD Quality
+    quadrant-4 Deep Eval
+    "WC Guard": [0.12, 0.90]
+    "WC Edge": [0.08, 0.96]
+    "Lakera": [0.32, 0.63]
+    "PromptArmor": [0.42, 0.80]
+    "Helicone": [0.95, 0.08]
+    "Langfuse": [0.88, 0.30]
+    "Braintrust": [0.95, 0.05]
+    "Patronus": [0.84, 0.16]
 ```
-
-**Strategic Differentiation:**
-- **White Circle** occupies the top-left (Edge Defense + Runtime Protection), combining the lowest latency with the highest safety enforcement.
-- **Langfuse/Helicone** are shifted right (Observability), focusing on post-facto analysis rather than prevention.
-- **Braintrust/Patronus** are shifted down (QA), focusing on pre-deploy evals.
 
 ====
 
-<!-- .slide: id="task2-intel" -->
-#### Live Cloudflare Intel: Competitor & Customer Validation
-##### *Via Cloudflare Intel API `/intel/domain` · Executed Feb 2026*
+<!-- .slide: id="task2-overlap" -->
+#### Matrix Overlap: Product vs. Specter Customer Industries
 
-| Domain | CF Intel Category | Signal |
+| Product - Company | Specter Customer Industries (Top) | Sample Reported Clients |
 |---|---|---|
-| `lakera.ai` | `Artificial Intelligence` | Pure AI Security taxonomy |
-| `langfuse.com` | `Business & Economy` | Standard SaaS telemetry |
-| `character.ai` | `Chat` | **CF App ID 2462** — platform scale |
-| `dropbox.com` | `Technology` | Verified Competitor Customer |
-| `samsung.com` | `Electronics` | Verified Competitor Customer |
-| `linkedin.com` | `Social Networking` | Verified Competitor Customer |
-| `opentable.com` | `Food & Drink` | Verified Competitor Customer |
+| Braintrust - Braintrust | Software, Technology, HR Tech | No reported clients |
+| Helicone - Helicone | Software, Finance, Information Technology | linkedin.com · 15five.com · 4degrees.ai |
+| Lakera Guard - Lakera | Information Technology, Software, Finance | tome.com · verax.ai · wexler.ai |
+| Langfuse - Langfuse | Information Technology, Software, Finance | claimsorted.com · portialabs.ai · symbe.co |
+| Patronus API - Patronus AI | Information Technology, Software, Data and Analytics | 101.xyz · 15five.com · 222.place |
+| AI Risk Platform - PromptArmor | Information Technology, Software, Data and Analytics | 101.xyz · 15five.com · 222.place |
 <!-- .element: class="small-table" -->
 
-> **Validation:** Cloudflare Intel confirms that competitors are successfully penetrating diverse verticals (Electronics, Food & Drink, Social) beyond just "Tech", validating our broad ICP strategy.
+<div class="callout text-left">
+  **Insight:** Specter join <code>companies</code> → <code>company_clients</code> → <code>clients_integration_companies</code>. Customer domains skew toward software/IT for most competitors.
+</div>
+
+<a href="./task2_product_industry_overlap.csv" target="_blank" class="pill">task2_product_industry_overlap.csv</a>
 
 ----
 
@@ -266,9 +302,9 @@ quadrantChart
 |---|---|---|---|
 | 1 | **Edge Telemetry Headers** | Firecrawl HTTP crawl | `cf-ray`, `x-vercel-id`, `Report-To` in prod traffic |
 | 2 | **GitHub CI/CD Fingerprints** | GitHub REST API | `langfuse` or `helicone` in `requirements.txt` or workflows |
-| 3 | **AI Safety Job Postings** | Remotive / Greenhouse | Role title contains `AI Safety` or `Trust & Safety` |
-| 4 | **Incident PR Monitoring** | Cala AI → Reddit/HN | Brand mentioned with `jailbreak`, `filter`, `toxic` |
-| 5 | **HuggingFace Eval Traction** | HF API + Token | Safety benchmark liked by target-adjacent accounts |
+| 3 | **AI Safety Job Postings** | Apify LinkedIn scraper | Role title contains `AI Safety` / `Trust & Safety` / `Responsible AI` |
+| 4 | **Incident PR Monitoring** | Cala MCP + Reddit/HN + DDG/BS4 | Brand mentioned with `jailbreak`, `filter`, `toxic` |
+| 5 | **HuggingFace Eval Traction** | HF 6-surface API sweep | Safety benchmark activity + user graph extraction |
 
 *(Press ↓ on each task slide to see the workflow diagram)*
 
@@ -276,18 +312,44 @@ quadrantChart
 
 <!-- .slide: id="task3-s1" -->
 #### Signal 1: Automated Telemetry Flow
+##### Horizontal Pipeline: Method → Logic → Outcome
 
 ```mermaid
-flowchart TD
-    S[Scheduler] --> F{Firecrawl Agent}
-    F -->|Crawl 500 Homepages| H[Intercept HTTP Headers]
-    H --> M{Pattern Matcher}
-    M -->|cf-ray detected| DB[(Specter Postgres)]
-    M -->|Report-To header| DB
-    DB --> T[Tag: Using CF Edge]
-    T --> O[Priority Outbound Queue]
+flowchart LR
+    subgraph Input
+        S[Scheduler] --> F[Firecrawl Agent]
+        F -->|Crawl 500 Homepages| H[Intercept HTTP Headers]
+    end
+    subgraph Logic
+        H --> P[Parse Raw Headers]
+        P --> M{AI-Indicative Pattern?}
+        M -->|cf-ray / x-vercel-id / Report-To| Y[Confidence Score]
+        M -->|No match| Z[Skip]
+        Y --> D{Dedupe Check}
+        D -->|New domain| I[DB Insert]
+    end
+    subgraph Outcome
+        I --> T[Tag: Using CF Edge]
+        T --> O[Priority Outbound Queue]
+    end
 ```
 <!-- .element: class="mermaid-scaled" -->
+
+**JSON output preview** (<span class="pill">artifacts/leads.jsonl</span>, `signal=edge_telemetry`):
+<div style="max-height: 210px; overflow: auto; border: 1px solid #2f3542; border-radius: 8px; background: #0b0f14; padding: 10px;">
+<pre style="margin: 0; font-size: 0.46em; line-height: 1.35;"><code class="language-json">{
+  "id": "2912fbdf-952c-4e1c-9e4a-2114390075f8",
+  "company": "whitecircle.ai",
+  "signal": "edge_telemetry",
+  "confidence": 0.85,
+  "why_now": "Detected production edge telemetry header (Report-To)",
+  "evidence_urls": [
+    "https://whitecircle.ai"
+  ],
+  "created_at": "2026-02-23 03:35:02"
+}</code></pre>
+</div>
+
 > **Why it works:** We don't rely on self-reported feature flags. We catch them *actually routing production ML traffic* through infrastructure White Circle integrates with natively.
 
 ====
@@ -306,82 +368,169 @@ flowchart LR
     F --> G[Qualified Lead + Contact]
 ```
 <!-- .element: class="mermaid-scaled" -->
-> **Insight:** If they run eval tooling in CI, they have already allocated engineering budget for AI quality. They're technically ready to buy guardrails *tomorrow*.
+
+**JSON output preview** (<span class="pill">artifacts/leads.jsonl</span>, `signal=ci_eval_tools`):
+<div style="max-height: 210px; overflow: auto; border: 1px solid #2f3542; border-radius: 8px; background: #0b0f14; padding: 10px;">
+<pre style="margin: 0; font-size: 0.46em; line-height: 1.35;"><code class="language-json">{
+  "id": "32c7194c-a96c-4379-b935-7695ea5eae31",
+  "company": "leandromorera",
+  "signal": "ci_eval_tools",
+  "confidence": 0.82,
+  "why_now": "Repository updated recently with 'langfuse' in metadata or readme.",
+  "evidence_urls": [
+    "https://github.com/leandromorera/LLMS_COMPARE_STREAMLIT_LANGFUSE"
+  ],
+  "created_at": "2026-02-22 21:53:04"
+}</code></pre>
+</div>
+
+<div class="callout text-left">
+  <strong>Insight:</strong> If they run eval tooling in CI, they've already allocated engineering budget for AI quality. They're technically ready to buy guardrails <em>tomorrow</em>.
+</div>
 
 ====
 
 <!-- .slide: id="task3-s3" -->
 #### Signal 3: AI Safety Job Posting Intelligence
+##### Apify CLI + `worldunboxer/rapid-linkedin-scraper` · Live Run Feb 2026
 
 ```mermaid
 flowchart LR
-    A[Greenhouse / Remotive API] --> B[Fetch All Eng Roles]
-    B --> C{NLP Parser}
-    C -->|Trust & Safety| D[High Intent Flag]
-    C -->|AI Safety Engineer| D
-    D --> E[Specter Contact Gen]
-    E --> F[CTO / VP-Eng Outreach]
+    A[Competitor Client Names] --> B[Apify CLI]
+    B -->|job_title: AI Safety| C[rapid-linkedin-scraper]
+    C --> D[Parse Job Listings]
+    D --> E{NLP: Trust & Safety / AI Safety?}
+    E -->|Match| F[Specter Contact Gen]
+    E -->|Skip| G[Discard]
+    F --> H[CTO / VP-Eng Outreach]
 ```
 <!-- .element: class="mermaid-scaled" -->
 
-**Trigger Logic:** A company posting an `AI Safety` role has:
-1. ✅ An **approved headcount budget** already <!-- .element: class="fragment" -->
-2. ✅ Recognized an **explicit operational vulnerability** <!-- .element: class="fragment" -->
-3. ✅ Set a 90-day hiring timeline we can **compress to an immediate B2B purchase** <!-- .element: class="fragment" -->
+**Live run:** `apify call worldunboxer/rapid-linkedin-scraper` → **22 jobs** from cleaned competitor-client input.
+- Safety keyword hits: **22/22**
+- Distinct company labels returned by actor: **1** (`LinkedIn`)
+
+**JSON output preview** (<span class="pill">artifacts/task3_signals/apify_linkedin_jobs.json</span>):
+<div style="max-height: 210px; overflow: auto; border: 1px solid #2f3542; border-radius: 8px; background: #0b0f14; padding: 10px;">
+<pre style="margin: 0; font-size: 0.46em; line-height: 1.35;"><code class="language-json">{
+  "job_title": "Sr. Trust and Safety Investigator",
+  "company_name": "LinkedIn",
+  "location": "Omaha, NE",
+  "time_posted": "1 week ago",
+  "job_url": "https://www.linkedin.com/jobs/view/4372943060",
+  "employment_type": "Full-time"
+}</code></pre>
+</div>
+
+<div class="callout text-left">
+  <strong>Trigger Logic — why this signal works:</strong>
+  <ul>
+    <li>Approved headcount budget already.</li>
+    <li>Recognized explicit operational vulnerability.</li>
+    <li>90-day hiring timeline → compress to immediate B2B purchase.</li>
+  </ul>
+</div>
+
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task3_signals/apify_linkedin_jobs.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full JSON — 22 AI/Trust/Safety roles from Apify</a>
 
 ====
 
 <!-- .slide: id="task3-s4" -->
-#### Signal 4: Incident / PR Event Monitoring (Cala AI)
+#### Signal 4: Incident / PR Event Monitoring
+##### Multi-Source Parallel Pipeline (Cala AI + Firecrawl + DDG + BS4)
 
 ```mermaid
-flowchart LR
-    A[Cala AI Knowledge Engine] --> B[Semantic Query]
-    B -->|Reddit /r/CharacterAI| C{Keyword Filter}
-    B -->|HackerNews /ask/show| C
-    C -->|jailbreak / filter / toxic| D[Brand Mentions]
-    D --> E[Event Summary Extract]
-    E --> F[Immediate Triggered Email]
+flowchart TB
+    subgraph Sources
+        C[Cala AI] -->|"AI chatbot incident"| M
+        C -->|"jailbreak production"| M
+        C -->|"prompt injection vulnerability"| M
+        F[Firecrawl] -->|Reddit /r/CharacterAI| M
+        F -->|Trustpilot competitor clients| M
+        D[DDG + BS4] -->|"[competitor] AI incident"| M
+    end
+    M[Merge & Dedupe] --> K{Keyword Filter}
+    K -->|jailbreak / filter / toxic| E[Event Timeline]
+    E --> X[Extract Company Names]
+    X --> O[Outbound Trigger Email]
 ```
 <!-- .element: class="mermaid-scaled" -->
 
-**Trigger Logic:** Cala detects complaint spikes *before* mainstream press. A live PR incident is a forcing function for rapid budget deployment — the Founder is actively putting out fires and receptive to immediate solutions.
+**Outcome:** `incidents_social` inserted **8 leads** from Reddit/HN + DDG/BS4 paths in <span class="pill">artifacts/leads.jsonl</span>.
+
+**JSON output preview** (<span class="pill">artifacts/leads.jsonl</span>, `signal=incidents_social`):
+<div style="max-height: 210px; overflow: auto; border: 1px solid #2f3542; border-radius: 8px; background: #0b0f14; padding: 10px;">
+<pre style="margin: 0; font-size: 0.46em; line-height: 1.35;"><code class="language-json">{
+  "id": "19b40a58-381e-4042-a56f-4c11d8d2b17f",
+  "company": "character.ai",
+  "signal": "incidents_social",
+  "confidence": 0.82,
+  "why_now": "Reddit incident mention (character.ai jailbreak): Ultimate Claude Code h4x0r - the four letter jailbreak you've been looking for.",
+  "evidence_urls": [
+    "https://www.reddit.com/r/ClaudeCode/comments/1r6xmhk/ultimate_claude_code_h4x0r_the_four_letter/"
+  ],
+  "created_at": "2026-02-22 21:48:51"
+}</code></pre>
+</div>
 
 ====
 
 <!-- .slide: id="task3-s5" -->
 #### Signal 5: HuggingFace Eval Traction
-##### Live API Query · Feb 2026 · Authenticated Request
+##### 6-Surface Sweep · Live API · Feb 2026
 
 ```mermaid
 flowchart LR
-    A[HF /api/datasets] --> B[Filter: tagged safety]
-    B --> C[Fetch Downloads + Likers]
-    C --> D{Liker Org Lookup}
-    D -->|Research Lab| E[Top-Funnel Signal]
-    D -->|AI Safety Company| F[High-Intent Lead]
+    A[Models] --> M[Merge]
+    B[Datasets] --> M
+    C[Spaces] --> M
+    D[Blog] --> M
+    E[Posts] --> M
+    F[Papers] --> M
+    M --> G[Profiles + Social Links]
+    G --> H[Specter Org Match]
+    H --> I[High-Intent Lead]
 ```
 <!-- .element: class="mermaid-scaled" -->
 
-**Live Data — `ai-safety-institute/AgentHarm`:**
+**Live Data — 6-surface sweep (`hf_universe_intel`):**
 
 | Metric | Value |
 |---|---:|
-| Downloads | **4,619** |
-| Likes | **45** |
-| Discussions | **8 active threads** |
+| Unique users discovered | **394** |
+| Profiles enriched | **158** |
+| Listing pages scanned | **6** (models, datasets, spaces, blog, posts, papers) |
+| Surface samples | **30 models / 30 datasets / 30 spaces** |
+| Specter-linked companies | **0** (specter check disabled in this live sweep) |
 
-**Sample Likers (35 of 45 publicly visible):**
+**JSON output preview** (<span class="pill">artifacts/task3_signals/hf_universe_intel.json</span>):
+<div style="max-height: 210px; overflow: auto; border: 1px solid #2f3542; border-radius: 8px; background: #0b0f14; padding: 10px;">
+<pre style="margin: 0; font-size: 0.46em; line-height: 1.35;"><code class="language-json">{
+  "generated_at": "2026-02-23T03:56:04.926587",
+  "summary": {
+    "models_sampled": 30,
+    "datasets_sampled": 30,
+    "spaces_sampled": 30,
+    "listing_pages_scanned": 6,
+    "unique_users_discovered": 394,
+    "profiles_enriched": 158
+  },
+  "sample_user": {
+    "username": "akhaliq",
+    "profile_url": "https://huggingface.co/akhaliq",
+    "source_count": 2,
+    "followers": 9185
+  }
+}</code></pre>
+</div>
 
-`davanstrien` · `andrewmao` · `AISecHub` · `shyamsn97` · `davidberenstein1957` · `farhan-ahmad` · `rufimelo` · `oneonlee`
-
-> Any company whose engineers appear in this liker list is actively doing R&D on safety evaluation. This is the highest-confidence signal in our pipeline.
+> Any company whose engineers appear in safety dataset liker lists is actively doing R&D on safety evaluation. This is the highest-confidence signal in our pipeline.
 
 ====
 
 <!-- .slide: id="task3-hn-people" -->
 #### HN Security People Graph (Live Crawl + User Deep Dive)
-##### `artifacts/task3_signals/hn_security_people.md` · Generated Feb 22, 2026
+##### <span class="pill">artifacts/task3_signals/hn_security_people.md</span>
 
 **Coverage from latest run:**
 - Pages scanned: **4**
@@ -403,28 +552,28 @@ flowchart LR
 
 <!-- .slide: id="task3-hf-people" -->
 #### HF Security Datasets → People → Social Links → Specter Match
-##### `artifacts/task3_signals/hf_security_people.md` · Generated Feb 22, 2026
+##### <span class="pill">artifacts/task3_signals/hf_security_people.md</span>
 
 **Coverage from latest run:**
 - Security datasets sampled: **40**
-- HF users profiled: **158**
-- Specter-linked companies: **30**
-- New signal leads inserted: **29**
+- HF users profiled: **140**
+- Specter-linked companies: **0**
+- New signal leads inserted: **0**
 
 | HF User | Datasets | Social Links Found | Specter Matches |
 |---|---:|---|---:|
-| `808cn163` | 1 | — | 9 |
-| `darknite` | 1 | [GitHub](https://github.com/git-khandelwal) | 6 |
-| `walker-luke` | 1 | [GitHub](https://github.com/walker-luke) | 4 |
-| `joylarkin` | 1 | [LinkedIn](https://www.linkedin.com/in/joylarkin) · [GitHub](https://github.com/joylarkin) · [X](https://twitter.com/joy) | 1 |
+| `mekhanique` | 13 | [GitHub](https://github.com/mekhanique) | 0 |
+| `FAU57` | 4 | [GitHub](https://github.com/Fau57) · [X](https://twitter.com/D3C3N7R41YF3) | 0 |
+| `lucianosb` | 3 | [LinkedIn](https://www.linkedin.com/in/lucianosb) · [GitHub](https://github.com/lucianosb) · [X](https://twitter.com/lucianosb) | 0 |
+| `finger8603` | 3 | — | 0 |
 
-> This layer gives us named operators already engaging with AI security datasets, plus their public social graph and company linkage potential in Specter.
+> This layer gives us named operators engaging with AI security datasets plus social graph handles. Specter matching was disabled in this run to prevent long remote DSN hangs.
 
 ----
 
 <!-- .slide: id="task4" -->
 ### Task 4: Psychotherapy Chatbot Safety Policies
-##### `artifacts/psychotherapy_policies.yaml` — 10 policies, CI-testable, severity-tagged
+##### <span class="pill">artifacts/psychotherapy_policies.yaml</span> — 10 policies, CI-testable, severity-tagged
 
 **User-Facing (5 constraints):**
 
@@ -472,11 +621,30 @@ flowchart LR
 
 > White Circle auto-generates a test suite from the YAML spec. Every policy is version-controlled and regression-tested on every deploy. **Policy drift is a source-code bug, not an ops problem.**
 
+====
+
+<!-- .slide: id="task4-rationale" -->
+#### Policy Rationale: Real-World Triggers & Regulatory Basis
+
+| Policy | Real-World Trigger | Regulatory Basis |
+|---|---|---|
+| **Self-Harm Escalation** | Character.AI lawsuits (2024–2025): minors harmed; Replika self-harm incidents | SAMHSA, 988 crisis line mandates; state digital safety laws |
+| **PII Redaction** | Health chatbot data breaches; therapy-app PII leakage | HIPAA (PHI), GDPR Art. 5(1)(f), CCPA |
+| **Medical Diagnosis Boundary** | AI chatbots giving diagnoses; liability in therapy apps | FDA guidance on AI/ML SaMD; state medical practice acts |
+| **Sexual Content Guardrail** | Replika ERP complaints; companion app abuse reports | Age-appropriate design codes; App Store / Play Store policies |
+| **Abuse De-escalation** | Users attacking chatbots; escalation to human abuse | Platform ToS; workplace safety standards for human handoff |
+| **No Prescription Advice** | Chatbots suggesting dosages; dangerous drug interactions | FDA drug labeling; DEA controlled-substance rules |
+| **Empathy Floor** | "That's irrational" responses; user distress amplifications | APA ethical guidelines; consumer protection (UX fairness) |
+| **Link Integrity** | Phishing via chatbot links; malicious resource referrals | FTC deceptive-practice; cybersecurity best practice |
+| **Anonymized Summaries** | Therapist notes with identifiers; clinician data exposure | HIPAA minimum necessary; GDPR data minimization |
+| **Crisis Refusal Override** | User refuses help while expressing self-harm intent | Duty-to-warn (Tarasoff); emergency-services protocols |
+<!-- .element: class="small-table" -->
+
 ----
 
 <!-- .slide: id="task5" -->
 ### Task 5: Pricing Strategy
-##### `artifacts/pricing_model.csv` — 4 tiers, effective rate + margin + competitor anchor
+##### <span class="pill">artifacts/pricing_model.csv</span> — 4 tiers, effective rate + margin + competitor anchor
 
 | Tier | Requests | Price | Effective / 1M | Gross Margin % | Competitive Anchor |
 |---|---:|---:|---:|---:|---|
@@ -487,51 +655,78 @@ flowchart LR
 
 ====
 
+<!-- .slide: id="task5-cala" -->
+#### Cala AI Pricing Research — Benchmark Anchors
+##### *Query: AI security & observability SaaS pricing · Feb 2026*
+
+**Competitor benchmarks (via [Cala AI](https://docs.cala.ai/)):**
+
+| Vendor | Model | Per-unit reference |
+|---|---|---|
+| **Datadog** | Consumption | RUM $0.15–0.80/1K sessions; Synthetic API $5/10K runs |
+| **Cloudflare WAF** | Plan-based | Pro $20/mo → Business $200/mo |
+| **Twilio** | Per-unit | SMS $0.0083/msg; volume discounts 150K+ |
+| **LaunchDarkly** | Per-seat | Starter $8.33/seat; Pro $16.67/seat |
+
+> White Circle’s request-based tiers align with observability vendors (Datadog, Helicone) and security motion (Lakera).
+
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task5_pricing/cala_pricing_research.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full research — Cala AI + cited sources</a>
+
+====
+
 <!-- .slide: id="task5-formula" -->
-#### Pricing Logic & Unit Economics
+#### Pricing Logic & Margins — Formal Derivation
 
-The pricing model follows a non-linear scaling curve to align with enterprise procurement while maintaining high margins:
+**Definition 1 (Pricing Function).** For volume $v$ (requests), tier $T$ with base fee $B_T$ and per-unit rate $r_T$:
 
-$$Price(v) = \text{BaseFee} + (v \times \text{TieredRate})$$
+$$
+\boxed{P(v) = B_T + (v \times r_T)}, \quad v \in [v_{T,\min}, v_{T,\max}]
+$$
 
-**Margin Calculation:**
-$$\text{Margin} = \frac{\text{Price} - (\text{Requests} \times \text{COGS})}{\text{Price}}$$
+**Definition 2 (Gross Margin).** With COGS *c* = 5 USD per 1M requests:
 
-*Assumed COGS: $5.00 per 1M requests (inference + edge overhead)*
+$$
+\text{Margin}_T = \frac{P - (v/10^6 \times c)}{P} \times 100\%
+$$
 
-```mermaid
-graph LR
-    A[Requests] --> B{Tier Match}
-    B -->| < 100k | C[Startup: $1490/M]
-    B -->| 100k - 1M | D[Growth: $899/M]
-    B -->| > 1M | E[Enterprise: $499/M]
-    C --> F[99.6% Margin]
-    D --> G[99.4% Margin]
-    E --> H[99.0% Margin]
-```
+<div class="callout text-left">
+  <strong>Numerical verification:</strong>
+</div>
+
+| Tier | $P$ | $v$ | COGS | $\text{Margin}$ |
+|---|---:|---:|---:|---:|
+| Startup | $149 | 100K | $0.50 | $(149-0.5)/149 = 99.66\%$ |
+| Growth | $899 | 1M | $5.00 | $(899-5)/899 = 99.44\%$ |
+| Enterprise | $4,990 | 10M | $50.00 | $(4990-50)/4990 = 99.00\%$ |
+
+<div class="callout text-left">
+  <strong>Proposition.</strong> Effective rate $\$/1\text{M}$ decreases monotonically: $1490 \to 899 \to 499$. Validated against Cala AI benchmarks (Datadog RUM, Twilio, LaunchDarkly).
+</div>
 
 ====
 
 <!-- .slide: id="task5-logic" -->
 #### The Math: Why Non-Linear Pricing Works
 
-**Validation from generated model (`pricing build`):**
+| Finding | Value |
+|---|---|
+| Effective rate progression | $1,490 → $899 → $499 per 1M |
+| Unit economics (COGS $5/1M) | 99.66% / 99.44% / 99.00% gross margin |
+| Competitive anchors | Braintrust (startup) · Helicone (growth) · Lakera (enterprise) |
 
-1. Effective rate decreases monotonically across paid tiers: **$1,490 → $899 → $499 per 1M**. <!-- .element: class="fragment" -->
-2. Unit economics remain high at all paid tiers using `$5 / 1M` inference cost assumption: **99.66% / 99.44% / 99.00% gross margin**. <!-- .element: class="fragment" -->
-3. Tier anchors map to live competitor positioning (Braintrust, Helicone, Lakera) so pricing narrative matches buyer context. <!-- .element: class="fragment" -->
+<div class="callout text-left">
+  <strong>Formula:</strong> margin = (price − (requests ÷ 1e6 × 5)) ÷ price × 100
+</div>
 
-> Formula used in artifact: `margin = (price - (requests / 1M * 5)) / price * 100`
-
-**Interpretation:** Growth retains high margin while Enterprise stays cheaper per 1M for high-volume traffic.
+<div class="callout text-left">
+  Growth retains high margin; Enterprise stays cheaper per 1M for high-volume traffic — validated against Cala AI competitor research.
+</div>
 
 ----
 
 <!-- .slide: id="task6" -->
 ### Task 6: Message Volume Estimates
-##### `artifacts/message_volume_estimates.md` — 3 independent heuristics
-
-*Cloudflare Intel verified `base44.com` on Feb 22, 2026 (`Artificial Intelligence` + `Technology`)*
+##### <span class="pill">artifacts/message_volume_estimates.md</span> — 3 independent heuristics
 
 | Platform | Domain | Low | Base | High | 95% CI | Tier Fit |
 |---|---|---:|---:|---:|---|---|
@@ -540,6 +735,23 @@ graph LR
 | **Base44** | `base44.com` | 4.22M | 4.78M | 5.30M | 4.22M - 5.30M | Growth |
 
 > All three figures are **per-platform per-month message totals**, derived from 3 independent heuristics triangulated together.
+
+====
+
+<!-- .slide: id="task6-vars" -->
+#### Variable Definitions (Before Calculation)
+
+| Proxy | Variable | Definition | Typical Value |
+|---|---|---|---|
+| **Traffic** | $V$ | Monthly visits | Platform-specific (e.g. 6M Lovable) |
+| | $c$ | Conversational share | 0.32 |
+| | $m$ | Messages per session | 6 |
+| **User** | $DAU$ | Daily active users | Platform-specific |
+| | $d$ | Active chat days per month | 20–30 |
+| | $n$ | Messages per active day | 5 |
+| **Engineering** | $R$ | Sustained RPS capacity | Platform-specific |
+| | $D$ | Duty cycle (fraction of time active) | 0.16 |
+| | $S$ | Seconds per month | 2.592M |
 
 ====
 
@@ -565,6 +777,28 @@ Method 3 — Engineering Proxy:
 
 ====
 
+<!-- .slide: id="task6-katex" -->
+#### KaTeX Calculation Walkthrough
+
+$$M_{\text{traffic}} = V \times c \times m \quad \text{ | } \quad M_{\text{user}} = DAU \times d \times n \quad \text{ | } \quad M_{\text{eng}} = R \times D \times S$$
+
+**Example — Lovable (Traffic Proxy):**
+$$M_{\text{traffic}} = 6\text{M} \times 0.32 \times 6 = 11.52\text{M}$$
+
+**Example — Lovable (User Proxy):**  
+$DAU = 153\text{K}$, $d = 20$, $n = 5$ → $M_{\text{user}} = 153{,}000 \times 20 \times 5 = 15.30\text{M}$
+
+**Example — Replit (Engineering Proxy):**  
+$R = 260$, $D = 0.16$, $S = 2.592\text{M}$ → $M_{\text{eng}} = 260 \times 0.16 \times 2{,}592{,}000 \approx 107.8\text{M}$
+
+| Platform | $V$ / $DAU$ / $R$ | Proxy Output |
+|---|---:|---:|
+| Lovable | 6M visits, 153K DAU | 11.52M, 15.30M |
+| Replit | 45M visits, ~825K DAU, 260 RPS | 86.4M, 82.5M, 107.8M |
+| Base44 | 2.2M visits, ~53K DAU | 4.22M, 5.30M |
+
+====
+
 <!-- .slide: id="task6-per-user" -->
 #### Per-User Per-Month Breakdown
 
@@ -574,72 +808,112 @@ Method 3 — Engineering Proxy:
 | **Replit** | 4000000-6000000 | 20-25 | Broad user base; only a subset uses AI intensively |
 | **Base44** | 20000-50000 | 90-130 | Early adopter-heavy user pool with high per-user usage |
 
+====
+
+<!-- .slide: id="task6-cala" -->
+#### Cala AI Proxy: Usage Statistics Triangulation
+##### *Query: Replit, Lovable, Cursor messages-per-user metrics · Feb 2026*
+
+**Cala-verified aggregates used for heuristic calibration:**
+
+| Platform | Cala-sourced metric | Use in our model |
+|---|---|---|
+| **Cursor** | 1M+ DAU, 1B+ lines/day, 1M+ QPS | Validates engineering proxy scale |
+| **Replit** | 30M+ MAU, 12.58M monthly visits | Anchors traffic proxy $V$ |
+| **Lovable** | 2.3M→8M users, 25.6M–39.3M visits | Anchors $V$ and DAU assumptions |
+| **Base44** | 250K→400K users, $1M ARR in 3 weeks, Wix $80M acquisition | Platform + analysis: vibe-coding scale & bootstrapped growth proxy |
+
+> We triangulate: traffic (visits × 0.32 × 6) + user (DAU × days × 5) + engineering (RPS × 0.16 × 2.592M). When all three align, CI narrows.
+
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/cala_usage_proxy.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Cala usage proxy artifact</a>
+
 ----
 
 <!-- .slide: id="task7" -->
 ### Task 7: Scalable Outbound Strategies
-##### Signal-Driven Outbound at Scale
+##### 1 Cold Email + 1 LinkedIn + Full Funnel Artifacts
 
 | Artifact | Count | Status |
 |---|---:|---|
-| `artifacts/leads.jsonl` | 143 leads | Valid JSONL parse |
-| `artifacts/task7_outbound/email_*_featured.txt` | 5 templates | Curated featured outbound set |
-| `artifacts/task7_outbound/linkedin_*_featured.txt` | 5 templates | Curated featured first-touch set |
-| `artifacts/task7_outbound/profile_enrichment.json` | 1 artifact | HF + Reddit profile enrichment snapshot |
+| <span class="pill">artifacts/leads.jsonl</span> | 143 leads | Valid JSONL parse |
+| <span class="pill">artifacts/task1_icp_profiles/ICP_targets_enriched.json</span> | 30 ICPs | Specter contacts + funding |
+| <span class="pill">artifacts/task7_outbound/</span> | 13 email + 13 LinkedIn v2 | OpenCode + Specter context generation |
+
+*(Press ↓ for concrete cold email, LinkedIn, and JSON previews)*
 
 ====
 
-<!-- .slide: id="task7-s1" -->
-#### Tactic 1: Trigger-Specific Email Generation
-##### Executed via `python -m src.cli outbound draft` + `bulk-v2`
+<!-- .slide: id="task7-cold-email" -->
+#### G1: Cold Email — Lakera Customer (Tome)
+##### Targeting <code>tome.com</code> · OpenCode output from full Specter context (`talentsignals` + `people_db.*`) + Lakera linkage evidence
 
-Every generated email now includes:
-1. `Trigger event` derived from the lead signal type. <!-- .element: class="fragment" -->
-2. `Evidence URL` tied to the lead's observed activity. <!-- .element: class="fragment" -->
-3. `White Circle value prop` mapped to that signal. <!-- .element: class="fragment" -->
-4. A concrete `CTA` for next-step benchmarking. <!-- .element: class="fragment" -->
+<div id="tome-contact-switcher" class="contact-switcher-sidebar">
+  <div class="folder-contacts"></div>
+  <div class="folder-body">
+    <div class="folder-email"></div>
+  </div>
+</div>
 
-> This removed stale lead IDs and regenerated outbound templates from live DB-backed leads only.
+*143 leads in <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">artifacts/leads.jsonl</a>*
+
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/tome_opencode_context.json" target="_blank" class="pill">tome_opencode_context.json</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/competitors.md" target="_blank" class="pill">competitors.md</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a>
 
 ====
 
-<!-- .slide: id="task7-s2" -->
-#### Tactic 2: Confidence-Gated Sequencing
-##### `confidence > 0.7` automatically receives V2 personalization
+<!-- .slide: id="task7-linkedin" -->
+#### G2: LinkedIn Message — AI Incident + Edge Telemetry Outbound
+##### Cala + Reddit/HF signal → Specter contact · person_db + OpenCode personalization
 
-```bash
-python -m src.cli outbound bulk-v2 --min-confidence 0.7 --out-dir artifacts
+<div id="incident-linkedin-switcher" class="contact-switcher-sidebar linkedin-slide">
+  <div class="folder-contacts"></div>
+  <div class="folder-body">
+    <div class="folder-email"></div>
+  </div>
+</div>
+
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/cala_ai_incidents_research.json" target="_blank" class="pill">cala_ai_incidents_research.json</a>
+
+====
+
+<!-- .slide: id="task7-artifacts" -->
+#### G3: Artifact Showcase — Signal → Specter → person_db → OpenCode → Outreach
+
+```mermaid
+flowchart LR
+    A[Incident / Signal] --> B[leads.jsonl]
+    B --> C[Specter + person_db]
+    C --> D[OpenCode]
+    D --> E[Email + LinkedIn]
 ```
 
-**Result from this run:**
-- 143 high-confidence leads detected in `artifacts/leads.jsonl` <!-- .element: class="fragment" -->
-- 143 corresponding `email_<lead_id>_v2.txt` drafts generated during QA pass <!-- .element: class="fragment" -->
-- Workspace retained a curated 5-email + 5-LinkedIn featured set in `artifacts/task7_outbound/` <!-- .element: class="fragment" -->
+| Stage | Artifact |
+|---|---|
+| Leads | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">leads.jsonl</a> (143) |
+| Contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
+| Tome (Lakera) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
+| Incident (people) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> (7) |
+| Raw outbound | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
+
+<code>outbound enrich-tome --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
 
 ----
 
-<!-- .slide: id="close" -->
-<div style="text-align: center; padding-top: 4vh;">
-
+<!-- .slide: id="close" class="text-left" -->
 ### Thank You.
 
-<br/>
-
-Everything here isn't just theory — **it is entirely powered by running code.**
-
-<br/>
+Everything here is **powered by running code** — Specter, person_db, OpenCode, Cala.
 
 | What's live | Evidence |
 |---|---|
-| 30 ICP profiles with Specter funding & investor data | `artifacts/ICP_targets_enriched.json` | <!-- .element: class="fragment" -->
-| 6-competitor intelligence matrix | `artifacts/task2_competitors/` | <!-- .element: class="fragment" -->
-| 5 automated signal detectors | `python -m src.cli signals run` | <!-- .element: class="fragment" -->
-| 10 CI-tested safety policies | `artifacts/psychotherapy_policies.yaml` | <!-- .element: class="fragment" -->
-| 4-tier pricing model | `artifacts/pricing_model.csv` | <!-- .element: class="fragment" -->
-| 3-heuristic volume estimates | `artifacts/message_volume_estimates.md` | <!-- .element: class="fragment" -->
-| Personalized outbound emails | `artifacts/task7_outbound/*_featured.txt` | <!-- .element: class="fragment" -->
+| 30 ICP profiles + Specter funding | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
+| 6-competitor matrix | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/" target="_blank" class="pill">task2_competitors/</a> |
+| 5 signal detectors | <code>python -m src.cli signals run</code> |
+| 10 safety policies | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/psychotherapy_policies.yaml" target="_blank" class="pill">psychotherapy_policies.yaml</a> |
+| 4-tier pricing | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/pricing_model.csv" target="_blank" class="pill">pricing_model.csv</a> |
+| **Tome cold email** (10 contacts, person_db + OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
+| **Incident LinkedIn** (7 people, Specter + person_job) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
+| 143 leads × email + LinkedIn (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
-<br/>
+<code>enrich-tome --use-opencode</code> · <code>enrich-incident-linkedin --people-only</code>
+
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/" style="font-size: 1.1em; color: #a8a8ff;">🔗 github.com/frankterpo/growth_hacker_wc_2026</a>
-
-</div>

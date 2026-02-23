@@ -1,0 +1,490 @@
+{
+  "generated_at": "2026-02-23T03:08:31.978029+00:00",
+  "method": "company_clients->clients + company_data products + company_logos + Cloudflare Intel + Firecrawl + DuckDuckGo",
+  "competitors": [
+    {
+      "use_case": "improve",
+      "competitor": "Braintrust",
+      "domain": "braintrust.dev",
+      "products": [
+        "Braintrust"
+      ],
+      "known_customers": [],
+      "source_methods": {
+        "specter": "public.companies + public.company_clients + public.clients_integration_companies",
+        "firecrawl": {
+          "status": "ok",
+          "url": "https://braintrust.dev/customers",
+          "detail": "markdown_chars=8086"
+        },
+        "ddg": {
+          "query": "site:braintrust.dev (customers OR case studies OR customer story)",
+          "top_url": "",
+          "result_count": 0
+        },
+        "cala": {
+          "status": "key_present_not_queried",
+          "note": "No direct Cala endpoint configured in this script runtime"
+        }
+      },
+      "differentiation": "White Circle includes runtime policy controls, whereas Braintrust centers on pre-production evaluation workflows.",
+      "logo_url": null,
+      "reported_customer_count": 0,
+      "top_customer_industries_specter": [],
+      "top_customer_categories_cf": []
+    },
+    {
+      "use_case": "observe",
+      "competitor": "Helicone",
+      "domain": "helicone.ai",
+      "products": [
+        "Helicone"
+      ],
+      "known_customers": [
+        "linkedin.com (linkedin.com)",
+        "15five.com (15five.com)",
+        "4degrees.ai (4degrees.ai)"
+      ],
+      "source_methods": {
+        "specter": "public.companies + public.company_clients + public.clients_integration_companies",
+        "firecrawl": {
+          "status": "ok",
+          "url": "https://helicone.ai/customers",
+          "detail": "markdown_chars=7142"
+        },
+        "ddg": {
+          "query": "site:helicone.ai (customers OR case studies OR customer story)",
+          "top_url": "",
+          "result_count": 0
+        },
+        "cala": {
+          "status": "key_present_not_queried",
+          "note": "No direct Cala endpoint configured in this script runtime"
+        }
+      },
+      "differentiation": "White Circle provides policy enforcement and incident prevention, while Helicone is primarily telemetry and cost observability.",
+      "logo_url": "https://specter-company-logo.s3.amazonaws.com/helicone.ai.jpeg",
+      "reported_customer_count": 60,
+      "top_customer_industries_specter": [
+        "Software",
+        "Finance",
+        "Information Technology"
+      ],
+      "top_customer_categories_cf": [
+        "Economy & Finance",
+        "Business & Economy",
+        "News & Media"
+      ]
+    },
+    {
+      "use_case": "protect",
+      "competitor": "Lakera",
+      "domain": "lakera.ai",
+      "products": [
+        "Lakera Guard",
+        "Lakera Red",
+        "Lakera Gandalf"
+      ],
+      "known_customers": [
+        "tome.com (tome.com)",
+        "verax.ai (verax.ai)",
+        "wexler.ai (wexler.ai)"
+      ],
+      "source_methods": {
+        "specter": "public.companies + public.company_clients + public.clients_integration_companies",
+        "firecrawl": {
+          "status": "ok",
+          "url": "https://lakera.ai/case-studies",
+          "detail": "markdown_chars=1427"
+        },
+        "ddg": {
+          "query": "site:lakera.ai (customers OR case studies OR customer story)",
+          "top_url": "",
+          "result_count": 0
+        },
+        "cala": {
+          "status": "key_present_not_queried",
+          "note": "No direct Cala endpoint configured in this script runtime"
+        }
+      },
+      "differentiation": "White Circle combines edge enforcement with continuous post-deployment tuning, while Lakera is primarily firewall-style blocking.",
+      "logo_url": "https://specter-company-logo.s3.amazonaws.com/lakera.ai.jpeg",
+      "reported_customer_count": 60,
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Finance"
+      ],
+      "top_customer_categories_cf": []
+    },
+    {
+      "use_case": "observe",
+      "competitor": "Langfuse",
+      "domain": "langfuse.com",
+      "products": [
+        "Langfuse"
+      ],
+      "known_customers": [
+        "claimsorted.com (claimsorted.com)",
+        "portialabs.ai (portialabs.ai)",
+        "symbe.co (symbe.co)"
+      ],
+      "source_methods": {
+        "specter": "public.companies + public.company_clients + public.clients_integration_companies",
+        "firecrawl": {
+          "status": "ok",
+          "url": "https://langfuse.com/customers",
+          "detail": "markdown_chars=7589"
+        },
+        "ddg": {
+          "query": "site:langfuse.com (customers OR case studies OR customer story)",
+          "top_url": "",
+          "result_count": 0
+        },
+        "cala": {
+          "status": "key_present_not_queried",
+          "note": "No direct Cala endpoint configured in this script runtime"
+        }
+      },
+      "differentiation": "White Circle blocks and remediates unsafe behavior at runtime; Langfuse focuses on traces and developer analytics.",
+      "logo_url": null,
+      "reported_customer_count": 60,
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Finance"
+      ],
+      "top_customer_categories_cf": []
+    },
+    {
+      "use_case": "improve",
+      "competitor": "Patronus AI",
+      "domain": "patronus.ai",
+      "products": [
+        "Patronus API",
+        "Percival",
+        "Lynx"
+      ],
+      "known_customers": [
+        "101.xyz (101.xyz)",
+        "15five.com (15five.com)",
+        "222.place (222.place)"
+      ],
+      "source_methods": {
+        "specter": "public.companies + public.company_clients + public.clients_integration_companies",
+        "firecrawl": {
+          "status": "ok",
+          "url": "https://patronus.ai/customers",
+          "detail": "markdown_chars=265"
+        },
+        "ddg": {
+          "query": "site:patronus.ai (customers OR case studies OR customer story)",
+          "top_url": "",
+          "result_count": 0
+        },
+        "cala": {
+          "status": "key_present_not_queried",
+          "note": "No direct Cala endpoint configured in this script runtime"
+        }
+      },
+      "differentiation": "White Circle unifies edge guardrails plus evaluators; Patronus AI is strongest in eval-focused quality scoring.",
+      "logo_url": null,
+      "reported_customer_count": 60,
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Data and Analytics"
+      ],
+      "top_customer_categories_cf": []
+    },
+    {
+      "use_case": "protect",
+      "competitor": "PromptArmor",
+      "domain": "promptarmor.com",
+      "products": [
+        "AI Risk Platform"
+      ],
+      "known_customers": [
+        "101.xyz (101.xyz)",
+        "15five.com (15five.com)",
+        "222.place (222.place)"
+      ],
+      "source_methods": {
+        "specter": "public.companies + public.company_clients + public.clients_integration_companies",
+        "firecrawl": {
+          "status": "ok",
+          "url": "https://promptarmor.com/customers",
+          "detail": "markdown_chars=1557"
+        },
+        "ddg": {
+          "query": "site:promptarmor.com (customers OR case studies OR customer story)",
+          "top_url": "",
+          "result_count": 0
+        },
+        "cala": {
+          "status": "key_present_not_queried",
+          "note": "No direct Cala endpoint configured in this script runtime"
+        }
+      },
+      "differentiation": "White Circle adds observability and policy QA workflows; PromptArmor is focused on prompt-injection hardening.",
+      "logo_url": null,
+      "reported_customer_count": 60,
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Data and Analytics"
+      ],
+      "top_customer_categories_cf": []
+    }
+  ],
+  "matrix_points": [
+    {
+      "product": "Braintrust",
+      "company": "Braintrust",
+      "domain": "braintrust.dev",
+      "use_case": "improve",
+      "x": 0.95,
+      "y": 0.05,
+      "logo_url": null
+    },
+    {
+      "product": "Helicone",
+      "company": "Helicone",
+      "domain": "helicone.ai",
+      "use_case": "observe",
+      "x": 0.95,
+      "y": 0.08,
+      "logo_url": "https://specter-company-logo.s3.amazonaws.com/helicone.ai.jpeg"
+    },
+    {
+      "product": "Lakera Guard",
+      "company": "Lakera",
+      "domain": "lakera.ai",
+      "use_case": "protect",
+      "x": 0.3,
+      "y": 0.64,
+      "logo_url": "https://specter-company-logo.s3.amazonaws.com/lakera.ai.jpeg"
+    },
+    {
+      "product": "Lakera Red",
+      "company": "Lakera",
+      "domain": "lakera.ai",
+      "use_case": "protect",
+      "x": 0.32,
+      "y": 0.62,
+      "logo_url": "https://specter-company-logo.s3.amazonaws.com/lakera.ai.jpeg"
+    },
+    {
+      "product": "Lakera Gandalf",
+      "company": "Lakera",
+      "domain": "lakera.ai",
+      "use_case": "protect",
+      "x": 0.34,
+      "y": 0.6,
+      "logo_url": "https://specter-company-logo.s3.amazonaws.com/lakera.ai.jpeg"
+    },
+    {
+      "product": "Langfuse",
+      "company": "Langfuse",
+      "domain": "langfuse.com",
+      "use_case": "observe",
+      "x": 0.88,
+      "y": 0.3,
+      "logo_url": null
+    },
+    {
+      "product": "Patronus API",
+      "company": "Patronus AI",
+      "domain": "patronus.ai",
+      "use_case": "improve",
+      "x": 0.82,
+      "y": 0.18,
+      "logo_url": null
+    },
+    {
+      "product": "Percival",
+      "company": "Patronus AI",
+      "domain": "patronus.ai",
+      "use_case": "improve",
+      "x": 0.84,
+      "y": 0.16,
+      "logo_url": null
+    },
+    {
+      "product": "Lynx",
+      "company": "Patronus AI",
+      "domain": "patronus.ai",
+      "use_case": "improve",
+      "x": 0.86,
+      "y": 0.14,
+      "logo_url": null
+    },
+    {
+      "product": "AI Risk Platform",
+      "company": "PromptArmor",
+      "domain": "promptarmor.com",
+      "use_case": "protect",
+      "x": 0.42,
+      "y": 0.8,
+      "logo_url": null
+    }
+  ],
+  "overlap_rows": [
+    {
+      "product": "Braintrust",
+      "company": "Braintrust",
+      "domain": "braintrust.dev",
+      "top_customer_industries_specter": [],
+      "top_customer_categories_cf": [],
+      "sample_customers": []
+    },
+    {
+      "product": "Helicone",
+      "company": "Helicone",
+      "domain": "helicone.ai",
+      "top_customer_industries_specter": [
+        "Software",
+        "Finance",
+        "Information Technology"
+      ],
+      "top_customer_categories_cf": [
+        "Economy & Finance",
+        "Business & Economy",
+        "News & Media"
+      ],
+      "sample_customers": [
+        "linkedin.com (linkedin.com)",
+        "15five.com (15five.com)",
+        "4degrees.ai (4degrees.ai)"
+      ]
+    },
+    {
+      "product": "Lakera Guard",
+      "company": "Lakera",
+      "domain": "lakera.ai",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Finance"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "tome.com (tome.com)",
+        "verax.ai (verax.ai)",
+        "wexler.ai (wexler.ai)"
+      ]
+    },
+    {
+      "product": "Lakera Red",
+      "company": "Lakera",
+      "domain": "lakera.ai",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Finance"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "tome.com (tome.com)",
+        "verax.ai (verax.ai)",
+        "wexler.ai (wexler.ai)"
+      ]
+    },
+    {
+      "product": "Lakera Gandalf",
+      "company": "Lakera",
+      "domain": "lakera.ai",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Finance"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "tome.com (tome.com)",
+        "verax.ai (verax.ai)",
+        "wexler.ai (wexler.ai)"
+      ]
+    },
+    {
+      "product": "Langfuse",
+      "company": "Langfuse",
+      "domain": "langfuse.com",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Finance"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "claimsorted.com (claimsorted.com)",
+        "portialabs.ai (portialabs.ai)",
+        "symbe.co (symbe.co)"
+      ]
+    },
+    {
+      "product": "Patronus API",
+      "company": "Patronus AI",
+      "domain": "patronus.ai",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Data and Analytics"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "101.xyz (101.xyz)",
+        "15five.com (15five.com)",
+        "222.place (222.place)"
+      ]
+    },
+    {
+      "product": "Percival",
+      "company": "Patronus AI",
+      "domain": "patronus.ai",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Data and Analytics"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "101.xyz (101.xyz)",
+        "15five.com (15five.com)",
+        "222.place (222.place)"
+      ]
+    },
+    {
+      "product": "Lynx",
+      "company": "Patronus AI",
+      "domain": "patronus.ai",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Data and Analytics"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "101.xyz (101.xyz)",
+        "15five.com (15five.com)",
+        "222.place (222.place)"
+      ]
+    },
+    {
+      "product": "AI Risk Platform",
+      "company": "PromptArmor",
+      "domain": "promptarmor.com",
+      "top_customer_industries_specter": [
+        "Information Technology",
+        "Software",
+        "Data and Analytics"
+      ],
+      "top_customer_categories_cf": [],
+      "sample_customers": [
+        "101.xyz (101.xyz)",
+        "15five.com (15five.com)",
+        "222.place (222.place)"
+      ]
+    }
+  ]
+}

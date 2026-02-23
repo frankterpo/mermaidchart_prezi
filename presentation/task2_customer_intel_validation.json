@@ -1,0 +1,2707 @@
+[
+  {
+    "competitor": "Helicone",
+    "customer_name": "linkedin.com",
+    "domain": "linkedin.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "15five.com",
+    "domain": "15five.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "4degrees.ai",
+    "domain": "4degrees.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "actualhq.com",
+    "domain": "actualhq.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "animahealth.com",
+    "domain": "animahealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "anthemis.com",
+    "domain": "anthemis.com",
+    "categories": [
+      "Economy & Finance",
+      "Business & Economy",
+      "News & Media",
+      "Entertainment"
+    ],
+    "success": true,
+    "status_code": 200,
+    "error": null
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "bananacapital.vc",
+    "domain": "bananacapital.vc",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "bold.health",
+    "domain": "bold.health",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "btv.vc",
+    "domain": "btv.vc",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "cerrion.com",
+    "domain": "cerrion.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "chaipredict.com",
+    "domain": "chaipredict.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "context.ai",
+    "domain": "context.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "craftventures.com",
+    "domain": "craftventures.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "eolasmedical.com",
+    "domain": "eolasmedical.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "ethermed.ai",
+    "domain": "ethermed.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "ever.green",
+    "domain": "ever.green",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "facet.ai",
+    "domain": "facet.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "felux.com",
+    "domain": "felux.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "foresightdata.com",
+    "domain": "foresightdata.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "glass.health",
+    "domain": "glass.health",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "gohealthhero.com",
+    "domain": "gohealthhero.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "golden.ventures",
+    "domain": "golden.ventures",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "grouporttherapy.com",
+    "domain": "grouporttherapy.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "junipersquare.com",
+    "domain": "junipersquare.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "kochind.com",
+    "domain": "kochind.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "legalkarma.io",
+    "domain": "legalkarma.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "limbic.ai",
+    "domain": "limbic.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "listen.co",
+    "domain": "listen.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "lu.ma",
+    "domain": "lu.ma",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "meetnirvana.com",
+    "domain": "meetnirvana.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "meruhealth.com",
+    "domain": "meruhealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "middesk.com",
+    "domain": "middesk.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "nachonacho.com",
+    "domain": "nachonacho.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "notion.vc",
+    "domain": "notion.vc",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "opal.so",
+    "domain": "opal.so",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "oursphere.org",
+    "domain": "oursphere.org",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "personal.ai",
+    "domain": "personal.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "radiantnuclear.com",
+    "domain": "radiantnuclear.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "rupahealth.com",
+    "domain": "rupahealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "sama.io",
+    "domain": "sama.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "sixfold.ai",
+    "domain": "sixfold.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "slow.co",
+    "domain": "slow.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "span.io",
+    "domain": "span.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "spritz.finance",
+    "domain": "spritz.finance",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "sunsethq.com",
+    "domain": "sunsethq.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "superpower.com",
+    "domain": "superpower.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "terralytiq.com",
+    "domain": "terralytiq.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "thatch.ai",
+    "domain": "thatch.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "trebellar.com",
+    "domain": "trebellar.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "twelvebelow.co",
+    "domain": "twelvebelow.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "unspun.io",
+    "domain": "unspun.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "vistra.com",
+    "domain": "vistra.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "wiseguru.in",
+    "domain": "wiseguru.in",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "101.xyz",
+    "domain": "101.xyz",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "11x.ai",
+    "domain": "11x.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "1sharpe.com",
+    "domain": "1sharpe.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "222.place",
+    "domain": "222.place",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "3box.io",
+    "domain": "3box.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "468cap.com",
+    "domain": "468cap.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Helicone",
+    "customer_name": "5mins.ai",
+    "domain": "5mins.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "tome.com",
+    "domain": "tome.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "verax.ai",
+    "domain": "verax.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "wexler.ai",
+    "domain": "wexler.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "11x.ai",
+    "domain": "11x.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "9am.health",
+    "domain": "9am.health",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "abstractops.com",
+    "domain": "abstractops.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "aim.vision",
+    "domain": "aim.vision",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "allyhealth.co.uk",
+    "domain": "allyhealth.co.uk",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "amazee.io",
+    "domain": "amazee.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "ameba.ai",
+    "domain": "ameba.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "animahealth.com",
+    "domain": "animahealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "api.video",
+    "domain": "api.video",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "atla-ai.com",
+    "domain": "atla-ai.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "avian.io",
+    "domain": "avian.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "banked.com",
+    "domain": "banked.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "blackshark.ai",
+    "domain": "blackshark.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "bland.ai",
+    "domain": "bland.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "buildtrayd.com",
+    "domain": "buildtrayd.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "cartesia.ai",
+    "domain": "cartesia.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "catch.co",
+    "domain": "catch.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "chaipredict.com",
+    "domain": "chaipredict.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "claimsorted.com",
+    "domain": "claimsorted.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "cofide.io",
+    "domain": "cofide.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "cogna.co",
+    "domain": "cogna.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "confident-ai.com",
+    "domain": "confident-ai.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "constrafor.com",
+    "domain": "constrafor.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "controlmonkey.io",
+    "domain": "controlmonkey.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "cside.dev",
+    "domain": "cside.dev",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "data.world",
+    "domain": "data.world",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "defer.run",
+    "domain": "defer.run",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "digger.dev",
+    "domain": "digger.dev",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "diliai.com",
+    "domain": "diliai.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "easyeat.ai",
+    "domain": "easyeat.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "electronx.com",
+    "domain": "electronx.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "embedd.it",
+    "domain": "embedd.it",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "every.io",
+    "domain": "every.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "finchat.io",
+    "domain": "finchat.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "fireworks.ai",
+    "domain": "fireworks.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "flowiseai.com",
+    "domain": "flowiseai.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "flychain.us",
+    "domain": "flychain.us",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "gesund.ai",
+    "domain": "gesund.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "getpaintbrush.com",
+    "domain": "getpaintbrush.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "glaive.ai",
+    "domain": "glaive.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "goyaso.com",
+    "domain": "goyaso.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "gradient-labs.ai",
+    "domain": "gradient-labs.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "hanomi.ai",
+    "domain": "hanomi.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "hi.health",
+    "domain": "hi.health",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "hona.ai",
+    "domain": "hona.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "humaans.io",
+    "domain": "humaans.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "include.ai",
+    "domain": "include.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "jitty.com",
+    "domain": "jitty.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "junipersquare.com",
+    "domain": "junipersquare.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "kapa.ai",
+    "domain": "kapa.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "kili.so",
+    "domain": "kili.so",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "knowde.com",
+    "domain": "knowde.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "kosli.com",
+    "domain": "kosli.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "landeed.com",
+    "domain": "landeed.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "ledge.co",
+    "domain": "ledge.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "linkedin.com",
+    "domain": "linkedin.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Lakera",
+    "customer_name": "loyee.io",
+    "domain": "loyee.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "claimsorted.com",
+    "domain": "claimsorted.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "portialabs.ai",
+    "domain": "portialabs.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "symbe.co",
+    "domain": "symbe.co",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "tracebit.com",
+    "domain": "tracebit.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "verax.ai",
+    "domain": "verax.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "wexler.ai",
+    "domain": "wexler.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "51tocarbonzero.com",
+    "domain": "51tocarbonzero.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "adjoint.io",
+    "domain": "adjoint.io",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "akirolabs.com",
+    "domain": "akirolabs.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "alinia.ai",
+    "domain": "alinia.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "alkymi.io",
+    "domain": "alkymi.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "alloy.capital",
+    "domain": "alloy.capital",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "alphadoc.io",
+    "domain": "alphadoc.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "appcharge.com",
+    "domain": "appcharge.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "approvalmax.com",
+    "domain": "approvalmax.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "arcube.org",
+    "domain": "arcube.org",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "argyle.com",
+    "domain": "argyle.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "asklio.ai",
+    "domain": "asklio.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "atla-ai.com",
+    "domain": "atla-ai.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "aurelia.com",
+    "domain": "aurelia.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "aveni.ai",
+    "domain": "aveni.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "banked.com",
+    "domain": "banked.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "bearer.sh",
+    "domain": "bearer.sh",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "belvo.com",
+    "domain": "belvo.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "bfore.ai",
+    "domain": "bfore.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "bitskout.com",
+    "domain": "bitskout.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "bluefishai.com",
+    "domain": "bluefishai.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "breyta.io",
+    "domain": "breyta.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "builtai.co",
+    "domain": "builtai.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "capsa.ai",
+    "domain": "capsa.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "cascading.ai",
+    "domain": "cascading.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "causalens.com",
+    "domain": "causalens.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "celo.org",
+    "domain": "celo.org",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "certivity.io",
+    "domain": "certivity.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "ceto.ai",
+    "domain": "ceto.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "chaipredict.com",
+    "domain": "chaipredict.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "chargezoom.com",
+    "domain": "chargezoom.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "charter.space",
+    "domain": "charter.space",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "checkstep.com",
+    "domain": "checkstep.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "clearly.earth",
+    "domain": "clearly.earth",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "climate-x.com",
+    "domain": "climate-x.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "cogna.co",
+    "domain": "cogna.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "coinfirm.com",
+    "domain": "coinfirm.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "connect.earth",
+    "domain": "connect.earth",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "context.ai",
+    "domain": "context.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "contilio.com",
+    "domain": "contilio.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "coterieinsurance.com",
+    "domain": "coterieinsurance.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "cside.dev",
+    "domain": "cside.dev",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "cybera.io",
+    "domain": "cybera.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "cygnetise.com",
+    "domain": "cygnetise.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "desia.ai",
+    "domain": "desia.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "digger.dev",
+    "domain": "digger.dev",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "digitail.io",
+    "domain": "digitail.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "diliai.com",
+    "domain": "diliai.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "dotfile.com",
+    "domain": "dotfile.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "dottxt.co",
+    "domain": "dottxt.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "dust.tt",
+    "domain": "dust.tt",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "dustidentity.com",
+    "domain": "dustidentity.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "easop.com",
+    "domain": "easop.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Langfuse",
+    "customer_name": "edgee.cloud",
+    "domain": "edgee.cloud",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "101.xyz",
+    "domain": "101.xyz",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "15five.com",
+    "domain": "15five.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "222.place",
+    "domain": "222.place",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "3box.io",
+    "domain": "3box.io",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "4degrees.ai",
+    "domain": "4degrees.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "aavia.io",
+    "domain": "aavia.io",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "aceup.com",
+    "domain": "aceup.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "actualhq.com",
+    "domain": "actualhq.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "adagyrobotics.com",
+    "domain": "adagyrobotics.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "additive.ai",
+    "domain": "additive.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "adversa.ai",
+    "domain": "adversa.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "aerial.is",
+    "domain": "aerial.is",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "airhouse.io",
+    "domain": "airhouse.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "alinea-invest.com",
+    "domain": "alinea-invest.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "allspice.io",
+    "domain": "allspice.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "anote.ai",
+    "domain": "anote.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "asknickels.com",
+    "domain": "asknickels.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "astrus.ai",
+    "domain": "astrus.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "atmo.ai",
+    "domain": "atmo.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "atopile.io",
+    "domain": "atopile.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "attunement.ai",
+    "domain": "attunement.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "axlehealth.com",
+    "domain": "axlehealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "batonmarket.com",
+    "domain": "batonmarket.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "begin.com",
+    "domain": "begin.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "blockdaemon.com",
+    "domain": "blockdaemon.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "blueonionlabs.com",
+    "domain": "blueonionlabs.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "boardy.ai",
+    "domain": "boardy.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "bold.health",
+    "domain": "bold.health",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "bolster.com",
+    "domain": "bolster.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "bolt.io",
+    "domain": "bolt.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "brale.xyz",
+    "domain": "brale.xyz",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "brand.ai",
+    "domain": "brand.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "breaker.audio",
+    "domain": "breaker.audio",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "brevy.com",
+    "domain": "brevy.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "brighthire.ai",
+    "domain": "brighthire.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "bruinhealth.com",
+    "domain": "bruinhealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "builtfirst.com",
+    "domain": "builtfirst.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "bumblebeespaces.com",
+    "domain": "bumblebeespaces.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "ca.la",
+    "domain": "ca.la",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "carbon.ai",
+    "domain": "carbon.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "cerrion.com",
+    "domain": "cerrion.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "charthop.com",
+    "domain": "charthop.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "chptr.com",
+    "domain": "chptr.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "chums.co",
+    "domain": "chums.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "clay.earth",
+    "domain": "clay.earth",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "coactive.ai",
+    "domain": "coactive.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "cointracker.io",
+    "domain": "cointracker.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "colabra.app",
+    "domain": "colabra.app",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "commonsclinic.com",
+    "domain": "commonsclinic.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "compose.ai",
+    "domain": "compose.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "compt.io",
+    "domain": "compt.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "consensus.app",
+    "domain": "consensus.app",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "continuum.xyz",
+    "domain": "continuum.xyz",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "coop.farm",
+    "domain": "coop.farm",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "cosmicrobotics.com",
+    "domain": "cosmicrobotics.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "countable.com",
+    "domain": "countable.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "courtyard.io",
+    "domain": "courtyard.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "cove.ai",
+    "domain": "cove.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "craft.co",
+    "domain": "craft.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "Patronus AI",
+    "customer_name": "craftventures.com",
+    "domain": "craftventures.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "101.xyz",
+    "domain": "101.xyz",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "15five.com",
+    "domain": "15five.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "222.place",
+    "domain": "222.place",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "3box.io",
+    "domain": "3box.io",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "4degrees.ai",
+    "domain": "4degrees.ai",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "aavia.io",
+    "domain": "aavia.io",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "actualhq.com",
+    "domain": "actualhq.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "adagyrobotics.com",
+    "domain": "adagyrobotics.com",
+    "categories": [],
+    "success": false,
+    "status_code": 403,
+    "error": "[{'code': 10403, 'message': 'intel.api_domain_limit exceeded'}]"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "additive.ai",
+    "domain": "additive.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "adversa.ai",
+    "domain": "adversa.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "aerial.is",
+    "domain": "aerial.is",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "airhouse.io",
+    "domain": "airhouse.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "alinea-invest.com",
+    "domain": "alinea-invest.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "allspice.io",
+    "domain": "allspice.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "anote.ai",
+    "domain": "anote.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "asknickels.com",
+    "domain": "asknickels.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "astrus.ai",
+    "domain": "astrus.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "atmo.ai",
+    "domain": "atmo.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "atopile.io",
+    "domain": "atopile.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "attunement.ai",
+    "domain": "attunement.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "axlehealth.com",
+    "domain": "axlehealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "batonmarket.com",
+    "domain": "batonmarket.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "begin.com",
+    "domain": "begin.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "blockdaemon.com",
+    "domain": "blockdaemon.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "blueonionlabs.com",
+    "domain": "blueonionlabs.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "boardy.ai",
+    "domain": "boardy.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "bold.health",
+    "domain": "bold.health",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "bolster.com",
+    "domain": "bolster.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "bolt.io",
+    "domain": "bolt.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "brale.xyz",
+    "domain": "brale.xyz",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "brand.ai",
+    "domain": "brand.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "breaker.audio",
+    "domain": "breaker.audio",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "brevy.com",
+    "domain": "brevy.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "brighthire.ai",
+    "domain": "brighthire.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "bruinhealth.com",
+    "domain": "bruinhealth.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "builtfirst.com",
+    "domain": "builtfirst.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "bumblebeespaces.com",
+    "domain": "bumblebeespaces.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "ca.la",
+    "domain": "ca.la",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "carbon.ai",
+    "domain": "carbon.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "cerrion.com",
+    "domain": "cerrion.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "charthop.com",
+    "domain": "charthop.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "chptr.com",
+    "domain": "chptr.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "chums.co",
+    "domain": "chums.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "clay.earth",
+    "domain": "clay.earth",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "coactive.ai",
+    "domain": "coactive.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "cointracker.io",
+    "domain": "cointracker.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "colabra.app",
+    "domain": "colabra.app",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "commonsclinic.com",
+    "domain": "commonsclinic.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "compose.ai",
+    "domain": "compose.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "compt.io",
+    "domain": "compt.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "consensus.app",
+    "domain": "consensus.app",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "continuum.xyz",
+    "domain": "continuum.xyz",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "coop.farm",
+    "domain": "coop.farm",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "cosmicrobotics.com",
+    "domain": "cosmicrobotics.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "countable.com",
+    "domain": "countable.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "courtyard.io",
+    "domain": "courtyard.io",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "cove.ai",
+    "domain": "cove.ai",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "craft.co",
+    "domain": "craft.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "craftventures.com",
+    "domain": "craftventures.com",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  },
+  {
+    "competitor": "PromptArmor",
+    "customer_name": "crater.co",
+    "domain": "crater.co",
+    "categories": [],
+    "success": false,
+    "status_code": null,
+    "error": "skipped_domain_budget"
+  }
+]

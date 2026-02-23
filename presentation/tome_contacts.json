@@ -1,0 +1,1221 @@
+{
+  "company": "Tome",
+  "domain": "tome.com",
+  "source": "Specter talentsignals + OpenCode",
+  "generated_at": "2026-02-23T12:04:39.620273",
+  "contacts": [
+    {
+      "role": "team",
+      "label": "Quinn Dombrowski, Head of Community",
+      "greeting": "Hi Quinn,",
+      "email_body": "Subject: Quick question about Tome's AI security stack\n\nHi Quinn,\n\nI noticed Tome is connected to several AI infrastructure tools like Langfuse, Lakera AI, and Helicone through your Affinity and Attio integrations.\n\nGiven how fast the AI security space is moving, I'm curious whether you're thinking about adding a runtime protection layer to your stack \u2014 specifically something that can enforce prompt and output controls at the edge (sub-200ms), auto-patch discovered vulnerabilities, and provide audit trails for compliance.\n\nWould a 15-minute chat make sense to explore how White Circle could complement what you're already building?\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Quinn \u2014 noticed Tome's connected to tools like Langfuse, Lakera AI, and Helicone through Affinity and Attio. With AI security moving fast, curious whether you're exploring runtime protection layers \u2014 edge enforcement under 200ms, auto-patching, and compliance audit trails. Would love to chat if that fits your roadmap.",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Quinn Dombrowski",
+        "position": "Head of Community",
+        "seniority": "Mid-Level",
+        "linkedin": ""
+      },
+      "specter_profile_full": {
+        "Name": "Quinn Dombrowski",
+        "New Position": "Head of Community",
+        "seniority": "Mid-Level",
+        "LinkedIn - URL (Talent)": ""
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "team",
+      "label": "Lianfeng Gu, VP Engineering",
+      "greeting": "Hi Lianfeng,",
+      "email_body": "Subject: Quick question about your AI infrastructure at Tome\n\nHi Lianfeng,\n\nI noticed Tome's been building out its AI stack with tools like Langfuse, Helicone, and Lakera AI for observability and security.\n\nWe're working with engineering teams at AI-native companies on a common challenge: balancing fast iteration with runtime guardrails. White Circle provides sub-200ms policy enforcement at the edge, auto-patching for discovered vulnerabilities, and audit trails for compliance.\n\nCurious if runtime AI safety is something you're thinking about as you scale?\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Lianfeng - noticed Tome's AI stack includes Langfuse, Helicone, and Lakera. Runtime guardrails become a bigger challenge as you scale. We help AI engineering teams enforce policies in <200ms with auto-patching and compliance audit trails. Would love to share what we're seeing across similar companies.",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Lianfeng Gu",
+        "position": "VP Engineering",
+        "seniority": "Director",
+        "linkedin": ""
+      },
+      "specter_profile_full": {
+        "Name": "Lianfeng Gu",
+        "New Position": "VP Engineering",
+        "seniority": "Director",
+        "LinkedIn - URL (Talent)": ""
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "cto",
+      "label": "Alexander Vladimirov, Head of Engineering",
+      "greeting": "Hi Alexander,",
+      "email_body": "Subject: Quick question about your AI infrastructure at Tome\n\nHi Alexander,\n\nI noticed Tome has integrations with tools like Helicone, Lakera AI, Langfuse, and Patronus AI \u2014 you're clearly investing heavily in your AI stack.\n\nWith that setup, I'm guessing you're dealing with the challenge of securing prompts and outputs at runtime while keeping latency low. That's where White Circle comes in: we provide sub-200ms edge policy enforcement, auto-patching for vulnerabilities, and audit trails for compliance.\n\nCurious \u2014 are you evaluating options for AI security and observability right now?\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Alexander \u2014 Tome's integration with tools like Helicone, Lakera AI, and Langfuse shows you're serious about building a robust AI infrastructure. With that stack, runtime security and low-latency controls likely become priorities fast.\n\nWe help engineering teams enforce prompt and output policies at the edge in under 200ms, with auto-patching and compliance audit trails. Would love to share how we fit into the AI stack you're building.\n\nBest,\nWhite Circle GTM",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Alexander Vladimirov",
+        "position": "Head of Engineering",
+        "seniority": "Director",
+        "linkedin": "https://www.linkedin.com/in/alexandervladimirov"
+      },
+      "specter_profile_full": {
+        "Name": "Alexander Vladimirov",
+        "New Position": "Head of Engineering",
+        "seniority": "Director",
+        "LinkedIn - URL (Talent)": "https://www.linkedin.com/in/alexandervladimirov"
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "cpo",
+      "label": "Henri Liriani, CPO",
+      "greeting": "Hi Henri,",
+      "email_body": "Subject: Quick question about your AI infrastructure stack\n\nHi Henri,\n\nI noticed Tome uses several AI tooling integrations (Helicone, Lakera AI, Langfuse, Patronus AI, PromptArmor) across Affinity and Attio.\n\nWe're White Circle, and we focus on three things that might complement what you're building:\n- Sub-200ms edge policy enforcement for prompt and output controls\n- Auto-patching layer to close discovered vulnerabilities quickly\n- Runtime observability + audit trails for compliance evidence\n\nCurious if you're evaluating or already handling these dimensions in your AI stack? Would be happy to share what we're seeing from other AI companies tackling similar challenges.\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Henri - noticed Tome is running integrations with several AI tooling providers (Helicone, Lakera AI, Langfuse, etc.). We're building White Circle - focused on edge policy enforcement, auto-patching for AI vulnerabilities, and runtime observability for compliance.\n\nWould be great to share what we're seeing work across AI companies building in this space. Let me know if you'd find that useful.",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Henri Liriani",
+        "position": "CPO",
+        "seniority": "Executive",
+        "linkedin": "https://www.linkedin.com/in/henriliriani"
+      },
+      "specter_profile_full": {
+        "Name": "Henri Liriani",
+        "New Position": "CPO",
+        "seniority": "Executive",
+        "LinkedIn - URL (Talent)": "https://www.linkedin.com/in/henriliriani"
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "ceo",
+      "label": "Keith Peiris, CEO",
+      "greeting": "Hi Keith,",
+      "email_body": "Subject: Quick question about your AI infrastructure at Tome\n\nHi Keith,\n\nI noticed Tome has built an impressive AI stack, with integrations across observability and security tools like Langfuse, Helicone, Lakera AI, and Patronus AI.\n\nGiven how fast the LLM tooling space is moving, I wanted to flag White Circle as a potential addition to your infrastructure. We offer sub-200ms edge policy enforcement for prompt and output controls, auto-patching for discovered vulnerabilities, and runtime observability with audit trails for compliance.\n\nWould love to briefly share what we're building and see if there's a fit with where Tome is headed.\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Keith - saw Tome's stack includes tools like Langfuse, Helicone, and Lakera AI. Impressive setup for an AI-first company.\n\nWhite Circle helps companies like yours with fast edge policy enforcement (sub-200ms), auto-patching vulnerabilities, and compliance-ready observability.\n\nWould be great to chat about what you're building and see if we can help. Happy to jump on a quick call.\n\nBest,\nWhite Circle GTM",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Keith Peiris",
+        "position": "CEO",
+        "seniority": "Executive",
+        "linkedin": "https://www.linkedin.com/in/keithpeiris"
+      },
+      "specter_profile_full": {
+        "Name": "Keith Peiris",
+        "New Position": "CEO",
+        "seniority": "Executive",
+        "LinkedIn - URL (Talent)": "https://www.linkedin.com/in/keithpeiris"
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "cpo",
+      "label": "Billy French, Tome: Head of Product Design",
+      "greeting": "Hi Billy,",
+      "email_body": "Subject: Tome + White Circle (Lakera stack check)\n\nHi Billy,\n\nWe're reaching out because Specter client-link data shows Tome connected to Lakera's stack.\n\nWhite Circle is complementary: edge enforcement under 200ms, auto-patching for emerging vulnerabilities, and audit-ready runtime traces.\n\nIf helpful, we can run a short gap check against Tome's current posture and send concrete fix opportunities.\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Billy \u2014 we saw Tome linked to Lakera in Specter client data. We help teams add sub-200ms edge controls + auto-patching on top of existing guardrails. Open to a quick gap-check exchange?",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": false,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Billy French",
+        "position": "Tome: Head of Product Design",
+        "seniority": "Mid-Level",
+        "linkedin": "https://www.linkedin.com/in/billy-french-7a883a22"
+      },
+      "specter_profile_full": {
+        "id": "7ce31877-f179-468c-a719-2b3b9793a762",
+        "Signal Date": "2023-03-10",
+        "Name": "Billy French",
+        "Profile Picture": "https://specter-profiles.s3.amazonaws.com/64019a896e5ed0967200cc06.jpeg",
+        "Location": "Durham, North Carolina, United States, United States",
+        "Region": "United States",
+        "Signal Score": 6,
+        "Signal Type": "New Role",
+        "Signal Status": "Live",
+        "Out of Stealth Advantage": null,
+        "Talent Latest Signal": true,
+        "Serial Founder": "No",
+        "Years of Experience": "11 to 20 years",
+        "LinkedIn - URL (Talent)": "https://www.linkedin.com/in/billy-french-7a883a22",
+        "Twitter - URL (Talent)": null,
+        "Past Position": "Acre: Lead Product Designer; Alto Pharmacy: Sr. Product Designer; Pendo.io: Lead Product Designer; Pendo.io: Sr. Product Designer; Viget: Senior Product Designer; Saforian: Designer",
+        "Past Company Website": "http://acrehomes.com",
+        "New Position": "Tome: Head of Product Design",
+        "New Company Website": "http://tome.com",
+        "Department": "Product & Research",
+        "New Company Tagline": "Venture Deals Simplified. VCs, Angels and Founders: You make the agreement. AI handles the fine print.",
+        "Industry": "Software Development",
+        "Founded Date": null,
+        "Tags": "venture capital, artificial intelligence, machine learning, legal tech, investing, SaaS, deeptech",
+        "LinkedIn - URL": "https://www.linkedin.com/company/usetome",
+        "Announcement Delay (Months)": 0,
+        "Education": "Savannah College of Art and Design; Graphic Design",
+        "Education Date": "2009 - 2011",
+        "Past Education": "SUNY Oneonta; Computer Art",
+        "Past Education Date": "2007 - 2009",
+        "Languages": null,
+        "Twitter - Followers": null,
+        "Twitter - F/F Ratio": null,
+        "Industry OG": "Finance; Information Technology; Lending and Investments; Software",
+        "seniority": "Mid-Level",
+        "New Company Domain": "tome.com",
+        "Past Company Domain": "acrehomes.com",
+        "linkedin_num_id": 79706864,
+        "person_id": 31581,
+        "signal_source": "people_db_positions",
+        "past_position_job_order": 9,
+        "past_position_linkedin_company_id": "acrehomes2021",
+        "past_position_company_name": "Acre",
+        "past_position_title": "Lead Product Designer",
+        "new_position_job_order": 10,
+        "new_position_linkedin_company_id": "usetome",
+        "new_position_company_name": "Tome",
+        "new_position_title": "Head of Product Design",
+        "new_position_description": null
+      },
+      "person_db_profile": {
+        "person": {
+          "person_id": 31581,
+          "specter_person_id": "per_4529864dec4d30ad070ced39",
+          "linkedin_num_id": 79706864,
+          "linkedin_id": "billyffrench",
+          "urn": "ACoAAATAOvABzukGzAcYnoWVbw-8SlpJE0vPKEQ",
+          "first_name": "Billy",
+          "last_name": "French",
+          "full_name": "Billy French",
+          "linkedin_url": "https://www.linkedin.com/in/billyffrench",
+          "github_url": null,
+          "twitter_url": null,
+          "about": "www.billyfrench.com\n\nA versatile designer helping businesses succeed through thoughtful user experience, research, visual design and product strategy.\n",
+          "headline": "Head of Design @ 24andUp",
+          "city": "Durham, North Carolina",
+          "country": "United States",
+          "email": null,
+          "followers_count": 956,
+          "connections_count": 937,
+          "profile_image_url": "https://peopledb-public.s3.eu-west-2.amazonaws.com/assets/profile-pictures/per_4529864dec4d30ad070ced39.jpg",
+          "industry": null,
+          "is_hiring": null,
+          "is_creator": null,
+          "is_open_to_work": null,
+          "created_at": "2024-10-01T14:04:50.368937+00:00",
+          "updated_at": "2025-01-18T05:13:06.303868+00:00",
+          "cb_id": null,
+          "cb_url": null
+        },
+        "person_data": {
+          "person_id": 31581,
+          "linkedin_num_id": 79706864,
+          "linkedin_id": "billyffrench",
+          "urn": "ACoAAATAOvABzukGzAcYnoWVbw-8SlpJE0vPKEQ",
+          "first_name": "Billy",
+          "last_name": "French",
+          "full_name": "Billy French",
+          "linkedin_url": "https://www.linkedin.com/in/billyffrench",
+          "twitter_url": null,
+          "about": "www.billyfrench.com\n\nA versatile designer helping businesses succeed through thoughtful user experience, research, visual design and product strategy.\n",
+          "headline": "Head of Design @ 24andUp",
+          "email": null,
+          "followers_count": 956,
+          "connections_count": 937,
+          "profile_image_url": "https://peopledb-public.s3.eu-west-2.amazonaws.com/assets/profile-pictures/per_4529864dec4d30ad070ced39.jpg",
+          "is_hiring": null,
+          "is_creator": null,
+          "is_open_to_work": null,
+          "created_at": "2024-10-01T14:04:50.368937+00:00",
+          "updated_at": "2025-01-18T05:13:06.303868+00:00",
+          "specter_person_id": "per_4529864dec4d30ad070ced39",
+          "rank": 686684,
+          "languages": null,
+          "skills": [
+            {
+              "name": "Web Design",
+              "endorsements_count": 24,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Graphic Design",
+              "endorsements_count": 22,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Art Direction",
+              "endorsements_count": 21,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Illustrator",
+              "endorsements_count": 18,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Photoshop",
+              "endorsements_count": 15,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Typography",
+              "endorsements_count": 12,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Logo Design",
+              "endorsements_count": 9,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Posters",
+              "endorsements_count": 7,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Creative Direction",
+              "endorsements_count": 6,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "InDesign",
+              "endorsements_count": 6,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Copywriting",
+              "endorsements_count": 5,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Branding & Identity",
+              "endorsements_count": 4,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Illustration",
+              "endorsements_count": 4,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "User Experience",
+              "endorsements_count": 4,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Adobe Creative Suite",
+              "endorsements_count": 3,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Interaction Design",
+              "endorsements_count": 3,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Adobe Illustrator",
+              "endorsements_count": 2,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "User Interface Design",
+              "endorsements_count": 2,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Best slack avatar in America",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Consumer Products",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Creative Design",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Design Leadership",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Design Strategy",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Design Systems",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Experience Design",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "Product Design",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "UX Research",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "User Experience (UX)",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "User Experience Testing",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            },
+            {
+              "name": "User Journeys",
+              "endorsements_count": null,
+              "passed_skill_assessment": false
+            }
+          ],
+          "highlights": [
+            "major_tech_experience",
+            "prior_vc_backed_experience"
+          ],
+          "education_level": "Bachelor's Degree",
+          "github_url": null,
+          "cb_url": null,
+          "seniority": "Executive Level",
+          "has_current_position": true,
+          "highlights_count": 2,
+          "role": "Operator",
+          "location": "Durham, North Carolina, United States, North America",
+          "region": "North America",
+          "city_id": 299489521249026181
+        },
+        "person_jobs": [
+          {
+            "person_job_id": 6165079,
+            "person_id": 31581,
+            "job_order": 13,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 78726914,
+            "company_id": "24-and-up",
+            "company_industry": "Computer Software",
+            "start_date": "2025-01-01",
+            "end_date": null,
+            "is_current": true,
+            "title": "Head of Design",
+            "company_linkedin_url": "linkedin.com/company/24-and-up",
+            "company_name": "24 and Up",
+            "location": "Durham, North Carolina, United States",
+            "description": null,
+            "employment_type": null,
+            "company_size": "2 - 10",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165078,
+            "person_id": 31581,
+            "job_order": 12,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 102666778,
+            "company_id": "billy-french",
+            "company_industry": "Computer Software",
+            "start_date": "2011-01-01",
+            "end_date": null,
+            "is_current": true,
+            "title": "Owner",
+            "company_linkedin_url": "linkedin.com/company/billy-french",
+            "company_name": "Billy French",
+            "location": "Durham, North Carolina, United States",
+            "description": "As a Freelance designer I've had the pleasure of helping companies of all sizes achieve their business goals through thoughtful visual design, user experience and product strategy.",
+            "employment_type": null,
+            "company_size": null,
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Executive Level",
+            "departments": [
+              "Senior Leadership"
+            ]
+          },
+          {
+            "person_job_id": 6165077,
+            "person_id": 31581,
+            "job_order": 11,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 20313069,
+            "company_id": "monte-carlo-data",
+            "company_industry": "Computer Software",
+            "start_date": "2024-06-01",
+            "end_date": "2025-01-01",
+            "is_current": false,
+            "title": "Senior Product Designer",
+            "company_linkedin_url": "linkedin.com/company/monte-carlo-data",
+            "company_name": "Monte Carlo",
+            "location": "Durham, North Carolina, United States",
+            "description": null,
+            "employment_type": null,
+            "company_size": "51 - 200",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165076,
+            "person_id": 31581,
+            "job_order": 10,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 79929698,
+            "company_id": "usetome",
+            "company_industry": "Computer Software",
+            "start_date": "2023-02-01",
+            "end_date": "2023-11-01",
+            "is_current": false,
+            "title": "Head of Product Design",
+            "company_linkedin_url": "linkedin.com/company/usetome",
+            "company_name": "Tome",
+            "location": "Durham, North Carolina, United States",
+            "description": "Helping everyone understand contracts through the power of AI.",
+            "employment_type": null,
+            "company_size": "2 - 10",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165075,
+            "person_id": 31581,
+            "job_order": 9,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 74726351,
+            "company_id": "acrehomes2021",
+            "company_industry": "Real Estate",
+            "start_date": "2021-11-01",
+            "end_date": "2023-01-01",
+            "is_current": false,
+            "title": "Lead Product Designer",
+            "company_linkedin_url": "linkedin.com/company/acrehomes2021",
+            "company_name": "Acre",
+            "location": "Durham, North Carolina, United States",
+            "description": "As the founding designer of Acre, I have been able to establish design guidelines and best practices from the beginning. Additionally, I have been heavily involved in various aspects of the company's development, which has been incredibly fulfilling. Witnessing the growth of the business, from its initial concept to acquiring real customers, has been a rewarding experience.\n\nIn my time at Acre I helped shape their core product from end to end. Collaborating with our Front End, Back End and Product Management teams I defined, wireframes and executed visual design for workflows like asset and income verification, home purchase journey, searching and filtering of qualified homes, and creating solutions to tell complex financial comparisons through easy to use calculators and pitch materials. \n\nOutside of this core product work I also laid the foundations for brand and future product work by establishing Acre's design system, screen libraries, illustration libraries and more.",
+            "employment_type": null,
+            "company_size": "11 - 50",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165074,
+            "person_id": 31581,
+            "job_order": 8,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 22337144,
+            "company_id": "altopharmacy",
+            "company_industry": "Hospital & Health Care",
+            "start_date": "2021-08-01",
+            "end_date": "2021-11-01",
+            "is_current": false,
+            "title": "Sr. Product Designer",
+            "company_linkedin_url": "linkedin.com/company/altopharmacy",
+            "company_name": "Alto Pharmacy",
+            "location": "Remote",
+            "description": null,
+            "employment_type": null,
+            "company_size": "501 - 1000",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165073,
+            "person_id": 31581,
+            "job_order": 7,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 5071271,
+            "company_id": "pendo-io",
+            "company_industry": "Computer Software",
+            "start_date": "2021-02-01",
+            "end_date": "2021-07-01",
+            "is_current": false,
+            "title": "Lead Product Designer",
+            "company_linkedin_url": "linkedin.com/company/pendo-io",
+            "company_name": "Pendo.io",
+            "location": "Raleigh",
+            "description": "In my role at Pendo, I collaborated with the executive team, product managers, data scientists, and engineering teams to develop innovative solutions in data analytics, onboarding, and guide delivery. \n\nI oversaw design and research for their flagship product, Visual Design Studio, and lead design for their newest product, Pendo Adopt, which provides in-app onboarding, workflow enhancements, and usage analytics to Pendo's customers' end-users.  I successfully built and scaled an MVP to a fully-realized product, driving significant revenue and shaping the vision and roadmap for their product.\n\nAdditionally, migrated the design team to Figma, improved front-end/design processes, and established a design system strategy, which enabled Pendo to scale and work more efficiently across all locations.",
+            "employment_type": null,
+            "company_size": "501 - 1000",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165072,
+            "person_id": 31581,
+            "job_order": 6,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 5071271,
+            "company_id": "pendo-io",
+            "company_industry": "Computer Software",
+            "start_date": "2018-08-01",
+            "end_date": "2021-02-01",
+            "is_current": false,
+            "title": "Sr. Product Designer",
+            "company_linkedin_url": "linkedin.com/company/pendo-io",
+            "company_name": "Pendo.io",
+            "location": "Raleigh, North Carolina",
+            "description": null,
+            "employment_type": null,
+            "company_size": "501 - 1000",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165071,
+            "person_id": 31581,
+            "job_order": 5,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 39826,
+            "company_id": "viget-labs",
+            "company_industry": "Computer Software",
+            "start_date": "2013-09-01",
+            "end_date": "2018-08-01",
+            "is_current": false,
+            "title": "Senior Product Designer",
+            "company_linkedin_url": "linkedin.com/company/viget-labs",
+            "company_name": "Viget",
+            "location": "Raleigh-Durham, North Carolina Area",
+            "description": "At Viget, my role consists of designing detailed, responsive compositions for the web, requiring in-depth thinking around user experience and research before translating them to design. I work collaboratively with a team of back and front-end developers, user experience specialists, data team members and project managers to make award winning, high quality interactive products.",
+            "employment_type": null,
+            "company_size": "51 - 200",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Senior Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165070,
+            "person_id": 31581,
+            "job_order": 4,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 70725,
+            "company_id": "saforian",
+            "company_industry": "Design",
+            "start_date": "2012-05-01",
+            "end_date": "2013-08-01",
+            "is_current": false,
+            "title": "Designer",
+            "company_linkedin_url": "linkedin.com/company/saforian",
+            "company_name": "Saforian",
+            "location": "Manassas, VA",
+            "description": "Responsibilities included: concept and initial sketches, brainstorming and ideation for large websites, designing comprehensive and organized photoshop documents to be passed to developers for implementation, icon, logo and various other asset design as well as general design consulting internally and client-side primarily for the web.",
+            "employment_type": null,
+            "company_size": "11 - 50",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Mid Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165069,
+            "person_id": 31581,
+            "job_order": 3,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": 19317,
+            "company_id": "space150",
+            "company_industry": "Marketing and Advertising",
+            "start_date": "2011-10-01",
+            "end_date": "2012-05-01",
+            "is_current": false,
+            "title": "Associate Designer",
+            "company_linkedin_url": "linkedin.com/company/space150",
+            "company_name": "space150",
+            "location": "Greater Minneapolis-St. Paul Area, + Brooklyn, NY",
+            "description": "Worked collaboratively with others to complete successful interactive campaigns that upheld strict brand guidelines. \n\nClients: American Express, Dairy Queen, Optum Health and internal space150 projects.",
+            "employment_type": null,
+            "company_size": "51 - 200",
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Mid Level",
+            "departments": [
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165068,
+            "person_id": 31581,
+            "job_order": 2,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": null,
+            "company_id": null,
+            "company_industry": null,
+            "start_date": "2008-12-01",
+            "end_date": "2010-12-01",
+            "is_current": false,
+            "title": "Co-Founder, Designer",
+            "company_linkedin_url": null,
+            "company_name": "City of Ash",
+            "location": null,
+            "description": "City of Ash was a game produced by Monster Games (now Metamoki Inc.), and developed by myself and Brady Law. City of Ash was developed for the Facebook platform.\n\nIt's success, with a user base of over 160,000+ monthly active users in 2009 lead to the development of the Iphone version by Ayogo Games.",
+            "employment_type": null,
+            "company_size": null,
+            "is_founder": true,
+            "company_domain": null,
+            "seniority": "Executive Level",
+            "departments": [
+              "Senior Leadership",
+              "Product & Research"
+            ]
+          },
+          {
+            "person_job_id": 6165067,
+            "person_id": 31581,
+            "job_order": 1,
+            "source": "rapidapi",
+            "created_at": "2025-01-28T08:47:30.441877",
+            "updated_at": null,
+            "company_num_id": null,
+            "company_id": null,
+            "company_industry": null,
+            "start_date": "2010-06-01",
+            "end_date": "2010-08-01",
+            "is_current": false,
+            "title": "Intern",
+            "company_linkedin_url": null,
+            "company_name": "Orange Element",
+            "location": null,
+            "description": "Intern of Orange Element, working on blog, social media, print + web design, web applications and interactive content.",
+            "employment_type": null,
+            "company_size": null,
+            "is_founder": false,
+            "company_domain": null,
+            "seniority": "Entry Level",
+            "departments": [
+              "Other"
+            ]
+          }
+        ],
+        "person_skills": [
+          {
+            "person_id": 31581,
+            "name": "Web Design",
+            "endorsements_count": 24,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Graphic Design",
+            "endorsements_count": 22,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Art Direction",
+            "endorsements_count": 21,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Illustrator",
+            "endorsements_count": 18,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Photoshop",
+            "endorsements_count": 15,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Typography",
+            "endorsements_count": 12,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Logo Design",
+            "endorsements_count": 9,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Posters",
+            "endorsements_count": 7,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Creative Direction",
+            "endorsements_count": 6,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "InDesign",
+            "endorsements_count": 6,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Copywriting",
+            "endorsements_count": 5,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Branding & Identity",
+            "endorsements_count": 4,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Illustration",
+            "endorsements_count": 4,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "User Experience",
+            "endorsements_count": 4,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Adobe Creative Suite",
+            "endorsements_count": 3,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Interaction Design",
+            "endorsements_count": 3,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Adobe Illustrator",
+            "endorsements_count": 2,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "User Interface Design",
+            "endorsements_count": 2,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Best slack avatar in America",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Consumer Products",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Creative Design",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Design Leadership",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Design Strategy",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Design Systems",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Experience Design",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "Product Design",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "UX Research",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "User Experience (UX)",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "User Experience Testing",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          },
+          {
+            "person_id": 31581,
+            "name": "User Journeys",
+            "endorsements_count": null,
+            "passed_skill_assessment": false
+          }
+        ],
+        "person_education": [
+          {
+            "person_id": 31581,
+            "created_at": "2025-01-28T08:47:30.441877",
+            "school_id": 7091,
+            "school_name": "Savannah College of Art and Design",
+            "school_linkedin_url": "linkedin.com/school/savannah-college-of-art-and-design",
+            "degree": "BFA",
+            "field_of_study": "Graphic Design",
+            "grade": null,
+            "description": null,
+            "activities": [
+              "Speaker on the SCAD Student Leader Board"
+            ],
+            "start_date": "2009-01-01",
+            "end_date": "2011-01-01",
+            "is_current": false,
+            "university_id": 625
+          },
+          {
+            "person_id": 31581,
+            "created_at": "2025-01-28T08:47:30.441877",
+            "school_id": 15099673,
+            "school_name": "SUNY Oneonta",
+            "school_linkedin_url": "linkedin.com/school/state-university-of-new-york-college-at-oneonta",
+            "degree": null,
+            "field_of_study": "Computer Art",
+            "grade": null,
+            "description": null,
+            "activities": [
+              "Alpha Psi Omega - Theater Honor Society",
+              "Mask and Hammer (Web Master/ Designer",
+              "2009)"
+            ],
+            "start_date": "2007-01-01",
+            "end_date": "2009-01-01",
+            "is_current": false,
+            "university_id": 4458
+          }
+        ],
+        "person_sources": [
+          {
+            "linkedin_num_id": 79706864,
+            "linkedin_id": "billyffrench",
+            "source": "rapidapi",
+            "updated_at": "2025-01-18T05:13:06.303868+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "role": "team",
+      "label": "Vicki Cheung, Head of Infrastructure",
+      "greeting": "Hi Vicki,",
+      "email_body": "Subject: Quick question about your AI infrastructure at Tome\n\nHi Vicki,\n\nI noticed Tome's stack includes tools like Langfuse, Helicone, and Lakera AI\u2014your team is clearly building heavily on LLMs.\n\nI'm reaching out because White Circle helps AI-forward companies enforce prompt and output controls at the edge with sub-200ms latency, auto-patch discovered vulnerabilities, and maintain audit trails for compliance.\n\nGiven your role leading infrastructure at Tome, I'd be curious if you're evaluating ways to harden your LLM traffic or need better observability into what's flowing through those integrations.\n\nHappy to share a quick demo or just swap notes on what's working for Tome's AI stack.\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Vicki - saw the work you're doing leading infrastructure at Tome. With your stack including Langfuse, Helicone, and Lakera AI, it sounds like you're deep in the AI/LLM space.\n\nWhite Circle handles edge policy enforcement for prompt/output controls with sub-200ms latency, auto-patching for vulnerabilities, and compliance audit trails. Could be relevant as you scale.\n\nWould love to chat about what you're seeing as the biggest infrastructure challenges with your AI setup.",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Vicki Cheung",
+        "position": "Head of Infrastructure",
+        "seniority": "Director",
+        "linkedin": ""
+      },
+      "specter_profile_full": {
+        "Name": "Vicki Cheung",
+        "New Position": "Head of Infrastructure",
+        "seniority": "Director",
+        "LinkedIn - URL (Talent)": ""
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "team",
+      "label": "Sara Verducci, Head of Design",
+      "greeting": "Hi Sara,",
+      "email_body": "Subject: Question for the Head of Design at Tome\n\nHi Sara,\n\nI'm reaching out because we're working with AI teams who've integrated tools like Langfuse and Lakera \u2014 and I noticed Tome uses similar infrastructure (Helicone, Patronus AI) for observability and security.\n\nWith AI moving fast, teams are looking for a unified layer that handles policy enforcement, auto-patching vulnerabilities, and gives compliance-ready audit trails \u2014 all with sub-200ms latency.\n\nWould a conversation make sense? Happy to share what we're hearing from others in the AI space.\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Sara \u2014 noticed Tome's using tools like Helicone and Langfuse for AI ops. We're building a unified layer for policy enforcement + runtime security that several AI teams are exploring. Quick chat?",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Sara Verducci",
+        "position": "Head of Design",
+        "seniority": "Director",
+        "linkedin": ""
+      },
+      "specter_profile_full": {
+        "Name": "Sara Verducci",
+        "New Position": "Head of Design",
+        "seniority": "Director",
+        "LinkedIn - URL (Talent)": ""
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "cpo",
+      "label": "Anand Chaudhry, VP Product",
+      "greeting": "Hi Anand,",
+      "email_body": "Subject: Quick question about Tome's AI infrastructure\n\nHi Anand,\n\nI noticed Tome's been building out its AI stack with tools like Langfuse, Helicone, and Lakera \u2014 impressive lineup for observability and security.\n\nWe're working with companies running similar AI infrastructure who need faster policy enforcement at the edge (sub-200ms), auto-patching for discovered vulnerabilities, and complete audit trails for compliance.\n\nCurious if you're seeing those needs on your side? Happy to share what we're hearing from peers in the space.\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Anand \u2014 noticed Tome's AI stack includes Langfuse, Helicone, and Lakera. We're helping companies with faster edge policy enforcement and runtime observability for AI apps. Would love to hear how your infrastructure needs are evolving.",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": true,
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "specter_profile": {
+        "name": "Anand Chaudhry",
+        "position": "VP Product",
+        "seniority": "Director",
+        "linkedin": ""
+      },
+      "specter_profile_full": {
+        "Name": "Anand Chaudhry",
+        "New Position": "VP Product",
+        "seniority": "Director",
+        "LinkedIn - URL (Talent)": ""
+      },
+      "person_db_profile": {
+        "person": {},
+        "person_data": {},
+        "person_jobs": [],
+        "person_skills": [],
+        "person_education": [],
+        "person_sources": []
+      }
+    },
+    {
+      "role": "team",
+      "label": "Tome team",
+      "greeting": "Hi Tome team,",
+      "email_body": "Subject: Tome + White Circle (Lakera stack check)\n\nHi Tome team,\n\nWe're reaching out because Specter client-link data shows Tome connected to Lakera's stack.\n\nWhite Circle is complementary: edge enforcement under 200ms, auto-patching for emerging vulnerabilities, and audit-ready runtime traces.\n\nIf helpful, we can run a short gap check against Tome's current posture and send concrete fix opportunities.\n\nBest,\nWhite Circle GTM",
+      "linkedin_message": "Hi Tome team \u2014 we saw your Lakera-linked footprint and can share a quick edge enforcement + auto-patching gap checklist if useful.",
+      "outreach_reason": [
+        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
+      ],
+      "opencode": {
+        "used": false,
+        "model": null
+      }
+    }
+  ]
+}
