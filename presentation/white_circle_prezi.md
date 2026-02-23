@@ -287,7 +287,7 @@ flowchart LR
 
 <!-- .slide: id="task3-s5" -->
 #### Signal 5: HuggingFace Eval Traction
-##### Live API Query · Feb 2026 · Token: `hf_SQZAnx...`
+##### Live API Query · Feb 2026 · Authenticated Request
 
 ```mermaid
 flowchart LR
@@ -312,6 +312,49 @@ flowchart LR
 `davanstrien` · `andrewmao` · `AISecHub` · `shyamsn97` · `davidberenstein1957` · `farhan-ahmad` · `rufimelo` · `oneonlee`
 
 > Any company whose engineers appear in this liker list is actively doing R&D on safety evaluation. This is the highest-confidence signal in our pipeline.
+
+====
+
+<!-- .slide: id="task3-hn-people" -->
+#### HN Security People Graph (Live Crawl + User Deep Dive)
+##### `artifacts/task3_signals/hn_security_people.md` · Generated Feb 22, 2026
+
+**Coverage from latest run:**
+- Pages scanned: **4**
+- Stories scanned: **60**
+- Security-relevant HN users profiled: **12**
+- Company mentions extracted: **8**
+- New signal leads inserted: **8**
+
+| User | Hits | Profile | Threads | Favorites |
+|---|---:|---|---|---|
+| `observationist` | 10 | [profile](https://news.ycombinator.com/user?id=observationist) | [threads](https://news.ycombinator.com/threads?id=observationist) | [favorites](https://news.ycombinator.com/favorites?id=observationist) |
+| `saezbaldo` | 8 | [profile](https://news.ycombinator.com/user?id=saezbaldo) | [threads](https://news.ycombinator.com/threads?id=saezbaldo) | [favorites](https://news.ycombinator.com/favorites?id=saezbaldo) |
+| `lambda` | 8 | [profile](https://news.ycombinator.com/user?id=lambda) | [threads](https://news.ycombinator.com/threads?id=lambda) | [favorites](https://news.ycombinator.com/favorites?id=lambda) |
+
+**Top company mentions from comments/favorites/submissions:**
+`anthropic.com` (4) · `openai.com` (1) · `cursor.com` (1) · `github.com` (1)
+
+====
+
+<!-- .slide: id="task3-hf-people" -->
+#### HF Security Datasets → People → Social Links → Specter Match
+##### `artifacts/task3_signals/hf_security_people.md` · Generated Feb 22, 2026
+
+**Coverage from latest run:**
+- Security datasets sampled: **40**
+- HF users profiled: **158**
+- Specter-linked companies: **30**
+- New signal leads inserted: **29**
+
+| HF User | Datasets | Social Links Found | Specter Matches |
+|---|---:|---|---:|
+| `808cn163` | 1 | — | 9 |
+| `darknite` | 1 | [GitHub](https://github.com/git-khandelwal) | 6 |
+| `walker-luke` | 1 | [GitHub](https://github.com/walker-luke) | 4 |
+| `joylarkin` | 1 | [LinkedIn](https://www.linkedin.com/in/joylarkin) · [GitHub](https://github.com/joylarkin) · [X](https://twitter.com/joy) | 1 |
+
+> This layer gives us named operators already engaging with AI security datasets, plus their public social graph and company linkage potential in Specter.
 
 ----
 
@@ -450,10 +493,10 @@ Method 3 — Engineering Proxy:
 
 | Artifact | Count | Status |
 |---|---:|---|
-| `artifacts/leads.jsonl` | 105 leads | Valid JSONL parse |
-| `artifacts/email_*.txt` | 113 templates | Trigger/evidence/value/CTA format |
-| `artifacts/email_*_v2.txt` | 105 templates | One per lead with confidence > 0.7 |
-| `artifacts/linkedin_*.txt` | 8 templates | Personalized first-touch scripts |
+| `artifacts/leads.jsonl` | 143 leads | Valid JSONL parse |
+| `artifacts/task7_outbound/email_*_featured.txt` | 5 templates | Curated featured outbound set |
+| `artifacts/task7_outbound/linkedin_*_featured.txt` | 5 templates | Curated featured first-touch set |
+| `artifacts/task7_outbound/profile_enrichment.json` | 1 artifact | HF + Reddit profile enrichment snapshot |
 
 ====
 
@@ -480,9 +523,9 @@ python -m src.cli outbound bulk-v2 --min-confidence 0.7 --out-dir artifacts
 ```
 
 **Result from this run:**
-- 105 high-confidence leads detected in `artifacts/leads.jsonl` <!-- .element: class="fragment" -->
-- 105 corresponding `email_<lead_id>_v2.txt` files generated <!-- .element: class="fragment" -->
-- Message copy now reflects signal context: telemetry, CI-eval, jobs, incidents, or HF-eval adoption <!-- .element: class="fragment" -->
+- 143 high-confidence leads detected in `artifacts/leads.jsonl` <!-- .element: class="fragment" -->
+- 143 corresponding `email_<lead_id>_v2.txt` drafts generated during QA pass <!-- .element: class="fragment" -->
+- Workspace retained a curated 5-email + 5-LinkedIn featured set in `artifacts/task7_outbound/` <!-- .element: class="fragment" -->
 
 ----
 
@@ -505,7 +548,7 @@ Everything here isn't just theory — **it is entirely powered by running code.*
 | 10 CI-tested safety policies | `artifacts/psychotherapy_policies.yaml` | <!-- .element: class="fragment" -->
 | 4-tier pricing model | `artifacts/pricing_model.csv` | <!-- .element: class="fragment" -->
 | 3-heuristic volume estimates | `artifacts/message_volume_estimates.md` | <!-- .element: class="fragment" -->
-| Personalized outbound emails | `artifacts/email_*.txt` | <!-- .element: class="fragment" -->
+| Personalized outbound emails | `artifacts/task7_outbound/*_featured.txt` | <!-- .element: class="fragment" -->
 
 <br/>
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/" style="font-size: 1.1em; color: #a8a8ff;">🔗 github.com/frankterpo/growth_hacker_wc_2026</a>
