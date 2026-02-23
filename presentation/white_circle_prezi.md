@@ -93,60 +93,102 @@ mindmap
 <!-- .slide: id="task1-targets-consumer" -->
 #### Consumer GenAI Targets — Live Specter Data
 
-*Investors extracted live from Specter Postgres `funding_round` table · Feb 2026*
+*Live query refresh (Feb 23, 2026): `companies` + `funding_round` + `funding_round_investor` + `investor`*
 
-| Company | Vertical | Raised | Investors |
-|---|---|---:|---|
-| **Woebot Health** | Mental Health | $123M | 10X Capital, AI Fund, Alumni Ventures |
-| **Wysa** | Mental Health | — | N/A |
-| **Character.AI** | Companion | $150M | A.Capital Ventures, Andreessen Horowitz |
-| **Replika** | Companion | — | N/A |
-| **Ada** | Support | $189M | Bertelsmann, Cumberland VC |
-| **Intercom** | Support | $241M | 137 Ventures, 500 Global |
-| **Inworld AI** | Gaming | $56M | N/A |
-| **Replica Studios** | Gaming | $9.6M | Carthona Capital |
-| **Khan Academy** | Education | $10K | N/A |
-| **Duolingo** | Education | $183M | A-Grade Investments, Ashton Kutcher |
+| Company | Vertical | Round | Date | Raised | Post-Money | Lead Investor | Partners |
+|---|---|---|---|---:|---:|---|---|
+| Woebot Health | Mental Health | Series Unknown | 2022-03-15 | $9.5M | — | Leaps by Bayer | Juergen Eckhardt (Leaps by Bayer) |
+| Wysa | Mental Health | Series B | 2022-07-14 | $20.0M | — | HealthQuad | Charles-Antoine Janssen (HealthQuad); Vidushi Kamani (Kae Capital) (+2 more) |
+| Character.AI | Companion | Series A | 2023-03-23 | $150.0M | $1.00B | Andreessen Horowitz | Sarah Wang (Andreessen Horowitz) |
+| Replika | Companion | — | — | — | — | — | — |
+| Ada | Customer Support | Series C | 2021-05-07 | $130.0M | $1.20B | Spark Capital | Ben Fletcher (Accel); Yasmin Razavi (Spark Capital) (+2 more) |
+| Intercom | Customer Support | Series D | 2018-03-27 | $125.0M | $1.30B | Kleiner Perkins | Ethan Kurzweil (Bessemer Venture Partners); Abhishek Agrawal (Vulcan Capital) (+1 more) |
+| Inworld AI | Gaming | Series A | 2023-08-02 | $56.0M | $521.0M | Lightspeed Venture Partners | Bejul Somaia (Lightspeed Venture Partners); Moritz Baier-Lentz (Lightspeed Venture Partners) (+2 more) |
+| Replica Studios | Gaming | Seed | 2022-11-01 | $4.2M | — | — | — |
+| Khan Academy | Education | Series A | 2022-01-01 | $10.0K | $111.0K | — | — |
+| Duolingo | Education | Series H | 2020-11-18 | $35.0M | $2.40B | General Atlantic; Durable Capital Partners | Henry Ellenbogen (Durable Capital Partners); Julio Novo (Durable Capital Partners) (+1 more) |
+<!-- .element: class="small-table" -->
+
+<br/>
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
 
 ====
 
 <!-- .slide: id="task1-targets-enterprise" -->
 #### Enterprise Automation Targets
 
-| Company | Vertical | Raised | Investors |
-|---|---|---:|---|
-| **Sourcegraph** | DevTools | $248M | Andreessen Horowitz, Craft Ventures |
-| **Anysphere** | DevTools | — | N/A |
-| **Harvey** | LegalTech | $160M | N/A |
-| **Robin AI** | LegalTech | $68M | AFG Partners, Creative Destruction Lab |
-| **Eightfold AI** | HRTech | $220M | N/A |
-| **Paradox** | HRTech | $200M | N/A |
-| **Gong** | Sales | — | N/A |
-| **Outreach** | Sales | — | N/A |
-| **Zip** | Procurement | $190M | N/A |
-| **Globality** | Procurement | $358M | Al Gore, David Rosenblatt |
+| Company | Vertical | Round | Date | Raised | Post-Money | Lead Investor | Partners |
+|---|---|---|---|---:|---:|---|---|
+| Sourcegraph | DevTools | Series D | 2021-07-13 | $150.0M | $2.62B | Andreessen Horowitz | John Yetimoglu (Infinitum); Sarah Wang (Andreessen Horowitz) |
+| Anysphere | DevTools | Series D | 2025-11-13 | $2.30B | $29.30B | Coatue; Accel | — |
+| Harvey | LegalTech | Series F | 2025-10-30 | $160.0M | $8.00B | Andreessen Horowitz | Patrick Grady (Sequoia Capital); Ilya Fushman (Kleiner Perkins) |
+| Robin AI | LegalTech | Series B | 2024-11-12 | $25.0M | — | University of Cambridge | — |
+| Eightfold AI | HRTech | Series E | 2021-06-10 | $220.0M | $2.10B | SoftBank Vision Fund | Peter Nieh (Lightspeed Venture Partners); Quentin Clark (General Catalyst) (+1 more) |
+| Paradox | HRTech | Series C | 2021-12-27 | $200.0M | $1.50B | Stripes; Thoma Bravo (+1 more) | Mike Gregoire (Brighton Park Capital); Robert Sayle (Thoma Bravo) (+2 more) |
+| Gong | SalesEnablement | Series E | 2021-06-03 | $250.0M | $7.25B | Franklin Templeton | Carl Eschenbach (Sequoia Capital); Alex Kayyal (Salesforce Ventures) (+1 more) |
+| Outreach | SalesEnablement | Series G | 2021-06-02 | $200.0M | $4.40B | Steadfast Financial; Premji Invest (+1 more) | Rajeev Batra (Mayfield Fund); Sandesh Patnam (Premji Invest) (+2 more) |
+| Zip | Procurement | Series D | 2024-10-21 | $190.0M | $2.20B | Bond | Jay Simons (Bond); Ali Rowghani (Y Combinator) (+2 more) |
+| Globality | Procurement | Series D | 2019-01-22 | $100.0M | $900.0M | SoftBank Vision Fund | — |
+<!-- .element: class="small-table" -->
+
+<br/>
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
 
 ====
 
 <!-- .slide: id="task1-targets-regulated" -->
 #### Regulated Industry Targets
 
-| Company | Vertical | Raised | Investors |
-|---|---|---:|---|
-| **Upstart** | FinTech | $1.86B | Collaborative Fund, Cyan Banister |
-| **Zest AI** | FinTech | — | N/A |
-| **Abridge** | HealthTech | $758M | American College of Cardiology |
-| **Nabla** | HealthTech | $115M | ARVO Ventures |
-| **Palantir** | GovTech | $3.0B | 10X Capital, 137 Ventures |
-| **Anduril** | GovTech | $6.2B | 8VC, Altimeter Capital |
-| **Lemonade** | InsurTech | $619M | Aleph, Allianz X |
-| **Tractable** | InsurTech | $65M | N/A |
-| **Recursion** | BioTech | $865M | AME Cloud Ventures |
-| **Insitro** | BioTech | $643M | ARCH Venture Partners |
+| Company | Vertical | Round | Date | Raised | Post-Money | Lead Investor | Partners |
+|---|---|---|---|---:|---:|---|---|
+| Upstart | FinTech | Series D | 2019-04-08 | $50.0M | — | Progressive | — |
+| Zest AI | FinTech | Series G | 2024-12-13 | $200.0M | — | Insight Partners | Jonathan Rosenbaum (Insight Partners); Lonne Jaffe (Insight Partners) (+1 more) |
+| Abridge | HealthTech | Series E | 2025-06-24 | $300.0M | $5.30B | Andreessen Horowitz; Khosla Ventures | David George (Andreessen Horowitz) |
+| Nabla | HealthTech | Series B | 2024-01-05 | $24.0M | $180.0M | Cathay Innovation | Jacky Abitbol (Cathay Innovation) |
+| Palantir | GovTech | Series Unknown | 2015-12-24 | $879.8M | $20.33B | Kortschak Investments L.P. | Walter Kortschak (Kortschak Investments L.P.) |
+| Anduril | GovTech | Series G | 2025-06-05 | $2.50B | $30.50B | Founders Fund | Peter Thiel (Founders Fund); Trae Stephens (Founders Fund) |
+| Lemonade | InsurTech | Series D | 2019-04-11 | $300.0M | $2.00B | SoftBank | David Thevenon (SoftBank); Ron Stern (OurCrowd) (+1 more) |
+| Tractable | InsurTech | Series D | 2021-06-16 | $60.0M | $1.00B | Insight Partners; Georgian | Lonne Jaffe (Insight Partners); Emily Walsh (Georgian) |
+| Recursion | BioTech | Series D | 2020-09-09 | $239.0M | $1.14B | Leaps by Bayer | Juergen Eckhardt (Leaps by Bayer); Zavain Dar (Lux Capital) (+2 more) |
+| Insitro | BioTech | Series C | 2021-03-15 | $400.0M | $1.00B | CPP Investments | Jim Tananbaum (Foresite Capital); Robert Nelsen (ARCH Venture Partners) (+3 more) |
 <!-- .element: class="small-table" -->
 
 <br/>
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full JSON — 75+ seniority-ranked contacts & live Specter funding data</a>
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/task1_funding_enriched_live.csv" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full live Task 1 funding export (30 companies, lead investor + partners + post-money)</a>
+
+====
+
+<!-- .slide: id="task1-wtp" -->
+#### Willingness to Pay (WTP) Model
+
+Calibrated from `artifacts/ICP_targets_enriched.json` (risk + volume weights + priority score + raised capital):
+
+$$
+WTP_i = \alpha\cdot\text{RiskWeight}_i + \beta\cdot\text{VolumeWeight}_i + \gamma\cdot\text{ComplianceBurden}_i
+$$
+
+**ICP vs Industry comparison (live dataset aggregate):**
+
+| Lens | Bucket | N | Avg Risk | Avg Volume | Avg Priority | Median Raised |
+|---|---|---:|---:|---:|---:|---:|
+| **ICP** | High-Risk Consumer GenAI | 10 | 0.50 | 0.50 | 90.0 | $8.4M |
+| **ICP** | Enterprise Automation & Copilots | 10 | 0.60 | 0.40 | 90.0 | $195.0M |
+| **ICP** | Regulated Industry AI | 10 | 0.70 | 0.00 | 84.0 | $175.0M |
+| **Industry** | DevTools | 2 | 0.60 | 0.40 | 90.0 | $1.23B |
+| **Industry** | Mental Health | 2 | 0.50 | 0.50 | 90.0 | $8.4M |
+| **Industry** | GovTech | 2 | 0.70 | 0.00 | 84.0 | $5.1M |
+| **Industry** | SalesEnablement | 2 | 0.60 | 0.40 | 90.0 | $225.0M |
+
+> QA takeaway: weights are set by ICP policy posture, while financing scale varies significantly by industry vertical.
+
+```mermaid
+graph LR
+    A[Higher Risk Weight] --> B[Higher Baseline WTP]
+    C[Higher Volume Weight] --> D[Usage-Sensitive WTP]
+    E[Compliance Burden] --> B
+    B --> F[Regulated ICP]
+    D --> G[Consumer & Enterprise ICP]
+```
 
 ----
 
@@ -420,6 +462,31 @@ flowchart LR
 | **Startup** | 100,000 | $149 | $1,490 | 99.66 | Braintrust startup-friendly entry economics |
 | **Growth** | 1,000,000 | $899 | $899 | 99.44 | Helicone usage-volume scaling benchmark |
 | **Enterprise** | 10,000,000 | $4,990 | $499 | 99.00 | Lakera-style enterprise annual commit motion |
+
+====
+
+<!-- .slide: id="task5-formula" -->
+#### Pricing Logic & Unit Economics
+
+The pricing model follows a non-linear scaling curve to align with enterprise procurement while maintaining high margins:
+
+$$Price(v) = \text{BaseFee} + (v \times \text{TieredRate})$$
+
+**Margin Calculation:**
+$$\text{Margin} = \frac{\text{Price} - (\text{Requests} \times \text{COGS})}{\text{Price}}$$
+
+*Assumed COGS: $5.00 per 1M requests (inference + edge overhead)*
+
+```mermaid
+graph LR
+    A[Requests] --> B{Tier Match}
+    B -->| < 100k | C[Startup: $1490/M]
+    B -->| 100k - 1M | D[Growth: $899/M]
+    B -->| > 1M | E[Enterprise: $499/M]
+    C --> F[99.6% Margin]
+    D --> G[99.4% Margin]
+    E --> H[99.0% Margin]
+```
 
 ====
 

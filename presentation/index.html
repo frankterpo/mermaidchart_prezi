@@ -250,7 +250,7 @@
 			top: 20px;
 			right: 20px;
 			z-index: 100;
-			pointer-events: none;
+			pointer-events: auto; /* Changed from none to allow interaction */
 			padding: 8px;
 			background: rgba(12, 12, 12, 0.7);
 			backdrop-filter: blur(8px);
@@ -259,6 +259,43 @@
 			display: flex;
 			flex-direction: column;
 			gap: 4px;
+			transition: all 0.3s ease;
+		}
+
+		#minimap-container.minimized {
+			width: 70px;
+			height: 36px;
+			overflow: hidden;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 4px 8px;
+			/* Keep position: fixed from base so it stays anchored to top-right */
+		}
+
+		#minimap-container.minimized #minimap-grid,
+		#minimap-container.minimized #minimap-label-container {
+			display: none !important; /* Override inline styles from JS */
+		}
+
+		#minimap-progress-container {
+			display: none;
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			font-size: 14px;
+			font-weight: 700;
+			color: #a8a8ff;
+			letter-spacing: 0.02em;
+			font-family: 'Inter', sans-serif;
+		}
+
+		#minimap-container.minimized #minimap-progress-container {
+			display: flex !important;
 		}
 
 		.minimap-row {
@@ -344,6 +381,9 @@
 				<div id="minimap-sublabel">↓ Elaboration</div>
 			</div>
 			<div id="minimap-grid"></div>
+			<div id="minimap-progress-container">
+				<span id="minimap-progress-text">0%</span>
+			</div>
 		</div>
 	</div>
 
@@ -351,6 +391,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/notes/notes.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/markdown/markdown.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/highlight/highlight.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/plugin/math/math.js"></script>
 	<!-- Load Mermaid -->
 	<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
 
@@ -450,7 +491,7 @@
 					margin: 0.15,
 					minScale: 0.2,
 					maxScale: 2.0,
-					plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+					plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
 				});
 
 				// Scroll indicator: mark slides that overflow with .has-scroll class
@@ -479,14 +520,17 @@
 					const horizontalSlides = Reveal.getHorizontalSlides();
 					const totalCols = horizontalSlides.length;
 
-					// Find the maximum vertical depth
+					// Find the maximum vertical depth and total slide count (h + all v)
 					let maxRows = 0;
-					const structure = horizontalSlides.map((hSlide, hIndex) => {
+					const structure = horizontalSlides.map((hSlide) => {
 						const vSlides = hSlide.querySelectorAll('section');
 						const rowCount = vSlides.length || 1;
 						if (rowCount > maxRows) maxRows = rowCount;
 						return rowCount;
 					});
+
+					// Total slides = sum of all vertical stacks (each h-section has structure[h] slides)
+					const totalSlides = structure.reduce((a, b) => a + b, 0);
 
 					grid.style.display = 'grid';
 					grid.style.gridTemplateColumns = `repeat(${totalCols}, 1fr)`;
@@ -527,9 +571,28 @@
 						});
 					};
 
+					const updateProgress = () => {
+						const visitedCount = visited.size;
+						const percent = totalSlides > 0 ? Math.round((visitedCount / totalSlides) * 100) : 0;
+						const el = document.getElementById('minimap-progress-text');
+						if (el) el.textContent = `${percent}%`;
+					};
+
 					Reveal.on('slidechanged', updateMinimap);
 					Reveal.on('ready', updateMinimap);
 					updateMinimap();
+
+					// Add minimize/maximize logic
+					const container = document.getElementById('minimap-container');
+					container.addEventListener('click', (e) => {
+						e.stopPropagation();
+						container.classList.toggle('minimized');
+						updateProgress(); // Refresh percentage when toggling
+					});
+
+					Reveal.on('slidechanged', updateProgress);
+					Reveal.on('ready', updateProgress);
+					updateProgress();
 				};
 
 				Reveal.on('ready', initMinimap);
