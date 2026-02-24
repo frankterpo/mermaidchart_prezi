@@ -776,103 +776,79 @@ flowchart LR
 
 <!-- .slide: id="task6" -->
 ### Task 6: Message Volume Estimates
-##### <span class="pill">artifacts/message_volume_estimates.md</span> — 3 independent heuristics
+##### *"Estimate the amount of messages Lovable, Base44, and Replit have per month."*
 
-<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em;">
-  <strong>Note:</strong> Estimates use <strong>LLM API requests</strong> as the unit, not user-visible messages. A single user prompt triggers 5–20+ backend calls (context retrieval, code gen, validation, error loops). ARR figures are point-in-time snapshots — these companies are growing fast (e.g. Lovable: $100M mid-2025 → $200M+ Nov 2025 → $300M+ reported Feb 2026). Estimates reflect the range.
-</div>
+**Approach:** 3 independent heuristics (traffic, user, engineering) -- then a critical correction.
 
-| Platform | Domain | Original (user msgs/mo) | Corrected (LLM API requests/mo) | Factor Off | Tier |
-|---|---|---:|---:|---:|---|
-| **Lovable** | `lovable.dev` | 15.30M | 1.5B – 6B | ~100–400x | Platform-scale |
-| **Replit** | `replit.com` | 86.40M | 5B – 25B | ~60–290x | Platform-scale |
-| **Base44** | `base44.com` | 4.78M | 225M – 720M | ~47–150x | Platform-scale |
-
-> Corrected estimates include autocomplete/inline traffic (dominant for IDE tools), multi-step agent calls, and updated Feb 2026 user counts. All three targets require **custom enterprise pricing** ($50K–500K+/year), not standard tiers.
-
-====
-
-<!-- .slide: id="task6-methods" -->
-#### Estimation Approach: 3 Independent Heuristics
-
-Each heuristic uses different public data. When all three converge, confidence is high.
-
-| Heuristic | Formula | Key Input |
+| Heuristic | What it uses | Why it helps |
 |---|---|---|
-| **Traffic proxy** | Monthly visits × conversational share × msgs/session | SimilarWeb traffic data |
-| **User proxy** | DAU × active days × msgs/active day | Reported MAU/DAU |
-| **Engineering proxy** | Sustained RPS × duty cycle × seconds/month | Infra disclosures, job postings |
-
-<div class="callout text-left" style="font-size: 0.55em;">
-  <strong>Why three?</strong> Each has different failure modes (traffic lags, DAU is optimistic, RPS is infra-capped). The confidence interval narrows when all three align — which they do for Lovable and Replit.
-</div>
-
-====
-
-<!-- .slide: id="task6-katex" -->
-#### Calculation: Why User Messages ≠ LLM API Requests
-
-**The 3 estimation heuristics:**
-
-<div>$$M_{\text{traffic}} = V \times c \times m \qquad M_{\text{user}} = DAU \times d \times n \qquad M_{\text{eng}} = R \times D \times S$$</div>
-
-These count **user-visible messages** and undercount by 100–400×. Each user prompt triggers 5–20+ backend LLM calls (context retrieval, code gen, validation, error loops). IDE tools fire ~400 autocomplete requests/user/day that never appear as “messages.”
-
-**Correct unit — LLM API requests per month:**
-
-<div>$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fanout}} + n_{\text{auto}})$$</div>
-
-| Variable | Definition | Typical Range |
-|---|---|---|
-| $d$ | Active days per month | 15–22 |
-| $n_{\text{explicit}}$ | User prompts per active day | 10–30 |
-| $k_{\text{fanout}}$ | Backend LLM calls per user prompt | 5–20 |
-| $n_{\text{auto}}$ | Autocomplete/inline triggers per day | 0–400 (IDE tools) |
+| **Traffic proxy** | SimilarWeb monthly visits | Public, hard to fake |
+| **User proxy** | Reported MAU/DAU | Closest to real usage |
+| **Engineering proxy** | Infra disclosures, job posts | Catches hidden capacity |
 <!-- .element: class="small-table" -->
 
 <div class="callout text-left" style="font-size: 0.55em;">
-  <strong>Worked example (Lovable):</strong> 2M active users × 20 days × (20 prompts × 15 fan-out + 0 autocomplete) = <strong>12B req/mo</strong> (upper range). The 100–400× correction factor comes from $k_{\text{fanout}}$ — each "message" is 5–20 backend calls that White Circle must guard.
+  <strong>The catch:</strong> All three heuristics count <em>user-visible messages</em> (what a person types). But White Circle guards <strong>LLM API requests</strong> -- and the gap between the two is 100-400x. The next slides explain why.
 </div>
 
 ====
 
-<!-- .slide: id="task6-per-user" -->
-#### Per-User Breakdown: What Drives the Numbers
+<!-- .slide: id="task6-data" -->
+#### Input Data: Cala AI Proxies + Per-User Variables
 
-| Platform | Active Users | Prompts/User/Day | Fan-out (k) | API Req/User/Mo | Key Driver |
-|---|---:|---:|---:|---:|---|
-| **Lovable** | 1–2M | 15–30 | 10–20 | 750–3,000 | 100% AI-native; every app action is an LLM call |
-| **Replit** | 8–12M DAU | 10–30 | 5–15 | 400–2,000 | AI Agent subset + autocomplete = hidden volume |
-| **Base44** | 100–200K | 15–25 | 10–15 | 450–1,100 | Early adopters with high prompt density |
-
-<div class="callout text-left" style="font-size: 0.55em;">
-  <strong>Answer to the question:</strong> “Estimate amount of messages Lovable, Base44, and Replit have per month.” The key insight is that “messages” (what a user types) is the wrong unit. White Circle guards <strong>LLM API requests</strong> — and the multiplier from user message to API request is 100–400×. At these volumes, all three are enterprise-tier customers requiring custom pricing.
+<div class="callout text-left" style="font-size: 0.5em; margin-bottom: 0.3em;">
+  <strong>What is Cala AI?</strong> A data structuring platform for AI agents (<a href="https://docs.cala.ai/" target="_blank">docs.cala.ai</a>). Francisco is one of 50 selected alpha testers. We use it to source verified company metrics.
 </div>
 
-====
+| Platform | Users | ARR | Monthly Visits | As of |
+|---|---|---|---|---|
+| **Lovable** | 8M+ | 200M-300M+ | 30.75M | Nov 2025 - Feb 2026 |
+| **Replit** | 35-40M MAU | 150M | -- | Q3 2025 |
+| **Base44** | 250K-400K | 1M (3 weeks) | -- | Jun 2025 |
+| **Cursor** *(reference)* | 1M+ DAU | 500M+ | -- | Q4 2025 |
+<!-- .element: class="small-table" -->
 
-<!-- .slide: id="task6-cala" -->
-#### Cala AI Proxy: Usage Statistics Triangulation
-##### *Query: Replit, Lovable, Cursor messages-per-user metrics · Feb 2026*
+**Per-user variables -- how 1 message becomes 100+ API requests:**
 
-<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em;">
-  <strong>What is Cala AI?</strong> A data structuring platform that turns unstructured internet data into typed, verified context for AI agents (<a href="https://docs.cala.ai/" target="_blank">docs.cala.ai</a>). Francisco is part of a group of 50 selected alpha testers building with it.
-</div>
-
-**Cala-verified aggregates (latest available data):**
-
-| Platform | Cala-sourced metric | As of |
+| Variable | Plain English | Range |
 |---|---|---|
-| **Cursor** | 1M+ DAU, 360K paying, $500M+ ARR, 1M+ QPS | Q4 2025 |
-| **Replit** | 35–40M MAU, $150M ARR | Q3 2025 |
-| **Lovable** | 8M+ users, $200M+ ARR, 30.75M monthly visits | Nov 2025 |
-| **Base44** | 250K→400K users, $1M ARR in 3 weeks, Wix $80M acquisition | Jun 2025 |
+| **Active users** | People actually using the AI each day | 100K - 12M |
+| **Prompts/user/day** | How many times a user types a prompt | 10-30 |
+| **Fan-out (k)** | Backend LLM calls per prompt (context, code gen, validation, retries) | 5-20 |
+| **Autocomplete** | Invisible inline completions per day (IDE tools only) | 0-400 |
+<!-- .element: class="small-table" -->
 
-<div class="callout text-left" style="font-size: 0.55em;">
-  <strong>Disclaimer:</strong> ARR figures are point-in-time snapshots from public sources. Lovable's reported ARR: $100M (mid-2025, <a href="https://techcrunch.com/2025/11/19/as-lovable-hits-200m-arr-its-ceo-credits-staying-in-europe-for-its-success/" target="_blank">TechCrunch</a>) → $200M+ (Nov 2025) → $300M+ (Feb 2026, <a href="https://www.linkedin.com/posts/seb-johnson_just-in-lovable-has-officially-surpassed-activity-7423998979274616832-tPv0/" target="_blank">LinkedIn</a>). These companies are growing 2–3x per quarter — any snapshot becomes stale within weeks. Volume estimates use ranges to account for this.
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/cala_usage_proxy.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">Cala usage proxy artifact</a>
+
+====
+
+<!-- .slide: id="task6-calc" -->
+#### Calculation: From 1 Message to 1,000+ API Requests
+
+```mermaid
+flowchart LR
+    A["1 user prompt"] --> B["1 explicit<br/>message"]
+    B --> C["5-20 fan-out<br/>calls per prompt"]
+    C --> D["Context retrieval<br/>Code generation<br/>Validation + retries"]
+    F["Autocomplete<br/>(IDE only)"] --> G["~400 invisible<br/>requests/day"]
+    D --> H["Total API<br/>req/mo"]
+    G --> H
+```
+
+**The formula:**
+
+<div>$$M_{\text{api}} = \text{Users}_{\text{active}} \times d \times (n_{\text{prompts}} \times k_{\text{fanout}} + n_{\text{auto}})$$</div>
+
+| Platform | Active Users | Prompts x Fan-out + Auto | Naive (msgs/mo) | **Corrected (API req/mo)** | Factor Off |
+|---|---:|---|---:|---:|---:|
+| **Lovable** | 1-2M | 20 x 15 + 0 | 15.3M | **1.5B - 6B** | ~100-400x |
+| **Replit** | 8-12M | 15 x 10 + 400 | 86.4M | **5B - 25B** | ~60-290x |
+| **Base44** | 100-200K | 20 x 12 + 0 | 4.8M | **225M - 720M** | ~47-150x |
+<!-- .element: class="small-table" -->
+
+<div class="callout text-left" style="font-size: 0.5em;">
+  <strong>Worked example (Lovable):</strong> 2M active users x 20 days x (20 prompts x 15 fan-out) = <strong>12B req/mo</strong> (upper). The naive "message" count (15.3M/mo) undercounts by <strong>~400x</strong>.
 </div>
-
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/cala_usage_proxy.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Cala usage proxy artifact</a>
 
 ====
 
@@ -881,11 +857,11 @@ These count **user-visible messages** and undercount by 100–400×. Each user p
 
 <div class="callout text-left">
 
-**1. "Messages" is the wrong unit.** User-visible messages undercount by 100-400x. White Circle guards LLM API requests — and each user prompt triggers 5-20+ backend calls (context retrieval, code gen, validation, error loops). This is the unit that determines pricing and infrastructure load.
+**1. "Messages" is the wrong unit -- and it matters 100-400x.** A single user prompt triggers 5-20 backend LLM calls (context, code gen, validation, retries). IDE tools add ~400 invisible autocomplete calls/day. White Circle guards every one of these API requests, not just the visible "messages."
 
-**2. All three targets are enterprise-tier.** Lovable (1.5B-6B req/mo), Replit (5B-25B), Base44 (225M-720M) — these volumes require custom contracts ($50K-500K+/year), not self-serve tiers.
+**2. All three targets are enterprise-tier.** Lovable (1.5B-6B req/mo), Replit (5B-25B), Base44 (225M-720M). At these volumes, standard tiers don't apply -- these are custom contracts ($50K-500K+/year).
 
-**3. Three independent heuristics converge.** Traffic proxy, user proxy, and engineering proxy each have different failure modes. When all three align (which they do for Lovable and Replit), confidence is high. This methodology is reusable for any prospect.
+**3. The methodology is reusable.** Three heuristics with different failure modes. When all three converge (as they do for Lovable and Replit), confidence is high. Run this on any prospect: plug in Cala data, apply the fan-out multiplier, get the volume.
 
 </div>
 
