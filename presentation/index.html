@@ -732,6 +732,31 @@
 						const opencodeBadge = contact?.opencode?.used
 							? ` <span class="pill-opencode" title="OpenCode ${contact.opencode.model || 'LLM'}">LLM</span>`
 							: '';
+
+						let warmIntroHtml = '';
+						const warmIntro = contact?.warm_intro;
+						const mutuals = contact?.mutuals;
+						if (warmIntro && typeof warmIntro === 'object') {
+							const entries = Object.entries(warmIntro);
+							const introBlocks = entries.map(([key, msg]) => {
+								const label = key.replace(/^via_/, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+								return `<div style="margin-bottom:8px;"><div class="msg-title" style="font-size:0.85em;">🤝 Warm Intro via ${esc(label)}</div><pre>${esc(msg)}</pre></div>`;
+							}).join('');
+							warmIntroHtml = `<div style="border:1px solid #3a6; border-radius:6px; padding:10px; background:#0a1a0f;">${introBlocks}</div>`;
+						} else if (mutuals && Array.isArray(mutuals.connections) && mutuals.connections.length === 0) {
+							warmIntroHtml = `<div class="msg-meta" style="color:#888;">No mutual connections — cold outreach only.</div>`;
+						} else if (mutuals && typeof mutuals.connections === 'string' && mutuals.connections.includes('No')) {
+							warmIntroHtml = `<div class="msg-meta" style="color:#888;">No mutual connections — cold outreach only.</div>`;
+						}
+
+						let mutualsHtml = '';
+						if (mutuals) {
+							const conns = Array.isArray(mutuals.connections) ? mutuals.connections : [];
+							if (conns.length > 0) {
+								mutualsHtml = `<div class="msg-meta"><strong>🔗 Mutual connections:</strong><br>${conns.map(c => `• ${esc(c)}`).join('<br>')}<br><em>Approach: ${esc(mutuals.approach || '')}</em></div>`;
+							}
+						}
+
 						emailEl.innerHTML = `
 							<div class="folder-email-scroll">
 								<div>
@@ -742,6 +767,8 @@
 									<div class="msg-title">LinkedIn</div>
 									<pre>${esc(linkedinBody)}</pre>
 								</div>
+								${warmIntroHtml}
+								${mutualsHtml}
 								${reasonHtml}
 							</div>
 						`;

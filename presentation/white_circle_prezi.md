@@ -950,11 +950,11 @@ flowchart LR
 
 <div class="callout text-left">
 
-**1. Start with what THEY already did.** Notion published a Braintrust case study (10x faster AI issue resolution). We position White Circle as the natural complement — Braintrust = eval (quality measurement), White Circle = runtime output enforcement (policy controls). The pitch starts with their own investment in AI quality, not our features.
+**1. Start with what THEY already did.** Notion published a Braintrust case study (10x faster AI issue resolution). White Circle = the natural complement — Braintrust covers eval, we cover runtime output enforcement. Pitch starts with their investment, not our features.
 
-**2. Full Specter intelligence → role-specific hooks.** `talentsignals` (384 for Notion), `specter_users_linkedin_connections` (warm intro to Ivan Zhao via fei@tryspecter.com — Specter's own team!), `company_data` (5.3K employees, $10B+ valuation). Each email uses career history as the uncommon commonality: Noah Beddome's Datadog VP Security background, Daimon G's SANS SEC522 + Robinhood D&R path, Erica Anderson's GitHub CRO → Notion CRO pattern.
+**2. Career history = uncommon commonality.** Each email uses the person's career path as the hook: Daimon G's SANS SEC522 + Robinhood D&R background, Fuzzy K's Google → Slack → Notion CTO arc, Erica Anderson's GitHub CRO → Notion CRO pattern. Role-specific pain, not generic pitches.
 
-**3. Warm intros > cold outreach.** Specter LinkedIn connections: dave@offline.vc connected to Ivan Zhao, fei@tryspecter.com (Specter's own employee!) also connected to Ivan Zhao. Internal warm intro path available.
+**3. Warm intros > cold outreach.** 4 of 5 contacts have mutual connections for warm intros: Fuzzy K via Steven Woods (Inovia Capital), Jackie Rocca via Kevin Diestel (Generation IM) + Roseanne Wincek (Renegade Partners), Ivan Zhao via Dave Morin (Offline VC) + Fei Hall, Erica Anderson via Ethan Epley (Delta V Capital). Each has a ready-to-send intro request email.
 
 </div>
 
@@ -973,7 +973,7 @@ Everything here is **powered by running code** — Specter, person_db, OpenCode,
 | 10 safety policies (CI-testable) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/psychotherapy_policies.yaml" target="_blank" class="pill">psychotherapy_policies.yaml</a> |
 | Usage-based pricing (4 tiers, WTP by ICP) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/pricing_model.csv" target="_blank" class="pill">pricing_model.csv</a> |
 | Volume estimates: LLM API requests (100–400× user msgs) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/" target="_blank" class="pill">task6_estimates/</a> |
-| **Dropbox cold email** (7 contacts, YC framework, Specter) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
+| **Notion cold email** (6 contacts + warm intros, YC framework) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
 | **Incident LinkedIn** (7 people, Specter + person_db) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
 | 115 leads × 18 personalized outbound (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 

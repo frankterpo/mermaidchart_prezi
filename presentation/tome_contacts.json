@@ -8,7 +8,10 @@
     "ai_products": "Notion AI (Q&A, writing, autofill) on GPT-4 + Claude. AI Connectors: Slack, Google Drive, GitHub, Jira, MS Teams, SharePoint, Linear. 100M+ users, 62% Fortune 100.",
     "security_context": "Schneier published 'Abusing Notion's AI Agent for Data Theft' (Sept 2025) — the 'lethal trifecta' vuln in Notion 3.0. Notion responded with prompt injection detection + admin controls. SOC 2 Type 2.",
     "warm_intro_paths": {
-      "ivan_zhao_ceo": ["dave@offline.vc (Offline VC)", "fei@tryspecter.com (Specter — our team)"]
+      "fuzzy_k_cto": ["sgwoods@inoviacapital.com (Steven Woods, Inovia Capital)"],
+      "jackie_rocca_product": ["kevin.diestel@generationim.com (Kevin Diestel, Generation IM)", "roseanne@renegadepartners.com (Roseanne Wincek, Renegade Partners)"],
+      "ivan_zhao_ceo": ["dave@offline.vc (Dave Morin, Offline VC)", "fei@tryspecter.com (Fei Hall)"],
+      "erica_anderson_cro": ["ethan@deltavcapital.com (Ethan Epley, Delta V Capital)"]
     }
   },
   "contacts": [
@@ -20,13 +23,13 @@
       "linkedin_message": "Hey Daimon — saw Schneier's piece on the Notion 3.0 'lethal trifecta.' Your team's response (prompt injection detection, admin controls) was fast. The next layer is runtime output enforcement — controlling what the model surfaces, not just what goes in. Built exactly that. Worth a quick chat?",
       "warm_intro": null,
       "mutuals": {
-        "connections": "No direct Specter connections found — cold outreach. Security EM → direct buyer.",
-        "approach": "Cold. Reference Schneier article as shared context."
+        "connections": [],
+        "approach": "Cold. No mutual connections — reference Schneier article as shared context."
       },
       "outreach_reason": [
         "Schneier published 'Abusing Notion's AI Agent for Data Theft' (Sept 2025) — Daimon's team responded",
         "Career: Airbnb Security → Robinhood D&R → Notion Security EM. SANS SEC522, CMU SEI trained.",
-        "He's the hands-on security leader who would evaluate + implement runtime enforcement"
+        "Hands-on security leader who would evaluate + implement runtime enforcement"
       ],
       "specter_profile": { "name": "Daimon G", "position": "Security Engineering Manager", "seniority": "Director", "linkedin": "https://www.linkedin.com/in/asdfdevnull" }
     },
@@ -36,15 +39,17 @@
       "greeting": "Hey Fuzzy,",
       "email_body": "Subject: the gap between Braintrust and the user\n\nHey Fuzzy,\n\nBraintrust gave your team 10x faster AI issue resolution — great case study. That covers eval.\n\nBut after Schneier's piece on Notion 3.0 data exfiltration, the question isn't just 'is the AI answer good?' — it's 'should this answer exist?' When Connectors pull from Slack, GitHub, and Jira, the output layer is where data crosses boundaries.\n\nWe enforce output policies at runtime. Sub-200ms.\n\n15 min? calendly.com/francisco-wc\n\nFrancisco",
       "linkedin_message": "Hey Fuzzy — the Braintrust case study (10x eval speed) was impressive. After Schneier's Notion 3.0 piece, the next question is runtime output enforcement — not just 'is this answer good?' but 'should it exist?' That's what we built. Quick chat?",
-      "warm_intro": null,
+      "warm_intro": {
+        "via_steven_woods_inovia": "Hey Steven,\n\nHope Inovia's been good. I noticed you're connected to Fuzzy Khosrowshahi at Notion.\n\nWe built runtime AI output enforcement at White Circle — the layer between what the model generates and what the user sees. After Schneier's piece on Notion 3.0 data exfiltration, it's directly relevant to their roadmap.\n\nWould you be open to making a quick intro? Happy to send a forwardable blurb.\n\nFrancisco"
+      },
       "mutuals": {
-        "connections": "No direct Specter connections found — cold outreach.",
-        "approach": "Cold. Lead with Braintrust case study (his win) + Schneier article (his problem)."
+        "connections": ["sgwoods@inoviacapital.com (Steven Woods, Inovia Capital)"],
+        "approach": "Warm via Steven Woods at Inovia Capital."
       },
       "outreach_reason": [
         "CTO who owns the Braintrust integration and Notion AI architecture (GPT-4, Claude)",
         "Career: Google Sr Director → Slack SVP Product Engineering → Notion CTO",
-        "Schneier's Notion 3.0 data exfiltration piece puts runtime security on his radar"
+        "Warm intro available via Steven Woods (Inovia Capital)"
       ],
       "specter_profile": { "name": "Fuzzy K", "position": "Chief Technology Officer", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/fuzzy-k-a58abb170" }
     },
@@ -54,15 +59,18 @@
       "greeting": "Hey Jackie,",
       "email_body": "Subject: output controls for Notion AI\n\nHey Jackie,\n\nYou shipped Notion AI to 62% of Fortune 100. Braintrust handles quality. But enterprise buyers are asking a different question now: what can the AI surface from my connected apps?\n\nAfter the Schneier piece on Notion 3.0 data exfiltration, that question got louder. Runtime output enforcement — between model and user — is the missing layer.\n\nThat's what we built. Sub-200ms, SOC 2 audit trails.\n\n15 min? calendly.com/francisco-wc\n\nFrancisco",
       "linkedin_message": "Hey Jackie — you shipped Notion AI to 62% of Fortune 100. After the Schneier piece on 3.0 data exfiltration, enterprise buyers are asking about output controls. Built exactly that layer. Worth a quick chat?",
-      "warm_intro": null,
+      "warm_intro": {
+        "via_kevin_diestel_generation": "Hey Kevin,\n\nI noticed you're connected to Jackie Rocca at Notion. We built runtime AI output enforcement at White Circle — controlling what the model can surface from connected enterprise apps. Directly relevant to Notion's AI Connectors rollout.\n\nWould you mind making a quick intro? Can send a one-liner to forward.\n\nFrancisco",
+        "via_roseanne_wincek_renegade": "Hey Roseanne,\n\nI see you're connected to Jackie Rocca at Notion. We built runtime AI output enforcement — the layer between what the model generates and what the user sees. After Schneier's piece on Notion 3.0, it's directly relevant to their roadmap.\n\nWould you be open to a quick intro? Happy to send a forwardable blurb.\n\nFrancisco"
+      },
       "mutuals": {
-        "connections": "No direct Specter connections found — cold outreach.",
-        "approach": "Cold. Lead with her achievement (62% Fortune 100) + enterprise buyer concern."
+        "connections": ["kevin.diestel@generationim.com (Kevin Diestel, Generation IM)", "roseanne@renegadepartners.com (Roseanne Wincek, Renegade Partners)"],
+        "approach": "Warm via Kevin Diestel (Generation IM) or Roseanne Wincek (Renegade Partners)."
       },
       "outreach_reason": [
         "Product Lead who owns Notion AI, shipped Braintrust integration",
         "Career: Bain → Google PM → Slack VP Product → Notion. Stanford MBA.",
-        "Enterprise buyers asking about AI output controls = her roadmap decision"
+        "Warm intro available via Kevin Diestel (Generation IM) and Roseanne Wincek (Renegade Partners)"
       ],
       "specter_profile": { "name": "Jackie Rocca", "position": "Product Lead", "seniority": "Director", "linkedin": "https://www.linkedin.com/in/jackie-rocca" }
     },
@@ -73,16 +81,16 @@
       "email_body": "Subject: runtime AI security for Notion\n\nHey Ivan,\n\n100M users, 62% of Fortune 100, AI Connectors pulling from 7 apps. Notion AI is everywhere. The Schneier piece on 3.0 data exfiltration showed the attack surface is real.\n\nBraintrust handles eval. The missing piece: runtime output enforcement — what the model can surface, controlled in real-time.\n\nThat's what we built at White Circle. Sub-200ms.\n\n15 min? calendly.com/francisco-wc\n\nFrancisco",
       "linkedin_message": "Hey Ivan — Notion AI in 62% of Fortune 100. After the Schneier piece on 3.0 data exfiltration, the runtime output layer is the next thing enterprise buyers will ask about. Built exactly that. Quick chat?",
       "warm_intro": {
-        "via_dave_offline_vc": "Hey Dave — hope things are good at Offline. I see you're connected to Ivan Zhao at Notion. We're building runtime AI security at White Circle — especially relevant after the Schneier piece on Notion 3.0 data exfiltration. Would you be open to making a quick intro? Happy to send a forwardable blurb.\n\nFrancisco",
-        "via_fei_specter": "Hey Fei — I see you're connected to Ivan Zhao at Notion on LinkedIn. We're building runtime AI output enforcement at White Circle, and after the Schneier piece on Notion 3.0 data exfiltration, it's directly relevant to their roadmap. Would you mind making a quick intro? Can send a one-liner to forward.\n\nFrancisco"
+        "via_dave_morin_offline": "Hey Dave,\n\nHope things are good at Offline. I see you're connected to Ivan Zhao at Notion.\n\nWe're building runtime AI security at White Circle — controlling what the model can surface from enterprise apps in real-time. After the Schneier piece on Notion 3.0 data exfiltration, it's directly relevant to their roadmap.\n\nWould you be open to making a quick intro? Happy to send a forwardable blurb.\n\nFrancisco",
+        "via_fei_hall": "Hey Fei,\n\nI see you're connected to Ivan Zhao at Notion on LinkedIn. We're building runtime AI output enforcement at White Circle — after the Schneier piece on Notion 3.0 data exfiltration, it's directly relevant to their roadmap.\n\nWould you mind making a quick intro? Can send a one-liner to forward.\n\nFrancisco"
       },
       "mutuals": {
-        "connections": ["dave@offline.vc (Offline VC) — Specter LinkedIn connection to Ivan Zhao", "fei@tryspecter.com (Specter employee) — Specter LinkedIn connection to Ivan Zhao"],
-        "approach": "Warm via Dave at Offline VC or Fei at Specter. Fei is internal — easiest path."
+        "connections": ["dave@offline.vc (Dave Morin, Offline VC)", "fei@tryspecter.com (Fei Hall)"],
+        "approach": "Warm via Dave Morin (Offline VC) or Fei Hall. Fei is the easiest path."
       },
       "outreach_reason": [
         "CEO & Co-Founder — ultimate decision maker",
-        "Warm intro via dave@offline.vc and fei@tryspecter.com (Specter's own team)",
+        "Warm intro available via Dave Morin (Offline VC) and Fei Hall",
         "Schneier's Notion 3.0 data exfiltration piece makes runtime security urgent"
       ],
       "specter_profile": { "name": "Ivan Zhao", "position": "CEO & Co-Founder", "seniority": "Executive", "linkedin": "" }
@@ -93,15 +101,17 @@
       "greeting": "Hey Erica,",
       "email_body": "Subject: AI security as a deal closer\n\nHey Erica,\n\nAt GitHub you sold code security. At Notion you're selling AI safety — same motion, bigger surface area.\n\nWhen a Fortune 500 CISO asks 'what can your AI surface from my Slack and Jira?' — that's a deal blocker or a closer. Runtime output enforcement gives you the proof layer to answer that question.\n\n15 min to show you what that looks like? calendly.com/francisco-wc\n\nFrancisco",
       "linkedin_message": "Hey Erica — GitHub CRO → Notion CRO. You've sold security before. When Fortune 500 CISOs ask what Notion AI can surface from their connected apps, runtime output enforcement is the proof layer. Worth a quick chat?",
-      "warm_intro": null,
+      "warm_intro": {
+        "via_ethan_epley_deltav": "Hey Ethan,\n\nHope things are going well at Delta V. I see you're connected to Erica Anderson at Notion.\n\nWe built runtime AI security at White Circle — controlling what the model can surface from enterprise apps. Relevant for Notion's Fortune 500 deals where security questionnaires are a daily blocker.\n\nWould you be open to a quick intro? Happy to send a forwardable blurb.\n\nFrancisco"
+      },
       "mutuals": {
-        "connections": "No direct Specter connections found — cold outreach.",
-        "approach": "Cold. Lead with GitHub → Notion CRO parallel. Security = revenue angle."
+        "connections": ["ethan@deltavcapital.com (Ethan Epley, Delta V Capital)"],
+        "approach": "Warm via Ethan Epley at Delta V Capital."
       },
       "outreach_reason": [
         "CRO who owns enterprise revenue — security questionnaires are daily reality",
         "Career: GitHub (VP Sales → SVP → CRO) → Notion CRO. Same security-as-sales pattern.",
-        "AI output controls = deal accelerator for Fortune 500 sales"
+        "Warm intro available via Ethan Epley (Delta V Capital)"
       ],
       "specter_profile": { "name": "Erica Anderson", "position": "Chief Revenue Officer", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/erica-anderson-54b5878" }
     },
