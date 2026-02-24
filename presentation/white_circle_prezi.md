@@ -884,7 +884,7 @@ flowchart LR
 | Incident (people) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> (7) |
 | Raw outbound | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
-<code>outbound enrich-tome --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
+<code>outbound enrich-company -d tome.com --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
 
 ----
 
@@ -905,6 +905,6 @@ Everything here is **powered by running code** — Specter, person_db, OpenCode,
 | **Incident LinkedIn** (7 people, Specter + person_db) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
 | 115 leads × 18 personalized outbound (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
-<code>enrich-tome --use-opencode</code> · <code>enrich-incident-linkedin --people-only</code>
+<code>outbound enrich-company -d tome.com</code> · <code>outbound enrich-incident-linkedin --people-only</code>
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/" style="font-size: 1.1em; color: #a8a8ff;">🔗 github.com/frankterpo/growth_hacker_wc_2026</a>
