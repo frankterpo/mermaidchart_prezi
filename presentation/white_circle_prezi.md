@@ -275,20 +275,20 @@ quadrantChart
 ====
 
 <!-- .slide: id="task2-overlap" -->
-#### Matrix Overlap: Product vs. Specter Customer Industries
+#### Competitor Product × Customer × Industry Matrix
 
-| Product - Company | Customer Industries | Verified Customers (public sources) |
-|---|---|---|
-| Braintrust | Software, AI/ML, Education | Zapier · Notion · Coursera · Dropbox · Retool · Loom |
-| Helicone | Software, Energy, AI/ML | Sunrun · DeepAI · Brand.dev · Greptile |
-| Lakera Guard | Software, Finance, Enterprise | Dropbox · Cohere · Fortune 500 EdTech (unnamed) |
-| Langfuse | Pharma, FinTech, Education | Samsara · Twilio · SumUp · Khan Academy · Springer Nature |
-| Patronus API | E-commerce, Automotive, AI | OpenAI · HP · Pearson · Etsy · CARIAD/VW |
-| PromptArmor | Legal, Finance, Healthcare | HubSpot · Gusto · Bill.com · Alteryx |
+| Company | Products | Verified Customers | Customer Industries |
+|---|---|---|---|
+| **Braintrust** | Platform · Brainstore · Loop | Notion · Stripe · Zapier · Vercel · Ramp · Dropbox · Cloudflare · Replit · Airtable · Instacart | SaaS, FinTech, DevTools, E-commerce |
+| **Helicone** | Observability Proxy (100+ LLMs) | Sunrun · DeepAI · Brand.dev · Greptile | Energy, AI/ML, DevTools |
+| **Lakera** | Guard · Red · Gandalf · PII Detection | Dropbox · Cohere · Top 3 US bank (unnamed) | Cloud Storage, AI/ML, Finance |
+| **Langfuse** | LLM Engineering Platform | Samsara · Twilio · SumUp · Khan Academy · Springer Nature · Telus · Pigment | IoT, Comms, FinTech, EdTech, Publishing, Telco |
+| **Patronus AI** | API · Percival · Lynx · FinanceBench · SimpleSafetyTests · Glider | OpenAI · HP · Pearson · Etsy · CARIAD/VW | AI, Enterprise Tech, Education, E-commerce, Automotive |
+| **PromptArmor** | AI Risk Platform | HubSpot · Gusto · Bill.com · Alteryx | SaaS, HR/Payroll, FinTech, Data Analytics |
 <!-- .element: class="small-table" -->
 
-<div class="callout text-left">
-  **Source:** Specter <code>company_data.clients_json</code> (web-scraped customer data from company sites) + public <code>/customers</code> pages and case studies. Pipeline fix: replaced <code>company_clients → clients_integration_companies</code> join (CRM artifacts) with <code>clients_json</code> (verified customers).
+<div class="callout text-left" style="font-size: 0.5em;">
+  <strong>Sources:</strong> Company website testimonials (web-scraped), public <code>/customers</code> pages, case studies, <a href="https://a16z.com/announcement/investing-in-braintrust/">a16z</a>, <a href="https://siliconangle.com/2026/02/17/braintrust-breaks-80m-series-b-funding-round-become-observability-layer-ai/">SiliconANGLE</a>, <a href="https://www.cbinsights.com/company/promptarmor/financials">CB Insights</a>, <a href="https://www.tprassociation.org/vendor-profiles/promptarmor">TPRA</a>. Product data from company pages + G2. Context enriched via <a href="https://docs.cala.ai/">Cala AI</a> knowledge search.
 </div>
 
 <a href="./task2_product_industry_overlap.csv" target="_blank" class="pill">task2_product_industry_overlap.csv</a>
