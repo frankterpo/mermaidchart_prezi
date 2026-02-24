@@ -891,8 +891,8 @@ flowchart TD
 ====
 
 <!-- .slide: id="task7-cold-email" -->
-#### G1: Cold Email — Enterprise AI Prospect (Tome)
-##### Targeting <code>tome.com</code> · Research: Governance Studio (Apr 2025), Salesforce/Gong integrations, SOC 2 Type II pursuit
+#### G1: Cold Email — Enterprise AI Prospect (Dropbox)
+##### Targeting <code>dropbox.com</code> · Research: Lakera Guard blog post, Dash AI search (10+ connected apps), DART security team, Braintrust eval
 
 <div id="tome-contact-switcher" class="contact-switcher-sidebar">
   <div class="folder-contacts"></div>
@@ -903,7 +903,7 @@ flowchart TD
 
 *115 leads in <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">artifacts/leads.jsonl</a>*
 
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/tome_opencode_context.json" target="_blank" class="pill">tome_opencode_context.json</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/competitors.md" target="_blank" class="pill">competitors.md</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a>
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/verified_competitor_customers.json" target="_blank" class="pill">verified_competitor_customers.json</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/competitors.md" target="_blank" class="pill">competitors.md</a> · <a href="https://dropbox.tech/security/how-we-use-lakera-guard-to-secure-our-llms" target="_blank" class="pill">Dropbox Lakera Guard blog</a>
 
 ====
 
@@ -937,11 +937,11 @@ flowchart LR
 |---|---|
 | Leads | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">leads.jsonl</a> (115) |
 | Contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
-| Tome contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
+| Dropbox contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> (Dropbox) |
 | Incident (people) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> (7) |
 | Raw outbound | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
-<code>outbound enrich-company -d tome.com --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
+<code>outbound enrich-company -d dropbox.com --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
 
 ====
 
@@ -950,11 +950,11 @@ flowchart LR
 
 <div class="callout text-left">
 
-**1. Every email starts with THEM, not us.** Epstein's #1 principle: "uncommon commonalities." We use Specter person_db career history, talent signals, and LinkedIn connections to find specific hooks — Vicki's OpenAI co-founding, Alexander's departure post, Billy's Pendo Visual Design Studio work. No generic openers.
+**1. Start with what THEY already did.** Dropbox published a blog post on using Lakera Guard and invested through Dropbox Ventures. We position White Circle as the natural complement — Lakera = input firewall, White Circle = output enforcement. The pitch starts with their own strategic bet, not our features.
 
-**2. Full Specter intelligence stack.** `talentsignals` (who moved where), `person_db` (full career/education), `specter_users_linkedin_connections` (warm intro paths via VC connections to Keith, Henri, Vicki), `company_data` (investors, funding). Fixed SQL bug: `ILIKE '%tome.com%'` matched `framatome.com`.
+**2. Full Specter intelligence → role-specific hooks.** `talentsignals` (783 for Dropbox), `specter_users_linkedin_connections` (VCs connected to Drew Houston, Eric Schuchman), `company_data` (investors, 4K employees). Each email uses career history as the uncommon commonality: Christopher Witter's CrowdStrike → Spotify → DART path, Josh Clemm's Lockheed Martin defense background, Busra Demirci's Airbnb → Instagram design career.
 
-**3. Warm intros > cold outreach.** Specter LinkedIn connections reveal 6 VCs connected to Tome leadership: Sierra Ventures, Primary VC, Inovia Capital (Keith), Radical VC, Amity VC (Henri), Renegade Partners (Vicki). 2-3x conversion vs. cold.
+**3. Warm intros > cold outreach.** Specter LinkedIn connections: dave@offline.vc and jon@daftcapital.com connected to Drew Houston, andy@amity.vc and pat@amity.vc connected to Eric Schuchman. 2-3x conversion vs. cold.
 
 </div>
 

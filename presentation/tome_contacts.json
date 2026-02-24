@@ -1,271 +1,154 @@
 {
-  "company": "Tome",
-  "domain": "tome.app",
+  "company": "Dropbox",
+  "domain": "dropbox.com",
   "source": "Specter talentsignals + person_db + linkedin_connections + public research (YC Epstein framework)",
-  "generated_at": "2026-02-24T22:00:00.000000",
+  "generated_at": "2026-02-24T23:00:00.000000",
   "intelligence_summary": {
-    "company_pivot": "Tome pivoted from consumer AI presentations (20M users) to enterprise CRM platform (Lightfield). Sunsetting Slides Apr 2025. Running GPT-4o and Llama-3 in production.",
-    "enterprise_features": "Governance Studio (regex compliance firewall), BrandGuard (visual identity lock), Engage Analytics (click-stream/CRM). SOC 2 Type I certified, pursuing Type II.",
-    "integrations": "Salesforce, Gong data connectors feed AI-generated enterprise content.",
-    "investors": "Lightspeed Venture Partners, Coatue, Greylock, 8VC, 500 Global, Eric Schmidt, Emad Mostaque, Wing Venture Capital",
+    "competitor_connection": "Dropbox uses Lakera Guard (published blog post: dropbox.tech/security/how-we-use-lakera-guard-to-secure-our-llms) AND Braintrust for AI eval. Dropbox Ventures invested in Lakera.",
+    "ai_products": "Dash (AI-powered universal search connecting Slack, M365, Notion, Google Drive, Canva, Asana). Multimodal search, AI-generated answers, AI writing tools. Stacks for team collaboration.",
+    "security_posture": "SOC 2, GDPR, HIPAA. Published AI governance report. DART team (Detection and Response). Lakera Guard for input firewall. Permission-aware indexing.",
+    "investors": "Accel, Benchmark, BlackRock, CRV, Goldman Sachs, Greylock, Salesforce Ventures, Sequoia, T. Rowe Price",
     "warm_intro_paths": {
-      "keith_peiris": ["anne@sierraventures.com (Sierra Ventures)", "nick@primary.vc (Primary VC)", "amalhotra@inoviacapital.com (Inovia Capital)"],
-      "henri_liriani": ["jules@radical.vc (Radical VC)", "cj@amity.vc (Amity VC)"],
-      "vicki_cheung": ["jean@renegadepartners.com (Renegade Partners)"]
+      "drew_houston": ["dave@offline.vc (Offline VC)", "jon@daftcapital.com (Daft Capital)"],
+      "eric_schuchman": ["andy@amity.vc (Amity VC)", "pat@amity.vc (Amity VC)"]
     },
-    "specter_bugs_fixed": "warm_intro_signals query ILIKE '%tome.com%' matched framatome.com — fixed to exact domain match. person_db name-based fallback added."
+    "key_angle": "Lakera Guard = input firewall (prompt injection). Braintrust = eval. White Circle = runtime OUTPUT enforcement. The missing layer between what the model generates and what the user sees."
   },
   "contacts": [
     {
-      "role": "ceo",
-      "label": "Keith Peiris, CEO & Co-Founder",
-      "greeting": "Hey Keith,",
-      "email_body": "Subject: Tome's enterprise shift and the runtime layer\n\nHey Keith,\n\nTome's move from 20M consumer users to enterprise CRM makes a lot of sense — annual contracts, SOC 2 compliance, Governance Studio catching content violations before export.\n\nBut once enterprise buyers connect Salesforce and Gong, the next question is: what can the model access at runtime, and who controls that? Governance Studio handles static rules. The gap is the dynamic layer — what GPT-4o infers between input and output.\n\nThat's what we enforce at White Circle. Sub-200ms policy controls between model and screen. The runtime complement to Governance Studio.\n\nAre enterprise buyers already asking about this?\n\nFrancisco",
-      "linkedin_message": "Hey Keith — Tome's enterprise pivot makes total sense. Governance Studio catches content-level violations, but once Salesforce/Gong data flows through GPT-4o, the runtime output layer is the next compliance gap enterprise buyers will ask about. Building the enforcement layer for exactly that. Curious if you're hearing this already.",
+      "role": "security",
+      "label": "Christopher Witter, Sr Engineering Manager — DART (Detection & Response)",
+      "greeting": "Hey Christopher,",
+      "email_body": "Subject: the output side of Lakera Guard\n\nHey Christopher,\n\nYour path from CrowdStrike to Spotify Detection & Response to running DART at Dropbox — you've built detection systems at every layer of the stack.\n\nDropbox published a great post on using Lakera Guard to screen LLM inputs. That covers prompt injection at the front door. But when Dash generates answers from a user's connected Slack, Notion, and Google Drive, the output layer is where sensitive data leaks across app boundaries.\n\nWe enforce policies at that runtime output layer — sub-200ms, between model and screen. The complement to what Lakera Guard does at input.\n\nIs output-side enforcement something DART is scoping?\n\nFrancisco",
+      "linkedin_message": "Hey Christopher — from CrowdStrike to Spotify D&R to running DART at Dropbox, you've built detection at every layer. Dropbox's Lakera Guard post covers input-side defense well. The gap is the output layer — when Dash surfaces data across connected apps. We enforce policies there, sub-200ms. Is this on DART's radar?",
       "outreach_reason": [
-        "Specter talent signal: Keith moved from Greylock (EIR) → Tome Co-Founder & CEO",
-        "Tome pivoted to enterprise CRM (Lightfield) — SOC 2 Type I certified, Governance Studio launched",
-        "Enterprise integrations (Salesforce, Gong) create runtime AI security surface area",
-        "Specter LinkedIn connections: anne@sierraventures.com, nick@primary.vc, amalhotra@inoviacapital.com (warm intro paths)"
+        "Specter talent signal: Christopher moved from Spotify (Detection & Response EM) → Dropbox (DART team lead)",
+        "Dropbox published blog post about Lakera Guard integration — covers input firewall only",
+        "DART team owns detection and response — natural buyer for runtime output enforcement",
+        "Career path (CrowdStrike → Capgemini MDR → Spotify → Dropbox) shows deep security detection expertise"
       ],
       "personalization_basis": {
-        "career": "Nanotechnology engineering at U of Waterloo → 6+ years at Facebook/Instagram/Oculus → Greylock EIR → co-founded Tome 2020",
-        "product_knowledge": "Enterprise pivot, Governance Studio regex firewall, BrandGuard, Engage Analytics, GPT-4o/Llama-3 in production",
-        "hook": "CEO angle — enterprise buyers asking about security posture is a sales blocker or accelerator",
-        "warm_intros": ["Sierra Ventures (Anne)", "Primary VC (Nick)", "Inovia Capital"]
+        "career": "CrowdStrike (Sr Manager) → Capgemini (Director, Managed Detection & Response) → Spotify (EM, Detection & Response) → Dropbox (Sr EM, DART)",
+        "education": "Strayer University, Information Systems",
+        "hook": "His entire career is detection and response. Lakera Guard handles input detection — output-side detection is the natural next layer for DART.",
+        "product_knowledge": "Runs DART (Detection and Response Team). Lakera Guard covers prompt injection input screening."
       },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter intelligence + Epstein YC cold email framework"
-      },
-      "specter_profile": {
-        "name": "Keith Peiris",
-        "position": "CEO",
-        "seniority": "Executive",
-        "linkedin": "https://www.linkedin.com/in/keithpeiris"
-      }
+      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + Dropbox Lakera blog post + Epstein framework" },
+      "specter_profile": { "name": "Christopher Witter", "position": "Senior Engineering Manager, Detection and Response (DART)", "seniority": "Director", "linkedin": "https://www.linkedin.com/in/christopher-witter" }
     },
     {
-      "role": "cpo",
-      "label": "Henri Liriani, CPO & Co-Founder",
-      "greeting": "Hey Henri,",
-      "email_body": "Subject: Governance Studio's next layer\n\nHey Henri,\n\nGovernance Studio is smart — regex checks before export catch content violations. BrandGuard locks visual identity at the workspace level. That covers the static compliance surface.\n\nBut when GPT-4o generates a deck from a Salesforce account record, the dynamic output layer is where the gap shows — what the model inferred vs. what it should have surfaced. That's not regex-catchable.\n\nWe enforce policies at that runtime layer. Sub-200ms, between model output and user screen. The piece that makes Governance Studio complete.\n\nWorth a look?\n\nFrancisco",
-      "linkedin_message": "Hey Henri — Governance Studio catches content violations pre-export, and BrandGuard locks visual identity. But when GPT-4o generates from Salesforce data, the runtime output layer is the compliance gap. We enforce policies there, sub-200ms. Worth a look?",
+      "role": "ceo",
+      "label": "Drew Houston, Founder & CEO",
+      "greeting": "Hey Drew,",
+      "email_body": "Subject: Dropbox Ventures backed the input layer — what about the output layer?\n\nHey Drew,\n\nDropbox Ventures backed Lakera, and the engineering team published a detailed post on using Lakera Guard to screen LLM inputs. Smart bet — prompt injection defense is table stakes.\n\nBut as Dash connects Slack, Notion, Google Drive, and OneDrive into one AI search layer, the harder problem is what the model surfaces on the output side. A user with access to marketing files shouldn't see finance data just because the AI inferred a connection.\n\nThat runtime output enforcement layer — between model and screen, sub-200ms — is what we're building.\n\nIs this gap on the Dash roadmap?\n\nFrancisco",
+      "linkedin_message": "Hey Drew — Dropbox Ventures backed Lakera for input-side AI defense (smart bet). As Dash connects Slack, Notion, Drive into one AI search layer, the harder problem is output-side: what the model surfaces across app boundaries. Building runtime enforcement for exactly that gap.",
       "outreach_reason": [
-        "Henri co-founded Tome with Keith at Greylock during pandemic",
-        "As CPO, he designed Governance Studio, BrandGuard, Engage Analytics",
-        "Specter LinkedIn connections: jules@radical.vc (Radical VC), cj@amity.vc (Amity VC) — warm intro paths"
+        "Dropbox Ventures invested in Lakera — shows strategic commitment to AI security",
+        "Published Lakera Guard integration blog post — input firewall in place, output gap remains",
+        "Dash connects 10+ enterprise apps — cross-app data leakage is the key risk",
+        "Specter LinkedIn connections: dave@offline.vc, jon@daftcapital.com (warm intro paths)"
       ],
       "personalization_basis": {
-        "career": "Co-founded Tome at Greylock with Keith Peiris during pandemic. CPO overseeing product.",
-        "product_knowledge": "Designed Governance Studio (regex compliance), BrandGuard (visual identity), Engage Analytics (CRM engagement tracking)",
-        "hook": "CPO angle — Governance Studio is his baby, positioning runtime enforcement as its natural complement rather than a competitor",
-        "warm_intros": ["Radical VC (Jules)", "Amity VC (CJ)"]
+        "career": "Founded Dropbox 2007. Previously software engineer at Bit9 (now Carbon Black — endpoint security)",
+        "hook": "He personally invested in Lakera through Dropbox Ventures. Positioning output enforcement as the natural complement to his own strategic bet.",
+        "warm_intros": ["Offline VC (Dave)", "Daft Capital (Jon)"]
       },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter intelligence + Epstein YC cold email framework"
-      },
-      "specter_profile": {
-        "name": "Henri Liriani",
-        "position": "CPO",
-        "seniority": "Executive",
-        "linkedin": "https://www.linkedin.com/in/henriliriani"
-      }
+      "opencode": { "used": false, "model": null, "method": "Manual: Specter + Dropbox Ventures/Lakera public data + Epstein framework" },
+      "specter_profile": { "name": "Drew Houston", "position": "Founder & CEO", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/drewhouston" }
     },
     {
       "role": "cto",
-      "label": "Alexander Vladimirov, Head of Engineering",
-      "greeting": "Hey Sasha,",
-      "email_body": "Subject: the AI-native problems you mentioned\n\nHey Sasha,\n\nYour LinkedIn post about leaving Tome resonated — \"problems engineers have never encountered, regardless of experience level\" building AI-native apps.\n\nRuntime AI security is one of those problems. Standard AppSec doesn't cover model behavior. Fine-tuning doesn't prevent prompt injection at inference time. The tooling gap between traditional security and AI-native apps is real.\n\nWe're building the enforcement layer for that — sub-200ms policy controls between model and output, with auto-patching for emerging vulnerabilities.\n\nGiven you lived this at Tome (and before that at Robinhood and Google), would love your take.\n\nFrancisco",
-      "linkedin_message": "Hey Sasha — your post about leaving Tome resonated, especially \"problems engineers have never encountered\" in AI-native apps. Runtime AI security is exactly one of those. Building the enforcement layer for it. Given your path from Google → Robinhood → Tome, would love your take.",
+      "label": "Ashraf Alkarmi, GM/SVP Core Products",
+      "greeting": "Hey Ashraf,",
+      "email_body": "Subject: Dash's cross-app AI search and the output boundary\n\nHey Ashraf,\n\nFrom Head of Product at Meta to GM Freevee at Amazon to CPO at Vimeo — you've shipped products where content boundaries between users are critical. At Dropbox, the stakes are higher: Dash pulls from Slack, Notion, Google Drive, and generates answers across all of them.\n\nLakera Guard screens the inputs. But when the model generates an answer that combines data from three connected apps, the output is where permission boundaries can break.\n\nWe enforce policies at that output layer — sub-200ms, respecting the access rules you've already built. The runtime complement to Dash's permission-aware indexing.\n\nIs output-side enforcement on the Core Products roadmap?\n\nFrancisco",
+      "linkedin_message": "Hey Ashraf — from Meta to Amazon Freevee to Vimeo CPO to Dropbox GM/SVP, you've shipped products where content boundaries matter. With Dash pulling from Slack/Notion/Drive, the output layer is where permission boundaries can break. Building runtime enforcement for exactly that. On the roadmap?",
       "outreach_reason": [
-        "Specter talent signal: Alexander moved from Robinhood (Sr Eng Manager) → Tome (Head of Engineering)",
-        "Specter talent signal: Alexander left Tome → Stealth (Founder)",
-        "His LinkedIn departure post specifically mentions unsolved problems in AI-native app development",
-        "Career path: Google → Robinhood → Tome gives deep context on scaling engineering orgs"
+        "Specter talent signal: Ashraf moved from Vimeo (CPO) → Dropbox (GM/SVP Core Products)",
+        "He owns Dropbox's core products including Dash, which connects 10+ enterprise apps",
+        "Harvard MA in Management — understands business risk of data leakage",
+        "Career: Meta → Amazon → Vimeo → Dropbox — every role involved content access control"
       ],
       "personalization_basis": {
-        "career": "Google Engineering Manager → Robinhood Sr Engineering Manager → Tome Head of Engineering → Stealth Founder",
-        "departure_context": "Left Tome, posted about 'problems engineers have never encountered' in AI-native apps — direct hook to runtime AI security",
-        "hook": "His departure post is the uncommon commonality. He publicly said the thing we're solving.",
-        "note": "Uses 'Sasha' — his public nickname from LinkedIn posts"
+        "career": "Meta (Head of Product) → Amazon (Director/GM Freevee) → Vimeo (CPO) → Dropbox (GM/SVP Core Products)",
+        "education": "Harvard University MA (Management & Operations), Southern Illinois University MSc (Electrical Engineering)",
+        "hook": "Every company he's led product at had content boundary challenges. Dropbox Dash multiplies that risk by connecting 10+ apps into one AI layer."
       },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter talent signals + LinkedIn departure post + Epstein YC framework"
-      },
-      "specter_profile": {
-        "name": "Alexander Vladimirov",
-        "position": "Head of Engineering",
-        "seniority": "Director",
-        "linkedin": "https://www.linkedin.com/in/alexandervladimirov"
-      }
-    },
-    {
-      "role": "team",
-      "label": "Vicki Cheung, Head of Infrastructure",
-      "greeting": "Hey Vicki,",
-      "email_body": "Subject: runtime enforcement from someone who helped build the models\n\nHey Vicki,\n\nYour path from co-founding OpenAI to leading infrastructure at Tome means you've seen model security from both sides — the research org training models and the product company deploying them in production.\n\nAt Tome's scale, running GPT-4o and Llama-3 for enterprise customers who've connected their Salesforce and Gong data, prompt injection at the runtime layer is a when, not an if. Fine-tuning alone doesn't prevent it.\n\nWe enforce policies at that layer — sub-200ms, between model output and user. Audit trails for SOC 2.\n\nHow are you thinking about this at Tome?\n\nFrancisco",
-      "linkedin_message": "Hey Vicki — your path from co-founding OpenAI to Tome infrastructure means you've seen model security from both sides. Running GPT-4o/Llama-3 in production with enterprise CRM data flowing through — how are you thinking about runtime policy enforcement at that layer?",
-      "outreach_reason": [
-        "Specter talent signal: Vicki moved from Lyft (Staff Software Engineer) → Gantry (Co-Founder/CTO)",
-        "Public: OpenAI co-founder, Lyft Kubernetes migration, Scale AI, Duolingo, Cruise",
-        "Specter LinkedIn connection: jean@renegadepartners.com (Renegade Partners) — warm intro path",
-        "Her OpenAI background uniquely positions her to understand runtime model security gaps"
-      ],
-      "personalization_basis": {
-        "career": "OpenAI co-founder → Lyft (Kubernetes migration, Staff SWE) → Scale AI → Duolingo → Cruise → Gantry (Co-Founder/CTO). Hong Kong origin, generalist engineer.",
-        "product_knowledge": "Tome runs GPT-4o and Llama-3, SOC 2 Type I. She owns the infrastructure these models run on.",
-        "hook": "OpenAI co-founder angle — she literally helped build the models, so she understands the security gap better than anyone",
-        "warm_intros": ["Renegade Partners (Jean)"]
-      },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter + public research (OpenAI founding team) + Epstein framework"
-      },
-      "specter_profile": {
-        "name": "Vicki Cheung",
-        "position": "Head of Infrastructure",
-        "seniority": "Director",
-        "linkedin": ""
-      }
+      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + career research + Epstein framework" },
+      "specter_profile": { "name": "Ashraf Alkarmi", "position": "GM/SVP Dropbox Core Products", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/alkarmi" }
     },
     {
       "role": "cpo",
-      "label": "Billy French, Head of Product Design",
-      "greeting": "Hey Billy,",
-      "email_body": "Subject: compliance UX that doesn't kill the creative flow\n\nHey Billy,\n\nYour work at Pendo building Visual Design Studio — turning complex product analytics into something users actually enjoy using — is exactly the design challenge AI compliance needs.\n\nAt Tome, Governance Studio catches content violations before export. But the runtime layer (what GPT-4o generates live from Salesforce data) needs UX that protects users without interrupting the creative flow you've spent your career perfecting.\n\nMost security tooling treats UX as an afterthought. Curious how you're thinking about the balance between safety controls and creative experience at Tome.\n\nFrancisco",
-      "linkedin_message": "Hey Billy — your Pendo Visual Design Studio work (complex analytics → clean UX) is the exact design challenge AI compliance needs. At Tome, Governance Studio handles pre-export rules, but runtime AI output needs safety UX that doesn't break the creative flow. How are you thinking about that balance?",
+      "label": "Eric Schuchman, GM — New Initiatives",
+      "greeting": "Hey Eric,",
+      "email_body": "Subject: AI security for what comes after Dash\n\nHey Eric,\n\nFrom building Gusto's payroll product (where a data leak is someone's salary) to Lattice's performance platform (where it's someone's review) to now owning new initiatives at Dropbox — every product you've launched handles data people care deeply about.\n\nAs Dropbox experiments with new AI features beyond Dash, the runtime security layer needs to scale with the ambition. Lakera Guard handles inputs, but output enforcement — controlling what the model surfaces from sensitive data — is the gap.\n\nWe build that layer. Sub-200ms, between model and user.\n\nIs this something the new initiatives team is thinking about?\n\nFrancisco",
+      "linkedin_message": "Hey Eric — from Gusto (payroll data) to Lattice (performance reviews) to Dropbox New Initiatives, every product you've built handles data people care deeply about. As Dropbox's AI features expand beyond Dash, runtime output enforcement is the security gap. Building exactly that.",
       "outreach_reason": [
-        "Specter talent signal: Billy moved from Acre Homes (Lead Product Designer) → Tome (Head of Product Design)",
-        "Specter person_db: Full career history — SCAD (BFA Graphic Design), SUNY Oneonta (Computer Art), Viget, Pendo.io (Lead Product Designer, built Visual Design Studio), Alto Pharmacy, Acre, Monte Carlo",
-        "Specter person_db: Co-founded City of Ash (160K+ MAU Facebook game) — entrepreneurial background",
-        "person_db headline: Now 'Head of Design @ 24andUp' — may have left Tome"
+        "Specter talent signal: Eric moved from Lattice (CPO) → Dropbox (GM New Initiatives)",
+        "Career: Gusto (Head of Product) → Lattice (CPO) → Dropbox — all handle sensitive employee data",
+        "New Initiatives = new AI bets that need security from day one",
+        "Specter LinkedIn connections: andy@amity.vc, pat@amity.vc (Amity VC) — warm intro paths"
       ],
       "personalization_basis": {
-        "career": "SUNY Oneonta (Computer Art, Theater Honor Society) → SCAD (BFA Graphic Design) → space150 → Saforian → Viget → Pendo.io (built Visual Design Studio flagship) → Alto Pharmacy → Acre Homes → Tome → Monte Carlo → 24andUp",
-        "product_knowledge": "At Pendo: designed Visual Design Studio, their flagship product. At Acre: founding designer, built design system from scratch. Co-founded City of Ash (Facebook game, 160K MAU).",
-        "hook": "His Pendo work (complex analytics → clean UX) is the perfect uncommon commonality for AI compliance UX",
-        "note": "Person_db shows current role as 'Head of Design @ 24andUp' — may no longer be at Tome"
+        "career": "Duke BME/ECE → Gusto (Head of Product & GM) → Lattice (CPO | Head of Eng, Product, Design) → Dropbox (GM New Initiatives)",
+        "education": "Duke University, B.S. Biomedical Engineering & Electrical Computer Engineering",
+        "hook": "Every company he's built product at handled deeply personal data (payroll, performance reviews, files). The data sensitivity angle resonates.",
+        "warm_intros": ["Amity VC (Andy)", "Amity VC (Pat)"]
       },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter person_db (full career history) + talent signals + Epstein framework"
+      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + career research + Epstein framework" },
+      "specter_profile": { "name": "Eric Schuchman", "position": "GM, New Initiatives", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/eschuchman" }
+    },
+    {
+      "role": "cto",
+      "label": "Josh Clemm, VP Engineering",
+      "greeting": "Hey Josh,",
+      "email_body": "Subject: runtime enforcement for Dropbox's AI stack\n\nHey Josh,\n\nLockheed Martin to LinkedIn to Uber to Dropbox VP Eng — you've scaled engineering orgs where system reliability and security are non-negotiable.\n\nThe Lakera Guard integration was a good call — screening LLM inputs for prompt injection. But Dash connects to Slack, Notion, Google Drive, and generates cross-app answers. The output layer — what the model surfaces — is where data crosses permission boundaries.\n\nWe enforce policies at that runtime layer. Sub-200ms, auto-patching for emerging vulnerabilities, audit trails for SOC 2.\n\nHow is the engineering team thinking about output-side controls?\n\nFrancisco",
+      "linkedin_message": "Hey Josh — Lockheed → LinkedIn → Uber → Dropbox VP Eng. Lakera Guard handles input-side screening well. With Dash generating cross-app answers from Slack/Notion/Drive, the output layer is where permission boundaries get tested. Building runtime enforcement for that gap. How's the eng team thinking about this?",
+      "outreach_reason": [
+        "Specter talent signal: Josh moved from Uber (Sr Director Eng) → Dropbox (VP Engineering)",
+        "Owns engineering org that integrates Lakera Guard and builds Dash",
+        "Career: Lockheed Martin (defense) → LinkedIn → Uber → Dropbox — all high-security-bar orgs",
+        "Carnegie Mellon MS Software Engineering — technical credibility"
+      ],
+      "personalization_basis": {
+        "career": "Cal Poly CS → Carnegie Mellon MS SWE → Lockheed Martin → Qualcomm → LinkedIn (Sr EM) → Uber (Sr Director Eng) → Dropbox (VP Eng)",
+        "education": "Carnegie Mellon University MS Software Engineering, Cal Poly BS Computer Engineering",
+        "hook": "Lockheed Martin background = defense-grade security mindset. Every subsequent role has been at high-security-bar companies."
       },
-      "specter_profile": {
-        "name": "Billy French",
-        "position": "Tome: Head of Product Design",
-        "seniority": "Mid-Level",
-        "linkedin": "https://www.linkedin.com/in/billy-french-7a883a22"
-      }
+      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + career research + Epstein framework" },
+      "specter_profile": { "name": "Josh Clemm", "position": "Vice President of Engineering", "seniority": "Director", "linkedin": "https://www.linkedin.com/in/joshclemm" }
     },
     {
       "role": "team",
-      "label": "Sarah Sachs, Director of Engineering, ML & Infrastructure",
-      "greeting": "Hey Sarah,",
-      "email_body": "Subject: runtime controls for the models you're shipping\n\nHey Sarah,\n\nYou went from leading NLP and GenAI at Robinhood to owning ML infrastructure at Tome — two very different risk profiles, both with real consequences when the model gets it wrong.\n\nWith Tome running GPT-4o and Llama-3 in production for enterprise customers, the runtime attack surface is different from what traditional AppSec covers. Prompt injection at inference time, data leakage through model outputs, compliance gaps between what's generated and what's allowed.\n\nWe enforce policies at that layer — sub-200ms, auto-patching for emerging vulnerabilities, audit trails for SOC 2.\n\nIs this a gap you're actively working to close?\n\nFrancisco",
-      "linkedin_message": "Hey Sarah — from NLP/GenAI at Robinhood to ML infrastructure at Tome, you've shipped models where getting it wrong has real consequences. With GPT-4o and Llama-3 in production for enterprise, how are you thinking about runtime policy enforcement at the model output layer?",
+      "label": "Busra Demirci, Director of Product Design — AI Innovations",
+      "greeting": "Hey Busra,",
+      "email_body": "Subject: designing AI safety that doesn't break the magic\n\nHey Busra,\n\nFrom Airbnb experience design to leading Instagram's design team to now directing AI Innovations design at Dropbox — you've spent your career making complex systems feel effortless.\n\nDash is magic when it surfaces the right answer from ten connected apps in seconds. The design challenge is: what happens when the model surfaces something the user shouldn't see? Most security tooling treats UX as an afterthought — block everything, explain nothing.\n\nCurious how you're thinking about the design of AI safety in Dash. The balance between protecting data and maintaining the seamless search experience.\n\nFrancisco",
+      "linkedin_message": "Hey Busra — from Airbnb experience design to Instagram design leadership to Dropbox AI Innovations. When Dash surfaces data across 10 connected apps, the UX of AI safety is the design challenge: how do you protect without breaking the magic? Curious how you're approaching this.",
       "outreach_reason": [
-        "Specter talent signal: Sarah moved from Robinhood (Head of NLP & GenAI) → Tome (Director of Engineering, ML & Infrastructure)",
-        "She owns the ML stack that runs GPT-4o and Llama-3 in production",
-        "Robinhood → Tome transition shows she understands high-stakes model deployment"
+        "Specter talent signal: Busra moved from Instagram (Design Manager) → Dropbox (Director Product Design, AI Innovations)",
+        "She designs the AI features that need safety UX — Dash, Stacks, AI-generated answers",
+        "Career: UCSD HCI → UBaltimore MS → Airbnb → Instagram → Dropbox = world-class design background",
+        "AI Innovations role = directly responsible for how safety appears in the product"
       ],
       "personalization_basis": {
-        "career": "Robinhood (Head of NLP & GenAI, Engineering Manager) → Tome (Director of Engineering, Machine Learning and Infrastructure)",
-        "hook": "Both Robinhood (financial) and Tome (enterprise CRM) have high stakes when models output wrong things — she lived this transition",
-        "product_knowledge": "Owns GPT-4o and Llama-3 deployment at Tome, responsible for ML infrastructure serving enterprise customers"
+        "career": "UCSD (HCI Certification) → UBaltimore (MS Interaction Design) → Airbnb (Experience Design Lead) → Instagram (Product Designer → Sr Design Manager) → Dropbox (Director Product Design, AI Innovations)",
+        "hook": "She designs the AI magic. The safety UX challenge is her problem to solve — position White Circle as making that challenge easier, not harder."
       },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter talent signals + Epstein framework"
-      },
-      "specter_profile": {
-        "name": "Sarah Sachs",
-        "position": "Director of Engineering, ML & Infrastructure",
-        "seniority": "Director",
-        "linkedin": ""
-      }
+      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + career research + Epstein framework" },
+      "specter_profile": { "name": "Busra Demirci", "position": "Director of Product Design, AI Innovations", "seniority": "Mid-Level", "linkedin": "https://www.linkedin.com/in/busra-demirci" }
     },
     {
       "role": "team",
-      "label": "Archana Sankaranarayanan, Director of Engineering",
-      "greeting": "Hey Archana,",
-      "email_body": "Subject: securing AI outputs at Tome's scale\n\nHey Archana,\n\nFrom engineering leadership at Google Assistant and Netflix to OpenSea and now Tome — you've scaled systems where user trust in the output is everything.\n\nAt Tome, that trust question gets sharper: enterprise customers are connecting their CRM data, and GPT-4o is generating content from it. The gap between what Governance Studio catches (static rules) and what the model actually outputs (dynamic behavior) is where compliance breaks.\n\nWe enforce policies at that runtime layer — sub-200ms, between model and screen.\n\nIs this a gap the engineering team is thinking about?\n\nFrancisco",
-      "linkedin_message": "Hey Archana — from Google Assistant and Netflix to OpenSea to Tome, you've scaled systems where user trust in output matters. At Tome, with GPT-4o generating from CRM data, the gap between Governance Studio's static rules and dynamic model output is the next compliance frontier. Curious if this is on the engineering roadmap.",
+      "label": "Dropbox team",
+      "greeting": "Hey Dropbox team,",
+      "email_body": "Subject: the layer between Lakera Guard and the user\n\nHey Dropbox team,\n\nThe Lakera Guard integration is smart — screening LLM inputs for prompt injection and jailbreaks. But as Dash connects to Slack, Notion, Google Drive, and generates cross-app answers, the harder problem is the output side: what the model surfaces from all that connected data.\n\nPermission-aware indexing handles who can search what. The gap is runtime enforcement — controlling what the model generates and surfaces from that indexed data, in real-time.\n\nWe enforce policies at that layer. Sub-200ms, between model output and user screen. Audit trails for SOC 2.\n\nIs output-side enforcement on the roadmap?\n\nFrancisco",
+      "linkedin_message": "Hey Dropbox team — Lakera Guard covers input-side LLM defense. As Dash generates cross-app answers from Slack/Notion/Drive, the output layer is where data can cross permission boundaries. We enforce policies there, sub-200ms. On the roadmap?",
       "outreach_reason": [
-        "Specter talent signal: Archana moved from OpenSea (Senior Engineering Manager) → Tome (Director of Engineering)",
-        "Public: Prior engineering leadership at Google Assistant and Netflix",
-        "She oversees product engineering at Tome, directly responsible for the AI-powered features"
+        "Dropbox uses Lakera Guard (published blog post) AND Braintrust for AI eval",
+        "Dropbox Ventures invested in Lakera — strategic commitment to AI security",
+        "Dash connects 10+ enterprise apps — cross-app AI output is the new security surface",
+        "SOC 2, GDPR, HIPAA compliance requirements"
       ],
-      "personalization_basis": {
-        "career": "Google Assistant → Netflix → OpenSea (Senior Engineering Manager - Web Platform, Mobile) → Tome (Director of Engineering)",
-        "hook": "Every company she's worked at has a trust-in-output problem — Google Assistant (voice accuracy), Netflix (recommendations), OpenSea (NFT authenticity), Tome (AI-generated content accuracy/compliance)",
-        "product_knowledge": "Oversees product engineering at Tome, responsible for the AI features enterprise customers use"
-      },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter talent signals + public research + Epstein framework"
-      },
-      "specter_profile": {
-        "name": "Archana Sankaranarayanan",
-        "position": "Director of Engineering",
-        "seniority": "Director",
-        "linkedin": ""
-      }
-    },
-    {
-      "role": "team",
-      "label": "Quinn Dombrowski, Head of Community",
-      "greeting": "Hey Quinn,",
-      "email_body": "Subject: community trust in AI-generated content\n\nHey Quinn,\n\nAs Tome shifts to enterprise, the community's relationship with AI-generated content changes. Enterprise users connecting Salesforce and Gong need to trust that what GPT-4o produces is accurate, compliant, and doesn't leak sensitive data across accounts.\n\nGovernance Studio handles content rules pre-export. But runtime — what the model generates in real-time — is where that trust gets tested.\n\nWe make that trust provable. Sub-200ms policy enforcement with audit trails.\n\nAre enterprise customers asking the community team about this?\n\nFrancisco",
-      "linkedin_message": "Hey Quinn — as Tome goes enterprise, community trust in AI-generated content changes. Enterprise users need to know GPT-4o outputs are accurate and compliant when pulling from their CRM data. Are you hearing this from the community side?",
-      "outreach_reason": [
-        "Specter role: Head of Community at Tome",
-        "Enterprise pivot creates new community trust dynamics around AI-generated content",
-        "Community team likely first to hear enterprise concerns about AI output reliability"
-      ],
-      "personalization_basis": {
-        "career": "Head of Community at Tome",
-        "hook": "Community angle — she's the first line hearing enterprise customer concerns about AI trustworthiness",
-        "note": "Limited Specter career data available — personalization focuses on role-specific angle"
-      },
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using role-specific angle + Epstein framework"
-      },
-      "specter_profile": {
-        "name": "Quinn Dombrowski",
-        "position": "Head of Community",
-        "seniority": "Mid-Level",
-        "linkedin": ""
-      }
-    },
-    {
-      "role": "team",
-      "label": "Tome team",
-      "greeting": "Hey Tome team,",
-      "email_body": "Subject: the layer between Governance Studio and model output\n\nHey Tome team,\n\nGovernance Studio catches content violations before export. BrandGuard locks visual identity. Engage Analytics tracks how decks perform.\n\nThe missing piece: what happens at runtime, when GPT-4o generates content from a customer's Salesforce data. That dynamic output layer — between the model and the user's screen — is where compliance gaps and data leakage risk live.\n\nWe enforce policies at that exact layer. Sub-200ms. Auto-patching for emerging vulnerabilities. Audit trails for SOC 2.\n\nIs this gap on the roadmap?\n\nFrancisco",
-      "linkedin_message": "Hey Tome team — Governance Studio catches content violations pre-export, BrandGuard locks visual identity. The gap is runtime: what GPT-4o generates from enterprise CRM data. We enforce policies at that layer, sub-200ms. Is this on the roadmap?",
-      "outreach_reason": [
-        "Tome's enterprise pivot with SOC 2 Type I, pursuing Type II",
-        "Governance Studio, BrandGuard, Engage Analytics show security-conscious product direction",
-        "Enterprise integrations (Salesforce, Gong) create runtime AI security surface area",
-        "Investors: Lightspeed, Coatue, Greylock, Eric Schmidt, Emad Mostaque"
-      ],
-      "opencode": {
-        "used": false,
-        "model": null,
-        "method": "Manual rewrite using Specter company intelligence + Epstein framework"
-      }
+      "opencode": { "used": false, "model": null }
     }
   ]
 }
