@@ -235,11 +235,11 @@ $$
 | White Circle USP | Competitor | Products | Verified Customers | Source | Differentiation |
 |---|---|---|---|---|---|
 | **Low-latency Safeguards** | Lakera | Guard, Red, Gandalf | Dropbox · Cohere · Top 3 US bank (unnamed) | [lakera.ai/customers](https://lakera.ai/customers) | WC: edge enforcement + post-deploy tuning. Lakera: firewall-first blocking. |
-| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | ASAPP (AI Transparency Portal) · TPRA members · $1M rev 2024 | [CB Insights](https://www.cbinsights.com/company/promptarmor/financials), [TPRA](https://www.tprassociation.org/vendor-profiles/promptarmor) | WC: observability + policy QA. PromptArmor: prompt-injection hardening. |
+| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | HubSpot · Gusto · Bill.com · Alteryx | Specter `clients_json`, [TPRA](https://www.tprassociation.org/vendor-profiles/promptarmor) | WC: observability + policy QA. PromptArmor: prompt-injection hardening. |
 | **Observability** | Helicone | Helicone | Sunrun · DeepAI (65% cost ↓) · Brand.dev | [helicone.ai/customers](https://helicone.ai/customers) | WC: prevention + policy enforcement. Helicone: telemetry + cost observability. |
 | **Observability** | Langfuse | Langfuse | Merck (80+ AI teams) · SumUp (4M merchants) · Twilio | [langfuse.com/customers](https://langfuse.com/customers) | WC: runtime blocking. Langfuse: tracing + developer analytics. |
 | **Eval / Stress-test** | Braintrust | Braintrust | Zapier (25% accuracy ↑) · Notion (10x resolution) · Coursera · Dropbox | [braintrust.dev/customers](https://braintrust.dev/customers) | WC: runtime guardrails + eval. Braintrust: pre-production eval workflows. |
-| **Eval / Stress-test** | Patronus AI | Patronus API, Percival, Lynx | Etsy · CARIAD/VW · Gamma · Weaviate | [patronus.ai/case-studies](https://patronus.ai/case-studies) | WC: edge controls + stress-test. Patronus: eval-focused quality scoring. |
+| **Eval / Stress-test** | Patronus AI | Patronus API, Percival, Lynx | OpenAI · HP · Pearson · Etsy · CARIAD/VW | Specter `clients_json`, [patronus.ai/case-studies](https://patronus.ai/case-studies) | WC: edge controls + stress-test. Patronus: eval-focused quality scoring. |
 <!-- .element: class="small-table" -->
 
 <br/>
@@ -282,13 +282,13 @@ quadrantChart
 | Braintrust | Software, AI/ML, Education | Zapier · Notion · Coursera · Dropbox · Retool · Loom |
 | Helicone | Software, Energy, AI/ML | Sunrun · DeepAI · Brand.dev · Greptile |
 | Lakera Guard | Software, Finance, Enterprise | Dropbox · Cohere · Fortune 500 EdTech (unnamed) |
-| Langfuse | Pharma, FinTech, Education | Merck · SumUp · Twilio · Canva · Khan Academy |
-| Patronus API | E-commerce, Automotive, AI | Etsy · CARIAD/VW · Gamma · Weaviate · Nova AI |
-| PromptArmor | Legal, Finance, Healthcare | ASAPP (AI Transparency Portal) · TPRA enterprise members |
+| Langfuse | Pharma, FinTech, Education | Samsara · Twilio · SumUp · Khan Academy · Springer Nature |
+| Patronus API | E-commerce, Automotive, AI | OpenAI · HP · Pearson · Etsy · CARIAD/VW |
+| PromptArmor | Legal, Finance, Healthcare | HubSpot · Gusto · Bill.com · Alteryx |
 <!-- .element: class="small-table" -->
 
 <div class="callout text-left">
-  **Source:** Public `/customers` pages and case studies. Initial Specter <code>company_clients</code> data was CRM integration artifacts (Affinity/Attio), not confirmed customer relationships — corrected after review.
+  **Source:** Specter <code>company_data.clients_json</code> (web-scraped customer data from company sites) + public <code>/customers</code> pages and case studies. Pipeline fix: replaced <code>company_clients → clients_integration_companies</code> join (CRM artifacts) with <code>clients_json</code> (verified customers).
 </div>
 
 <a href="./task2_product_industry_overlap.csv" target="_blank" class="pill">task2_product_industry_overlap.csv</a>
