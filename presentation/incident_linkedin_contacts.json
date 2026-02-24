@@ -4,20 +4,20 @@
   "contacts": [
     {
       "label": "Sunita Verma, Character.AI: Chief Technology Officer",
-      "linkedin_message": "Hi Sunita,\n\nSaw Character.AI come up in our monitoring \u2014 a Reddit thread (\"Ultimate Claude Code H4x0r: the four letter jailbreak\") is discussing jailbreak/filter bypass techniques. Given your experience scaling AI safety at Google and now at Character.AI, you're likely already on this.\n\nWe help teams close the gap between \"we have filters\" and \"we can prove we caught and blocked X in production.\" We've mapped 8 similar incidents (DPD chatbot, Microsoft Copilot EchoLeak, others) and built a compact checklist: self-harm escalation, medical boundaries, PII controls \u2014 runnable in one pass.\n\nHappy to share what we've learned before the next thread blows up.",
-      "incident": "Reddit: Ultimate Claude Code H4x0r \u2014 four letter jailbreak targeting Character.AI filter bypass",
+      "linkedin_message": "Hey Sunita — a Reddit thread ('Ultimate Claude Code H4x0r') is circulating jailbreak techniques that apply broadly to consumer AI products. Given Character.AI's safety challenges and your background scaling safety at Google, figured this is already on your radar.\n\nBuilding runtime enforcement for exactly this class of attack at White Circle. Worth comparing approaches?",
+      "incident": "Reddit: Ultimate Claude Code H4x0r — four letter jailbreak targeting Character.AI filter bypass",
       "incident_url": "https://www.reddit.com/r/ClaudeCode/comments/1r6xmhk/ultimate_claude_code_h4x0r_the_four_letter/",
       "linkedin_url": "https://www.linkedin.com/in/sunita-verma-1a4491",
       "company": "Character.AI",
       "signal": "incidents_social",
       "outreach_reason": [
-        "Reddit: Ultimate Claude Code H4x0r \u2014 four letter jailbreak targeting Character.AI filter bypass",
+        "Reddit: Ultimate Claude Code H4x0r — four letter jailbreak targeting Character.AI filter bypass",
         "Lead 19b40a58-381e-4042-a56f-4c11d8d2b17f"
       ]
     },
     {
       "label": "Siva Gurumurthy, Harvey: Chief Technology Officer",
-      "linkedin_message": "Hi Siva, noticed Harvey is running AI traffic through edge telemetry controls. We build sub-200ms guardrails for prompt safety - self-harm escalation, medical boundaries, PII. Happy to share our production safety checklist if useful for benchmarking your current coverage.",
+      "linkedin_message": "Hey Siva — Harvey's handling legal documents where a single hallucination or prompt injection could expose privileged information. The hard part isn't the model — it's what happens between model and data at runtime.\n\nBuilding sub-200ms enforcement at that layer. Is runtime data access control something your team is working on?",
       "incident": "Edge telemetry: x-vercel-id headers detected on harvey.ai",
       "incident_url": "https://www.harvey.ai/",
       "linkedin_url": "https://www.linkedin.com/in/siva-gurumurthy-a1037a14",
@@ -30,7 +30,7 @@
     },
     {
       "label": "Katerina Nikolova, MPA, Sourcegraph: Executive Business Partner to the CEO and Co-founder",
-      "linkedin_message": "Hi Katerina, I noticed sourcegraph.com is running AI traffic through edge telemetry controls (cf-ray, cloudflare headers detected). \n\nGiven your background supporting executive leadership at Sourcegraph, I thought this might be relevant. We help companies add sub-200ms safety guardrails to production AI endpoints.\n\nWould you be open to a brief conversation? Happy to share our production safety checklist for AI deployments.",
+      "linkedin_message": "Hey Katerina — Sourcegraph's Cody is generating code with access to enterprise repos. The security question enterprise buyers ask: what can the AI model access during generation? Building runtime controls for that at White Circle. Worth flagging to Quinn or the security team?",
       "incident": "Edge telemetry: cf-ray headers detected on sourcegraph.com",
       "incident_url": "https://sourcegraph.com/",
       "linkedin_url": "https://www.linkedin.com/in/katerinanikolova",
@@ -43,7 +43,7 @@
     },
     {
       "label": "Namrata Mayanil, Wysa: Head of Engineering",
-      "linkedin_message": "Hi Namrata, saw that wysa.com is running AI traffic through edge telemetry controls (cf-ray, nel, report-to headers). If useful, I can share our production safety checklist covering self-harm escalation, medical boundaries, and PII controls - could help benchmark your current coverage.",
+      "linkedin_message": "Hey Namrata — Wysa is one of the few AI products handling mental health conversations. The safety bar is uniquely high — one wrong escalation response is a crisis. Building sub-200ms runtime controls for exactly these edge cases. How is your team handling the model-layer safety boundary today?",
       "incident": "Edge telemetry: cf-ray headers detected on wysa.com",
       "incident_url": "https://www.wysa.com/",
       "linkedin_url": "https://www.linkedin.com/in/namrata-mayanil-7469a41",
@@ -56,7 +56,7 @@
     },
     {
       "label": "Niamh Smithers, Intercom: Executive Assistant Manager and Executive Assistant to CSO & Co-founder and SVP of Product",
-      "linkedin_message": "Hi Niamh, I noticed Intercom is running AI traffic through edge telemetry controls - seems like a signal worth flagging for your team.\n\nWe help companies like Intercom deploy sub-200ms guardrails against unsafe prompts (self-harm escalation, medical boundaries, PII controls).\n\nIf useful, I can share our production safety checklist so you can benchmark your current coverage.",
+      "linkedin_message": "Hey Niamh — Intercom's Fin is handling live customer conversations with AI. Enterprise buyers are starting to ask about runtime controls on what the AI can access and say. Building exactly that at White Circle. Would this be worth flagging to Des or the security team?",
       "incident": "Edge telemetry: edge headers detected on intercom.com",
       "incident_url": "https://www.intercom.com/",
       "linkedin_url": "https://www.linkedin.com/in/niamhsmithers",
@@ -69,7 +69,7 @@
     },
     {
       "label": "Netto Farah, Cursor: Engineering",
-      "linkedin_message": "Hi Netto, noticed cursor.com is running AI traffic through edge telemetry (x-vercel-id headers). We're building sub-200ms guardrails for AI safety - blocking unsafe prompts at the edge. Our checklist covers self-harm escalation, medical boundaries, and PII controls. Happy to share if useful for benchmarking your current coverage.",
+      "linkedin_message": "Hey Netto — Cursor's AI has deep access to codebases during generation. The security question isn't output filtering — it's controlling what the model can access from the repo at runtime. Building sub-200ms enforcement at that layer. Is this something your eng team is scoping internally?",
       "incident": "Edge telemetry: x-vercel-id headers detected on cursor.com",
       "incident_url": "https://cursor.com/",
       "linkedin_url": "https://www.linkedin.com/in/netto-farah-7433b328",
@@ -82,7 +82,7 @@
     },
     {
       "label": "Sal Uslugil, Ada: Chief Revenue Officer (CRO)",
-      "linkedin_message": "Hi Sal, saw that ada.cx is running AI traffic through edge telemetry controls (cf-ray, cloudflare headers). We help companies add sub-200ms guardrails for unsafe prompts - covering self-harm escalation, medical boundaries, and PII controls. Happy to share our production safety checklist if useful.",
+      "linkedin_message": "Hey Sal — Ada's AI agents are handling enterprise customer conversations. In your sales cycles, are buyers asking 'what can the AI access from our systems during a conversation?' That's the exact runtime boundary White Circle enforces. Is this coming up in enterprise deals?",
       "incident": "Edge telemetry: cf-ray headers detected on ada.cx",
       "incident_url": "https://ada.cx/",
       "linkedin_url": "https://www.linkedin.com/in/suslugil",
