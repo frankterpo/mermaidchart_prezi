@@ -228,6 +228,21 @@ $$
   <strong>Why Regulated > Enterprise > Consumer?</strong> For a security product, <em>regulatory penalty exposure</em> drives WTP more than volume. GovTech (FedRAMP/ITAR), HealthTech (HIPAA), FinTech (SOX) face the highest cost of a safety failure — and the longest vendor lock-in. Consumer GenAI has the most users but weaker enforcement and smaller budgets.
 </div>
 
+====
+
+<!-- .slide: id="task1-takeaways" -->
+#### Concrete Takeaways
+
+<div class="callout text-left">
+
+**1. Regulatory risk is the #1 predictor of WTP.** GovTech and HealthTech companies will pay 2-3x more than consumer AI at the same volume — compliance is non-negotiable, and switching costs are high.
+
+**2. 15 verticals, 30 companies — but the pipeline starts with 3.** Regulated Industry AI (Palantir, Abridge, Upstart) is the beachhead: highest urgency, longest lock-in, largest deal sizes. Enterprise Automation is the scale play.
+
+**3. The ICP formula is a living model.** Coefficients ($\alpha, \beta, \gamma, \eta$) recalibrate as win/loss data lands. Right now it's seeded on public signals — the first 5 closed deals will sharpen it dramatically.
+
+</div>
+
 ----
 
 <!-- .slide: id="task2" -->
@@ -270,7 +285,7 @@ quadrantChart
     Lakera Guard: [0.28, 0.68]
     Patronus Percival: [0.62, 0.58]
     Lakera Red: [0.52, 0.42]
-    Gandalf: [0.42, 0.32]
+    Lakera Gandalf: [0.42, 0.32]
     Langfuse: [0.78, 0.30]
     Braintrust Loop: [0.68, 0.18]
     Patronus API: [0.82, 0.12]
@@ -302,6 +317,21 @@ quadrantChart
 </div>
 
 <a href="./task2_product_industry_overlap.csv" target="_blank" class="pill">task2_product_industry_overlap.csv</a>
+
+====
+
+<!-- .slide: id="task2-takeaways" -->
+#### Concrete Takeaways
+
+<div class="callout text-left">
+
+**1. White Circle's moat is latency + runtime.** Every competitor lives in post-hoc eval or pre-deploy quality. No one else does sub-200ms runtime enforcement. The quadrant chart makes this visually obvious — top-left is empty except for WC.
+
+**2. Competitors validate the market, not threaten it.** Lakera ($20M Series A), Braintrust ($80M Series B), Langfuse (acquired by ClickHouse) — investors are pouring capital into AI security/observability. WC is differentiated, not duplicated.
+
+**3. Customer overlap = expansion opportunity.** Dropbox uses Lakera; Merck uses Langfuse; Etsy uses Patronus. These companies already budget for AI safety tools — WC sells alongside, not against.
+
+</div>
 
 ----
 
@@ -580,6 +610,21 @@ flowchart LR
 
 > This layer gives us named operators engaging with AI security datasets plus social graph handles. Specter matching was disabled in this run to prevent long remote DSN hangs.
 
+====
+
+<!-- .slide: id="task3-takeaways" -->
+#### Concrete Takeaways
+
+<div class="callout text-left">
+
+**1. Six signals, one pipeline, 115 leads.** Edge telemetry, CI/CD fingerprinting, job postings, incidents, HuggingFace eval, HN security people — each catches a different buying signal. Together they cover intent (jobs), infrastructure (telemetry), and urgency (incidents).
+
+**2. Job postings are the highest-intent signal.** A company hiring for "AI Safety Engineer" has approved headcount budget, recognized the problem, and set a 90-day timeline. That's a warm lead you can compress into an immediate B2B purchase.
+
+**3. Incident monitoring creates urgency.** When a jailbreak hits Reddit or a data leak makes HN, the affected company's security team is in triage mode. Outreach within 48 hours converts at 3-5x the cold baseline.
+
+</div>
+
 ----
 
 <!-- .slide: id="task4" -->
@@ -650,6 +695,21 @@ flowchart LR
 | **Anonymized Summaries** | Therapist notes with identifiers; clinician data exposure | HIPAA minimum necessary; GDPR data minimization |
 | **Crisis Refusal Override** | User refuses help while expressing self-harm intent | Involuntary hold statutes (e.g. CA 5150); duty-of-care negligence; emergency-services protocols |
 <!-- .element: class="small-table" -->
+
+====
+
+<!-- .slide: id="task4-takeaways" -->
+#### Concrete Takeaways
+
+<div class="callout text-left">
+
+**1. Policies are code, not PDFs.** Every policy is YAML-defined, version-controlled, and CI-tested. Policy drift becomes a source-code bug caught in CI, not an ops surprise found in production.
+
+**2. 10 policies cover the critical surface.** 5 user-facing (self-harm escalation, PII redaction, scope boundary, minors, crisis override) + 5 assistant-facing (diagnosis prohibition, empathy floor, link integrity, anonymized summaries, crisis refusal override). Each maps to a specific regulatory framework.
+
+**3. This is White Circle's product in miniature.** The safety policy YAML → CI test → runtime enforcement loop is exactly what WC sells to every customer. Psychotherapy is the hardest case; if it works here, it works everywhere.
+
+</div>
 
 ----
 
@@ -823,6 +883,21 @@ These count **user-visible messages** and undercount by 100–400×. Each user p
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/cala_usage_proxy.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Cala usage proxy artifact</a>
 
+====
+
+<!-- .slide: id="task6-takeaways" -->
+#### Concrete Takeaways
+
+<div class="callout text-left">
+
+**1. "Messages" is the wrong unit.** User-visible messages undercount by 100-400x. White Circle guards LLM API requests — and each user prompt triggers 5-20+ backend calls (context retrieval, code gen, validation, error loops). This is the unit that determines pricing and infrastructure load.
+
+**2. All three targets are enterprise-tier.** Lovable (1.5B-6B req/mo), Replit (5B-25B), Base44 (225M-720M) — these volumes require custom contracts ($50K-500K+/year), not self-serve tiers.
+
+**3. Three independent heuristics converge.** Traffic proxy, user proxy, and engineering proxy each have different failure modes. When all three align (which they do for Lovable and Replit), confidence is high. This methodology is reusable for any prospect.
+
+</div>
+
 ----
 
 <!-- .slide: id="task7" -->
@@ -891,6 +966,21 @@ flowchart LR
 | Raw outbound | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
 <code>outbound enrich-company -d tome.com --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
+
+====
+
+<!-- .slide: id="task7-takeaways" -->
+#### Concrete Takeaways
+
+<div class="callout text-left">
+
+**1. The pipeline is generic, not Tome-specific.** `outbound enrich-company -d [any-domain]` runs the full chain: Specter enrichment → person_db contacts → warm intro signals → OpenCode YC-format email. Swap the domain, get a new campaign in minutes.
+
+**2. Cold emails follow YC's framework (Epstein + Seibel).** 50-66 words, reader-focused (you/your > I/we), role-specific angles, one low-friction CTA. The OpenCode prompt encodes all 7 Epstein principles — every future run generates compliant copy at scale.
+
+**3. Warm intros > cold outreach.** Specter talent signals (who moved where) and shared investors create natural openers. "Saw Sarah Sachs moved from Robinhood to your ML team" converts 2-3x better than a cold pitch.
+
+</div>
 
 ----
 
