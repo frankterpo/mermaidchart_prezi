@@ -800,12 +800,12 @@ flowchart LR
   <strong>What is Cala AI?</strong> A data structuring platform for AI agents (<a href="https://docs.cala.ai/" target="_blank">docs.cala.ai</a>). Francisco is one of 50 selected alpha testers. We use it to source verified company metrics.
 </div>
 
-| Platform | Users | ARR | Monthly Visits | As of |
+| Platform | Active Users | ARR | Monthly Visits | As of |
 |---|---|---|---|---|
-| **Lovable** | 8M+ | 200M-300M+ | 30.75M | Nov 2025 - Feb 2026 |
-| **Replit** | 35-40M MAU | 150M | -- | Q3 2025 |
-| **Base44** | 250K-400K | 1M (3 weeks) | -- | Jun 2025 |
-| **Cursor** *(reference)* | 1M+ DAU | 500M+ | -- | Q4 2025 |
+| **Lovable** | 8M+ registered | 200M-300M+ | 30.75M | Nov 2025 - Feb 2026 |
+| **Replit** | 35-40M MAU | 150M | 12.58M | Q3 2025 |
+| **Base44** | 250K-400K registered | 1M (3 weeks) | N/A (too new) | Jun 2025 |
+| **Cursor** *(reference)* | 1M+ DAU | 500M+ | N/A (desktop app) | Q4 2025 |
 <!-- .element: class="small-table" -->
 
 **Per-user variables -- how 1 message becomes 100+ API requests:**
