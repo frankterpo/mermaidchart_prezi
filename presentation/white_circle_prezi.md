@@ -338,7 +338,7 @@ quadrantChart
 
 **1. White Circle's moat is data, not features.** Sub-200ms runtime enforcement is the entry point — but the real moat is the model WC builds from usage. Every policy enforcement, every blocked prompt, every false positive correction feeds back into the system. More customers = more data = better detection = harder to displace. Competitors doing post-hoc eval never see this traffic.
 
-**2. Competitors validate the market, not threaten it.** Lakera ($20M Series A), Braintrust ($80M Series B), Langfuse (acquired by ClickHouse) — investors are pouring capital into AI security/observability. WC is differentiated, not duplicated.
+**2. Competitors validate the market, not threaten it.** Lakera (20M Series A), Braintrust (80M Series B), Langfuse (acquired by ClickHouse) — investors are pouring capital into AI security/observability. WC is differentiated, not duplicated.
 
 **3. Customer overlap = expansion opportunity.** Dropbox uses Lakera; Merck uses Langfuse; Etsy uses Patronus. These companies already budget for AI safety tools — WC sells alongside, not against.
 
@@ -768,7 +768,7 @@ flowchart LR
 
 **3. Free tier is mandatory for developer adoption.** Langfuse (open-source, acquired by ClickHouse) and Braintrust (free eval tools) prove developer-first distribution beats enterprise sales at this stage. 1K free requests costs us $0.005/mo in COGS.
 
-**4. Enterprise is where the money is.** From Task 6: Lovable, Replit, and Base44 each generate 225M–25B API req/mo. At $499/1M, a single enterprise deal = $112K–$12.5M/year. These require custom contracts, not self-serve.
+**4. Enterprise is where the money is.** From Task 6: Lovable, Replit, and Base44 each generate 225M–25B API req/mo. At 499/1M requests, a single enterprise deal = 112K–12.5M/year. These require custom contracts, not self-serve.
 
 </div>
 
@@ -826,13 +826,22 @@ flowchart LR
 #### Calculation: From 1 Message to 1,000+ API Requests
 
 ```mermaid
-flowchart LR
-    A["1 user prompt"] --> B["1 explicit<br/>message"]
-    B --> C["5-20 fan-out<br/>calls per prompt"]
-    C --> D["Context retrieval<br/>Code generation<br/>Validation + retries"]
-    F["Autocomplete<br/>(IDE only)"] --> G["~400 invisible<br/>requests/day"]
-    D --> H["Total API<br/>req/mo"]
-    G --> H
+flowchart TD
+    A["1 user prompt"] --> B["1 explicit message"]
+    B --> C1["1. Context retrieval"]
+    B --> C2["2. Code generation"]
+    B --> C3["3. Validation"]
+    B --> C4["4. Error retry"]
+    B --> C5["5-20. Agent sub-calls"]
+    F["Autocomplete - IDE only"] --> G["~400 invisible req/day"]
+    C1 --> WC["White Circle guards every call"]
+    C2 --> WC
+    C3 --> WC
+    C4 --> WC
+    C5 --> WC
+    G --> WC
+    WC --> H["Total API req/mo"]
+    style WC fill:#4a9eff,stroke:#fff,color:#fff
 ```
 
 **The formula:**
