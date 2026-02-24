@@ -2,25 +2,24 @@
   "company": "Tome",
   "domain": "tome.com",
   "source": "Specter talentsignals + OpenCode",
-  "generated_at": "2026-02-23T12:04:39.620273",
+  "generated_at": "2026-02-24T20:10:10.244609",
   "contacts": [
     {
       "role": "team",
       "label": "Quinn Dombrowski, Head of Community",
-      "greeting": "Hi Quinn,",
-      "email_body": "Subject: quick question about Tome's enterprise rollout\n\nHey Quinn,\n\nYour enterprise customers are connecting Tome to Salesforce and Gong. Once AI generates content from that data, the security question stops being 'did the output look right' and becomes 'what could the model access during generation.'\n\nI'm building White Circle — runtime policy enforcement at that exact layer. Sub-200ms, no UX hit.\n\nAre enterprise buyers asking you about this yet?\n\nFrancisco",
-      "linkedin_message": "Hey Quinn — as Tome connects to Salesforce/Gong for enterprise, are buyers asking about what the AI model can access during generation? Building something at that exact layer.",
+      "greeting": "Hey Quinn,",
+      "email_body": "Hey Quinn,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps.\n\nWith AI-generated content in Tome, are you thinking about how to control what users see in real-time?\n\nWe auto-patch vulnerabilities and give you compliance evidence.\n\nIs this on your radar?\n\nFrancisco",
+      "linkedin_message": "Hey Quinn,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps.\n\nSaw Neil Dugal joined as co-founder. With AI security vendors like Langfuse, PromptArmor, Patronus AI, and Lakera in your stack, are you thinking about runtime policy controls and audit trails?\n\nWe auto-patch vulnerabilities and give you compliance evidence.\n\nIs this on your radar?\n\nFrancisco",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Quinn Dombrowski",
@@ -46,20 +45,19 @@
     {
       "role": "team",
       "label": "Lianfeng Gu, VP Engineering",
-      "greeting": "Hi Lianfeng,",
-      "email_body": "Subject: model-layer security at Tome\n\nHey Lianfeng,\n\nSaw you brought Sarah Sachs from Robinhood's NLP team as Director of ML. That's a serious investment in the model layer.\n\nThe security gap at that layer — controlling what LLMs access from connected enterprise data during generation, not just filtering outputs — is exactly what I'm building at White Circle. Sub-200ms runtime enforcement.\n\nIs model-layer access control something your team is scoping?\n\nFrancisco",
-      "linkedin_message": "Hey Lianfeng — saw you hired Sarah Sachs from Robinhood's NLP team. That kind of ML investment usually means the model-layer security question is next. Building exactly that at White Circle. Worth comparing notes?",
+      "greeting": "Hey Lianfeng,",
+      "email_body": "Hey Lianfeng,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps.\n\nWith Tome's AI making business easier, curious how you're thinking about runtime security as VP of Engineering. When integrating tools like Langfuse and Patronus AI, what's your approach to prompt injection protection and latency?\n\nIs this on your radar?\n\nFrancisco",
+      "linkedin_message": "Hey Lianfeng,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps.\n\nSaw you're VP Engineering at Tome. With Langfuse, PromptArmor, Patronus AI, and Lakera all connected to your stack, curious: how are you approaching runtime AI security and prompt injection protection?\n\nIs this on your radar?\n\nFrancisco",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Lianfeng Gu",
@@ -85,20 +83,19 @@
     {
       "role": "cto",
       "label": "Alexander Vladimirov, Head of Engineering",
-      "greeting": "Hi Alexander,",
-      "email_body": "Subject: runtime controls for Tome's AI stack\n\nHey Alexander,\n\nGoogle, Robinhood, now Tome — you've scaled AI systems where the model touches sensitive data. The hard problem isn't output filtering. It's controlling what the model accesses during generation from Salesforce, Gong, and workspace integrations.\n\nWhite Circle enforces policies at that layer. Sub-200ms, inline, no UX impact.\n\nIs this a problem your eng team has started scoping?\n\nFrancisco",
-      "linkedin_message": "Hey Alexander — Google, Robinhood, now Tome. You've seen what happens when AI hits sensitive enterprise data at scale. The model-layer access control problem is what I'm building at White Circle. Worth a quick compare?",
+      "greeting": "Hey Alexander,",
+      "email_body": "Hey Alexander,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for prompt and output controls.\n\nWith Tome's AI-powered storytelling platform, I'm curious how you're handling runtime security and compliance for the prompts and outputs flowing through your system.\n\nWe help engineering teams auto-patch vulnerabilities and maintain audit trails without slowing development.\n\nHow are you approaching this at Tome?",
+      "linkedin_message": "Hey Alexander — I'm Francisco from White Circle. Neil Dugal (Co-Founder) joined Tome recently — congrats on the growth. With AI in your stack, you're probably thinking about runtime security and compliance. We help teams auto-patch vulnerabilities and maintain audit trails without slowing development. Is this on your radar?",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Alexander Vladimirov",
@@ -124,20 +121,19 @@
     {
       "role": "cpo",
       "label": "Henri Liriani, CPO",
-      "greeting": "Hi Henri,",
-      "email_body": "Subject: Tome's enterprise security gap\n\nHey Henri,\n\nTome raised $75M from Coatue, Greylock, Lightspeed — enterprise is clearly the bet. Your SOC 2 Type II pursuit probably means enterprise buyers are already asking: 'what can the AI access from our connected systems during generation?'\n\nWhite Circle answers that at runtime. Sub-200ms enforcement between model and data sources.\n\nIs that question coming up in enterprise deals?\n\nFrancisco",
-      "linkedin_message": "Hey Henri — with Tome's SOC 2 push and enterprise pivot, are buyers asking what the AI model can access from connected systems during generation? That's exactly what White Circle enforces.",
+      "greeting": "Hey Henri,",
+      "email_body": "Hey Henri,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI applications.\n\nSaw Neil Dugal joined Tome as Co-Founder — congrats on the team. With AI adoption accelerating, I'd guess you're weighing security controls for your models.\n\nWe help teams like yours close prompt injection vulnerabilities in minutes, not months. Auto-patching + audit trails for compliance.\n\nIs this on your radar?\n\nFrancisco",
+      "linkedin_message": "Hey Henri,\n\nNeil joining as Co-Founder — solid move. With AI adoption accelerating, you're likely thinking about security controls for your models.\n\nWe help teams like yours close prompt injection vulnerabilities in minutes, not months. Auto-patching + audit trails for compliance.\n\nIs this on your radar?\n\nFrancisco",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Henri Liriani",
@@ -163,20 +159,19 @@
     {
       "role": "ceo",
       "label": "Keith Peiris, CEO",
-      "greeting": "Hi Keith,",
-      "email_body": "Subject: what Tome's enterprise buyers will ask next\n\nHey Keith,\n\nOnce Tome touches Salesforce and Gong data, every SOC 2 auditor asks the same question: 'what can the model access during generation, and who controls that boundary?'\n\nWhite Circle enforces that boundary at runtime. Sub-200ms, no latency hit. Built for exactly this use case.\n\nIs this already coming up in enterprise conversations?\n\nFrancisco",
-      "linkedin_message": "Hey Keith — when Tome connects to Salesforce/Gong, SOC 2 auditors ask 'what can the model access during generation?' White Circle enforces that boundary at runtime. Already hearing this from buyers?",
+      "greeting": "Hey Keith,",
+      "email_body": "Hey Keith,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps.\n\nTome's AI features are impressive. With your scale, I'm curious how you handle runtime policy enforcement and audit trails for compliance.\n\nIs this something on your radar?",
+      "linkedin_message": "Hey Keith, I'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps. Tome's AI features are scaling fast. As CEO, how are you thinking about runtime security and compliance for your AI stack? Is this on your radar?",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Keith Peiris",
@@ -202,20 +197,19 @@
     {
       "role": "cpo",
       "label": "Billy French, Tome: Head of Product Design",
-      "greeting": "Hi Billy,",
-      "email_body": "Subject: AI content generation + data boundaries\n\nHey Billy,\n\nAs Head of Product Design, you're shaping how Tome's AI generates content from enterprise data. The UX challenge: security controls that don't add friction.\n\nWhite Circle runs sub-200ms runtime policy enforcement between the model and data sources. Users never see it. Compliance teams do.\n\nIs invisible security something you've thought about for the enterprise product?\n\nFrancisco",
-      "linkedin_message": "Hey Billy — as Tome's AI pulls from enterprise data, the UX challenge is security that doesn't add friction. White Circle does that sub-200ms. Thinking about this?",
+      "greeting": "Hey Billy,",
+      "email_body": "Subject: Tome + runtime AI controls\n\nHey Billy,\n\nI'm Francisco, building White Circle — sub-200ms runtime policy enforcement for AI applications.\n\nTome is building on LLMs, and as that scales, the security surface grows fast — prompt injection, data leakage, compliance gaps.\n\nIs runtime AI security on your radar?\n\nFrancisco",
+      "linkedin_message": "Hey Billy — I'm Francisco, building White Circle (sub-200ms AI policy enforcement). As Tome scales its AI stack, runtime security becomes critical. Is this on your radar?",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": false,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Billy French",
@@ -1084,20 +1078,19 @@
     {
       "role": "team",
       "label": "Vicki Cheung, Head of Infrastructure",
-      "greeting": "Hi Vicki,",
-      "email_body": "Subject: runtime enforcement for Tome's infra\n\nHey Vicki,\n\nYour infrastructure handles the connection between Tome's LLMs and enterprise data sources. The gap most teams discover: output filtering isn't enough when the model can access anything in connected Salesforce/Gong workspaces during generation.\n\nWhite Circle sits at that boundary. Sub-200ms, drops into the inference pipeline.\n\nIs this a gap you're actively closing?\n\nFrancisco",
-      "linkedin_message": "Hey Vicki — Tome's infra connects LLMs to enterprise data. Most teams find output filtering isn't enough — the gap is model-layer access control during generation. Building exactly that. Something you're working on?",
+      "greeting": "Hey Vicki,",
+      "email_body": "Hey Vicki,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps.\n\nWith your infrastructure role at Tome, I'm curious how you balance latency requirements with safety controls in production AI features. We help teams close vulnerabilities faster with auto-patching and runtime audit trails.\n\nIs this something you're thinking about?\n\nFrancisco",
+      "linkedin_message": "Hey Vicki,\n\nI'm Francisco from White Circle — we help teams close AI vulnerabilities faster with auto-patching and runtime audit trails.\n\nSaw you're Head of Infrastructure at Tome with Langfuse, PromptArmor, and other security tools on your stack. Would love to hear your thoughts on runtime policy enforcement.\n\nFrancisco",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Vicki Cheung",
@@ -1123,20 +1116,19 @@
     {
       "role": "team",
       "label": "Sara Verducci, Head of Design",
-      "greeting": "Hi Sara,",
-      "email_body": "Subject: AI-generated content controls at Tome\n\nHey Sara,\n\nI’m Francisco, building White Circle — runtime policy enforcement for LLMs (sub-200ms).\n\n• Tome’s AI generates business-critical content from enterprise data. The design challenge: ensuring the model doesn’t surface confidential data across workspaces during generation.\n• We enforce those controls at the model layer without adding latency.\n\nIs content safety something that comes up in your design decisions?\n\nFrancisco",
-      "linkedin_message": "Hi Sara — noticed Tome's using tools like Helicone and Langfuse for AI ops. We're building a unified layer for policy enforcement + runtime security that several AI teams are exploring. Quick chat?",
+      "greeting": "Hey Sara,",
+      "email_body": "Hey Sara,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI applications.\n\nAs Head of Design, I'm curious how you're thinking about the UX impact of AI safety controls. When safety prompts interrupt the creative flow in Tome, how do you balance protection vs. user experience?\n\nWe help teams like yours auto-patch vulnerabilities while keeping interfaces clean.\n\nIs this a tension you're wrestling with?\n\nFrancisco",
+      "linkedin_message": "Hey Sara,\n\nNeil's move from Flourish is interesting — with AI security becoming critical, how's Tome approaching runtime protection?\n\nWe help with prompt injection defense and compliance — curious your take.\n\nFrancisco",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Sara Verducci",
@@ -1162,20 +1154,19 @@
     {
       "role": "cpo",
       "label": "Anand Chaudhry, VP Product",
-      "greeting": "Hi Anand,",
-      "email_body": "Subject: runtime AI controls at Tome\n\nHey Anand,\n\nI’m Francisco, building White Circle — runtime policy enforcement for LLMs (sub-200ms, between model and data sources).\n\n• Tome’s enterprise pivot means AI decks now pull from Salesforce/Gong data. The security surface is the model layer, not just output filters.\n• Enterprise security reviews and SOC 2 Type II auditors are starting to ask about this.\n\nIs this something you’re seeing on your side?\n\nFrancisco",
-      "linkedin_message": "Hi Anand — noticed Tome's AI stack includes Langfuse, Helicone, and Lakera. We're helping companies with faster edge policy enforcement and runtime observability for AI apps. Would love to hear how your infrastructure needs are evolving.",
+      "greeting": "Hey Anand,",
+      "email_body": "Hey Anand,\n\nI'm Francisco, building White Circle — sub-200ms edge policy enforcement for AI apps.\n\nWith Tome's rapid growth and AI features in production, I'm guessing prompt controls and runtime security are keeping you up at night.\n\nWe auto-patch vulnerabilities and give you audit trails for compliance — without slowing your AI down.\n\nHow are you thinking about safety controls for your AI features?\n\nFrancisco",
+      "linkedin_message": "Hey Anand,\n\nSaw you joined Tome as VP Product. With Langfuse, PromptArmor, Patronus AI, and Lakera all connected to your stack, I'm guessing runtime security and prompt controls are top of mind.\n\nWe auto-patch vulnerabilities and give you audit trails for compliance — without slowing your AI down.\n\nIs this on your radar?\n\nFrancisco",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
         "used": true,
-        "model": "opencode/minimax-m2.5-free"
+        "model": "opencode/trinity-large-preview-free"
       },
       "specter_profile": {
         "name": "Anand Chaudhry",
@@ -1201,15 +1192,14 @@
     {
       "role": "team",
       "label": "Tome team",
-      "greeting": "Hi Tome team,",
-      "email_body": "Subject: Tome + runtime AI security\n\nHey Tome team,\n\nI’m Francisco, building White Circle — runtime policy enforcement for LLMs (sub-200ms, sits between model and data sources).\n\n• As Tome’s AI generates enterprise decks from connected Salesforce/Gong data, the security question shifts to model-layer control.\n• Governance Studio handles output filtering; we handle what happens during generation.\n\nIs anyone on your team thinking about this layer?\n\nFrancisco",
-      "linkedin_message": "Hi Tome team — we saw your Lakera-linked footprint and can share a quick edge enforcement + auto-patching gap checklist if useful.",
+      "greeting": "Hey Tome team,",
+      "email_body": "Subject: Tome + runtime AI controls\n\nHey Tome team,\n\nI'm Francisco, building White Circle — sub-200ms runtime policy enforcement for AI applications.\n\nTome is building on LLMs, and as that scales, the security surface grows fast — prompt injection, data leakage, compliance gaps.\n\nIs runtime AI security on your radar?\n\nFrancisco",
+      "linkedin_message": "Hey Tome team — building White Circle (sub-200ms AI policy enforcement). As Tome scales its AI product, runtime security gets critical. Worth a quick exchange?",
       "outreach_reason": [
-        "Specter linkage: Helicone (helicone.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Lakera AI (lakera.ai) appears connected to tome.com via integration(s): affinity, attio.",
-        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): affinity.",
-        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): affinity.",
+        "Specter linkage: Langfuse (langfuse.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: PromptArmor (promptarmor.com) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Patronus AI (patronus.ai) appears connected to tome.com via integration(s): unknown.",
+        "Specter linkage: Lakera (lakera.ai) appears connected to tome.com via integration(s): unknown.",
         "No direct tome.com public incident in current incidents_social feed; outreach is driven by stack/competitor signal."
       ],
       "opencode": {
