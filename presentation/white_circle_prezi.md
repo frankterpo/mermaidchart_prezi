@@ -891,8 +891,8 @@ flowchart TD
 ====
 
 <!-- .slide: id="task7-cold-email" -->
-#### G1: Cold Email — Enterprise AI Prospect (Dropbox)
-##### Targeting <code>dropbox.com</code> · Research: Lakera Guard blog post, Dash AI search (10+ connected apps), DART security team, Braintrust eval
+#### G1: Cold Email — Enterprise AI Prospect (Notion)
+##### Targeting <code>notion.so</code> · Research: Braintrust case study (10x eval), AI Connectors (7+ apps), CISO from Datadog, SOC 2 Type 2
 
 <div id="tome-contact-switcher" class="contact-switcher-sidebar">
   <div class="folder-contacts"></div>
@@ -903,7 +903,7 @@ flowchart TD
 
 *115 leads in <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">artifacts/leads.jsonl</a>*
 
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/verified_competitor_customers.json" target="_blank" class="pill">verified_competitor_customers.json</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/competitors.md" target="_blank" class="pill">competitors.md</a> · <a href="https://dropbox.tech/security/how-we-use-lakera-guard-to-secure-our-llms" target="_blank" class="pill">Dropbox Lakera Guard blog</a>
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/verified_competitor_customers.json" target="_blank" class="pill">verified_competitor_customers.json</a> · <a href="https://www.braintrust.dev/customers/notion" target="_blank" class="pill">Braintrust × Notion case study</a> · <a href="https://www.notion.com/help/notion-ai-security-practices" target="_blank" class="pill">Notion AI Security</a>
 
 ====
 
@@ -937,11 +937,11 @@ flowchart LR
 |---|---|
 | Leads | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">leads.jsonl</a> (115) |
 | Contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
-| Dropbox contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> (Dropbox) |
+| Notion contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> (Notion) |
 | Incident (people) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> (7) |
 | Raw outbound | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
-<code>outbound enrich-company -d dropbox.com --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
+<code>outbound enrich-company -d notion.so --use-opencode</code> · <code>outbound enrich-incident-linkedin --people-only</code>
 
 ====
 
@@ -950,11 +950,11 @@ flowchart LR
 
 <div class="callout text-left">
 
-**1. Start with what THEY already did.** Dropbox published a blog post on using Lakera Guard and invested through Dropbox Ventures. We position White Circle as the natural complement — Lakera = input firewall, White Circle = output enforcement. The pitch starts with their own strategic bet, not our features.
+**1. Start with what THEY already did.** Notion published a Braintrust case study (10x faster AI issue resolution). We position White Circle as the natural complement — Braintrust = eval (quality measurement), White Circle = runtime output enforcement (policy controls). The pitch starts with their own investment in AI quality, not our features.
 
-**2. Full Specter intelligence → role-specific hooks.** `talentsignals` (783 for Dropbox), `specter_users_linkedin_connections` (VCs connected to Drew Houston, Eric Schuchman), `company_data` (investors, 4K employees). Each email uses career history as the uncommon commonality: Christopher Witter's CrowdStrike → Spotify → DART path, Josh Clemm's Lockheed Martin defense background, Busra Demirci's Airbnb → Instagram design career.
+**2. Full Specter intelligence → role-specific hooks.** `talentsignals` (384 for Notion), `specter_users_linkedin_connections` (warm intro to Ivan Zhao via fei@tryspecter.com — Specter's own team!), `company_data` (5.3K employees, $10B+ valuation). Each email uses career history as the uncommon commonality: Noah Beddome's Datadog VP Security background, Daimon G's SANS SEC522 + Robinhood D&R path, Erica Anderson's GitHub CRO → Notion CRO pattern.
 
-**3. Warm intros > cold outreach.** Specter LinkedIn connections: dave@offline.vc and jon@daftcapital.com connected to Drew Houston, andy@amity.vc and pat@amity.vc connected to Eric Schuchman. 2-3x conversion vs. cold.
+**3. Warm intros > cold outreach.** Specter LinkedIn connections: dave@offline.vc connected to Ivan Zhao, fei@tryspecter.com (Specter's own employee!) also connected to Ivan Zhao. Internal warm intro path available.
 
 </div>
 
@@ -977,6 +977,6 @@ Everything here is **powered by running code** — Specter, person_db, OpenCode,
 | **Incident LinkedIn** (7 people, Specter + person_db) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
 | 115 leads × 18 personalized outbound (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
-<code>outbound enrich-company -d dropbox.com</code> · <code>outbound enrich-incident-linkedin --people-only</code>
+<code>outbound enrich-company -d notion.so</code> · <code>outbound enrich-incident-linkedin --people-only</code>
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/" style="font-size: 1.1em; color: #a8a8ff;">🔗 github.com/frankterpo/growth_hacker_wc_2026</a>
