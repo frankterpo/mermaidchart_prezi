@@ -235,7 +235,7 @@ $$
 | White Circle USP | Competitor | Products | Verified Customers | Source | Differentiation |
 |---|---|---|---|---|---|
 | **Low-latency Safeguards** | Lakera | Guard, Red, Gandalf | Dropbox · Cohere · Top 3 US bank (unnamed) | [lakera.ai/customers](https://lakera.ai/customers) | WC: edge enforcement + post-deploy tuning. Lakera: firewall-first blocking. |
-| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | Fortune 50 + Am Law 50 (unnamed); 300K+ users | [promptarmor.com](https://promptarmor.com) | WC: observability + policy QA. PromptArmor: prompt-injection hardening. |
+| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | ASAPP (AI Transparency Portal) · TPRA members · $1M rev 2024 | [CB Insights](https://www.cbinsights.com/company/promptarmor/financials), [TPRA](https://www.tprassociation.org/vendor-profiles/promptarmor) | WC: observability + policy QA. PromptArmor: prompt-injection hardening. |
 | **Observability** | Helicone | Helicone | Sunrun · DeepAI (65% cost ↓) · Brand.dev | [helicone.ai/customers](https://helicone.ai/customers) | WC: prevention + policy enforcement. Helicone: telemetry + cost observability. |
 | **Observability** | Langfuse | Langfuse | Merck (80+ AI teams) · SumUp (4M merchants) · Twilio | [langfuse.com/customers](https://langfuse.com/customers) | WC: runtime blocking. Langfuse: tracing + developer analytics. |
 | **Eval / Stress-test** | Braintrust | Braintrust | Zapier (25% accuracy ↑) · Notion (10x resolution) · Coursera · Dropbox | [braintrust.dev/customers](https://braintrust.dev/customers) | WC: runtime guardrails + eval. Braintrust: pre-production eval workflows. |
@@ -284,7 +284,7 @@ quadrantChart
 | Lakera Guard | Software, Finance, Enterprise | Dropbox · Cohere · Fortune 500 EdTech (unnamed) |
 | Langfuse | Pharma, FinTech, Education | Merck · SumUp · Twilio · Canva · Khan Academy |
 | Patronus API | E-commerce, Automotive, AI | Etsy · CARIAD/VW · Gamma · Weaviate · Nova AI |
-| PromptArmor | Legal, Finance, Healthcare | Fortune 50 (unnamed) · Am Law 50 (unnamed) · 300K+ users |
+| PromptArmor | Legal, Finance, Healthcare | ASAPP (AI Transparency Portal) · TPRA enterprise members |
 <!-- .element: class="small-table" -->
 
 <div class="callout text-left">
