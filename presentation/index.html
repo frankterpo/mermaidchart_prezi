@@ -412,22 +412,25 @@
 		.callout.text-left { text-align: left; }
 		/* WTP flowchart: no scale (TB layout fits) */
 		#task1-wtp .mermaid svg { max-width: 100%; }
-		/* Matrix: constrain chart height to fit viewport */
-		#task2-why { padding-top: 0.3em !important; }
-		#task2-why h4, #task2-why h5 { margin: 0 0 0.1em 0 !important; }
+		/* Matrix: maximize chart in viewport */
+		#task2-why { padding-top: 0 !important; }
+		#task2-why h4 { margin: 0 0 0 0 !important; font-size: 0.9em !important; }
+		#task2-why h5 { margin: 0 !important; font-size: 0.65em !important; }
 		#task2-why .mermaid {
 			overflow: hidden !important;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-top: 0 !important;
-			max-height: 420px;
+			margin: 0 !important;
+			padding: 0 !important;
+			max-height: 650px;
 		}
 		#task2-why .mermaid svg {
-			height: 400px !important;
+			height: 630px !important;
 			width: auto !important;
-			max-height: 400px !important;
+			max-height: 630px !important;
 		}
+		#task2-why .callout { margin: 2px 0 0 0 !important; padding: 6px 12px !important; }
 		#task7-artifacts .mermaid svg {
 			transform: scale(1.1);
 			transform-origin: center;
