@@ -237,11 +237,11 @@ $$
 | White Circle USP | Competitor | Products | Verified Customers | Source | Differentiation |
 |---|---|---|---|---|---|
 | **Low-latency Safeguards** | Lakera | Guard, Red, Gandalf | Dropbox · Cohere · Top 3 US bank (unnamed) | [lakera.ai/customers](https://lakera.ai/customers) | WC: edge enforcement + post-deploy tuning. Lakera: firewall-first blocking. |
-| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | HubSpot · Gusto · Bill.com · Alteryx | Specter `clients_json`, [TPRA](https://www.tprassociation.org/vendor-profiles/promptarmor) | WC: observability + policy QA. PromptArmor: prompt-injection hardening. |
+| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | ASAPP (AI Transparency Portal) · Fortune 100 (unnamed) | [TPRA](https://www.tprassociation.org/vendor-profiles/promptarmor), [ASAPP partnership](https://www.joinprospect.com/explore/asapp) | WC: observability + policy QA. PromptArmor: prompt-injection hardening. |
 | **Observability** | Helicone | Helicone | Sunrun · DeepAI (65% cost ↓) · Brand.dev | [helicone.ai/customers](https://helicone.ai/customers) | WC: prevention + policy enforcement. Helicone: telemetry + cost observability. |
 | **Observability** | Langfuse | Langfuse | Merck (80+ AI teams) · SumUp (4M merchants) · Twilio | [langfuse.com/customers](https://langfuse.com/customers) | WC: runtime blocking. Langfuse: tracing + developer analytics. |
-| **Eval / Stress-test** | Braintrust | Braintrust | Zapier (25% accuracy ↑) · Notion (10x resolution) · Coursera · Dropbox | [braintrust.dev/customers](https://braintrust.dev/customers) | WC: runtime guardrails + eval. Braintrust: pre-production eval workflows. |
-| **Eval / Stress-test** | Patronus AI | Patronus API, Percival, Lynx | OpenAI · HP · Pearson · Etsy · CARIAD/VW | Specter `clients_json`, [patronus.ai/case-studies](https://patronus.ai/case-studies) | WC: edge controls + stress-test. Patronus: eval-focused quality scoring. |
+| **Eval / Stress-test** | Braintrust | Braintrust | Zapier (25% accuracy ↑) · Notion (10x resolution) · Coursera · Dropbox · Stripe · Navan | [braintrust.dev/customers](https://braintrust.dev/customers), [a16z](https://a16z.com/announcement/investing-in-braintrust/) | WC: runtime guardrails + eval. Braintrust: pre-production eval workflows. |
+| **Eval / Stress-test** | Patronus AI | Patronus API, Percival, Lynx | Etsy · CARIAD/VW · Gamma · Weaviate · Hospitable.com | [patronus.ai/case-studies](https://patronus.ai/case-studies) | WC: edge controls + stress-test. Patronus: eval-focused quality scoring. |
 <!-- .element: class="small-table" -->
 
 <br/>
@@ -285,12 +285,12 @@ quadrantChart
 
 | Company | Products | Verified Customers | Customer Industries |
 |---|---|---|---|
-| **Braintrust** | Platform · Brainstore · Loop | Notion · Stripe · Zapier · Vercel · Ramp · Dropbox · Cloudflare · Replit · Airtable · Instacart | SaaS, FinTech, DevTools, E-commerce |
+| **Braintrust** | Platform · Brainstore · Loop | Notion · Stripe · Zapier · Vercel · Dropbox · Coursera · Navan · Retool · Airtable · Instacart | SaaS, FinTech, DevTools, EdTech, E-commerce |
 | **Helicone** | Observability Proxy (100+ LLMs) | Sunrun · DeepAI · Brand.dev · Greptile | Energy, AI/ML, DevTools |
 | **Lakera** | Guard · Red · Gandalf · PII Detection | Dropbox · Cohere · Top 3 US bank (unnamed) | Cloud Storage, AI/ML, Finance |
 | **Langfuse** | LLM Engineering Platform | Samsara · Twilio · SumUp · Khan Academy · Springer Nature · Telus · Pigment | IoT, Comms, FinTech, EdTech, Publishing, Telco |
-| **Patronus AI** | API · Percival · Lynx · FinanceBench · SimpleSafetyTests · Glider | OpenAI · HP · Pearson · Etsy · CARIAD/VW | AI, Enterprise Tech, Education, E-commerce, Automotive |
-| **PromptArmor** | AI Risk Platform | HubSpot · Gusto · Bill.com · Alteryx | SaaS, HR/Payroll, FinTech, Data Analytics |
+| **Patronus AI** | API · Percival · Lynx · FinanceBench · SimpleSafetyTests · Glider | Etsy · CARIAD/VW · Gamma · Weaviate · Hospitable.com | E-commerce, Automotive, AI/ML, Search, Hospitality |
+| **PromptArmor** | AI Risk Platform | ASAPP · Fortune 100 (unnamed) | Enterprise AI, undisclosed |
 <!-- .element: class="small-table" -->
 
 <div class="callout text-left" style="font-size: 0.5em;">
@@ -767,14 +767,16 @@ These count **user-visible messages** and undercount by 100–400×. Each user p
 
 <div>$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fanout}} + n_{\text{auto}})$$</div>
 
-| Platform | Key Inputs (Feb 2026) | Naive (msg/mo) | Corrected (API req/mo) |
-|---|---|---:|---:|
-| **Lovable** | 8M+ users, $200M–$300M+ ARR | 15.3M | **1.5B – 6B** |
-| **Replit** | 35–40M MAU, $150M ARR | 86.4M | **5B – 25B** |
-| **Base44** | 400K users, $1M ARR | 4.8M | **225M – 720M** |
+| Variable | Definition | Typical Range |
+|---|---|---|
+| $d$ | Active days per month | 15–22 |
+| $n_{\text{explicit}}$ | User prompts per active day | 10–30 |
+| $k_{\text{fanout}}$ | Backend LLM calls per user prompt | 5–20 |
+| $n_{\text{auto}}$ | Autocomplete/inline triggers per day | 0–400 (IDE tools) |
+<!-- .element: class="small-table" -->
 
 <div class="callout text-left" style="font-size: 0.55em;">
-  Where $d$ = active days/mo, $n_{\text{explicit}}$ = user prompts/day, $k_{\text{fanout}}$ = backend calls per prompt (5–20), $n_{\text{auto}}$ = autocomplete triggers/day (~400 for IDE tools). All three platforms are <strong>platform-scale enterprise deals</strong> ($50K–500K+/year).
+  <strong>Worked example (Lovable):</strong> 2M active users × 20 days × (20 prompts × 15 fan-out + 0 autocomplete) = <strong>12B req/mo</strong> (upper range). The 100–400× correction factor comes from $k_{\text{fanout}}$ — each "message" is 5–20 backend calls that White Circle must guard.
 </div>
 
 ====
