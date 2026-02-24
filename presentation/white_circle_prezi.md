@@ -737,42 +737,20 @@ flowchart LR
 
 ====
 
-<!-- .slide: id="task6-vars" -->
-#### Variable Definitions (Before Calculation)
-
-| Proxy | Variable | Definition | Typical Value |
-|---|---|---|---|
-| **Traffic** | $V$ | Monthly visits | Platform-specific (e.g. 6M Lovable) |
-| | $c$ | Conversational share | 0.32 |
-| | $m$ | Messages per session | 6 |
-| **User** | $DAU$ | Daily active users | Platform-specific |
-| | $d$ | Active chat days per month | 20–30 |
-| | $n$ | Messages per active day | 5 |
-| **Engineering** | $R$ | Sustained RPS capacity | Platform-specific |
-| | $D$ | Duty cycle (fraction of time active) | 0.16 |
-| | $S$ | Seconds per month | 2.592M |
-
-====
-
 <!-- .slide: id="task6-methods" -->
-#### 3-Heuristic Methodology
+#### Estimation Approach: 3 Independent Heuristics
 
-```
-Method 1 — Traffic Proxy:
-  Monthly Visits × Conversational Share × Msgs per Session
+Each heuristic uses different public data. When all three converge, confidence is high.
 
-Method 2 — User Proxy:
-  DAU × Active Chat Days × Msgs per Active Day
+| Heuristic | Formula | Key Input |
+|---|---|---|
+| **Traffic proxy** | Monthly visits × conversational share × msgs/session | SimilarWeb traffic data |
+| **User proxy** | DAU × active days × msgs/active day | Reported MAU/DAU |
+| **Engineering proxy** | Sustained RPS × duty cycle × seconds/month | Infra disclosures, job postings |
 
-Method 3 — Engineering Proxy:
-  Sustained RPS × Duty Cycle × Seconds per Month
-```
-
-**Why three heuristics?**
-- Each proxy has different failure modes (traffic data can lag; DAU estimates can be optimistic; RPS can be infra-capped).
-- The **confidence interval narrows** dramatically when all three align — which they do for Lovable and Replit.
-
-**Base44 note:** Cloudflare Intel classifies `base44.com` as `Artificial Intelligence + Technology`, resolving to `34.149.87.45`.
+<div class="callout text-left" style="font-size: 0.55em;">
+  <strong>Why three?</strong> Each has different failure modes (traffic lags, DAU is optimistic, RPS is infra-capped). The confidence interval narrows when all three align — which they do for Lovable and Replit.
+</div>
 
 ====
 
@@ -781,13 +759,13 @@ Method 3 — Engineering Proxy:
 
 **The 3 estimation heuristics:**
 
-$$M_{\text{traffic}} = V \times c \times m \qquad M_{\text{user}} = DAU \times d \times n \qquad M_{\text{eng}} = R \times D \times S$$
+<div>$$M_{\text{traffic}} = V \times c \times m \qquad M_{\text{user}} = DAU \times d \times n \qquad M_{\text{eng}} = R \times D \times S$$</div>
 
 These count **user-visible messages** and undercount by 100–400×. Each user prompt triggers 5–20+ backend LLM calls (context retrieval, code gen, validation, error loops). IDE tools fire ~400 autocomplete requests/user/day that never appear as “messages.”
 
 **Correct unit — LLM API requests per month:**
 
-$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fanout}} + n_{\text{auto}})$$
+<div>$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fanout}} + n_{\text{auto}})$$</div>
 
 | Platform | Key Inputs (Feb 2026) | Naive (msg/mo) | Corrected (API req/mo) |
 |---|---|---:|---:|
