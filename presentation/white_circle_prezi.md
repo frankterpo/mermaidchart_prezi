@@ -173,14 +173,17 @@ flowchart TB
     T --> P[Price tier]
 ```
 
-<div class="callout text-left">
-  <strong>In plain English:</strong>
-  <ul>
-    <li>More AI risk → pay more for protection.</li>
-    <li>More volume → pay more (impact is bigger).</li>
-    <li>Heavier compliance rules → pay more to stay audit-safe.</li>
-    <li>Risk + compliance both high → urgency jumps faster.</li>
-  </ul>
+| WTP Driver | Consumer GenAI | Enterprise Automation | Regulated Industry |
+|---|---|---|---|
+| **Risk exposure** | HIGH — lawsuits, PR | MEDIUM — internal-facing | HIGH — regulatory fines |
+| **Request volume** | VERY HIGH — 1B+ req/mo | MEDIUM — 10M–100M/mo | LOW–MEDIUM |
+| **Compliance burden** | LOW — minimal regulation | MEDIUM — SOC 2, audit | VERY HIGH — HIPAA, FDA, SOX |
+| **Likely tier** | Growth → Enterprise | Startup → Growth | Growth → Enterprise |
+| **Price sensitivity** | Low (VC-funded) | Medium (ROI-driven) | Low (non-negotiable) |
+<!-- .element: class="small-table" -->
+
+<div class="callout text-left" style="font-size: 0.55em;">
+  <strong>In plain English:</strong> More AI risk → pay more. More volume → pay more. Heavier compliance → pay more. Risk + compliance both high → urgency jumps faster than either alone. Regulated industries have the highest WTP despite lower volume.
 </div>
 
 ====
@@ -333,7 +336,7 @@ quadrantChart
 
 <div class="callout text-left">
 
-**1. White Circle's moat is latency + runtime.** Every competitor lives in post-hoc eval or pre-deploy quality. No one else does sub-200ms runtime enforcement. The quadrant chart makes this visually obvious — top-left is empty except for WC.
+**1. White Circle's moat is data, not features.** Sub-200ms runtime enforcement is the entry point — but the real moat is the model WC builds from usage. Every policy enforcement, every blocked prompt, every false positive correction feeds back into the system. More customers = more data = better detection = harder to displace. Competitors doing post-hoc eval never see this traffic.
 
 **2. Competitors validate the market, not threaten it.** Lakera ($20M Series A), Braintrust ($80M Series B), Langfuse (acquired by ClickHouse) — investors are pouring capital into AI security/observability. WC is differentiated, not duplicated.
 
@@ -733,26 +736,6 @@ flowchart LR
 | **Startup** | 100K | $149 | $1,490 | First production workload. Anchored to Braintrust/Helicone starter ($99–199). |
 | **Growth** | 1M | $899 | $899 | Scaling companies. 40% cheaper per unit. Matches Datadog consumption economics. |
 | **Enterprise** | 10M+ | $4,990 | $499 | Annual commit. 67% cheaper per unit. Lakera/Cloudflare WAF enterprise pattern. |
-
-====
-
-<!-- .slide: id="task5-cala" -->
-#### What Determines WTP — and How It Differs by ICP
-
-<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em;">
-  <strong>Key finding:</strong> WTP is driven by <strong>risk exposure × compliance burden × volume</strong>. Their relative weight shifts by ICP — regulated industries pay for compliance; consumer AI pays for scale protection; enterprise pays for both.
-</div>
-
-| WTP Driver | Consumer GenAI | Enterprise Automation | Regulated Industry |
-|---|---|---|---|
-| **Risk exposure** | HIGH — lawsuits, PR | MEDIUM — internal-facing | HIGH — regulatory fines |
-| **Request volume** | VERY HIGH — 1B+ req/mo | MEDIUM — 10M–100M/mo | LOW–MEDIUM |
-| **Compliance burden** | LOW — minimal regulation | MEDIUM — SOC 2, audit | VERY HIGH — HIPAA, FDA, SOX |
-| **Likely tier** | Growth → Enterprise | Startup → Growth | Growth → Enterprise |
-| **Price sensitivity** | Low (VC-funded) | Medium (ROI-driven) | Low (non-negotiable) |
-<!-- .element: class="small-table" -->
-
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task5_pricing/cala_pricing_research.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Benchmark research — Cala AI + cited sources</a>
 
 ====
 
