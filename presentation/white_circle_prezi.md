@@ -199,13 +199,21 @@ $$
 \text{WTPUSD}_i=f(\text{WTPScore}_i)\ \text{via tier mapping}
 $$
 
-<div class="callout text-left">
-  <strong>Variable definitions:</strong>
-  <ul>
-    <li>$\delta$ — baseline spend propensity.</li>
-    <li>$(\tilde{R}_i\cdot\tilde{C}_i)$ — compound pressure when risk and compliance are both high.</li>
-    <li>Coefficients fit on outcomes (win/loss, tier, expansion); refreshed as data lands.</li>
+<div class="callout text-left" style="font-size: 0.55em;">
+  <strong>Every variable, plain English:</strong>
+  <ul style="margin:4px 0; line-height:1.6;">
+    <li><strong>WTPScore<sub>i</sub></strong> — "How much will company <em>i</em> pay?" A score from 0–1 that maps to a pricing tier.</li>
+    <li><strong>δ (delta)</strong> — The baseline. Even a company with zero risk and zero volume has <em>some</em> willingness to pay just to have the tool. Think of it as the "floor."</li>
+    <li><strong>R̃<sub>i</sub> (risk)</strong> — How dangerous is company <em>i</em>'s AI? Mental health chatbot = high risk. Internal wiki search = low risk. Scale: 0 to 1.</li>
+    <li><strong>α (alpha)</strong> — How much does risk <em>move the needle</em> on price? Big α = risky companies pay a lot more.</li>
+    <li><strong>Ṽ<sub>i</sub> (volume)</strong> — How many API requests does company <em>i</em> send per month? More requests = more value from WC. Scale: 0 to 1.</li>
+    <li><strong>β (beta)</strong> — How much does volume move the needle? Big β = high-traffic companies pay more.</li>
+    <li><strong>C̃<sub>i</sub> (compliance)</strong> — How heavy are company <em>i</em>'s regulatory requirements? HIPAA/FedRAMP = high. Unregulated consumer app = low. Scale: 0 to 1.</li>
+    <li><strong>γ (gamma)</strong> — How much does compliance move the needle?</li>
+    <li><strong>R̃<sub>i</sub> · C̃<sub>i</sub> (interaction term)</strong> — When risk AND compliance are <em>both</em> high, urgency jumps faster than either alone. A regulated company running risky AI pays a premium on top of the individual effects.</li>
+    <li><strong>η (eta)</strong> — How strong is that compound effect?</li>
   </ul>
+  <strong>How we get dollar amounts:</strong> The score feeds into a tier map (Task 5): 0–0.3 → Free, 0.3–0.5 → Starter ($99), 0.5–0.7 → Growth ($899), 0.7+ → Enterprise (custom).
 </div>
 
 ====
