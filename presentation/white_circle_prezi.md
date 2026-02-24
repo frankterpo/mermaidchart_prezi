@@ -950,11 +950,11 @@ flowchart LR
 
 <div class="callout text-left">
 
-**1. The pipeline is generic, not Tome-specific.** `outbound enrich-company -d [any-domain]` runs the full chain: Specter enrichment → person_db contacts → warm intro signals → OpenCode YC-format email. Swap the domain, get a new campaign in minutes.
+**1. Every email starts with THEM, not us.** Epstein's #1 principle: "uncommon commonalities." We use Specter person_db career history, talent signals, and LinkedIn connections to find specific hooks — Vicki's OpenAI co-founding, Alexander's departure post, Billy's Pendo Visual Design Studio work. No generic openers.
 
-**2. Cold emails follow YC's framework (Epstein + Seibel).** 50-66 words, reader-focused (you/your > I/we), role-specific angles, one low-friction CTA. The OpenCode prompt encodes all 7 Epstein principles — every future run generates compliant copy at scale.
+**2. Full Specter intelligence stack.** `talentsignals` (who moved where), `person_db` (full career/education), `specter_users_linkedin_connections` (warm intro paths via VC connections to Keith, Henri, Vicki), `company_data` (investors, funding). Fixed SQL bug: `ILIKE '%tome.com%'` matched `framatome.com`.
 
-**3. Warm intros > cold outreach.** Specter talent signals (who moved where) and shared investors create natural openers. "Saw Sarah Sachs moved from Robinhood to your ML team" converts 2-3x better than a cold pitch.
+**3. Warm intros > cold outreach.** Specter LinkedIn connections reveal 6 VCs connected to Tome leadership: Sierra Ventures, Primary VC, Inovia Capital (Keith), Radical VC, Amity VC (Henri), Renegade Partners (Vicki). 2-3x conversion vs. cold.
 
 </div>
 
