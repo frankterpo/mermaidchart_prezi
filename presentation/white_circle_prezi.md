@@ -804,7 +804,7 @@ flowchart LR
 |---|---|---|---|---|
 | **Lovable** | 8M+ registered | 200M-300M+ | 30.75M | Nov 2025 - Feb 2026 |
 | **Replit** | 35-40M MAU | 150M | 12.58M | Q3 2025 |
-| **Base44** | 250K-400K registered | 1M (3 weeks) | N/A (too new) | Jun 2025 |
+| **Base44** | 250K-400K registered | 1M (3 weeks) | 12.39M | Jan 2026 |
 | **Cursor** *(reference)* | 1M+ DAU | 500M+ | N/A (desktop app) | Q4 2025 |
 <!-- .element: class="small-table" -->
 
