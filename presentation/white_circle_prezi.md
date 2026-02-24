@@ -973,10 +973,10 @@ Everything here is **powered by running code** — Specter, person_db, OpenCode,
 | 10 safety policies (CI-testable) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/psychotherapy_policies.yaml" target="_blank" class="pill">psychotherapy_policies.yaml</a> |
 | Usage-based pricing (4 tiers, WTP by ICP) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/pricing_model.csv" target="_blank" class="pill">pricing_model.csv</a> |
 | Volume estimates: LLM API requests (100–400× user msgs) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/" target="_blank" class="pill">task6_estimates/</a> |
-| **Tome cold email** (10 contacts, YC framework, OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
+| **Dropbox cold email** (7 contacts, YC framework, Specter) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
 | **Incident LinkedIn** (7 people, Specter + person_db) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
 | 115 leads × 18 personalized outbound (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
-<code>outbound enrich-company -d tome.com</code> · <code>outbound enrich-incident-linkedin --people-only</code>
+<code>outbound enrich-company -d dropbox.com</code> · <code>outbound enrich-incident-linkedin --people-only</code>
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/" style="font-size: 1.1em; color: #a8a8ff;">🔗 github.com/frankterpo/growth_hacker_wc_2026</a>
