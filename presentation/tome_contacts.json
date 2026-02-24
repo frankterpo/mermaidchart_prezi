@@ -1,152 +1,116 @@
 {
   "company": "Notion",
   "domain": "notion.so",
-  "source": "Specter talentsignals + person_db + linkedin_connections + public research (YC Epstein framework)",
-  "generated_at": "2026-02-24T23:30:00.000000",
+  "source": "Specter talentsignals + linkedin_connections + public research (YC Epstein framework)",
+  "generated_at": "2026-02-24T23:45:00.000000",
   "intelligence_summary": {
-    "competitor_connection": "Notion uses Braintrust for AI eval (published case study: braintrust.dev/customers/notion). 10x faster issue resolution. No investment relationship with any White Circle competitor.",
-    "ai_products": "Notion AI (Q&A, writing, autofill) powered by GPT-4 and Claude. AI Connectors pull from Slack, Google Drive, GitHub, Jira, MS Teams, SharePoint, Linear. 100M+ users, 62% of Fortune 100.",
-    "security_posture": "SOC 2 Type 2, ISO certified. CISO is Noah Beddome (ex-Datadog VP Security Engineering). Permission-aware query-time access control. Zero-retention API calls. TLS 1.2+.",
-    "investors": "Coatue, Index Ventures, Sequoia, Felicis, First Round Capital, ICONIQ Growth, GIC, Daniel Gross, Elad Gil",
+    "competitor_connection": "Notion uses Braintrust for AI eval (published case study: 10x faster issue resolution). No investment in any WC competitor.",
+    "ai_products": "Notion AI (Q&A, writing, autofill) on GPT-4 + Claude. AI Connectors: Slack, Google Drive, GitHub, Jira, MS Teams, SharePoint, Linear. 100M+ users, 62% Fortune 100.",
+    "security_context": "Schneier published 'Abusing Notion's AI Agent for Data Theft' (Sept 2025) — the 'lethal trifecta' vuln in Notion 3.0. Notion responded with prompt injection detection + admin controls. SOC 2 Type 2.",
     "warm_intro_paths": {
-      "ivan_zhao": ["dave@offline.vc (Offline VC)", "fei@tryspecter.com (Specter — our own team!)"]
-    },
-    "key_angle": "Braintrust = eval (quality measurement). White Circle = runtime OUTPUT enforcement (policy controls). Notion AI Connectors pull data from 7+ enterprise apps into one AI layer — cross-app data leakage at the output layer is the gap."
+      "ivan_zhao_ceo": ["dave@offline.vc (Offline VC)", "fei@tryspecter.com (Specter — our team)"]
+    }
   },
   "contacts": [
     {
-      "role": "ciso",
-      "label": "Noah Beddome, Chief Information Security Officer",
-      "greeting": "Hey Noah,",
-      "email_body": "Subject: runtime enforcement for Notion AI Connectors\n\nHey Noah,\n\nFrom Datadog VP of Security Engineering to Notion CISO — you've built security at the infrastructure layer and now own it at the product layer.\n\nNotion AI Connectors pull data from Slack, Google Drive, GitHub, Jira, and SharePoint into one AI Q&A layer. Permission-aware access control handles who can query what. But the output side — what GPT-4 and Claude surface when they synthesize answers across connected apps — is where data can cross permission boundaries.\n\nWe enforce policies at that runtime output layer. Sub-200ms, between model and screen. Audit trails for SOC 2.\n\nIs output-side enforcement something the security team is scoping?\n\nFrancisco",
-      "linkedin_message": "Hey Noah — from Datadog VP Security Engineering to Notion CISO, you've built security at every layer. With AI Connectors pulling from Slack/Drive/GitHub/Jira into one Q&A layer, the output side is where data can cross permission boundaries. Building runtime enforcement for exactly that gap. On the radar?",
-      "outreach_reason": [
-        "Specter talent signal: Noah moved from Opendoor CISO → Datadog VP Security Engineering → Notion CISO",
-        "Notion AI Connectors pull from 7+ enterprise apps — cross-app output is the security surface",
-        "SOC 2 Type 2 certified, Noah owns the compliance posture",
-        "Datadog background means he understands observability and runtime monitoring deeply"
-      ],
-      "personalization_basis": {
-        "career": "ITT Technical Institute (Networking/Telecom) → Datadog (Director Infra Security → VP Security Engineering) → Opendoor (CISO) → Aegis Games (Owner) → Notion (CISO)",
-        "hook": "His Datadog background = he built observability-grade security infrastructure. Runtime enforcement is the natural next layer for someone who thinks in metrics and monitoring.",
-        "product_knowledge": "Owns Notion's entire security posture: SOC 2 Type 2, ISO, GDPR. AI Connectors create new cross-app data surface he must secure."
+      "role": "security",
+      "label": "Daimon G, Security Engineering Manager",
+      "greeting": "Hey Daimon,",
+      "email_body": "Subject: Schneier's 'lethal trifecta' and Notion 3.0\n\nHey Daimon,\n\nSchneier's September piece on Notion AI agent data exfiltration hit close to home — hidden prompt injection in PDFs extracting private workspace data via web search. Your team shipped prompt injection detection and admin controls fast.\n\nThe gap: runtime output enforcement. Detecting bad inputs is step one — controlling what the model surfaces from connected apps in real-time is step two.\n\nThat's what we built. Sub-200ms, between model and user.\n\n15 min this week? calendly.com/francisco-wc\n\nFrancisco",
+      "linkedin_message": "Hey Daimon — saw Schneier's piece on the Notion 3.0 'lethal trifecta.' Your team's response (prompt injection detection, admin controls) was fast. The next layer is runtime output enforcement — controlling what the model surfaces, not just what goes in. Built exactly that. Worth a quick chat?",
+      "warm_intro": null,
+      "mutuals": {
+        "connections": "No direct Specter connections found — cold outreach. Security EM → direct buyer.",
+        "approach": "Cold. Reference Schneier article as shared context."
       },
-      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + Notion security docs + Epstein framework" },
-      "specter_profile": { "name": "Noah Beddome", "position": "Chief Information Security Officer", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/noah-beddome-6b794940" }
+      "outreach_reason": [
+        "Schneier published 'Abusing Notion's AI Agent for Data Theft' (Sept 2025) — Daimon's team responded",
+        "Career: Airbnb Security → Robinhood D&R → Notion Security EM. SANS SEC522, CMU SEI trained.",
+        "He's the hands-on security leader who would evaluate + implement runtime enforcement"
+      ],
+      "specter_profile": { "name": "Daimon G", "position": "Security Engineering Manager", "seniority": "Director", "linkedin": "https://www.linkedin.com/in/asdfdevnull" }
     },
     {
       "role": "cto",
       "label": "Fuzzy K, Chief Technology Officer",
       "greeting": "Hey Fuzzy,",
-      "email_body": "Subject: the layer between Braintrust and the user\n\nHey Fuzzy,\n\nFrom Google's financial platform to Area120 to SVP Product Engineering at Slack to Notion CTO — you've built the systems that millions of teams depend on.\n\nThe Braintrust integration is smart — 10x faster issue resolution, automated eval scoring. That covers quality. But when Notion AI synthesizes an answer from a user's Slack threads, GitHub repos, and Jira tickets, the runtime output layer is where sensitive data can surface across app boundaries.\n\nBraintrust measures quality after the fact. Runtime enforcement prevents bad outputs before they reach the user. Sub-200ms, between model and screen.\n\nIs this gap on the engineering roadmap?\n\nFrancisco",
-      "linkedin_message": "Hey Fuzzy — Google → Slack SVP Product Eng → Notion CTO. Braintrust handles eval (10x faster issue resolution — great case study). The gap is runtime: when Notion AI synthesizes across Slack/GitHub/Jira, the output layer is where data crosses boundaries. Building enforcement for exactly that.",
-      "outreach_reason": [
-        "Specter talent signal: Fuzzy moved from Slack (SVP Product Engineering) → Notion (CTO)",
-        "Owns the technical architecture that runs GPT-4 and Claude in production",
-        "Braintrust case study proves Notion invests in AI quality — runtime enforcement is the next layer",
-        "Google → Slack → Notion = built infrastructure at massive scale"
-      ],
-      "personalization_basis": {
-        "career": "Google (Sr Engineering Director → Area120 Founder in Residence → Financial Platform Lead) → Slack (SVP Product Engineering) → Notion (CTO)",
-        "hook": "Braintrust handles eval (his team published the case study). Positioning runtime enforcement as the complement — eval measures, enforcement prevents.",
-        "product_knowledge": "Owns Notion AI architecture: GPT-4, Claude, AI Connectors, Q&A. Responsible for how 100M+ users interact with AI features."
+      "email_body": "Subject: the gap between Braintrust and the user\n\nHey Fuzzy,\n\nBraintrust gave your team 10x faster AI issue resolution — great case study. That covers eval.\n\nBut after Schneier's piece on Notion 3.0 data exfiltration, the question isn't just 'is the AI answer good?' — it's 'should this answer exist?' When Connectors pull from Slack, GitHub, and Jira, the output layer is where data crosses boundaries.\n\nWe enforce output policies at runtime. Sub-200ms.\n\n15 min? calendly.com/francisco-wc\n\nFrancisco",
+      "linkedin_message": "Hey Fuzzy — the Braintrust case study (10x eval speed) was impressive. After Schneier's Notion 3.0 piece, the next question is runtime output enforcement — not just 'is this answer good?' but 'should it exist?' That's what we built. Quick chat?",
+      "warm_intro": null,
+      "mutuals": {
+        "connections": "No direct Specter connections found — cold outreach.",
+        "approach": "Cold. Lead with Braintrust case study (his win) + Schneier article (his problem)."
       },
-      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + Braintrust case study + Epstein framework" },
+      "outreach_reason": [
+        "CTO who owns the Braintrust integration and Notion AI architecture (GPT-4, Claude)",
+        "Career: Google Sr Director → Slack SVP Product Engineering → Notion CTO",
+        "Schneier's Notion 3.0 data exfiltration piece puts runtime security on his radar"
+      ],
       "specter_profile": { "name": "Fuzzy K", "position": "Chief Technology Officer", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/fuzzy-k-a58abb170" }
-    },
-    {
-      "role": "security",
-      "label": "Daimon G, Security Engineering Manager",
-      "greeting": "Hey Daimon,",
-      "email_body": "Subject: from Robinhood D&R to Notion — the AI output surface\n\nHey Daimon,\n\nAirbnb security to Robinhood Detection & Response to leading security engineering at Notion — you've built detection systems where the data is sensitive and the stakes are real. SANS SEC522 training, CMU incident management foundations.\n\nAt Notion, the attack surface is different: AI Connectors pull from Slack, GitHub, Drive, and Jira. When GPT-4 generates an answer by synthesizing across those sources, the output layer is where data leaks across app boundaries. Traditional WAF rules don't catch model-generated cross-app data exposure.\n\nWe enforce policies at that runtime output layer. Sub-200ms. Designed for exactly the class of threats SEC522 doesn't cover yet.\n\nIs this a gap your team is working on?\n\nFrancisco",
-      "linkedin_message": "Hey Daimon — Airbnb security → Robinhood D&R → Notion security engineering. SANS SEC522 trained. When Notion AI synthesizes across Slack/GitHub/Jira, the output layer creates a new threat surface traditional WAF rules don't cover. Building runtime enforcement for exactly that. On your radar?",
-      "outreach_reason": [
-        "Specter talent signal: Daimon moved from Robinhood (D&R EM) → Notion (Security Engineering Manager)",
-        "SANS SEC522 (Web AppSec) + CMU SEI (Incident Management) — serious security credentials",
-        "Career: Airbnb → Robinhood → Notion = progressively higher-stakes security roles",
-        "He's the hands-on security leader who would evaluate and implement runtime enforcement"
-      ],
-      "personalization_basis": {
-        "career": "Airbnb (Senior Security Engineer) → Robinhood (Staff Security Engineer → EM Detection & Response) → Notion (Security Engineer → Security Engineering Manager)",
-        "education": "Carnegie Mellon SEI (Incident Management), SANS Technology Institute SEC522 (Web AppSec)",
-        "hook": "His SANS SEC522 training covers web app security — but model-generated cross-app data exposure is a threat class SEC522 doesn't address yet. Position White Circle as the new layer."
-      },
-      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + SANS/CMU credentials + Epstein framework" },
-      "specter_profile": { "name": "Daimon G", "position": "Security Engineering Manager", "seniority": "Director", "linkedin": "https://www.linkedin.com/in/asdfdevnull" }
     },
     {
       "role": "cpo",
       "label": "Jackie Rocca, Product Lead",
       "greeting": "Hey Jackie,",
-      "email_body": "Subject: the safety UX layer for Notion AI Q&A\n\nHey Jackie,\n\nFrom Bain to Google PM to VP Product at Slack to Product Lead at Notion — you've shipped products that define how teams communicate. The Braintrust integration (10x faster issue resolution) shows your team takes AI quality seriously.\n\nBut when a user asks Notion AI a question and it synthesizes an answer from their connected Slack, GitHub, and Jira, the quality question becomes a safety question: what should the model surface, and what should it withhold?\n\nBraintrust evaluates quality. Runtime enforcement controls what reaches the user. That's the gap between eval and production.\n\nIs output-side control part of the Notion AI roadmap?\n\nFrancisco",
-      "linkedin_message": "Hey Jackie — Bain → Google PM → Slack VP Product → Notion Product Lead. The Braintrust integration (10x faster issue resolution) proves quality matters to your team. The next layer: what should Notion AI surface vs. withhold when synthesizing across Slack/GitHub/Jira? Building runtime controls for exactly that.",
-      "outreach_reason": [
-        "Specter talent signal: Jackie moved from Slack (VP Product Management) → Notion (Product Lead)",
-        "Stanford MBA, Bain → Google → Disney → Slack → Notion = elite product career",
-        "She owns the Notion AI product that uses Braintrust for eval",
-        "Product lead = the person who decides what safety features ship"
-      ],
-      "personalization_basis": {
-        "career": "Bain (Senior Associate Consultant) → Disney (Analyst) → Google (PM) → Slack (VP Product Management) → Notion (Product Lead)",
-        "education": "Stanford GSB MBA, University of Michigan BBA",
-        "hook": "She shipped the Braintrust integration for AI quality. Runtime enforcement is the natural next product decision for someone who already optimized eval."
+      "email_body": "Subject: output controls for Notion AI\n\nHey Jackie,\n\nYou shipped Notion AI to 62% of Fortune 100. Braintrust handles quality. But enterprise buyers are asking a different question now: what can the AI surface from my connected apps?\n\nAfter the Schneier piece on Notion 3.0 data exfiltration, that question got louder. Runtime output enforcement — between model and user — is the missing layer.\n\nThat's what we built. Sub-200ms, SOC 2 audit trails.\n\n15 min? calendly.com/francisco-wc\n\nFrancisco",
+      "linkedin_message": "Hey Jackie — you shipped Notion AI to 62% of Fortune 100. After the Schneier piece on 3.0 data exfiltration, enterprise buyers are asking about output controls. Built exactly that layer. Worth a quick chat?",
+      "warm_intro": null,
+      "mutuals": {
+        "connections": "No direct Specter connections found — cold outreach.",
+        "approach": "Cold. Lead with her achievement (62% Fortune 100) + enterprise buyer concern."
       },
-      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + Braintrust case study + Epstein framework" },
+      "outreach_reason": [
+        "Product Lead who owns Notion AI, shipped Braintrust integration",
+        "Career: Bain → Google PM → Slack VP Product → Notion. Stanford MBA.",
+        "Enterprise buyers asking about AI output controls = her roadmap decision"
+      ],
       "specter_profile": { "name": "Jackie Rocca", "position": "Product Lead", "seniority": "Director", "linkedin": "https://www.linkedin.com/in/jackie-rocca" }
     },
     {
       "role": "ceo",
       "label": "Ivan Zhao, CEO & Co-Founder",
       "greeting": "Hey Ivan,",
-      "email_body": "Subject: what Braintrust doesn't cover\n\nHey Ivan,\n\nNotion AI is in 62% of Fortune 100 workspaces, with AI Connectors pulling from Slack, GitHub, Drive, and Jira. The Braintrust integration handles eval — 10x faster issue resolution, automated quality scoring.\n\nBut enterprise buyers are starting to ask a different question: not \"is the AI answer good?\" but \"should this AI answer exist?\" When GPT-4 synthesizes across connected apps, the output can surface data that crosses permission boundaries.\n\nBraintrust measures quality. We enforce output policies at runtime — sub-200ms, between model and screen. The layer that makes AI Connectors enterprise-safe.\n\nIs this gap on the roadmap?\n\nFrancisco",
-      "linkedin_message": "Hey Ivan — Notion AI in 62% of Fortune 100, with Connectors pulling from Slack/Drive/GitHub/Jira. Braintrust handles eval quality. The gap enterprise buyers ask about: should this AI answer exist? Building runtime output enforcement for that exact question.",
-      "outreach_reason": [
-        "CEO & Co-Founder of Notion — ultimate decision maker",
-        "Specter LinkedIn connections: dave@offline.vc (Offline VC), fei@tryspecter.com (Specter employee — direct warm intro)",
-        "62% of Fortune 100 use Notion — enterprise security is a sales accelerator",
-        "Braintrust partnership shows investment in AI quality — runtime enforcement is the next layer"
-      ],
-      "personalization_basis": {
-        "career": "CEO & Co-Founder of Notion since 2010. Built Notion from a notes app to an all-in-one workspace used by 100M+ people.",
-        "hook": "Enterprise buyers asking 'should this answer exist?' is a revenue question, not just a security question. Position runtime enforcement as a sales accelerator for Fortune 100 deals.",
-        "warm_intros": ["Offline VC (Dave)", "Specter (Fei — our own team!)"]
+      "email_body": "Subject: runtime AI security for Notion\n\nHey Ivan,\n\n100M users, 62% of Fortune 100, AI Connectors pulling from 7 apps. Notion AI is everywhere. The Schneier piece on 3.0 data exfiltration showed the attack surface is real.\n\nBraintrust handles eval. The missing piece: runtime output enforcement — what the model can surface, controlled in real-time.\n\nThat's what we built at White Circle. Sub-200ms.\n\n15 min? calendly.com/francisco-wc\n\nFrancisco",
+      "linkedin_message": "Hey Ivan — Notion AI in 62% of Fortune 100. After the Schneier piece on 3.0 data exfiltration, the runtime output layer is the next thing enterprise buyers will ask about. Built exactly that. Quick chat?",
+      "warm_intro": {
+        "via_dave_offline_vc": "Hey Dave — hope things are good at Offline. I see you're connected to Ivan Zhao at Notion. We're building runtime AI security at White Circle — especially relevant after the Schneier piece on Notion 3.0 data exfiltration. Would you be open to making a quick intro? Happy to send a forwardable blurb.\n\nFrancisco",
+        "via_fei_specter": "Hey Fei — I see you're connected to Ivan Zhao at Notion on LinkedIn. We're building runtime AI output enforcement at White Circle, and after the Schneier piece on Notion 3.0 data exfiltration, it's directly relevant to their roadmap. Would you mind making a quick intro? Can send a one-liner to forward.\n\nFrancisco"
       },
-      "opencode": { "used": false, "model": null, "method": "Manual: Specter connections + Notion AI public data + Epstein framework" },
+      "mutuals": {
+        "connections": ["dave@offline.vc (Offline VC) — Specter LinkedIn connection to Ivan Zhao", "fei@tryspecter.com (Specter employee) — Specter LinkedIn connection to Ivan Zhao"],
+        "approach": "Warm via Dave at Offline VC or Fei at Specter. Fei is internal — easiest path."
+      },
+      "outreach_reason": [
+        "CEO & Co-Founder — ultimate decision maker",
+        "Warm intro via dave@offline.vc and fei@tryspecter.com (Specter's own team)",
+        "Schneier's Notion 3.0 data exfiltration piece makes runtime security urgent"
+      ],
       "specter_profile": { "name": "Ivan Zhao", "position": "CEO & Co-Founder", "seniority": "Executive", "linkedin": "" }
     },
     {
-      "role": "team",
+      "role": "cro",
       "label": "Erica Anderson, Chief Revenue Officer",
       "greeting": "Hey Erica,",
-      "email_body": "Subject: turning AI security into a sales accelerator\n\nHey Erica,\n\nFrom GitHub CRO to Notion CRO — you know that enterprise deals live or die on the security questionnaire. At GitHub, that was code access controls. At Notion, it's AI output controls.\n\nWhen a Fortune 500 CISO asks \"what can your AI access and surface from our connected apps?\" — that's either a deal blocker or a competitive advantage. Braintrust handles AI quality. The gap is runtime enforcement: provable controls on what the model surfaces.\n\nWe build that proof layer. Sub-200ms policy enforcement with audit trails.\n\nAre enterprise buyers already asking this question?\n\nFrancisco",
-      "linkedin_message": "Hey Erica — GitHub CRO → Notion CRO. Enterprise deals live or die on security questionnaires. When Fortune 500 CISOs ask what Notion AI can surface from connected apps, that's a deal blocker or accelerator. Building the proof layer for exactly that question.",
-      "outreach_reason": [
-        "Specter talent signal: Erica moved from GitHub (CRO/SVP Revenue/SVP Sales) → Notion (CRO)",
-        "She owns enterprise revenue — security questionnaires are her daily blocker or enabler",
-        "GitHub → Notion = both developer-first tools going enterprise, same security-as-sales pattern",
-        "Vanderbilt background (PoliSci + Psychology) — understands buyer psychology"
-      ],
-      "personalization_basis": {
-        "career": "GitHub (VP Sales Operations → VP Sales → SVP Sales → SVP Revenue → CRO) → Notion (CRO)",
-        "education": "Vanderbilt University (Political Science, Psychology), Lipscomb University (Finance)",
-        "hook": "CRO angle — security is a revenue conversation. At GitHub she sold code security. At Notion she sells AI safety. Same motion, new surface area."
+      "email_body": "Subject: AI security as a deal closer\n\nHey Erica,\n\nAt GitHub you sold code security. At Notion you're selling AI safety — same motion, bigger surface area.\n\nWhen a Fortune 500 CISO asks 'what can your AI surface from my Slack and Jira?' — that's a deal blocker or a closer. Runtime output enforcement gives you the proof layer to answer that question.\n\n15 min to show you what that looks like? calendly.com/francisco-wc\n\nFrancisco",
+      "linkedin_message": "Hey Erica — GitHub CRO → Notion CRO. You've sold security before. When Fortune 500 CISOs ask what Notion AI can surface from their connected apps, runtime output enforcement is the proof layer. Worth a quick chat?",
+      "warm_intro": null,
+      "mutuals": {
+        "connections": "No direct Specter connections found — cold outreach.",
+        "approach": "Cold. Lead with GitHub → Notion CRO parallel. Security = revenue angle."
       },
-      "opencode": { "used": false, "model": null, "method": "Manual: Specter talent signals + enterprise sales angle + Epstein framework" },
+      "outreach_reason": [
+        "CRO who owns enterprise revenue — security questionnaires are daily reality",
+        "Career: GitHub (VP Sales → SVP → CRO) → Notion CRO. Same security-as-sales pattern.",
+        "AI output controls = deal accelerator for Fortune 500 sales"
+      ],
       "specter_profile": { "name": "Erica Anderson", "position": "Chief Revenue Officer", "seniority": "Executive", "linkedin": "https://www.linkedin.com/in/erica-anderson-54b5878" }
     },
     {
       "role": "team",
       "label": "Notion team",
       "greeting": "Hey Notion team,",
-      "email_body": "Subject: the layer between Braintrust and the user\n\nHey Notion team,\n\nBraintrust gives you 10x faster AI issue resolution — automated eval, quality scoring, production traces feeding test cases. That covers quality measurement.\n\nBut when Notion AI Connectors pull from Slack, GitHub, Google Drive, and Jira, and GPT-4 synthesizes an answer across all of them — the output layer is where data can cross permission boundaries. Quality and safety are different problems.\n\nWe enforce output policies at runtime. Sub-200ms, between model and screen. Audit trails for SOC 2. The layer that makes AI Connectors enterprise-safe.\n\nIs output-side enforcement on the roadmap?\n\nFrancisco",
-      "linkedin_message": "Hey Notion team — Braintrust gives you 10x faster AI eval. The gap is runtime output: when AI Connectors synthesize across Slack/GitHub/Drive/Jira, data can cross permission boundaries. We enforce policies there, sub-200ms. On the roadmap?",
-      "outreach_reason": [
-        "Notion uses Braintrust (published case study) — eval in place, runtime enforcement is the gap",
-        "AI Connectors pull from 7+ enterprise apps — cross-app output is the security surface",
-        "100M+ users, 62% of Fortune 100 — enterprise security is a growth lever",
-        "SOC 2 Type 2, ISO certified — compliance infrastructure already exists"
-      ],
-      "opencode": { "used": false, "model": null }
+      "email_body": "Subject: the gap Schneier found in Notion 3.0\n\nHey Notion team,\n\nSchneier's piece on Notion AI agent data exfiltration exposed the 'lethal trifecta': private data access + untrusted content + external communication. Your team shipped prompt injection detection fast.\n\nThe missing layer: runtime output enforcement — controlling what the model surfaces, in real-time, before it reaches the user.\n\nThat's what we built. Sub-200ms.\n\n15 min? calendly.com/francisco-wc\n\nFrancisco",
+      "linkedin_message": "Hey Notion team — after Schneier's piece on 3.0 data exfiltration, runtime output enforcement is the missing layer between what the model generates and what the user sees. Built exactly that. Worth a quick chat?"
     }
   ]
 }
