@@ -20,7 +20,7 @@
 ```mermaid
 flowchart TD
     subgraph Data_Extraction [1. Data Extraction]
-        A1["Recon (Playwright/Firecrawl)"] --> A2["Sitemap & Meta"]
+        A1["Recon (Firecrawl/BS4)"] --> A2["Sitemap & Meta"]
         A1 --> A3["HTTP Headers"]
         A4["Cala AI + DuckDuckGo/Reddit"] --> A5["Web Intent & Social Scraping"]
     end
@@ -48,7 +48,7 @@ flowchart TD
 # ICP: Build 30 targets → Enrich with Specter
 python -m src.cli icp build && python -m src.cli icp enrich
 
-# Signals: Run all 5 detectors in one pass
+# Signals: Run all 6 detectors in one pass
 python -m src.cli signals run --since 7 \
   --config config/signals.yaml \
   --watchlist data/watchlist_companies.csv
@@ -105,7 +105,7 @@ mindmap
 | Intercom | Customer Support | Series D | 2018-03-27 | $125.0M | $1.30B | Kleiner Perkins | Ethan Kurzweil (Bessemer Venture Partners); Abhishek Agrawal (Vulcan Capital) (+1 more) |
 | Inworld AI | Gaming | Series A | 2023-08-02 | $56.0M | $521.0M | Lightspeed Venture Partners | Bejul Somaia (Lightspeed Venture Partners); Moritz Baier-Lentz (Lightspeed Venture Partners) (+2 more) |
 | Replica Studios | Gaming | Seed | 2022-11-01 | $4.2M | — | — | — |
-| Khan Academy | Education | Series A | 2022-01-01 | $10.0K | $111.0K | — | — |
+| Khan Academy | Education | Grant-funded nonprofit | — | ~$22M (grants) | — | Gates Foundation, Google.org | — |
 | Duolingo | Education | Series H | 2020-11-18 | $35.0M | $2.40B | General Atlantic; Durable Capital Partners | Henry Ellenbogen (Durable Capital Partners); Julio Novo (Durable Capital Partners) (+1 more) |
 <!-- .element: class="small-table" -->
 
@@ -232,14 +232,14 @@ $$
 ### Task 2: Competitor Intelligence
 ##### Mapped to White Circle USPs via Automated Multi-Source Extraction
 
-| White Circle USP | Competitor | Products (Specter) | Reported Clients (`company_clients`) | Source & Method | Differentiation vs White Circle |
+| White Circle USP | Competitor | Products | Verified Customers | Source | Differentiation |
 |---|---|---|---|---|---|
-| **Low-latency Safeguards** | Lakera | Lakera Guard, Lakera Red, Lakera Gandalf | tome.com (`tome.com`), verax.ai (`verax.ai`), wexler.ai (`wexler.ai`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/case-studies`=ok) + DDG (0 results this run) + Cala (key present, not queried) | White Circle combines edge enforcement with continuous post-deployment tuning; Lakera is firewall-first. |
-| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | 101.xyz (`101.xyz`), 15five.com (`15five.com`), 222.place (`222.place`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle adds observability + policy QA workflows on top of prompt-injection defense. |
-| **Observability** | Helicone | Helicone | linkedin.com (`linkedin.com`), 15five.com (`15five.com`), 4degrees.ai (`4degrees.ai`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle emphasizes prevention + policy enforcement, while Helicone is telemetry-first. |
-| **Observability** | Langfuse | Langfuse | claimsorted.com (`claimsorted.com`), portialabs.ai (`portialabs.ai`), symbe.co (`symbe.co`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle targets runtime blocking/remediation; Langfuse focuses on tracing and analytics. |
-| **Eval / Stress-test** | Braintrust | Braintrust | No reported clients in `company_clients` | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle includes runtime guardrails in addition to pre-deploy evaluation coverage. |
-| **Eval / Stress-test** | Patronus AI | Patronus API, Percival, Lynx | 101.xyz (`101.xyz`), 15five.com (`15five.com`), 222.place (`222.place`) | Specter SQL (`companies` + `company_clients` + `clients_integration_companies`) + Firecrawl (`/customers`=ok) + DDG (0) + Cala (key present, not queried) | White Circle unifies edge controls + stress-testing; Patronus is strongest on eval scoring. |
+| **Low-latency Safeguards** | Lakera | Guard, Red, Gandalf | Dropbox · Cohere · Top 3 US bank (unnamed) | [lakera.ai/customers](https://lakera.ai/customers) | WC: edge enforcement + post-deploy tuning. Lakera: firewall-first blocking. |
+| **Low-latency Safeguards** | PromptArmor | AI Risk Platform | Fortune 50 + Am Law 50 (unnamed); 300K+ users | [promptarmor.com](https://promptarmor.com) | WC: observability + policy QA. PromptArmor: prompt-injection hardening. |
+| **Observability** | Helicone | Helicone | Sunrun · DeepAI (65% cost ↓) · Brand.dev | [helicone.ai/customers](https://helicone.ai/customers) | WC: prevention + policy enforcement. Helicone: telemetry + cost observability. |
+| **Observability** | Langfuse | Langfuse | Merck (80+ AI teams) · SumUp (4M merchants) · Twilio | [langfuse.com/customers](https://langfuse.com/customers) | WC: runtime blocking. Langfuse: tracing + developer analytics. |
+| **Eval / Stress-test** | Braintrust | Braintrust | Zapier (25% accuracy ↑) · Notion (10x resolution) · Coursera · Dropbox | [braintrust.dev/customers](https://braintrust.dev/customers) | WC: runtime guardrails + eval. Braintrust: pre-production eval workflows. |
+| **Eval / Stress-test** | Patronus AI | Patronus API, Percival, Lynx | Etsy · CARIAD/VW · Gamma · Weaviate | [patronus.ai/case-studies](https://patronus.ai/case-studies) | WC: edge controls + stress-test. Patronus: eval-focused quality scoring. |
 <!-- .element: class="small-table" -->
 
 <br/>
@@ -277,18 +277,18 @@ quadrantChart
 <!-- .slide: id="task2-overlap" -->
 #### Matrix Overlap: Product vs. Specter Customer Industries
 
-| Product - Company | Specter Customer Industries (Top) | Sample Reported Clients |
+| Product - Company | Customer Industries | Verified Customers (public sources) |
 |---|---|---|
-| Braintrust - Braintrust | Software, Technology, HR Tech | No reported clients |
-| Helicone - Helicone | Software, Finance, Information Technology | linkedin.com · 15five.com · 4degrees.ai |
-| Lakera Guard - Lakera | Information Technology, Software, Finance | tome.com · verax.ai · wexler.ai |
-| Langfuse - Langfuse | Information Technology, Software, Finance | claimsorted.com · portialabs.ai · symbe.co |
-| Patronus API - Patronus AI | Information Technology, Software, Data and Analytics | 101.xyz · 15five.com · 222.place |
-| AI Risk Platform - PromptArmor | Information Technology, Software, Data and Analytics | 101.xyz · 15five.com · 222.place |
+| Braintrust | Software, AI/ML, Education | Zapier · Notion · Coursera · Dropbox · Retool · Loom |
+| Helicone | Software, Energy, AI/ML | Sunrun · DeepAI · Brand.dev · Greptile |
+| Lakera Guard | Software, Finance, Enterprise | Dropbox · Cohere · Fortune 500 EdTech (unnamed) |
+| Langfuse | Pharma, FinTech, Education | Merck · SumUp · Twilio · Canva · Khan Academy |
+| Patronus API | E-commerce, Automotive, AI | Etsy · CARIAD/VW · Gamma · Weaviate · Nova AI |
+| PromptArmor | Legal, Finance, Healthcare | Fortune 50 (unnamed) · Am Law 50 (unnamed) · 300K+ users |
 <!-- .element: class="small-table" -->
 
 <div class="callout text-left">
-  **Insight:** Specter join <code>companies</code> → <code>company_clients</code> → <code>clients_integration_companies</code>. Customer domains skew toward software/IT for most competitors.
+  **Source:** Public `/customers` pages and case studies. Initial Specter <code>company_clients</code> data was CRM integration artifacts (Affinity/Attio), not confirmed customer relationships — corrected after review.
 </div>
 
 <a href="./task2_product_industry_overlap.csv" target="_blank" class="pill">task2_product_industry_overlap.csv</a>
@@ -296,7 +296,7 @@ quadrantChart
 ----
 
 <!-- .slide: id="task3" -->
-### Task 3: Five Lead Gen Signals
+### Task 3: Six Lead Gen Signals
 
 | # | Signal | Data Source | Trigger |
 |---|---|---|---|
@@ -305,6 +305,7 @@ quadrantChart
 | 3 | **AI Safety Job Postings** | Apify LinkedIn scraper | Role title contains `AI Safety` / `Trust & Safety` / `Responsible AI` |
 | 4 | **Incident PR Monitoring** | Cala MCP + Reddit/HN + DDG/BS4 | Brand mentioned with `jailbreak`, `filter`, `toxic` |
 | 5 | **HuggingFace Eval Traction** | HF 6-surface API sweep | Safety benchmark activity + user graph extraction |
+| 6 | **HN Security People Graph** | HN crawl + user deep dive | Security-related users with company mentions |
 
 *(Press ↓ on each task slide to see the workflow diagram)*
 
@@ -462,10 +463,10 @@ flowchart TB
 <div style="max-height: 210px; overflow: auto; border: 1px solid #2f3542; border-radius: 8px; background: #0b0f14; padding: 10px;">
 <pre style="margin: 0; font-size: 0.46em; line-height: 1.35;"><code class="language-json">{
   "id": "19b40a58-381e-4042-a56f-4c11d8d2b17f",
-  "company": "character.ai",
+  "company": "anthropic",
   "signal": "incidents_social",
   "confidence": 0.82,
-  "why_now": "Reddit incident mention (character.ai jailbreak): Ultimate Claude Code h4x0r - the four letter jailbreak you've been looking for.",
+  "why_now": "Reddit incident mention (Claude Code jailbreak): prompt override technique shared on r/ClaudeCode",
   "evidence_urls": [
     "https://www.reddit.com/r/ClaudeCode/comments/1r6xmhk/ultimate_claude_code_h4x0r_the_four_letter/"
   ],
@@ -637,7 +638,7 @@ flowchart LR
 | **Empathy Floor** | "That's irrational" responses; user distress amplifications | APA ethical guidelines; consumer protection (UX fairness) |
 | **Link Integrity** | Phishing via chatbot links; malicious resource referrals | FTC deceptive-practice; cybersecurity best practice |
 | **Anonymized Summaries** | Therapist notes with identifiers; clinician data exposure | HIPAA minimum necessary; GDPR data minimization |
-| **Crisis Refusal Override** | User refuses help while expressing self-harm intent | Duty-to-warn (Tarasoff); emergency-services protocols |
+| **Crisis Refusal Override** | User refuses help while expressing self-harm intent | Involuntary hold statutes (e.g. CA 5150); duty-of-care negligence; emergency-services protocols |
 <!-- .element: class="small-table" -->
 
 ----
@@ -728,13 +729,17 @@ $$
 ### Task 6: Message Volume Estimates
 ##### <span class="pill">artifacts/message_volume_estimates.md</span> — 3 independent heuristics
 
-| Platform | Domain | Low | Base | High | 95% CI | Tier Fit |
-|---|---|---:|---:|---:|---|---|
-| **Lovable** | `lovable.dev` | 11.52M | 15.30M | 18.96M | 13.46M - 17.14M | Enterprise |
-| **Replit** | `replit.com` | 82.50M | 86.40M | 107.80M | 82.50M - 96.77M | Enterprise |
-| **Base44** | `base44.com` | 4.22M | 4.78M | 5.30M | 4.22M - 5.30M | Growth |
+<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em; border-left: 3px solid #ff6b6b;">
+  <strong>⚠️ Correction (post-review):</strong> Original estimates counted <em>user-visible messages</em> (what a person types). The correct unit for White Circle is <strong>LLM API requests</strong> — each user prompt triggers 5–20+ backend calls (context retrieval, code gen, validation, error loops). Original estimates were <strong>100–400x too low</strong>. See corrected figures below.
+</div>
 
-> All three figures are **per-platform per-month message totals**, derived from 3 independent heuristics triangulated together.
+| Platform | Domain | Original (user msgs/mo) | Corrected (LLM API requests/mo) | Factor Off | Tier |
+|---|---|---:|---:|---:|---|
+| **Lovable** | `lovable.dev` | 15.30M | 1.5B – 6B | ~100–400x | Platform-scale |
+| **Replit** | `replit.com` | 86.40M | 5B – 25B | ~60–290x | Platform-scale |
+| **Base44** | `base44.com` | 4.78M | 225M – 720M | ~47–150x | Platform-scale |
+
+> Corrected estimates include autocomplete/inline traffic (dominant for IDE tools), multi-step agent calls, and updated Feb 2026 user counts. All three targets require **custom enterprise pricing** ($50K–500K+/year), not standard tiers.
 
 ====
 
@@ -782,31 +787,30 @@ Method 3 — Engineering Proxy:
 
 $$M_{\text{traffic}} = V \times c \times m \quad \text{ | } \quad M_{\text{user}} = DAU \times d \times n \quad \text{ | } \quad M_{\text{eng}} = R \times D \times S$$
 
-**Example — Lovable (Traffic Proxy):**
-$$M_{\text{traffic}} = 6\text{M} \times 0.32 \times 6 = 11.52\text{M}$$
+**Original calculation (user-visible messages only):**
+$$M_{\text{traffic}} = V \times 0.32 \times 6 \quad \text{(underestimates by 100–400x)}$$
 
-**Example — Lovable (User Proxy):**  
-$DAU = 153\text{K}$, $d = 20$, $n = 5$ → $M_{\text{user}} = 153{,}000 \times 20 \times 5 = 15.30\text{M}$
+**Why this fails:** Each user prompt triggers 5–20+ LLM API calls. IDE tools add ~400 autocomplete requests/user/day that never appear as "messages." Using $n=5$ msgs/day for an AI coding tool is ~10x too low.
 
-**Example — Replit (Engineering Proxy):**  
-$R = 260$, $D = 0.16$, $S = 2.592\text{M}$ → $M_{\text{eng}} = 260 \times 0.16 \times 2{,}592{,}000 \approx 107.8\text{M}$
+**Corrected approach (LLM API requests):**
+$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fan-out}} + n_{\text{autocomplete}})$$
 
-| Platform | $V$ / $DAU$ / $R$ | Proxy Output |
-|---|---:|---:|
-| Lovable | 6M visits, 153K DAU | 11.52M, 15.30M |
-| Replit | 45M visits, ~825K DAU, 260 RPS | 86.4M, 82.5M, 107.8M |
-| Base44 | 2.2M visits, ~53K DAU | 4.22M, 5.30M |
+| Platform | Updated inputs (Feb 2026) | Original msg/mo | Corrected API req/mo |
+|---|---|---:|---:|
+| Lovable | 8M+ users, 30.75M visits, $200M+ ARR | 15.30M | 1.5B – 6B |
+| Replit | 35-40M MAU, $150M ARR | 86.40M | 5B – 25B |
+| Base44 | 400K users, $1M ARR | 4.78M | 225M – 720M |
 
 ====
 
 <!-- .slide: id="task6-per-user" -->
-#### Per-User Per-Month Breakdown
+#### Per-User Per-Month Breakdown (Corrected)
 
-| Platform | Est. MAU | Messages / User / Month | Reasoning |
-|---|---:|---:|---|
-| **Lovable** | 100000-200000 | 100-150 | 100% AI-native codegen: high prompt/session density |
-| **Replit** | 4000000-6000000 | 20-25 | Broad user base; only a subset uses AI intensively |
-| **Base44** | 20000-50000 | 90-130 | Early adopter-heavy user pool with high per-user usage |
+| Platform | Est. Active Users | User Prompts / Mo | LLM API Requests / User / Mo | Key Factor |
+|---|---:|---:|---:|---|
+| **Lovable** | 1–2M active | 300–600M | 750–3,000 | 100% AI-native codegen; 15–30 prompts/app × 100K apps/day |
+| **Replit** | 8–12M DAU | 750M–1.5B | 400–2,000 | Broad base; AI Agent subset drives 10–30 prompts/day + autocomplete |
+| **Base44** | 100–200K active | 45–112M | 450–1,100 | Early adopter-heavy; high per-session prompt density |
 
 ====
 
@@ -814,16 +818,22 @@ $R = 260$, $D = 0.16$, $S = 2.592\text{M}$ → $M_{\text{eng}} = 260 \times 0.16
 #### Cala AI Proxy: Usage Statistics Triangulation
 ##### *Query: Replit, Lovable, Cursor messages-per-user metrics · Feb 2026*
 
-**Cala-verified aggregates used for heuristic calibration:**
+<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em;">
+  <strong>What is Cala AI?</strong> A data structuring platform that turns unstructured internet data into typed, verified context for AI agents (<a href="https://docs.cala.ai/" target="_blank">docs.cala.ai</a>). Francisco is part of a group of 50 selected alpha testers building with it.
+</div>
 
-| Platform | Cala-sourced metric | Use in our model |
+**Cala-verified aggregates (latest available data):**
+
+| Platform | Cala-sourced metric | As of |
 |---|---|---|
-| **Cursor** | 1M+ DAU, 1B+ lines/day, 1M+ QPS | Validates engineering proxy scale |
-| **Replit** | 30M+ MAU, 12.58M monthly visits | Anchors traffic proxy $V$ |
-| **Lovable** | 2.3M→8M users, 25.6M–39.3M visits | Anchors $V$ and DAU assumptions |
-| **Base44** | 250K→400K users, $1M ARR in 3 weeks, Wix $80M acquisition | Platform + analysis: vibe-coding scale & bootstrapped growth proxy |
+| **Cursor** | 1M+ DAU, 360K paying, $500M+ ARR, 1M+ QPS | Q4 2025 |
+| **Replit** | 35–40M MAU, $150M ARR | Q3 2025 |
+| **Lovable** | 8M+ users, $200M+ ARR, 30.75M monthly visits | Nov 2025 |
+| **Base44** | 250K→400K users, $1M ARR in 3 weeks, Wix $80M acquisition | Jun 2025 |
 
-> We triangulate: traffic (visits × 0.32 × 6) + user (DAU × days × 5) + engineering (RPS × 0.16 × 2.592M). When all three align, CI narrows.
+<div class="callout text-left" style="font-size: 0.55em;">
+  <strong>⚠️ Correction:</strong> Original artifact showed Lovable at $100M ARR (mid-2025 snapshot). Actual: $200M+ by Nov 2025 (<a href="https://techcrunch.com/2025/11/19/as-lovable-hits-200m-arr-its-ceo-credits-staying-in-europe-for-its-success/" target="_blank">TechCrunch</a>), trajectory to $300M by early 2026 (<a href="https://www.linkedin.com/posts/seb-johnson_just-in-lovable-has-officially-surpassed-activity-7423998979274616832-tPv0/" target="_blank">Seb Johnson/LinkedIn</a>). This significantly impacts downstream volume estimates — see correction on next slide.
+</div>
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/cala_usage_proxy.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Cala usage proxy artifact</a>
 
@@ -835,9 +845,9 @@ $R = 260$, $D = 0.16$, $S = 2.592\text{M}$ → $M_{\text{eng}} = 260 \times 0.16
 
 | Artifact | Count | Status |
 |---|---:|---|
-| <span class="pill">artifacts/leads.jsonl</span> | 143 leads | Valid JSONL parse |
+| <span class="pill">artifacts/leads.jsonl</span> | 115 leads | Valid JSONL parse |
 | <span class="pill">artifacts/task1_icp_profiles/ICP_targets_enriched.json</span> | 30 ICPs | Specter contacts + funding |
-| <span class="pill">artifacts/task7_outbound/</span> | 13 email + 13 LinkedIn v2 | OpenCode + Specter context generation |
+| <span class="pill">artifacts/task7_outbound/</span> | 9 email + 9 LinkedIn v2 | OpenCode + Specter context generation |
 
 *(Press ↓ for concrete cold email, LinkedIn, and JSON previews)*
 
@@ -845,7 +855,7 @@ $R = 260$, $D = 0.16$, $S = 2.592\text{M}$ → $M_{\text{eng}} = 260 \times 0.16
 
 <!-- .slide: id="task7-cold-email" -->
 #### G1: Cold Email — Lakera Customer (Tome)
-##### Targeting <code>tome.com</code> · OpenCode output from full Specter context (`talentsignals` + `people_db.*`) + Lakera linkage evidence
+##### Targeting <code>tome.com</code> · Research: Governance Studio (Apr 2025), Salesforce/Gong integrations, SOC 2 Type II pursuit
 
 <div id="tome-contact-switcher" class="contact-switcher-sidebar">
   <div class="folder-contacts"></div>
@@ -854,7 +864,7 @@ $R = 260$, $D = 0.16$, $S = 2.592\text{M}$ → $M_{\text{eng}} = 260 \times 0.16
   </div>
 </div>
 
-*143 leads in <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">artifacts/leads.jsonl</a>*
+*115 leads in <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">artifacts/leads.jsonl</a>*
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/tome_opencode_context.json" target="_blank" class="pill">tome_opencode_context.json</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/competitors.md" target="_blank" class="pill">competitors.md</a> · <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a>
 
@@ -888,7 +898,7 @@ flowchart LR
 
 | Stage | Artifact |
 |---|---|
-| Leads | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">leads.jsonl</a> (143) |
+| Leads | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">leads.jsonl</a> (115) |
 | Contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
 | Tome (Lakera) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
 | Incident (people) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> (7) |
@@ -906,13 +916,13 @@ Everything here is **powered by running code** — Specter, person_db, OpenCode,
 | What's live | Evidence |
 |---|---|
 | 30 ICP profiles + Specter funding | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
-| 6-competitor matrix | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/" target="_blank" class="pill">task2_competitors/</a> |
-| 5 signal detectors | <code>python -m src.cli signals run</code> |
+| 6-competitor matrix (verified public customers) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/" target="_blank" class="pill">task2_competitors/</a> |
+| 6 signal detectors | <code>python -m src.cli signals run</code> |
 | 10 safety policies | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/psychotherapy_policies.yaml" target="_blank" class="pill">psychotherapy_policies.yaml</a> |
 | 4-tier pricing | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/pricing_model.csv" target="_blank" class="pill">pricing_model.csv</a> |
 | **Tome cold email** (10 contacts, person_db + OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
 | **Incident LinkedIn** (7 people, Specter + person_job) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
-| 143 leads × email + LinkedIn (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
+| 115 leads × 9 email + 9 LinkedIn (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
 <code>enrich-tome --use-opencode</code> · <code>enrich-incident-linkedin --people-only</code>
 
