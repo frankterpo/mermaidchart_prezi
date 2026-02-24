@@ -729,8 +729,8 @@ $$
 ### Task 6: Message Volume Estimates
 ##### <span class="pill">artifacts/message_volume_estimates.md</span> — 3 independent heuristics
 
-<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em; border-left: 3px solid #ff6b6b;">
-  <strong>⚠️ Correction (post-review):</strong> Original estimates counted <em>user-visible messages</em> (what a person types). The correct unit for White Circle is <strong>LLM API requests</strong> — each user prompt triggers 5–20+ backend calls (context retrieval, code gen, validation, error loops). Original estimates were <strong>100–400x too low</strong>. See corrected figures below.
+<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em;">
+  <strong>Note:</strong> Estimates use <strong>LLM API requests</strong> as the unit, not user-visible messages. A single user prompt triggers 5–20+ backend calls (context retrieval, code gen, validation, error loops). ARR figures are point-in-time snapshots — these companies are growing fast (e.g. Lovable: $100M mid-2025 → $200M+ Nov 2025 → $300M+ reported Feb 2026). Estimates reflect the range.
 </div>
 
 | Platform | Domain | Original (user msgs/mo) | Corrected (LLM API requests/mo) | Factor Off | Tier |
@@ -787,24 +787,24 @@ Method 3 — Engineering Proxy:
 
 $$M_{\text{traffic}} = V \times c \times m \quad \text{ | } \quad M_{\text{user}} = DAU \times d \times n \quad \text{ | } \quad M_{\text{eng}} = R \times D \times S$$
 
-**Original calculation (user-visible messages only):**
-$$M_{\text{traffic}} = V \times 0.32 \times 6 \quad \text{(underestimates by 100–400x)}$$
+**Naive approach (user-visible messages):**
+$$M_{\text{traffic}} = V \times 0.32 \times 6$$
 
-**Why this fails:** Each user prompt triggers 5–20+ LLM API calls. IDE tools add ~400 autocomplete requests/user/day that never appear as "messages." Using $n=5$ msgs/day for an AI coding tool is ~10x too low.
+This undercounts by 100–400x because it ignores backend fan-out. Each user prompt triggers 5–20+ LLM API calls (context retrieval, code gen, validation, error loops). IDE tools add ~400 autocomplete requests/user/day that never surface as "messages."
 
-**Corrected approach (LLM API requests):**
+**Correct unit — LLM API requests:**
 $$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fan-out}} + n_{\text{autocomplete}})$$
 
-| Platform | Updated inputs (Feb 2026) | Original msg/mo | Corrected API req/mo |
+| Platform | Inputs (Feb 2026) | Naive msg/mo | LLM API req/mo |
 |---|---|---:|---:|
-| Lovable | 8M+ users, 30.75M visits, $200M+ ARR | 15.30M | 1.5B – 6B |
-| Replit | 35-40M MAU, $150M ARR | 86.40M | 5B – 25B |
+| Lovable | 8M+ users, 30.75M visits, $200M–$300M+ ARR | 15.30M | 1.5B – 6B |
+| Replit | 35–40M MAU, $150M ARR | 86.40M | 5B – 25B |
 | Base44 | 400K users, $1M ARR | 4.78M | 225M – 720M |
 
 ====
 
 <!-- .slide: id="task6-per-user" -->
-#### Per-User Per-Month Breakdown (Corrected)
+#### Per-User Per-Month Breakdown
 
 | Platform | Est. Active Users | User Prompts / Mo | LLM API Requests / User / Mo | Key Factor |
 |---|---:|---:|---:|---|
@@ -832,7 +832,7 @@ $$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit
 | **Base44** | 250K→400K users, $1M ARR in 3 weeks, Wix $80M acquisition | Jun 2025 |
 
 <div class="callout text-left" style="font-size: 0.55em;">
-  <strong>⚠️ Correction:</strong> Original artifact showed Lovable at $100M ARR (mid-2025 snapshot). Actual: $200M+ by Nov 2025 (<a href="https://techcrunch.com/2025/11/19/as-lovable-hits-200m-arr-its-ceo-credits-staying-in-europe-for-its-success/" target="_blank">TechCrunch</a>), trajectory to $300M by early 2026 (<a href="https://www.linkedin.com/posts/seb-johnson_just-in-lovable-has-officially-surpassed-activity-7423998979274616832-tPv0/" target="_blank">Seb Johnson/LinkedIn</a>). This significantly impacts downstream volume estimates — see correction on next slide.
+  <strong>Disclaimer:</strong> ARR figures are point-in-time snapshots from public sources. Lovable's reported ARR: $100M (mid-2025, <a href="https://techcrunch.com/2025/11/19/as-lovable-hits-200m-arr-its-ceo-credits-staying-in-europe-for-its-success/" target="_blank">TechCrunch</a>) → $200M+ (Nov 2025) → $300M+ (Feb 2026, <a href="https://www.linkedin.com/posts/seb-johnson_just-in-lovable-has-officially-surpassed-activity-7423998979274616832-tPv0/" target="_blank">LinkedIn</a>). These companies are growing 2–3x per quarter — any snapshot becomes stale within weeks. Volume estimates use ranges to account for this.
 </div>
 
 <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/cala_usage_proxy.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Cala usage proxy artifact</a>
