@@ -22,7 +22,7 @@
       "linkedin_message": "Hey Siva — saw your post about Forward-Deployed Engineers building agentic solutions directly in customer environments. That model is brilliant for speed — and it means AI agents have live access to client legal data. Runtime enforcement at that boundary is what we built at White Circle. Relevant to the FDE stack? calendly.com/francisco-wc",
       "incident": "Edge telemetry: x-vercel-id headers detected on harvey.ai",
       "incident_url": "https://www.harvey.ai/",
-      "linkedin_url": "https://www.linkedin.com/in/siva-gurumurthy-a1037a14",
+      "linkedin_url": "https://www.linkedin.com/in/siva-g-a1037a14",
       "company": "Harvey",
       "signal": "edge_telemetry",
       "personal_hook": "His recent LinkedIn post about FDEs: 'Build agentic solutions directly for customers with the shortest feedback loop.' FDEs = AI agents in customer legal environments = massive runtime security surface.",
