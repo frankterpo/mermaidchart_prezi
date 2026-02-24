@@ -20,23 +20,25 @@
 ```mermaid
 flowchart TD
     subgraph Data_Extraction [1. Data Extraction]
-        A1["Recon (Firecrawl/BS4)"] --> A2["Sitemap & Meta"]
-        A1 --> A3["HTTP Headers"]
-        A4["Cala AI + DuckDuckGo/Reddit"] --> A5["Web Intent & Social Scraping"]
+        A1["Firecrawl + BS4\n(sitemap, meta, headers)"] --> A3["HTTP Headers\n(cf-ray, x-vercel-id)"]
+        A4["Cala AI\n(entity_search, knowledge_query)"] --> A5["Verified company context\n+ social signals"]
+        A6["GitHub API\n+ HF 6-surface sweep"] --> A7["CI/CD deps\n+ safety dataset users"]
+        A8["Apify LinkedIn\n+ DDG + Reddit/HN"] --> A9["Job postings\n+ incident mentions"]
     end
     subgraph Signal_Processing [2. Signal Processing]
-        B1["ICP Build (DuckDuckGo + Cala API)"] --> B2["Specter Postgres Enrichment"]
-        A3 --> B3["Telemetry & CI/CD Fingerprinting"]
+        B1["ICP Build\n(30 targets × 15 verticals)"] --> B2["Specter Postgres\n(funding, headcount, tech stack)"]
+        A3 --> B3["6 Signal Detectors"]
+        A7 --> B3
+        A9 --> B3
+        A5 --> B2
     end
     subgraph Insights_Activation [3. Insights & Activation]
-        B2 --> C1["Entity Scoring & Seniority Ranking"]
-        B3 --> C2["Lead Gen Confidence Engine"]
-        A5 --> C2
-        C1 --> C3["Personalized Outbound"]
+        B2 --> C1["person_db\n(seniority rank + contact)"]
+        B3 --> C2["leads.jsonl\n(115 scored leads)"]
+        C1 --> C3["OpenCode\n(YC-format outbound)"]
         C2 --> C3
+        C3 --> C4["Email + LinkedIn\n(18 personalized drafts)"]
     end
-    Data_Extraction --> Signal_Processing
-    Signal_Processing --> Insights_Activation
 ```
 
 ====
@@ -255,21 +257,25 @@ $$
 
 ```mermaid
 quadrantChart
-    title AI Security Positioning
+    title AI Security & Observability Positioning
     x-axis Low Latency --> High Latency
     y-axis Pre-deploy Eval --> Runtime Protection
-    quadrant-1 Observability
-    quadrant-2 Strategic Protection
-    quadrant-3 CI/CD Quality
-    quadrant-4 Deep Eval
-    "WC Guard": [0.12, 0.90]
-    "WC Edge": [0.08, 0.96]
-    "Lakera": [0.32, 0.63]
-    "PromptArmor": [0.42, 0.80]
-    "Helicone": [0.95, 0.08]
-    "Langfuse": [0.88, 0.30]
-    "Braintrust": [0.95, 0.05]
-    "Patronus": [0.84, 0.16]
+    quadrant-1 Runtime Observability
+    quadrant-2 Runtime Security
+    quadrant-3 Pre-deploy Quality
+    quadrant-4 Post-hoc Eval
+    "WC Guard": [0.12, 0.88]
+    "WC Edge": [0.08, 0.95]
+    "Lakera Guard": [0.30, 0.72]
+    "Lakera Red": [0.55, 0.45]
+    "PromptArmor": [0.38, 0.78]
+    "Helicone Proxy": [0.92, 0.12]
+    "Langfuse": [0.85, 0.28]
+    "Braintrust Platform": [0.90, 0.10]
+    "Braintrust Loop": [0.75, 0.22]
+    "Patronus API": [0.78, 0.18]
+    "Patronus Percival": [0.65, 0.55]
+    "Gandalf (Lakera)": [0.48, 0.35]
 ```
 
 ====
@@ -530,7 +536,7 @@ flowchart LR
 ====
 
 <!-- .slide: id="task3-hn-people" -->
-#### HN Security People Graph (Live Crawl + User Deep Dive)
+#### Signal 6: HN Security People Graph (Live Crawl + User Deep Dive)
 ##### <span class="pill">artifacts/task3_signals/hn_security_people.md</span>
 
 **Coverage from latest run:**
@@ -552,7 +558,7 @@ flowchart LR
 ====
 
 <!-- .slide: id="task3-hf-people" -->
-#### HF Security Datasets → People → Social Links → Specter Match
+#### Signal 5 (cont.): HF Datasets → People → Social Links → Specter Match
 ##### <span class="pill">artifacts/task3_signals/hf_security_people.md</span>
 
 **Coverage from latest run:**
@@ -645,82 +651,70 @@ flowchart LR
 
 <!-- .slide: id="task5" -->
 ### Task 5: Pricing Strategy
-##### <span class="pill">artifacts/pricing_model.csv</span> — 4 tiers, effective rate + margin + competitor anchor
+##### *"Some clients have 1,000 API requests/mo, some have 10,000,000. How would you approach pricing?"*
 
-| Tier | Requests | Price | Effective / 1M | Gross Margin % | Competitive Anchor |
-|---|---:|---:|---:|---:|---|
-| **Free** | 1,000 | $0 | $0 | 0.00 | Langfuse community/open-source entry point |
-| **Startup** | 100,000 | $149 | $1,490 | 99.66 | Braintrust startup-friendly entry economics |
-| **Growth** | 1,000,000 | $899 | $899 | 99.44 | Helicone usage-volume scaling benchmark |
-| **Enterprise** | 10,000,000 | $4,990 | $499 | 99.00 | Lakera-style enterprise annual commit motion |
+**Approach: Usage-based tiers with volume discounts.** Dominant model in AI infra (Datadog, Twilio, Stripe) — cost aligns with value delivered.
+
+| Tier | Requests/mo | Price/mo | Eff. $/1M | Why this tier exists |
+|---|---:|---:|---:|---|
+| **Free** | 1,000 | $0 | — | Removes friction. Langfuse/Braintrust prove free tier drives developer adoption. |
+| **Startup** | 100K | $149 | $1,490 | First production workload. Anchored to Braintrust/Helicone starter ($99–199). |
+| **Growth** | 1M | $899 | $899 | Scaling companies. 40% cheaper per unit. Matches Datadog consumption economics. |
+| **Enterprise** | 10M+ | $4,990 | $499 | Annual commit. 67% cheaper per unit. Lakera/Cloudflare WAF enterprise pattern. |
 
 ====
 
 <!-- .slide: id="task5-cala" -->
-#### Cala AI Pricing Research — Benchmark Anchors
-##### *Query: AI security & observability SaaS pricing · Feb 2026*
+#### What Determines WTP — and How It Differs by ICP
 
-**Competitor benchmarks (via [Cala AI](https://docs.cala.ai/)):**
+<div class="callout text-left" style="font-size: 0.55em; margin-bottom: 0.5em;">
+  <strong>Key finding:</strong> WTP is driven by <strong>risk exposure × compliance burden × volume</strong>. Their relative weight shifts by ICP — regulated industries pay for compliance; consumer AI pays for scale protection; enterprise pays for both.
+</div>
 
-| Vendor | Model | Per-unit reference |
-|---|---|---|
-| **Datadog** | Consumption | RUM $0.15–0.80/1K sessions; Synthetic API $5/10K runs |
-| **Cloudflare WAF** | Plan-based | Pro $20/mo → Business $200/mo |
-| **Twilio** | Per-unit | SMS $0.0083/msg; volume discounts 150K+ |
-| **LaunchDarkly** | Per-seat | Starter $8.33/seat; Pro $16.67/seat |
+| WTP Driver | Consumer GenAI | Enterprise Automation | Regulated Industry |
+|---|---|---|---|
+| **Risk exposure** | HIGH — lawsuits, PR | MEDIUM — internal-facing | HIGH — regulatory fines |
+| **Request volume** | VERY HIGH — 1B+ req/mo | MEDIUM — 10M–100M/mo | LOW–MEDIUM |
+| **Compliance burden** | LOW — minimal regulation | MEDIUM — SOC 2, audit | VERY HIGH — HIPAA, FDA, SOX |
+| **Likely tier** | Growth → Enterprise | Startup → Growth | Growth → Enterprise |
+| **Price sensitivity** | Low (VC-funded) | Medium (ROI-driven) | Low (non-negotiable) |
+<!-- .element: class="small-table" -->
 
-> White Circle’s request-based tiers align with observability vendors (Datadog, Helicone) and security motion (Lakera).
-
-<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task5_pricing/cala_pricing_research.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Full research — Cala AI + cited sources</a>
+<a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task5_pricing/cala_pricing_research.json" target="_blank" style="font-size: 0.6em; color: #a8a8ff;">🔗 Benchmark research — Cala AI + cited sources</a>
 
 ====
 
 <!-- .slide: id="task5-formula" -->
-#### Pricing Logic & Margins — Formal Derivation
+#### Unit Economics & Competitive Anchors
+##### <span class="pill">artifacts/pricing_model.csv</span>
 
-**Definition 1 (Pricing Function).** For volume $v$ (requests), tier $T$ with base fee $B_T$ and per-unit rate $r_T$:
+**COGS:** $5 per 1M requests (inference proxy + policy engine compute). Gross margin stays >99% at all tiers.
 
-$$
-\boxed{P(v) = B_T + (v \times r_T)}, \quad v \in [v_{T,\min}, v_{T,\max}]
-$$
+| Tier | Price | COGS | Gross Margin | Competitive Reference |
+|---|---:|---:|---:|---|
+| Startup | $149 | $0.50 | 99.7% | Braintrust starter ($99), Helicone Pro ($199) |
+| Growth | $899 | $5.00 | 99.4% | Datadog RUM ($150–800/1K sessions), Twilio volume tiers |
+| Enterprise | $4,990 | $50.00 | 99.0% | Lakera enterprise (custom), Cloudflare WAF Business ($200/mo) |
 
-**Definition 2 (Gross Margin).** With COGS *c* = 5 USD per 1M requests:
-
-$$
-\text{Margin}_T = \frac{P - (v/10^6 \times c)}{P} \times 100\%
-$$
-
-<div class="callout text-left">
-  <strong>Numerical verification:</strong>
-</div>
-
-| Tier | $P$ | $v$ | COGS | $\text{Margin}$ |
-|---|---:|---:|---:|---:|
-| Startup | $149 | 100K | $0.50 | $(149-0.5)/149 = 99.66\%$ |
-| Growth | $899 | 1M | $5.00 | $(899-5)/899 = 99.44\%$ |
-| Enterprise | $4,990 | 10M | $50.00 | $(4990-50)/4990 = 99.00\%$ |
-
-<div class="callout text-left">
-  <strong>Proposition.</strong> Effective rate $\$/1\text{M}$ decreases monotonically: $1490 \to 899 \to 499$. Validated against Cala AI benchmarks (Datadog RUM, Twilio, LaunchDarkly).
+<div class="callout text-left" style="font-size: 0.55em;">
+  <strong>Why non-linear pricing works:</strong> Effective rate drops $1,490 → $899 → $499 per 1M. A 10M req/mo customer gets 67% lower unit cost but pays 33× the Startup price. The 99%+ margins mean every incremental request is near-pure revenue.
 </div>
 
 ====
 
 <!-- .slide: id="task5-logic" -->
-#### The Math: Why Non-Linear Pricing Works
-
-| Finding | Value |
-|---|---|
-| Effective rate progression | $1,490 → $899 → $499 per 1M |
-| Unit economics (COGS $5/1M) | 99.66% / 99.44% / 99.00% gross margin |
-| Competitive anchors | Braintrust (startup) · Helicone (growth) · Lakera (enterprise) |
+#### Concrete Takeaways
 
 <div class="callout text-left">
-  <strong>Formula:</strong> margin = (price − (requests ÷ 1e6 × 5)) ÷ price × 100
-</div>
 
-<div class="callout text-left">
-  Growth retains high margin; Enterprise stays cheaper per 1M for high-volume traffic — validated against Cala AI competitor research.
+**1. Use requests as the billing unit** — not seats, not “messages.” API requests are the atomic unit mapping directly to compute cost and customer value. Every competitor in this space (Helicone, Langfuse, Lakera) bills on usage, not seats.
+
+**2. WTP varies by ICP, not just volume.** A HealthTech company at 100K req/mo will pay Growth-tier ($899) because compliance is non-negotiable. A consumer AI startup at 1M req/mo might negotiate harder to optimize burn. Same volume, different willingness.
+
+**3. Free tier is mandatory for developer adoption.** Langfuse (open-source, acquired by ClickHouse) and Braintrust (free eval tools) prove developer-first distribution beats enterprise sales at this stage. 1K free requests costs us $0.005/mo in COGS.
+
+**4. Enterprise is where the money is.** From Task 6: Lovable, Replit, and Base44 each generate 225M–25B API req/mo. At $499/1M, a single enterprise deal = $112K–$12.5M/year. These require custom contracts, not self-serve.
+
 </div>
 
 ----
@@ -783,34 +777,42 @@ Method 3 — Engineering Proxy:
 ====
 
 <!-- .slide: id="task6-katex" -->
-#### KaTeX Calculation Walkthrough
+#### Calculation: Why User Messages ≠ LLM API Requests
 
-$$M_{\text{traffic}} = V \times c \times m \quad \text{ | } \quad M_{\text{user}} = DAU \times d \times n \quad \text{ | } \quad M_{\text{eng}} = R \times D \times S$$
+**The 3 estimation heuristics:**
 
-**Naive approach (user-visible messages):**
-$$M_{\text{traffic}} = V \times 0.32 \times 6$$
+$$M_{\text{traffic}} = V \times c \times m \qquad M_{\text{user}} = DAU \times d \times n \qquad M_{\text{eng}} = R \times D \times S$$
 
-This undercounts by 100–400x because it ignores backend fan-out. Each user prompt triggers 5–20+ LLM API calls (context retrieval, code gen, validation, error loops). IDE tools add ~400 autocomplete requests/user/day that never surface as "messages."
+These count **user-visible messages** and undercount by 100–400×. Each user prompt triggers 5–20+ backend LLM calls (context retrieval, code gen, validation, error loops). IDE tools fire ~400 autocomplete requests/user/day that never appear as “messages.”
 
-**Correct unit — LLM API requests:**
-$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fan-out}} + n_{\text{autocomplete}})$$
+**Correct unit — LLM API requests per month:**
 
-| Platform | Inputs (Feb 2026) | Naive msg/mo | LLM API req/mo |
+$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times \big(n_{\text{explicit}} \times k_{\text{fan\text{-}out}} + n_{\text{auto}}\big)$$
+
+| Platform | Key Inputs (Feb 2026) | Naive (msg/mo) | Corrected (API req/mo) |
 |---|---|---:|---:|
-| Lovable | 8M+ users, 30.75M visits, $200M–$300M+ ARR | 15.30M | 1.5B – 6B |
-| Replit | 35–40M MAU, $150M ARR | 86.40M | 5B – 25B |
-| Base44 | 400K users, $1M ARR | 4.78M | 225M – 720M |
+| **Lovable** | 8M+ users, $200M–$300M+ ARR | 15.3M | **1.5B – 6B** |
+| **Replit** | 35–40M MAU, $150M ARR | 86.4M | **5B – 25B** |
+| **Base44** | 400K users, $1M ARR | 4.8M | **225M – 720M** |
+
+<div class="callout text-left" style="font-size: 0.55em;">
+  Where $d$ = active days/mo, $n_{\text{explicit}}$ = user prompts/day, $k_{\text{fan\text{-}out}}$ = backend calls per prompt (5–20), $n_{\text{auto}}$ = autocomplete triggers/day (~400 for IDE tools). All three platforms are <strong>platform-scale enterprise deals</strong> ($50K–500K+/year).
+</div>
 
 ====
 
 <!-- .slide: id="task6-per-user" -->
-#### Per-User Per-Month Breakdown
+#### Per-User Breakdown: What Drives the Numbers
 
-| Platform | Est. Active Users | User Prompts / Mo | LLM API Requests / User / Mo | Key Factor |
-|---|---:|---:|---:|---|
-| **Lovable** | 1–2M active | 300–600M | 750–3,000 | 100% AI-native codegen; 15–30 prompts/app × 100K apps/day |
-| **Replit** | 8–12M DAU | 750M–1.5B | 400–2,000 | Broad base; AI Agent subset drives 10–30 prompts/day + autocomplete |
-| **Base44** | 100–200K active | 45–112M | 450–1,100 | Early adopter-heavy; high per-session prompt density |
+| Platform | Active Users | Prompts/User/Day | Fan-out (k) | API Req/User/Mo | Key Driver |
+|---|---:|---:|---:|---:|---|
+| **Lovable** | 1–2M | 15–30 | 10–20 | 750–3,000 | 100% AI-native; every app action is an LLM call |
+| **Replit** | 8–12M DAU | 10–30 | 5–15 | 400–2,000 | AI Agent subset + autocomplete = hidden volume |
+| **Base44** | 100–200K | 15–25 | 10–15 | 450–1,100 | Early adopters with high prompt density |
+
+<div class="callout text-left" style="font-size: 0.55em;">
+  <strong>Answer to the question:</strong> “Estimate amount of messages Lovable, Base44, and Replit have per month.” The key insight is that “messages” (what a user types) is the wrong unit. White Circle guards <strong>LLM API requests</strong> — and the multiplier from user message to API request is 100–400×. At these volumes, all three are enterprise-tier customers requiring custom pricing.
+</div>
 
 ====
 
@@ -854,7 +856,7 @@ $$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit
 ====
 
 <!-- .slide: id="task7-cold-email" -->
-#### G1: Cold Email — Lakera Customer (Tome)
+#### G1: Cold Email — Enterprise AI Prospect (Tome)
 ##### Targeting <code>tome.com</code> · Research: Governance Studio (Apr 2025), Salesforce/Gong integrations, SOC 2 Type II pursuit
 
 <div id="tome-contact-switcher" class="contact-switcher-sidebar">
@@ -900,7 +902,7 @@ flowchart LR
 |---|---|
 | Leads | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/leads.jsonl" target="_blank" class="pill">leads.jsonl</a> (115) |
 | Contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
-| Tome (Lakera) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
+| Tome contacts | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
 | Incident (people) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> (7) |
 | Raw outbound | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
@@ -911,18 +913,19 @@ flowchart LR
 <!-- .slide: id="close" class="text-left" -->
 ### Thank You.
 
-Everything here is **powered by running code** — Specter, person_db, OpenCode, Cala.
+Everything here is **powered by running code** — Specter, person_db, OpenCode, Cala AI.
 
-| What's live | Evidence |
+| What’s live | Evidence |
 |---|---|
-| 30 ICP profiles + Specter funding | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
-| 6-competitor matrix (verified public customers) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/" target="_blank" class="pill">task2_competitors/</a> |
-| 6 signal detectors | <code>python -m src.cli signals run</code> |
-| 10 safety policies | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/psychotherapy_policies.yaml" target="_blank" class="pill">psychotherapy_policies.yaml</a> |
-| 4-tier pricing | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/pricing_model.csv" target="_blank" class="pill">pricing_model.csv</a> |
-| **Tome cold email** (10 contacts, person_db + OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
-| **Incident LinkedIn** (7 people, Specter + person_job) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
-| 115 leads × 9 email + 9 LinkedIn (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
+| 30 ICP profiles (15 verticals) + Specter funding | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task1_icp_profiles/ICP_targets_enriched.json" target="_blank" class="pill">ICP_targets_enriched.json</a> |
+| 6-competitor matrix (verified customers, all products) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task2_competitors/" target="_blank" class="pill">task2_competitors/</a> |
+| 6 signal detectors (telemetry, CI/CD, jobs, incidents, HF, HN) | <code>python -m src.cli signals run</code> |
+| 10 safety policies (CI-testable) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/psychotherapy_policies.yaml" target="_blank" class="pill">psychotherapy_policies.yaml</a> |
+| Usage-based pricing (4 tiers, WTP by ICP) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/pricing_model.csv" target="_blank" class="pill">pricing_model.csv</a> |
+| Volume estimates: LLM API requests (100–400× user msgs) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task6_estimates/" target="_blank" class="pill">task6_estimates/</a> |
+| **Tome cold email** (10 contacts, YC framework, OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/tome_contacts.json" target="_blank" class="pill">tome_contacts.json</a> |
+| **Incident LinkedIn** (7 people, Specter + person_db) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/presentation/presentation/incident_linkedin_contacts.json" target="_blank" class="pill">incident_linkedin_contacts.json</a> |
+| 115 leads × 18 personalized outbound (OpenCode) | <a href="https://github.com/frankterpo/growth_hacker_wc_2026/blob/main/artifacts/task7_outbound/" target="_blank" class="pill">task7_outbound/*_v2.txt</a> |
 
 <code>enrich-tome --use-opencode</code> · <code>enrich-incident-linkedin --people-only</code>
 
