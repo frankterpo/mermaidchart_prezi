@@ -787,7 +787,7 @@ These count **user-visible messages** and undercount by 100–400×. Each user p
 
 **Correct unit — LLM API requests per month:**
 
-$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times \big(n_{\text{explicit}} \times k_{\text{fan\text{-}out}} + n_{\text{auto}}\big)$$
+$$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times (n_{\text{explicit}} \times k_{\text{fanout}} + n_{\text{auto}})$$
 
 | Platform | Key Inputs (Feb 2026) | Naive (msg/mo) | Corrected (API req/mo) |
 |---|---|---:|---:|
@@ -796,7 +796,7 @@ $$M_{\text{api}} = \text{MAU}_{\text{active}} \times d \times \big(n_{\text{expl
 | **Base44** | 400K users, $1M ARR | 4.8M | **225M – 720M** |
 
 <div class="callout text-left" style="font-size: 0.55em;">
-  Where $d$ = active days/mo, $n_{\text{explicit}}$ = user prompts/day, $k_{\text{fan\text{-}out}}$ = backend calls per prompt (5–20), $n_{\text{auto}}$ = autocomplete triggers/day (~400 for IDE tools). All three platforms are <strong>platform-scale enterprise deals</strong> ($50K–500K+/year).
+  Where $d$ = active days/mo, $n_{\text{explicit}}$ = user prompts/day, $k_{\text{fanout}}$ = backend calls per prompt (5–20), $n_{\text{auto}}$ = autocomplete triggers/day (~400 for IDE tools). All three platforms are <strong>platform-scale enterprise deals</strong> ($50K–500K+/year).
 </div>
 
 ====
