@@ -215,17 +215,17 @@ $$
 
 | Lens | Bucket | N | Avg Risk | Avg Volume | Avg Priority | Median Raised |
 |---|---|---:|---:|---:|---:|---:|
-| **ICP** | High-Risk Consumer GenAI | 10 | 0.50 | 0.50 | 90.0 | $8.4M |
+| **ICP** | Regulated Industry AI | 10 | 0.70 | 0.00 | 95.0 | $175.0M |
 | **ICP** | Enterprise Automation & Copilots | 10 | 0.60 | 0.40 | 90.0 | $195.0M |
-| **ICP** | Regulated Industry AI | 10 | 0.70 | 0.00 | 84.0 | $175.0M |
+| **ICP** | High-Risk Consumer GenAI | 10 | 0.50 | 0.50 | 85.0 | $8.4M |
+| **Industry** | GovTech | 2 | 0.70 | 0.00 | 95.0 | $5.1M |
 | **Industry** | DevTools | 2 | 0.60 | 0.40 | 90.0 | $1.23B |
-| **Industry** | Mental Health | 2 | 0.50 | 0.50 | 90.0 | $8.4M |
-| **Industry** | GovTech | 2 | 0.70 | 0.00 | 84.0 | $5.1M |
 | **Industry** | SalesEnablement | 2 | 0.60 | 0.40 | 90.0 | $225.0M |
+| **Industry** | Mental Health | 2 | 0.50 | 0.50 | 85.0 | $8.4M |
 <!-- .element: class="small-table" -->
 
-<div class="callout text-left">
-  QA: Calibrated <strong>propensity score</strong>; price assigned in Task 5 by tier thresholds.
+<div class="callout text-left" style="font-size: 0.55em;">
+  <strong>Why Regulated > Enterprise > Consumer?</strong> For a security product, <em>regulatory penalty exposure</em> drives WTP more than volume. GovTech (FedRAMP/ITAR), HealthTech (HIPAA), FinTech (SOX) face the highest cost of a safety failure — and the longest vendor lock-in. Consumer GenAI has the most users but weaker enforcement and smaller budgets.
 </div>
 
 ----
@@ -258,25 +258,29 @@ $$
 ```mermaid
 quadrantChart
     title AI Security & Observability Positioning
-    x-axis Low Latency --> High Latency
-    y-axis Pre-deploy Eval --> Runtime Protection
+    x-axis "Low Latency" --> "High Latency"
+    y-axis "Pre-deploy Eval" --> "Runtime Protection"
     quadrant-1 Runtime Observability
     quadrant-2 Runtime Security
     quadrant-3 Pre-deploy Quality
     quadrant-4 Post-hoc Eval
-    "WC Guard": [0.12, 0.88]
-    "WC Edge": [0.08, 0.95]
-    "Lakera Guard": [0.30, 0.72]
-    "Lakera Red": [0.55, 0.45]
-    "PromptArmor": [0.38, 0.78]
-    "Helicone Proxy": [0.92, 0.12]
-    "Langfuse": [0.85, 0.28]
-    "Braintrust Platform": [0.90, 0.10]
-    "Braintrust Loop": [0.75, 0.22]
-    "Patronus API": [0.78, 0.18]
-    "Patronus Percival": [0.65, 0.55]
-    "Gandalf (Lakera)": [0.48, 0.35]
+    WC Edge: [0.10, 0.92]
+    WC Guard: [0.18, 0.82]
+    PromptArmor: [0.35, 0.75]
+    Lakera Guard: [0.28, 0.68]
+    Patronus Percival: [0.62, 0.58]
+    Lakera Red: [0.52, 0.42]
+    Gandalf: [0.42, 0.32]
+    Langfuse: [0.78, 0.30]
+    Braintrust Loop: [0.68, 0.18]
+    Patronus API: [0.82, 0.12]
+    Helicone: [0.92, 0.22]
+    Braintrust Platform: [0.92, 0.08]
 ```
+
+<div class="callout text-left" style="font-size: 0.5em;">
+  <strong style="color:#6366f1;">■ White Circle</strong> = top-left: lowest latency + highest runtime protection. Competitors cluster in post-hoc eval or pre-deploy quality. No other product combines sub-200ms with runtime enforcement.
+</div>
 
 ====
 
